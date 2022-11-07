@@ -1,11 +1,29 @@
-import '../styles/global.css'
+import { ReactElement, ReactNode } from 'react'
+import { NextPage } from 'next'
 import type { AppProps } from 'next/app'
-import {ThemeProvider} from '@material-tailwind/react'
 
-export default function App({ Component, pageProps }: AppProps) {
-  return (
+import {ThemeProvider} from '@material-tailwind/react'
+import {Layout} from '../layout/layout'
+
+import '../styles/global.css'
+
+export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
+  getLayout?: (page: ReactElement) => ReactNode
+}
+
+type AppPropsWithLayout = AppProps & {
+  Component: NextPageWithLayout
+}
+
+export default function App({ Component, pageProps }:AppPropsWithLayout) {
+  
+  const getLayout = Component.getLayout ?? ((page) => page)
+
+  return getLayout(
   <ThemeProvider>
-    <Component {...pageProps} />
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
   </ThemeProvider>
   )
 }

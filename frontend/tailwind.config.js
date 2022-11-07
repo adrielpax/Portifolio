@@ -7,7 +7,9 @@ module.exports = withMT({
     './src/**/*.tsx'
   ],
   theme: {
-    extend: {},
+    extend: {
+      sans:'Roboto, sans-serif'
+    },
   },
   plugins: [],
 })

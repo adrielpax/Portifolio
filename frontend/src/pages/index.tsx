@@ -1,11 +1,22 @@
 //import Head from 'next/head'
 //import Image from 'next/image'
+import type {ReactElement} from 'react'
+import { Layout } from '../layout/layout'
+import { NextPageWithLayout } from './_app'
+import { Homepage } from './Homepage'
 
-
-export default function Home() {
+const Page: NextPageWithLayout = ()=>{
   return (
-    <div>
-  
-    </div>
+    <>
+      <Homepage/>
+    </>
   )
 }
+
+Page.getLayout = function getLayout(page:ReactElement){
+  return(
+    <main>{page}</main>
+  )
+}
+
+export default Page;
