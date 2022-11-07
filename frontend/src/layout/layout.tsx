@@ -10,7 +10,7 @@ export function Layout({children}:any){
     return(
      <>
         <NavbarPage/>
-            <main>{children}</main>
+            <main className='h-auto'>{children}</main>
         <Footer/>
      </>
     )

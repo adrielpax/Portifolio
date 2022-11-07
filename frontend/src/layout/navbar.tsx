@@ -41,7 +41,7 @@ export function NavbarPage(){
                     variant="small"
                     className="mr-4 cursor-pointer py-1.5 font-normal"
                 >
-                    <span>LOGO HERE</span>
+                    <span className='font-semibold text-lg'>Adriel Dev</span>
                 </Typography>
                 <div className='hidden lg:block'>{NavList}</div>
                 <Button 
