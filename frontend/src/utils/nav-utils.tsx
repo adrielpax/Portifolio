@@ -9,7 +9,8 @@ export const NavList = (
             as="li"
             variant="small"
             color="blue-gray"
-            className="p-1 font-normal"
+            className="p-1 font-normal hover:border-b-2 hover:border-light-blue-300
+            hover:text-light-blue-700"
         >
             <Link href='#' className='flex items-center'>
                 Pages
@@ -19,7 +20,8 @@ export const NavList = (
             as="li"
             variant="small"
             color="blue-gray"
-            className="p-1 font-normal"
+            className="p-1 font-normal hover:border-b-2 hover:border-light-blue-300
+            hover:text-light-blue-700"
         >
             <Link href='#' className='flex items-center'>
                 Account
@@ -29,7 +31,8 @@ export const NavList = (
             as="li"
             variant="small"
             color="blue-gray"
-            className="p-1 font-normal"
+            className="p-1 font-normal hover:border-b-2 hover:border-light-blue-300
+            hover:text-light-blue-700"
         >
             <Link href='#' className='flex items-center'>
                 Blocks
@@ -39,7 +42,8 @@ export const NavList = (
             as="li"
             variant="small"
             color="blue-gray"
-            className="p-1 font-normal"
+            className="p-1 font-normal hover:border-b-2 hover:border-light-blue-300
+            hover:text-light-blue-700"
         >
             <Link href='#' className='flex items-center'>
                 Docs

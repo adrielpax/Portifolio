@@ -30,7 +30,10 @@ export function NavbarPage(){
 
 
     return(
-        <Navbar className='mx-auto max-w-screen-xl py-2 px-4 lg:px-8 lg:py-4'>
+        <Navbar 
+            fullWidth
+            className='mx-auto max-w-screen-xl py-2 px-4 lg:px-8 lg:py-4 rounded'
+        >
             <div className='container mx-auto flex items-center justify-between text-blue-gray-900'>
                 <Typography
                     as="a"
@@ -43,8 +46,8 @@ export function NavbarPage(){
                 <div className='hidden lg:block'>{NavList}</div>
                 <Button 
                     variant="filled"
-                    color="blue"
-                    className='hidden lg:inline-block'
+                    className='hidden rounded lg:inline-block bg-light-blue-300
+                    hover:bg-blue-700'
                     size='sm'
                 >
                     <span>Buy Now</span>
