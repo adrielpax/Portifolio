@@ -1,7 +1,6 @@
 //import Head from 'next/head'
 //import Image from 'next/image'
 import type {ReactElement} from 'react'
-import { Layout } from '../layout/layout'
 import { NextPageWithLayout } from './_app'
 import { Homepage } from './Homepage'
 
@@ -15,7 +14,7 @@ const Page: NextPageWithLayout = ()=>{
 
 Page.getLayout = function getLayout(page:ReactElement){
   return(
-    <main>{page}</main>
+    <main className='mx-auto max-w-screen-xl'>{page}</main>
   )
 }
 

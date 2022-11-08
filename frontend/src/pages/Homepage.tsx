@@ -1,5 +1,5 @@
 export function Homepage(){
     return(
-        <div>iam a homepage</div>
+        <div className="h-full w-full">iam a homepage</div>
     )
 }

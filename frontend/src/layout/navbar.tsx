@@ -24,10 +24,7 @@ export function NavbarPage(){
             "resize",
             ()=> window.innerWidth >= 960 && setOpenNav(false)
         )
-    },[])
-
-    
-
+    },[])    
 
     return(
         <Navbar 
