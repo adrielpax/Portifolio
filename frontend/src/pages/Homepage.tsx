@@ -1,11 +1,13 @@
+import { Cards } from '../components/cards';
 import * as H from '../layout/home/home';
+import { InfoCard } from '../layout/home/infoCard';
 
 
 export function Homepage(){
     return(
-        <div className="w-full h-auto">
+        <div className="w-full h-auto bg-gradient-to-r from-cyan-500 to-blue-500">
             <H.HeroSection/>
-            <section className="mb-20">
+            <section className='mb-40'>
                 <div className="container mx-auto px-4">
                     <div className="flex flex-wrap">
                         <H.HomeCard/>
@@ -14,14 +16,11 @@ export function Homepage(){
                     </div>
                 </div>
             </section>
-            <div className="flex flex-wrap">
-                <H.ProjectCard/>
-                <H.ProjectCard/>
-                <H.ProjectCard/>
+            <InfoCard/>
+            <div className="flex flex-wrap justify-center gap-2">
+                <Cards/>
             </div>
-            <div className="flex flex-wrap">
-                <H.ProjectCard/>
-                <H.ProjectCard/>
+            <div className="flex flex-wrap mt-20">
                 <H.ProjectCard/>
             </div>
         </div>

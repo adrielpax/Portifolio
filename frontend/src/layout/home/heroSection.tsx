@@ -4,7 +4,7 @@ export function HeroSection(){
         <div className="relative pt-16 pb-32 
             flex content-center items-center justify-center -z-20"> 
             <div className="w-full h-full">
-                <span className="w-full h-96 absolute opacity-75 bg-black">
+                <span className="w-full h-96 absolute opacity-75 bg-[#0096c7]">
                 </span>
             </div>
         </div>

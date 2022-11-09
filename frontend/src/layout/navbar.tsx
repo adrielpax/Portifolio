@@ -29,7 +29,7 @@ export function NavbarPage(){
     return(
         <Navbar 
             fullWidth
-            className='mx-auto max-w-screen-xl py-2 px-4 lg:px-8 lg:py-4 rounded'
+            className='mx-auto max-w-screen-xl py-2 px-4 lg:px-8 lg:py-4 rounded bg-white'
         >
             <div className='container mx-auto flex items-center justify-between text-blue-gray-900'>
                 <Typography

@@ -2,8 +2,8 @@ import { FooterList } from "../utils/footer-utils";
 
 export function Footer(){
     return(
-      <div className="flex bottom-0 content-end pt-8 pb-6 rounded border-t border-blue-gray-900
-        mx-auto max-w-screen-xl shadow-md">
+      <div className="flex bottom-0 content-end pt-8 pb-6 rounded border-t 
+        mx-auto max-w-screen-xl shadow-md bg-white">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap">
             <div className="w-full lg:w-6/12 px-4">
@@ -40,7 +40,7 @@ export function Footer(){
               </div>
             </div>
           </div>
-          <hr className="my-6 border-blue-gray-900" />
+          <hr className="my-6 border-light-blue-300" />
           <div className="flex flex-wrap items-center md:justify-between justify-center">
             <div className="w-full md:w-4/12 px-4 mx-auto text-center">
               <div className="text-sm text-blue-gray-900 font-semibold py-1">

@@ -1,4 +1,4 @@
-import {HomeCard} from './cards';
+import {HomeCard} from './homeCards';
 import {HeroSection} from './heroSection';
 import {ProjectCard} from './projectsCard';
 
