@@ -2,7 +2,7 @@ import { FooterList } from "../utils/footer-utils";
 
 export function Footer(){
     return(
-        <div className="flex bottom-0 content-end pt-8 pb-6 rounded border-t border-blue-gray-900
+      <div className="flex bottom-0 content-end pt-8 pb-6 rounded border-t border-blue-gray-900
         mx-auto max-w-screen-xl shadow-md">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap">

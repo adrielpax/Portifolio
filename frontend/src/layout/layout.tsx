@@ -1,4 +1,3 @@
-import useSWR from 'swr';
 import {NavbarPage} from './navbar';
 import {Footer} from './footer';
 
@@ -10,7 +9,7 @@ export function Layout({children}:any){
     return(
      <>
         <NavbarPage/>
-            <main className='h-screen'>{children}</main>
+            <main className='h-auto mb-40'>{children}</main>
         <Footer/>
      </>
     )
