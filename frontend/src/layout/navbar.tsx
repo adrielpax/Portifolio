@@ -42,14 +42,14 @@ export function NavbarPage(){
                 >
                     <span className='font-semibold text-lg'>Adriel Dev</span>
                 </Typography>
-                <div className='hidden lg:block'>{NavList}</div>
+                {/*<div className='hidden lg:block'>{NavList}</div>*/}
                 <Button 
                     variant="filled"
                     className='hidden rounded lg:inline-block bg-light-blue-300
                     hover:bg-blue-700'
                     size='sm'
                 >
-                    <span>Donate</span>
+                    <span>Contact Me</span>
                 </Button>
                 <IconButton
                     variant='text'
@@ -84,7 +84,7 @@ export function NavbarPage(){
                     color="blue"
                     className='mb-2'
                 >
-                    <span>Donate</span>
+                    <span>Contact Me</span>
                 </Button>
             </MobileNav>
         </Navbar>    

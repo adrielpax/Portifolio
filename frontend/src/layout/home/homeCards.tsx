@@ -1,7 +1,7 @@
 import {Tooltip,Button} from '@material-tailwind/react';
 export function HomeCard(){
     return(
-        <div className="lg:pt-12 pt-6 w-full md:w-4/12 px-4 text-center">
+        <div className="lg:pt-12 pt-6 w-full md:w-4/12 px-4 text-center z-10">
             <div className="px-4 py-5 flex-auto bg-white rounded 
             shadow-md md:shadow-xl md:hover:shadow-2xl">
                 <Tooltip content="ReactJS">

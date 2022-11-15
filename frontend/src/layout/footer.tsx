@@ -24,19 +24,18 @@ export function Footer(){
                   <span className="block uppercase text-blue-gray-900 text-sm font-semibold mb-2">
                     Useful Links
                   </span>
-                  <FooterList text="About" refer="#"/>
-                  <FooterList text="Blog" refer="https://www.youtube.com/watch?v=C9ctoK4M9Bk"/>
-                  <FooterList text="Github" refer="#"/>
-                  <FooterList text="FreeProducts" refer=""/>
+                  <FooterList text="Github" refer="https://github.com/T4SpaX"/>
+                  <FooterList text="Linkedin" refer="https://www.linkedin.com/in/adriel-lucas/"/>
+                  <FooterList text="Instagram" refer="https://www.instagram.com/adriel_adrion/"/>
                 </div>
-                <div className="w-full lg:w-4/12 px-4">
+                {/*<div className="w-full lg:w-4/12 px-4">
                   <span className="block uppercase text-blue-gray-900 text-sm font-semibold mb-2">
                     Other Resources
                   </span>
                   <FooterList text="Terms & Conditions" refer="#"/>
                   <FooterList text="Privacy Policy" refer="#"/>
                   <FooterList text="Contact Us" refer="#"/>
-                </div>
+                </div>*/}
               </div>
             </div>
           </div>

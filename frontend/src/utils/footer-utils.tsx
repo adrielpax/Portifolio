@@ -8,9 +8,10 @@ export const FooterList = ({...props}:Prop)=>{
     return(
         <ul className="list-unstyled">
             <li>
-            <a className="text-blue-gray-900 hover:text-light-blue-300 block pb-2 text-sm
+            <a  target="blank"
+                className="text-blue-gray-900 hover:text-light-blue-300 block pb-2 text-sm
                 hover:border-b-2 hover:border-light-blue-300"
-                href={props.refer}>{props.text}
+                href={props.refer}>{props.text}     
             </a>
             </li>
         </ul>
