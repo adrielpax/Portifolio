@@ -1,6 +1,6 @@
 import { SwiperCard } from '../components/swiperCard';
 import * as H from '../layout/home/home';
-import { InfoCard } from '../components/sectionCard';
+import { InfoCard } from '../components/infoCard';
 // bg-gradient-to-r from-cyan-500 to-blue-500
 
 export function Homepage(){
@@ -16,8 +16,8 @@ export function Homepage(){
                 </div>
             </section>
             <H.PersonalCard/>
-            <InfoCard Title={'About Me'}/>
-            <InfoCard Title={'Tecnologies'}/>
+            <InfoCard Title={'About Me'} index={false}/>
+            <InfoCard Title={'Tecnologies'} index={true}/>
             <div className="flex flex-wrap justify-center gap-2">
                 <SwiperCard/>
             </div>

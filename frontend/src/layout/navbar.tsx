@@ -76,7 +76,7 @@ export function NavbarPage(){
                 </IconButton>
             </div>
             <MobileNav open={openNav}>
-                {NavList}
+                {/*NavList*/}
                 <Button
                     variant="filled"
                     size='sm'
