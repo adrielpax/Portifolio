@@ -1,4 +1,4 @@
-export function ProjectCard(){
+export function PersonalCard(){
     return(
         <div className="w-full md:w-4/12 px-4 py-8 mr-auto ml-auto">
             <div className="relative flex flex-col min-w-0 break-words 

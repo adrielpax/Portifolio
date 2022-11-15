@@ -1,9 +1,9 @@
 import {HomeCard} from './homeCards';
 import {HeroSection} from './heroSection';
-import {ProjectCard} from './projectsCard';
+import {PersonalCard} from './personalCard';
 
 export {
-    ProjectCard,
+    PersonalCard,
     HeroSection,
     HomeCard  
 } 
