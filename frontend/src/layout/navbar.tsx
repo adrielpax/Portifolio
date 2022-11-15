@@ -28,8 +28,10 @@ export function NavbarPage(){
 
     return(
         <Navbar 
+            color='white'
             fullWidth
-            className='mx-auto max-w-screen-xl py-2 px-4 lg:px-8 lg:py-4 rounded bg-white'
+            className='fixed mx-auto max-w-screen-xl py-2 px-4 lg:px-8 lg:py-4 rounded
+            z-50 bg-opacity-100 shadow-md md:shadow-xl md:hover:shadow-2xl'
         >
             <div className='container mx-auto flex items-center justify-between text-blue-gray-900'>
                 <Typography
@@ -47,13 +49,16 @@ export function NavbarPage(){
                     hover:bg-blue-700'
                     size='sm'
                 >
-                    <span>Buy Now</span>
+                    <span>Donate</span>
                 </Button>
                 <IconButton
                     variant='text'
                     className='ml-auto h-6 w-6 
-                        text-inherit hover:bg-transparent focus:bg-transparent 
-                        active:bg-transparent lg:hidden'
+                        text-inherit 
+                        lg:hidden
+                        hover:bg-transparent 
+                        focus:bg-transparent 
+                        active:bg-transparent '
                     ripple={false}
                     onClick={()=> setOpenNav(!openNav)}
                 >
@@ -79,7 +84,7 @@ export function NavbarPage(){
                     color="blue"
                     className='mb-2'
                 >
-                    <span>Buy Now</span>
+                    <span>Donate</span>
                 </Button>
             </MobileNav>
         </Navbar>    

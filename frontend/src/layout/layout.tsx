@@ -9,7 +9,7 @@ export function Layout({children}:any){
     return(
      <>
         <NavbarPage/>
-            <main className='h-auto bg-gradient-to-r '>{children}</main>
+            <main className='h-auto'>{children}</main>
         <Footer/>
      </>
     )

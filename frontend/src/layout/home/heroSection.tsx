@@ -4,14 +4,14 @@ export function HeroSection(){
         <div className="relative pt-16 pb-32 
             flex content-center items-center justify-center -z-20"> 
             <div className="w-full h-full">
-                <span className="w-full h-96 absolute opacity-75 bg-[#0096c7]">
+                <span className="w-full h-96 absolute opacity-75 bg-light-blue-500">
                 </span>
             </div>
         </div>
             <div className="container relative mx-auto">
                 <div className="items-center flex flex-wrap">
                     <div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
-                        <div className="pr-12">
+                        <div>
                             <div className="text-white font-semibold text-5xl">
                                 Sua historia começa com agente
                             </div>

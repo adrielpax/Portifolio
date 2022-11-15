@@ -13,7 +13,7 @@ export const NavList = (
             hover:text-light-blue-700"
         >
             <Link href='#' className='flex items-center'>
-                Pages
+                Home
             </Link>
         </Typography>
         <Typography
@@ -24,7 +24,7 @@ export const NavList = (
             hover:text-light-blue-700"
         >
             <Link href='#' className='flex items-center'>
-                Account
+                Projects
             </Link>
         </Typography>
         <Typography
@@ -35,18 +35,7 @@ export const NavList = (
             hover:text-light-blue-700"
         >
             <Link href='#' className='flex items-center'>
-                Blocks
-            </Link>
-        </Typography>
-        <Typography
-            as="li"
-            variant="small"
-            color="blue-gray"
-            className="p-1 font-normal hover:border-b-2 hover:border-light-blue-300
-            hover:text-light-blue-700"
-        >
-            <Link href='#' className='flex items-center'>
-                Docs
+                Contact
             </Link>
         </Typography>
     </ul>
