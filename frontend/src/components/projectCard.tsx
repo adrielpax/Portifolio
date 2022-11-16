@@ -8,7 +8,7 @@ import {
 
 export function ProjectCard(){
     return(
-        <Card className="flex mx-auto w-96 rounded my-20">
+        <Card className="flex mx-auto w-96 rounded my-20 shadow-md md:shadow-xl md:hover:shadow-2xl">
             <CardHeader color="gray" className="relative h-56 rounded text-center">
                 Em Breve!
             </CardHeader>

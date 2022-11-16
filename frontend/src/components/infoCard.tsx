@@ -1,4 +1,20 @@
-import { Typography, Button } from "@material-tailwind/react"
+import { 
+    Typography, 
+    Tooltip,
+    Button,
+    iconButton,
+    IconButton
+} from "@material-tailwind/react"
+
+import {
+    IoLogoJavascript,
+    IoLogoNodejs
+} from 'react-icons/io';
+
+import {
+    SiMongodb,
+    SiGraphql
+} from 'react-icons/si';
 
 interface Props{
     Title:string
@@ -7,7 +23,7 @@ interface Props{
 
 export function InfoCard({Title,index}:Props){
     return(
-        <div className="bg-white w-[80%] mx-auto my-7 h-auto rounded  
+        <div className="bg-white w-[80%] mx-auto my-12 h-auto rounded  
             shadow-md md:shadow-xl md:hover:shadow-2xl">
             <div className="p-8 h-[100%]">
                 <Typography 
@@ -52,7 +68,80 @@ export function InfoCard({Title,index}:Props){
                             Linkedin
                         </Button>
                 </div>
-                </>) : (<></>)
+                </>) : (
+                <div className="p-4 grid md:grid-flow-col">
+                    <div className="relative p-4">
+                        <span>Tenho experiência</span>
+                        <ul className="grid md:grid-flow-col mt-8">    
+                            <li>
+                                <Tooltip content="Java Script">
+                                    <Button
+                                        variant='filled' 
+                                        className="text-white p-3 
+                                        text-center inline-flex items-center 
+                                        justify-center w-12 h-12 mb-5 shadow-lg rounded 
+                                        bg-yellow-600"
+                                    >
+                                        <IoLogoJavascript
+                                            className="h-[100%] w-[100%] text-black"
+                                        />
+                                    </Button>
+                                </Tooltip>
+                            </li>
+                            <li>
+                                <Tooltip content="Node JS">
+                                    <Button
+                                        variant='filled' 
+                                        className="text-white p-3 
+                                        text-center inline-flex items-center 
+                                        justify-center w-12 h-12 mb-5 shadow-lg rounded 
+                                        bg-light-green-600"
+                                    >
+                                        <IoLogoNodejs
+                                            className="h-[100%] w-[100%] text-black"
+                                        />
+                                    </Button>
+                                </Tooltip>
+                            </li>
+                        </ul>
+                    </div>
+                    <div className="relative p-4 md:pl-10 md:border-l md:border-blue-500">
+                        <span>Estou estudando</span>
+                        <ul className="grid md:grid-flow-col mt-8">
+                            <li>
+                                <Tooltip content="Mongo DB">
+                                    <Button
+                                        variant='filled' 
+                                        className="text-white p-3 
+                                        text-center inline-flex items-center 
+                                        justify-center w-12 h-12 mb-5 shadow-lg rounded 
+                                        bg-gray-900"
+                                    >
+                                        <SiMongodb
+                                            className="h-[100%] w-[100%] text-green-800"
+                                        />
+                                    </Button>
+                                </Tooltip>
+                            </li>
+                            <li>
+                                <Tooltip content="Graphql">
+                                    <Button
+                                        variant='filled' 
+                                        className="text-white p-3 
+                                        text-center inline-flex items-center 
+                                        justify-center w-12 h-12 mb-5 shadow-lg rounded 
+                                        bg-pink-500"
+                                    >
+                                        <SiGraphql
+                                            className="h-[100%] w-[100%] text-white"
+                                        />
+                                    </Button>
+                                </Tooltip>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                    )
                 }
             </div>
         </div>

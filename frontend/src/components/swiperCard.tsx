@@ -9,16 +9,17 @@ import "swiper/css/pagination";
 export function SwiperCard(){
     return(
         <Swiper
-            slidesPerView={"auto"}
+            slidesPerView={1}
             centeredSlides={true}
             spaceBetween={30}
             pagination={{
                 clickable:true
             }}
             modules={[Pagination]}
+
             //onSlideChange={()=>{}}
             //onSwiper={(swiper)=>{}}
-            className="bg-white h-auto md:w-[80%] md:mx-auto my-10 rounded  
+            className="bg-white h-auto md:w-[80%] md:mx-auto my-20 rounded  
             shadow-md md:shadow-xl md:hover:shadow-2xl"
         >
             <SwiperSlide><ProjectCard/></SwiperSlide>
