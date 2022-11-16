@@ -9,6 +9,7 @@ import "swiper/css/pagination";
 export function SwiperCard(){
     return(
         <Swiper
+    
             slidesPerView={1}
             centeredSlides={true}
             spaceBetween={30}
@@ -19,12 +20,14 @@ export function SwiperCard(){
 
             //onSlideChange={()=>{}}
             //onSwiper={(swiper)=>{}}
-            className="bg-white h-auto md:w-[80%] md:mx-auto my-20 rounded  
+            className="bg-[whitesmoke] h-auto md:w-[80%] md:mx-auto my-20 rounded  
             shadow-md md:shadow-xl md:hover:shadow-2xl"
         >
-            <SwiperSlide><ProjectCard/></SwiperSlide>
-            <SwiperSlide><ProjectCard/></SwiperSlide>
-            <SwiperSlide><ProjectCard/></SwiperSlide>
+            <SwiperSlide>
+                <h3 className='text-blue-gray-400 text-2xl font-semibold text-center mx-auto w-[100%]'>Technical Project</h3>
+                <ProjectCard/>
+            </SwiperSlide>
+           
         </Swiper>
     )    
 }

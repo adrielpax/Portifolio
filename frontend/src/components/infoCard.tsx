@@ -1,20 +1,25 @@
 import { 
     Typography, 
-    Tooltip,
     Button,
-    iconButton,
-    IconButton
+    IconButton,
 } from "@material-tailwind/react"
 
 import {
     IoLogoJavascript,
-    IoLogoNodejs
+    IoLogoNodejs,
+    IoLogoGithub
 } from 'react-icons/io';
 
 import {
     SiMongodb,
-    SiGraphql
+    SiGraphql,
+    SiReact,
+    SiTailwindcss,
+    SiLinkedin
 } from 'react-icons/si';
+import {TbBrandNextjs} from 'react-icons/tb'
+import {FaGitAlt, FaPython} from 'react-icons/fa'
+import { ListTech } from "../utils/list-tech";
 
 interface Props{
     Title:string
@@ -22,6 +27,21 @@ interface Props{
 }
 
 export function InfoCard({Title,index}:Props){
+
+    const icons = {
+        react:<SiReact className="h-[100%] w-[100%]"/>,
+        node:<IoLogoNodejs className="h-[100%] w-[100%]"/>,
+        js:<IoLogoJavascript className="h-[100%] w-[100%]"/>,
+        graph:<SiGraphql className="h-[100%] w-[100%]"/>,
+        mongo:<SiMongodb className="h-[100%] w-[100%]"/>,
+        git:<FaGitAlt className="h-[100%] w-[100%]"/>,
+        python:<FaPython className="h-[100%] w-[100%]"/>,
+        tailwind:<SiTailwindcss className="h-[100%] w-[100%]"/>,
+        next:<TbBrandNextjs className="h-[100%] w-[100%]"/>,
+        github:<IoLogoGithub className=""/>,
+        linkedin:<SiLinkedin className=" "/>,
+    }
+
     return(
         <div className="bg-white w-[80%] mx-auto my-12 h-auto rounded  
             shadow-md md:shadow-xl md:hover:shadow-2xl">
@@ -55,16 +75,16 @@ export function InfoCard({Title,index}:Props){
                             variant="text"
                             size='sm'
                             color="light-blue"
-                            className='rounded bg-[whitesmoke] hover:bg-gray-300 mx-1'
-                        >
+                            className='rounded bg-[whitesmoke] hover:bg-gray-300 m-4'
+                        >   
                             GitHub
                         </Button>
                         <Button 
                             variant="text"
                             size='sm'
                             color="light-blue"
-                            className='rounded bg-[whitesmoke] hover:bg-gray-300 mx-1'
-                        >
+                            className='rounded bg-[whitesmoke] hover:bg-gray-300 m-4'
+                        > 
                             Linkedin
                         </Button>
                 </div>
@@ -72,72 +92,84 @@ export function InfoCard({Title,index}:Props){
                 <div className="p-4 grid md:grid-flow-col">
                     <div className="relative p-4">
                         <span>Tenho experiência</span>
-                        <ul className="grid md:grid-flow-col mt-8">    
-                            <li>
-                                <Tooltip content="Java Script">
-                                    <Button
-                                        variant='filled' 
-                                        className="text-white p-3 
-                                        text-center inline-flex items-center 
-                                        justify-center w-12 h-12 mb-5 shadow-lg rounded 
-                                        bg-yellow-600"
-                                    >
-                                        <IoLogoJavascript
-                                            className="h-[100%] w-[100%] text-black"
-                                        />
-                                    </Button>
-                                </Tooltip>
-                            </li>
-                            <li>
-                                <Tooltip content="Node JS">
-                                    <Button
-                                        variant='filled' 
-                                        className="text-white p-3 
-                                        text-center inline-flex items-center 
-                                        justify-center w-12 h-12 mb-5 shadow-lg rounded 
-                                        bg-light-green-600"
-                                    >
-                                        <IoLogoNodejs
-                                            className="h-[100%] w-[100%] text-black"
-                                        />
-                                    </Button>
-                                </Tooltip>
-                            </li>
+                        <ul className="grid md:grid-flow-col mt-8 "> 
+                            <ListTech 
+                                props={{
+                                    text: "Java Script",
+                                    color: "bg-yellow-500",
+                                    colorIcon: "text-black",
+                                    icon:icons.js
+                                }}
+                            /> 
+                            <ListTech 
+                                props={{
+                                    text: "Node JS",
+                                    color: "bg-green-400",
+                                    colorIcon: "text-white",
+                                    icon:icons.node
+                                }}
+                            /> 
+                            <ListTech 
+                                props={{
+                                    text: "React JS",
+                                    color: "bg-light-blue-400",
+                                    colorIcon: "text-white",
+                                    icon:icons.react
+                                }}
+                            />
+                            <ListTech 
+                                props={{
+                                    text: "Git",
+                                    color: "bg-orange-900",
+                                    colorIcon: "text-white",
+                                    icon:icons.git
+                                }}
+                            />  
+                            <ListTech 
+                                props={{
+                                    text: "Python",
+                                    color: "bg-blue-900",
+                                    colorIcon: "text-yellow-700",
+                                    icon:icons.python
+                                }}
+                            />  
                         </ul>
                     </div>
                     <div className="relative p-4 md:pl-10 md:border-l md:border-blue-500">
                         <span>Estou estudando</span>
-                        <ul className="grid md:grid-flow-col mt-8">
-                            <li>
-                                <Tooltip content="Mongo DB">
-                                    <Button
-                                        variant='filled' 
-                                        className="text-white p-3 
-                                        text-center inline-flex items-center 
-                                        justify-center w-12 h-12 mb-5 shadow-lg rounded 
-                                        bg-gray-900"
-                                    >
-                                        <SiMongodb
-                                            className="h-[100%] w-[100%] text-green-800"
-                                        />
-                                    </Button>
-                                </Tooltip>
-                            </li>
-                            <li>
-                                <Tooltip content="Graphql">
-                                    <Button
-                                        variant='filled' 
-                                        className="text-white p-3 
-                                        text-center inline-flex items-center 
-                                        justify-center w-12 h-12 mb-5 shadow-lg rounded 
-                                        bg-pink-500"
-                                    >
-                                        <SiGraphql
-                                            className="h-[100%] w-[100%] text-white"
-                                        />
-                                    </Button>
-                                </Tooltip>
-                            </li>
+                        <ul className="grid md:grid-flow-col mt-8 ">
+                            <ListTech 
+                                props={{
+                                    text: "Mongo DB",
+                                    color: "bg-gray-900",
+                                    colorIcon: "text-green-800",
+                                    icon:icons.mongo
+                                }}
+                            />
+                             <ListTech 
+                                props={{
+                                    text: "TailwindCss",
+                                    color: "bg-gradient-to-r from-cyan-500 to-blue-500",
+                                    colorIcon: "text-white",
+                                    icon:icons.tailwind
+                                }}
+                            />
+                             <ListTech 
+                                props={{
+                                    text: "Grapql",
+                                    color: "bg-pink-600",
+                                    colorIcon: "text-white",
+                                    icon:icons.graph
+                                }}
+                            />
+                             <ListTech 
+                                props={{
+                                    text: "Next JS",
+                                    color: "bg-black",
+                                    colorIcon: "text-white",
+                                    icon:icons.next
+                                }}
+                            />        
                         </ul>
                     </div>
                 </div>
