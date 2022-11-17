@@ -10,12 +10,16 @@ export function Homepage(){
                 <H.HeroSection/>
             </div>
             <section className='mb-40'>
+                <H.PersonalCard/>
                 <div className="container mx-auto px-4">
                     <div className="flex flex-wrap justify-around">
+                        <H.HomeCard/>
+                        <H.HomeCard/>
+                        <H.HomeCard/>
                     </div>
                 </div>
             </section>
-            <H.PersonalCard/>
+    
             <InfoCard Title={'About Me'} index={false}/>
             <InfoCard Title={'Tecnologies'} index={true}/>
             <div className="flex flex-wrap justify-center gap-2">

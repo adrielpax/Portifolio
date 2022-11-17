@@ -27,6 +27,7 @@ export function Footer(){
                   <FooterList text="Github" refer="https://github.com/T4SpaX"/>
                   <FooterList text="Linkedin" refer="https://www.linkedin.com/in/adriel-lucas/"/>
                   <FooterList text="Instagram" refer="https://www.instagram.com/adriel_adrion/"/>
+                  <FooterList text="RocketSeat" refer="https://app.rocketseat.com.br/me/adriel-lucas-de-souza-01136"/>
                 </div>
                 {/*<div className="w-full lg:w-4/12 px-4">
                   <span className="block uppercase text-blue-gray-900 text-sm font-semibold mb-2">

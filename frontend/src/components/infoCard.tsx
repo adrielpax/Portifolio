@@ -15,7 +15,8 @@ import {
     SiGraphql,
     SiReact,
     SiTailwindcss,
-    SiLinkedin
+    SiLinkedin,
+    SiExpo
 } from 'react-icons/si';
 import {TbBrandNextjs} from 'react-icons/tb'
 import {FaGitAlt, FaPython} from 'react-icons/fa'
@@ -38,6 +39,7 @@ export function InfoCard({Title,index}:Props){
         python:<FaPython className="h-[100%] w-[100%]"/>,
         tailwind:<SiTailwindcss className="h-[100%] w-[100%]"/>,
         next:<TbBrandNextjs className="h-[100%] w-[100%]"/>,
+        expo:<SiExpo className="h-[100%] w-[100%]"/>,
         github:<IoLogoGithub className=""/>,
         linkedin:<SiLinkedin className=" "/>,
     }
@@ -162,12 +164,12 @@ export function InfoCard({Title,index}:Props){
                                     icon:icons.graph
                                 }}
                             />
-                             <ListTech 
+                            <ListTech 
                                 props={{
-                                    text: "Next JS",
+                                    text: "Expo",
                                     color: "bg-black",
                                     colorIcon: "text-white",
-                                    icon:icons.next
+                                    icon:icons.expo
                                 }}
                             />        
                         </ul>
