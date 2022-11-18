@@ -45,7 +45,7 @@ export function InfoCard({Title,index}:Props){
     }
 
     return(
-        <div className="bg-white dark:bg-gray-900 w-[80%] mx-auto my-12 h-auto rounded  
+        <div className="bg-white w-[80%] mx-auto my-12 h-auto rounded  
             shadow-md md:shadow-xl md:hover:shadow-2xl">
             <div className="p-8 h-[100%]">
                 <Typography 

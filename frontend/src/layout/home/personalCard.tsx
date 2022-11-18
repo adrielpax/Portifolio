@@ -29,13 +29,13 @@ export function PersonalCard(){
         'opacity-0 transition-opacity ease-out delay-600'}
         w-96 mx-auto rounded 
         shadow-md md:shadow-xl 
-        md:hover:shadow-2xl my-32 dark:bg-gray-900 `}
+        md:hover:shadow-2xl my-32 `}
         >
         <CardHeader floated={false} className="self-center h-32 w-32 rounded-full 
             boder-2 border-light-blue-400 bg-gray-600 ">
         </CardHeader>
         <CardBody className="text-center">
-            <Typography variant="h4" color="blue-gray" className="mb-2 dark:text-white">
+            <Typography variant="h4" color="blue-gray" className="mb-2">
                 Adriel Lucas
             </Typography>
             <Typography color="blue" className="font-medium" textGradient>
