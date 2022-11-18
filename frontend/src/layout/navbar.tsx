@@ -1,10 +1,9 @@
 //import Link from 'next/link';
 import {useState,useEffect} from 'react';
 import {
-    NavList,
     MenuClose,
     MenuOpen
-} from '../utils/nav-utils'
+} from '../utils/nav-utils';
 // M of Material tailwind
 import {
     Typography,
@@ -12,8 +11,8 @@ import {
     Button,
     MobileNav,
     IconButton,
-} from '@material-tailwind/react'
-
+} from '@material-tailwind/react';
+import { DarkMode } from '../components/darkModeButtom';
 
 
 export function NavbarPage(){
@@ -26,12 +25,15 @@ export function NavbarPage(){
         )
     },[])    
 
+    //const darkIcon = <FaCloudSun/>
+
     return(
         <Navbar 
             color='white'
             fullWidth
             className='fixed mx-auto max-w-screen-xl py-2 px-4 lg:px-8 lg:py-4 rounded
-            z-50 bg-opacity-100 shadow-md md:shadow-xl md:hover:shadow-2xl'
+            z-50 bg-opacity-100 shadow-md md:shadow-xl md:hover:shadow-2xl dark:bg-gray-900
+            dark:border-gray-900'
         >
             <div className='container mx-auto flex items-center justify-between text-blue-gray-900'>
                 <Typography
@@ -40,13 +42,18 @@ export function NavbarPage(){
                     variant="small"
                     className="mr-4 cursor-pointer py-1.5 font-normal"
                 >
-                    <span className='font-semibold text-lg'>Adriel Dev</span>
+                    <span className='font-semibold text-lg dark:text-white'>Adriel Dev</span>
                 </Typography>
                 {/*<div className='hidden lg:block'>{NavList}</div>*/}
+                <div className='flex flex-1 flex-row-reverse mr-8'>
+                    <DarkMode/>
+                </div>
                 <Button 
                     variant="filled"
                     className='hidden rounded lg:inline-block bg-light-blue-300
-                    hover:bg-blue-700'
+                    hover:bg-blue-700 
+                    dark:bg-gradient-to-r dark:from-purple-700 dark:to-pink-600
+                    dark:hover:shadow-pink-600 dark:shadow-1 dark:text-white'
                     size='sm'
                 >
                     <span>Contact Me</span>
@@ -82,7 +89,9 @@ export function NavbarPage(){
                     size='sm'
                     fullWidth
                     color="blue"
-                    className='mb-2'
+                    className='mb-2
+                    dark:bg-gradient-to-r dark:from-purple-700 dark:to-pink-600
+                    dark:hover:shadow-pink-600 dark:shadow-1 dark:text-white'
                 >
                     <span>Contact Me</span>
                 </Button>

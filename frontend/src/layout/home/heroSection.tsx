@@ -3,9 +3,11 @@ export function HeroSection(){
     <>
         <div className="relative pt-16 pb-32
             flex content-center items-center justify-center"> 
-            <div className="w-full h-full">
-                <span className="w-full h-96 absolute top-6 opacity-100 bg-gradient-to-r from-cyan-500 to-blue-500 mb-32">
-                </span>
+            <div className="w-full h-full dark:bg-gradient-to-r dark:from-purple-700 dark:to-pink-600 
+            bg-gradient-to-r from-cyan-500 to-blue-500">
+                <div className="w-full h-96 absolute top-6 opacity-100  mb-32
+                ">
+                </div>
             </div>
         </div>
             <div className="container relative mx-auto">

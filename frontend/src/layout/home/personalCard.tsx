@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+import Image from 'next/image';
 import {
     Card,
     CardHeader,
@@ -8,15 +10,32 @@ import {
   } from "@material-tailwind/react";
 
 export function PersonalCard(){
-    return(
-    <Card className="w-96 mx-auto rounded shadow-md md:shadow-xl md:hover:shadow-2xl
-        my-32"
-    >
-        <CardHeader floated={false} className="h-80 bg-gray-600 rounded">
-        </CardHeader>
+    const [scrolled,setScrolled] = useState(false)
 
+    const changeHiddenCard = ()=>{
+        if(window.scrollY >= 120){
+            setScrolled(true)
+        }else{
+            setScrolled(false)
+        }
+    }
+
+    useEffect(()=>{
+        window.addEventListener('scroll',changeHiddenCard)
+    },[])
+
+    return(
+    <Card className={`${scrolled? 'opacity-100 transition-opacity ease-in delay-600':
+        'opacity-0 transition-opacity ease-out delay-600'}
+        w-96 mx-auto rounded 
+        shadow-md md:shadow-xl 
+        md:hover:shadow-2xl my-32 dark:bg-gray-900 `}
+        >
+        <CardHeader floated={false} className="self-center h-32 w-32 rounded-full 
+            boder-2 border-light-blue-400 bg-gray-600 ">
+        </CardHeader>
         <CardBody className="text-center">
-            <Typography variant="h4" color="blue-gray" className="mb-2">
+            <Typography variant="h4" color="blue-gray" className="mb-2 dark:text-white">
                 Adriel Lucas
             </Typography>
             <Typography color="blue" className="font-medium" textGradient>
@@ -43,7 +62,7 @@ export function PersonalCard(){
                     variant="lead"
                     color="light-blue"
                     textGradient
-                >
+                    >
                     <i className="fab fa-twitter" />
                 </Typography>
                 </Tooltip>
@@ -54,7 +73,7 @@ export function PersonalCard(){
                     variant="lead"
                     color="purple"
                     textGradient
-                >
+                    >
                     <i className="fab fa-instagram" />
                 </Typography>
             </Tooltip>

@@ -3,6 +3,7 @@
 const withMT = require("@material-tailwind/react/utils/withMT");
 
 module.exports = withMT({
+  darkMode:'class',
   content: [
     './src/**/*.tsx'
   ],
@@ -11,5 +12,4 @@ module.exports = withMT({
       sans:'Roboto, sans-serif'
     },
   },
-  plugins: [],
 })

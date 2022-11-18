@@ -19,7 +19,7 @@ export function SwiperCard(){
 
             //onSlideChange={()=>{}}
             //onSwiper={(swiper)=>{}}
-            className="bg-[whitesmoke] h-auto md:w-[80%] md:mx-auto my-20 rounded  
+            className="bg-[whitesmoke] dark:bg-gray-900 h-auto md:w-[80%] md:mx-auto my-20 rounded  
             shadow-md md:shadow-xl md:hover:shadow-2xl"
         >
             <SwiperSlide>

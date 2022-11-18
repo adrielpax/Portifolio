@@ -45,7 +45,7 @@ export function InfoCard({Title,index}:Props){
     }
 
     return(
-        <div className="bg-white w-[80%] mx-auto my-12 h-auto rounded  
+        <div className="bg-white dark:bg-gray-900 w-[80%] mx-auto my-12 h-auto rounded  
             shadow-md md:shadow-xl md:hover:shadow-2xl">
             <div className="p-8 h-[100%]">
                 <Typography 
@@ -93,7 +93,7 @@ export function InfoCard({Title,index}:Props){
                 </>) : (
                 <div className="p-4 grid md:grid-flow-col">
                     <div className="relative p-4">
-                        <span>Tenho experiência</span>
+                        <span>I have Expirience</span>
                         <ul className="grid md:grid-flow-col mt-8 "> 
                             <ListTech 
                                 props={{
@@ -138,7 +138,7 @@ export function InfoCard({Title,index}:Props){
                         </ul>
                     </div>
                     <div className="relative p-4 md:pl-10 md:border-l md:border-blue-500">
-                        <span>Estou estudando</span>
+                        <span>I am studing</span>
                         <ul className="grid md:grid-flow-col mt-8 ">
                             <ListTech 
                                 props={{
