@@ -22,6 +22,8 @@ import {TbBrandNextjs} from 'react-icons/tb'
 import {FaGitAlt, FaPython} from 'react-icons/fa'
 import { ListTech } from "../utils/list-tech";
 
+import renderThemeChanger from '../hook/darkModeHook';
+
 interface Props{
     Title:string
     index:boolean
@@ -45,9 +47,10 @@ export function InfoCard({Title,index}:Props){
     }
 
     return(
-        <div className="bg-white w-[80%] mx-auto my-12 h-auto rounded  
-            shadow-md md:shadow-xl md:hover:shadow-2xl">
-            <div className="p-8 h-[100%]">
+        <div className={`${renderThemeChanger()? 'bg-gray-900':'bg-white'} 
+            w-[80%] mx-auto my-12 h-auto rounded  
+            shadow-md md:shadow-xl md:hover:shadow-2xl`}>
+            <div className="p-8">
                 <Typography 
                     variant="h5"
                 >
@@ -58,16 +61,11 @@ export function InfoCard({Title,index}:Props){
                 <div className="p-4 text-justify">
                     <div>
                         <p>
-                            Meu nome e Adriel completei 18 anos 
-                            em junho de 2021 , eu programo desde 
-                            os 15 brincava muito com HTML,CSS e 
-                            JS e não sabia o poder que tinha em 
-                            minhas mãos, começei a me desenvolver 
-                            mais com 17 aprofundar bastante em jogos
-                            e projetos, e eu estou em busca de um
-                            job eu quero começar cedo um bloco de
-                            codigo de cada vez, e poder me desenvolver
-                            melhor com as tecnologias. #neverstoplearning
+                            Meu nome e Adriel apaixonado por tecnologia e 
+                            com desejo empreendedor, me aprofundo em programação 
+                            desde de 2019 e venho me desenvolvendo ao longo do tempo 
+                            dentro de desenvolvimento Web e seu ecossytema,
+                            . #neverstoplearning
                         </p>
                         <p className="mt-2"></p>
                     </div>
@@ -77,7 +75,10 @@ export function InfoCard({Title,index}:Props){
                             variant="text"
                             size='sm'
                             color="light-blue"
-                            className='rounded bg-[whitesmoke] hover:bg-gray-300 m-4'
+                            className={`rounded ${renderThemeChanger()?
+                                'bg-pink-600 text-white hover:bg-pink-800':
+                                'bg-[whitesmoke]'} 
+                            m-4`}
                         >   
                             GitHub
                         </Button>
@@ -85,7 +86,10 @@ export function InfoCard({Title,index}:Props){
                             variant="text"
                             size='sm'
                             color="light-blue"
-                            className='rounded bg-[whitesmoke] hover:bg-gray-300 m-4'
+                            className={`rounded ${renderThemeChanger()?
+                                'bg-pink-600 text-white hover:bg-pink-800':
+                                'bg-[whitesmoke]'} 
+                            m-4`}
                         > 
                             Linkedin
                         </Button>

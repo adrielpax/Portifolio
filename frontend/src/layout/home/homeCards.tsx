@@ -1,5 +1,5 @@
 import {Tooltip,Button} from '@material-tailwind/react';
-
+import renderThemeChanger from '../../hook/darkModeHook';
 interface Props {
     props:{
         content:string,
@@ -14,8 +14,9 @@ interface Props {
 export function HomeCard({props}:Props){
     return(
         <div className="lg:pt-12 pt-6 w-full md:w-4/12 px-4 text-center z-10">
-            <div className="px-4 py-5 flex-auto bg-white rounded 
-            shadow-md md:shadow-xl md:hover:shadow-2xl">
+            <div className={`px-4 py-5 flex-auto rounded 
+            shadow-md md:shadow-xl md:hover:shadow-2xl 
+            ${renderThemeChanger()? 'bg-gray-900':'bg-white'}`}>
                 <Tooltip content={props.content}
                     interactive={true}
                 >

@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Image from 'next/image';
 import {
     Card,
     CardHeader,
@@ -7,10 +6,12 @@ import {
     CardFooter,
     Typography,
     Tooltip,
-  } from "@material-tailwind/react";
+} from "@material-tailwind/react";
+import renderThemeChanger from '../../hook/darkModeHook'
 
 export function PersonalCard(){
-    const [scrolled,setScrolled] = useState(false)
+
+    const [scrolled,setScrolled] = useState(false);
 
     const changeHiddenCard = ()=>{
         if(window.scrollY >= 120){
@@ -24,15 +25,15 @@ export function PersonalCard(){
         window.addEventListener('scroll',changeHiddenCard)
     },[])
 
+
     return(
     <Card className={`${scrolled? 'opacity-100 transition-opacity ease-in delay-600':
-        'opacity-0 transition-opacity ease-out delay-600'}
-        w-96 mx-auto rounded 
-        shadow-md md:shadow-xl 
-        md:hover:shadow-2xl my-32 `}
+        'opacity-0 transition-opacity ease-out delay-600'} rounded shadow-md 
+        md:shadow-xl md:hover:shadow-2xl my-32 bg-transparent w-96 mx-auto
+        ${renderThemeChanger()? 'bg-gray-900':'bg-white'}`}
         >
         <CardHeader floated={false} className="self-center h-32 w-32 rounded-full 
-            boder-2 border-light-blue-400 bg-gray-600 ">
+            boder-2 border-light-blue-400 bg-gray-600">
         </CardHeader>
         <CardBody className="text-center">
             <Typography variant="h4" color="blue-gray" className="mb-2">
