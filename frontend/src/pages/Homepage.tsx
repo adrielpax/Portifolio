@@ -11,8 +11,8 @@ export function Homepage(){
         data:<FaDatabase className='w-full h-full'/>,
     }
     return(
-        <div className="dark w-full h-auto bg-gradient-to-r from-cyan-500 to-blue-500
-            dark:bg-gradient-to-r dark:from-purple-700 dark:to-pink-600
+        <div className="dark w-full h-auto bg-gradient-to-r from-cyan-400 to-blue-900
+            dark:bg-gradient-to-r dark:to-[#8000f2] dark:from-[#911037]
         ">
             <div>
                 <H.HeroSection/>
@@ -57,8 +57,9 @@ export function Homepage(){
                 </div>
             </section>
     
-            <InfoCard Title={'About Me'} index={false}/>
-            <InfoCard Title={'Tecnologies'} index={true}/>
+            <InfoCard Title={'About Me'} index={false} type={0}/>
+            <InfoCard Title={'Tecnologies'} index={true} type={0}/>
+            <InfoCard Title={'Language'} index={true} type={1}/>
             <div className="flex flex-wrap justify-center gap-2">
                 <SwiperCard/>
             </div>

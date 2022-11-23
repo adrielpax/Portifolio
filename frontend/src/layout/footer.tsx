@@ -2,8 +2,10 @@ import { FooterList } from "../utils/footer-utils";
 
 export function Footer(){
     return(
-      <div className="flex bottom-0 content-end pt-8 pb-6 rounded border-t 
-        mx-auto max-w-screen-xl shadow-md bg-white dark:bg-gray-900">
+      <div className="flex bottom-0 content-end pt-8 pb-6 mx-auto 
+      max-w-screen-xl shadow-md bg-white dark:bg-[#18191a]
+      rounded-t
+      ">
         <div className="container mx-auto px-4 dark:text-white">
           <div className="flex flex-wrap">
             <div className="w-full lg:w-6/12 px-4">
@@ -40,7 +42,7 @@ export function Footer(){
               </div>
             </div>
           </div>
-          <hr className="my-6 border-light-blue-300 dark:border-pink-500" />
+          <hr className="my-6 border-light-blue-300 dark:border-[#a53fff]" />
           <div className="flex flex-wrap items-center md:justify-between justify-center">
             <div className="w-full md:w-4/12 px-4 mx-auto text-center">
               <div className="text-sm text-blue-gray-900 font-semibold py-1 dark:text-white">
@@ -48,7 +50,7 @@ export function Footer(){
                 <a
                   href="https://www.creative-tim.com"
                   className="text-blue-gray-900 hover:text-light-blue-300
-                  dark:text-white dark:hover:text-pink-500"
+                  dark:text-white dark:hover:text-[#a53fff]"
                 >
                   Adriel Dev
                 </a>.

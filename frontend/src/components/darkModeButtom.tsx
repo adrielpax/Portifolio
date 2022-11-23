@@ -28,9 +28,11 @@ export function DarkMode(){
     return(
         <div className="flex">
             <Switch
-                onChange={toogleTheme}                        
+                onChange={toogleTheme}  
+                color="purple"                      
                 className='bg-gradient-to-r from-cyan-500 to-blue-500
-                dark:bg-gradient-to-r dark:from-purple-700 dark:to-pink-600'
+                dark:bg-gradient-to-r dark:from-[#8000f2] dark:to-[#80002f]
+                '
                 //label={`${value? 'Light Mode':'Dark Mode'}`}
             />
             {darkMode == true?

@@ -19,6 +19,7 @@ import {
     SiExpo
 } from 'react-icons/si';
 import {TbBrandNextjs} from 'react-icons/tb'
+import {GiBrazilFlag,GiUsaFlag} from 'react-icons/gi';
 import {FaGitAlt, FaPython} from 'react-icons/fa'
 import { ListTech } from "../utils/list-tech";
 
@@ -27,9 +28,10 @@ import renderThemeChanger from '../hook/darkModeHook';
 interface Props{
     Title:string
     index:boolean
+    type:number
 }
 
-export function InfoCard({Title,index}:Props){
+export function InfoCard({Title,index,type}:Props){
 
     const icons = {
         react:<SiReact className="h-[100%] w-[100%]"/>,
@@ -42,12 +44,14 @@ export function InfoCard({Title,index}:Props){
         tailwind:<SiTailwindcss className="h-[100%] w-[100%]"/>,
         next:<TbBrandNextjs className="h-[100%] w-[100%]"/>,
         expo:<SiExpo className="h-[100%] w-[100%]"/>,
+        brasil:<GiBrazilFlag className="h-[100%] w-[100%]"/>,
+        eua:<GiUsaFlag className="h-[100%] w-[100%]"/>,
         github:<IoLogoGithub className=""/>,
         linkedin:<SiLinkedin className=" "/>,
     }
 
     return(
-        <div className={`${renderThemeChanger()? 'bg-gray-900':'bg-white'} 
+        <div className={`${renderThemeChanger()? 'bg-[#18191a]':'bg-white'} 
             w-[80%] mx-auto my-12 h-auto rounded  
             shadow-md md:shadow-xl md:hover:shadow-2xl`}>
             <div className="p-8">
@@ -61,11 +65,12 @@ export function InfoCard({Title,index}:Props){
                 <div className="p-4 text-justify">
                     <div>
                         <p>
-                            Meu nome e Adriel apaixonado por tecnologia e 
+                            Meu nome e Adriel, sou apaixonado por tecnologia e 
                             com desejo empreendedor, me aprofundo em programação 
                             desde de 2019 e venho me desenvolvendo ao longo do tempo 
-                            dentro de desenvolvimento Web e seu ecossytema,
-                            . #neverstoplearning
+                            dentro de desenvolvimento Web e seu ecossytema, tenho como objetivo
+                            trabalhar em equipe e desenvolver com o que tem de melhor em tecnologia!.
+                            #neverstoplearning
                         </p>
                         <p className="mt-2"></p>
                     </div>
@@ -76,7 +81,7 @@ export function InfoCard({Title,index}:Props){
                             size='sm'
                             color="light-blue"
                             className={`rounded ${renderThemeChanger()?
-                                'bg-pink-600 text-white hover:bg-pink-800':
+                                'bg-[#8000f2] text-white hover:bg-[#33005f]':
                                 'bg-[whitesmoke]'} 
                             m-4`}
                         >   
@@ -87,7 +92,7 @@ export function InfoCard({Title,index}:Props){
                             size='sm'
                             color="light-blue"
                             className={`rounded ${renderThemeChanger()?
-                                'bg-pink-600 text-white hover:bg-pink-800':
+                                'bg-[#8000f2] text-white hover:bg-[#33005f]':
                                 'bg-[whitesmoke]'} 
                             m-4`}
                         > 
@@ -97,53 +102,70 @@ export function InfoCard({Title,index}:Props){
                 </>) : (
                 <div className="p-4 grid md:grid-flow-col">
                     <div className="relative p-4">
-                        <span>I have Expirience</span>
-                        <ul className="grid md:grid-flow-col mt-8 "> 
+                            {!type ? 
+                            (<>
+                            <span>I have Expirience</span>
+                            <ul className="grid md:grid-flow-col mt-8 "> 
+                                <ListTech 
+                                    props={{
+                                        text: "Java Script",
+                                        color: "bg-yellow-500",
+                                        colorIcon: "text-black",
+                                        icon:icons.js
+                                    }}
+                                /> 
+                                <ListTech 
+                                    props={{
+                                        text: "Node JS",
+                                        color: "bg-green-400",
+                                        colorIcon: "text-white",
+                                        icon:icons.node
+                                    }}
+                                /> 
+                                <ListTech 
+                                    props={{
+                                        text: "React JS",
+                                        color: "bg-light-blue-400",
+                                        colorIcon: "text-white",
+                                        icon:icons.react
+                                    }}
+                                />
+                                <ListTech 
+                                    props={{
+                                        text: "Git",
+                                        color: "bg-orange-900",
+                                        colorIcon: "text-white",
+                                        icon:icons.git
+                                    }}
+                                />  
+                                <ListTech 
+                                    props={{
+                                        text: "Python",
+                                        color: "bg-blue-900",
+                                        colorIcon: "text-yellow-700",
+                                        icon:icons.python
+                                    }}
+                                />
+                            </ul>
+                            </>) : (
+                            <>
+                            <span>Native</span>
+                            <ul className="grid md:grid-flow-col mt-8 ">
                             <ListTech 
                                 props={{
-                                    text: "Java Script",
-                                    color: "bg-yellow-500",
-                                    colorIcon: "text-black",
-                                    icon:icons.js
+                                    text: "Portugues Brazil / level: native",
+                                    color: "bg-green-800",
+                                    colorIcon: "text-yellow-800",
+                                    icon:icons.brasil
                                 }}
-                            /> 
-                            <ListTech 
-                                props={{
-                                    text: "Node JS",
-                                    color: "bg-green-400",
-                                    colorIcon: "text-white",
-                                    icon:icons.node
-                                }}
-                            /> 
-                            <ListTech 
-                                props={{
-                                    text: "React JS",
-                                    color: "bg-light-blue-400",
-                                    colorIcon: "text-white",
-                                    icon:icons.react
-                                }}
-                            />
-                            <ListTech 
-                                props={{
-                                    text: "Git",
-                                    color: "bg-orange-900",
-                                    colorIcon: "text-white",
-                                    icon:icons.git
-                                }}
-                            />  
-                            <ListTech 
-                                props={{
-                                    text: "Python",
-                                    color: "bg-blue-900",
-                                    colorIcon: "text-yellow-700",
-                                    icon:icons.python
-                                }}
-                            />  
-                        </ul>
+                                />
+                            </ul>
+                            </>)}
                     </div>
                     <div className="relative p-4 md:pl-10 md:border-l md:border-blue-500">
-                        <span>I am studing</span>
-                        <ul className="grid md:grid-flow-col mt-8 ">
+                        {!type?
+                        (<><span>I am studing</span>
+                        <ul className="grid md:grid-flow-col mt-8">
                             <ListTech 
                                 props={{
                                     text: "Mongo DB",
@@ -176,7 +198,19 @@ export function InfoCard({Title,index}:Props){
                                     icon:icons.expo
                                 }}
                             />        
-                        </ul>
+                        </ul></>):(<>
+                            <span>Other Language</span>
+                            <ul className="grid md:grid-flow-col mt-8 ">
+                            <ListTech 
+                                props={{
+                                    text: "English / level: conversation",
+                                    color: "bg-blue-500",
+                                    colorIcon: "text-red-800",
+                                    icon:icons.eua
+                                }}
+                            />
+                            </ul>
+                        </>)}
                     </div>
                 </div>
                     )
