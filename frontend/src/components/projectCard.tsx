@@ -29,6 +29,7 @@ export function ProjectCard(){
                 <Typography variant="small">
                     <a 
                         className="text-light-blue-400"
+                        target="_blank"
                         href="https://yourfinance.netlify.app/">
                         Link to Project page
                     </a>

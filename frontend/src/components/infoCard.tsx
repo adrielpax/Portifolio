@@ -57,12 +57,13 @@ export function InfoCard({Title,index,type}:Props){
             <div className="p-8">
                 <Typography 
                     variant="h5"
+                    className="text-blue-gray-600"
                 >
                     {Title}
                 </Typography>
             {!index ? (
                 <>
-                <div className="p-4 text-justify">
+                <div className="p-4 text-justify text-blue-gray-600">
                     <div>
                         <p>
                             Meu nome e Adriel, sou apaixonado por tecnologia e 
@@ -100,7 +101,7 @@ export function InfoCard({Title,index,type}:Props){
                         </Button>
                 </div>
                 </>) : (
-                <div className="p-4 grid md:grid-flow-col">
+                <div className="p-4 grid md:grid-flow-col text-blue-gray-600">
                     <div className="relative p-4">
                             {!type ? 
                             (<>

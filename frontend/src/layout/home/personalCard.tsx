@@ -8,6 +8,7 @@ import {
     Tooltip,
 } from "@material-tailwind/react";
 import renderThemeChanger from '../../hook/darkModeHook'
+import Image from 'next/image';
 
 export function PersonalCard(){
 
@@ -32,14 +33,24 @@ export function PersonalCard(){
         md:shadow-xl md:hover:shadow-2xl my-32 bg-transparent w-96 mx-auto
         ${renderThemeChanger()? 'bg-gray-900':'bg-white'}`}
         >
-        <CardHeader floated={false} className="self-center h-32 w-32 rounded-full 
-            boder-2 border-light-blue-400 bg-gray-600">
+        <CardHeader floated={false} className={`relative
+            self-center h-60 w-40 rounded shadow-2 shadow-none bg-transparent`}>
+            <Image
+                src="/imgs/dree.png"
+                objectFit="cover"
+                objectPosition="relative"
+                fill
+                unoptimized={false}
+                alt={"Dree"}
+                className='bg-transparent'
+            />
         </CardHeader>
         <CardBody className="text-center">
-            <Typography variant="h4" color="blue-gray" className="mb-2">
+            <Typography variant="h4" color="blue-gray" className={`${renderThemeChanger()? 'text-white':''} mb-2`}>
                 Adriel Lucas
             </Typography>
-            <Typography color="blue" className="font-medium" textGradient>
+            <Typography color="blue" 
+                className={`${renderThemeChanger()? 'text-[#c37fff]':''} font-medium`} textGradient>
                 Web Developer / Full-Stack
             </Typography>
         </CardBody>

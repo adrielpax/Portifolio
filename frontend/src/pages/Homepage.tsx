@@ -2,6 +2,7 @@ import * as H from '../layout/home/home';
 import {FaDesktop,FaMobile,FaDatabase} from 'react-icons/fa'
 import { InfoCard } from '../components/infoCard';
 import { SwiperCard } from '../components/swiperCard';
+import { DialogCard } from '../components/dialogCard';
 // bg-gradient-to-r from-cyan-500 to-blue-500
 
 export function Homepage(){

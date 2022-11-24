@@ -13,7 +13,7 @@ import {
     IconButton,
 } from '@material-tailwind/react';
 import { DarkMode } from '../components/darkModeButtom';
-
+import { DialogCard } from '../components/dialogCard';
 
 export function NavbarPage(){
     const [openNav,setOpenNav] = useState(false)
@@ -48,17 +48,13 @@ export function NavbarPage(){
                 <div className='flex flex-1 flex-row-reverse mr-8'>
                     <DarkMode/>
                 </div>
-                <Button 
-                    variant="filled"
-                    className='hidden rounded lg:inline-block bg-light-blue-300
-                    hover:bg-blue-700 dark:bg-[#8000f2] 
-                    dark:hover:bg-[#4c0e81]
-                    dark:text-white dark:shadow-none 
-                    '
-                    size='sm'
-                >
-                    <span>Contact Me</span>
-                </Button>
+               
+                <DialogCard prop={{
+                    text:'Contact Me',
+                    full:false,
+                    hidden:'hidden'
+                }}/>
+
                 <IconButton
                     variant='text'
                     className='ml-auto h-6 w-6 
@@ -85,20 +81,11 @@ export function NavbarPage(){
             </div>
             <MobileNav open={openNav}>
                 {/*NavList*/}
-                <Button
-                    variant="filled"
-                    size='sm'
-                    fullWidth
-                    color="blue"
-                    className='mb-2 rounded lg:inline-block bg-light-blue-300
-                    hover:bg-blue-700 dark:bg-[#8000f2] 
-                    dark:hover:bg-[#4c0e81]
-                    dark:text-white 
-                    '
-                    
-                >
-                    <span>Contact Me</span>
-                </Button>
+                <DialogCard prop={{
+                    text:'Contact Me',
+                    full:true,
+                    hidden:'hidden-none'
+                }}/>
             </MobileNav>
         </Navbar>    
     )    

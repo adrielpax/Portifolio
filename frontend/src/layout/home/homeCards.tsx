@@ -28,10 +28,10 @@ export function HomeCard({props}:Props){
                         {props.icon}
                     </Button>
                 </Tooltip>
-                <h6 className="text-xl font-semibold">
+                <h6 className="text-xl font-semibold text-blue-gray-600">
                     {props.title}
                 </h6>
-                <p className="mt-2 mb-4 text-slate-500 text-justify">
+                <p className="mt-2 mb-4 text-slate-500 text-justify text-blue-gray-600">
                     {props.text}
                 </p>
             </div>
