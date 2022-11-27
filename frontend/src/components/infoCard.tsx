@@ -50,20 +50,22 @@ export function InfoCard({Title,index,type}:Props){
         linkedin:<SiLinkedin className=" "/>,
     }
 
+    const theme = renderThemeChanger();
+
     return(
-        <div className={`${renderThemeChanger()? 'bg-[#18191a]':'bg-white'} 
+        <div className={`${theme? 'bg-[#18191a]':'bg-white'} 
             w-[80%] mx-auto my-12 h-auto rounded  
             shadow-md md:shadow-xl md:hover:shadow-2xl`}>
             <div className="p-8">
                 <Typography 
                     variant="h5"
-                    className="text-blue-gray-600"
+                    className={`${!theme?'text-blue-gray-600':'text-[whitesmoke]'}`}
                 >
                     {Title}
                 </Typography>
             {!index ? (
                 <>
-                <div className="p-4 text-justify text-blue-gray-600">
+                <div className={`p-4 text-justify ${!theme?'text-blue-gray-600':'text-[whitesmoke]'}`}>
                     <div>
                         <p>
                             Meu nome e Adriel, sou apaixonado por tecnologia e 
@@ -81,7 +83,7 @@ export function InfoCard({Title,index,type}:Props){
                             variant="text"
                             size='sm'
                             color="light-blue"
-                            className={`rounded ${renderThemeChanger()?
+                            className={`rounded ${theme?
                                 'bg-[#8000f2] text-white hover:bg-[#33005f]':
                                 'bg-[whitesmoke]'} 
                             m-4`}
@@ -92,7 +94,7 @@ export function InfoCard({Title,index,type}:Props){
                             variant="text"
                             size='sm'
                             color="light-blue"
-                            className={`rounded ${renderThemeChanger()?
+                            className={`rounded ${theme?
                                 'bg-[#8000f2] text-white hover:bg-[#33005f]':
                                 'bg-[whitesmoke]'} 
                             m-4`}
@@ -101,7 +103,7 @@ export function InfoCard({Title,index,type}:Props){
                         </Button>
                 </div>
                 </>) : (
-                <div className="p-4 grid md:grid-flow-col text-blue-gray-600">
+                <div className={`p-4 grid md:grid-flow-col ${!theme?'text-blue-gray-600':'text-[whitesmoke]'}`}>
                     <div className="relative p-4">
                             {!type ? 
                             (<>

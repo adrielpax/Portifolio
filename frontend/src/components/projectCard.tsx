@@ -4,8 +4,10 @@ import {
     CardBody,
     CardFooter,
     Typography
-} from "@material-tailwind/react"
-import Image from "next/image"
+} from "@material-tailwind/react";
+import Image from "next/image";
+
+import {TbWorld} from 'react-icons/tb';
 
 export function ProjectCard(){
     return(
@@ -28,10 +30,13 @@ export function ProjectCard(){
             <CardFooter divider className="flex items-center justify-between py-3">
                 <Typography variant="small">
                     <a 
-                        className="text-light-blue-400"
+                        className="flex items-center gap-1 text-light-blue-400"
                         target="_blank"
                         href="https://yourfinance.netlify.app/">
-                        Link to Project page
+                        <TbWorld 
+                        className="m-1 mt-0"
+                        />
+                        Site
                     </a>
                 </Typography>
             </CardFooter>

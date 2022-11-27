@@ -1,5 +1,7 @@
 import {Tooltip,Button} from '@material-tailwind/react';
 import renderThemeChanger from '../../hook/darkModeHook';
+
+
 interface Props {
     props:{
         content:string,
@@ -12,11 +14,12 @@ interface Props {
 }
 
 export function HomeCard({props}:Props){
+    const theme = renderThemeChanger()
     return(
         <div className="lg:pt-12 pt-6 w-full md:w-4/12 px-4 text-center z-10">
             <div className={`px-4 py-5 flex-auto rounded 
             shadow-md md:shadow-xl md:hover:shadow-2xl 
-            ${renderThemeChanger()? 'bg-gray-900':'bg-white'}`}>
+            ${theme? 'bg-gray-900':'bg-white'}`}>
                 <Tooltip content={props.content}
                     interactive={true}
                 >
@@ -28,10 +31,10 @@ export function HomeCard({props}:Props){
                         {props.icon}
                     </Button>
                 </Tooltip>
-                <h6 className="text-xl font-semibold text-blue-gray-600">
+                <h6 className={`text-xl font-semibold ${theme? 'text-[whitesmoke]':'text-blue-gray-600'}`}>
                     {props.title}
                 </h6>
-                <p className="mt-2 mb-4 text-slate-500 text-justify text-blue-gray-600">
+                <p className={`mt-2 mb-4 text-slate-500 text-justify ${theme?'text-[whitesmoke]':'text-blue-gray-600'}`}>
                     {props.text}
                 </p>
             </div>
