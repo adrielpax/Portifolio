@@ -1,7 +1,7 @@
+import { useTranslations } from "next-intl";
 import { 
     Typography, 
     Button,
-    IconButton,
 } from "@material-tailwind/react"
 
 import {
@@ -24,15 +24,20 @@ import {FaGitAlt, FaPython} from 'react-icons/fa'
 import { ListTech } from "../utils/list-tech";
 
 import renderThemeChanger from '../hook/darkModeHook';
+import { GetStaticPropsContext } from "next";
+import { useEffect, useState } from "react";
 
 interface Props{
     Title:string
     index:boolean
     type:number
+    text:string
 }
 
-export function InfoCard({Title,index,type}:Props){
-
+export function InfoCard({Title,index,type,text}:Props){
+    
+    //const t = useTranslations("index");
+    
     const icons = {
         react:<SiReact className="h-[100%] w-[100%]"/>,
         node:<IoLogoNodejs className="h-[100%] w-[100%]"/>,
@@ -51,10 +56,36 @@ export function InfoCard({Title,index,type}:Props){
     }
 
     const theme = renderThemeChanger();
+    
+    const [scrolled,setScrolled] = useState(false);
+    const [screenChange,setScreenChange] = useState(false);
+
+    useEffect(()=>{
+        window.addEventListener('scroll',hiddenCard)
+        window.addEventListener('resize',mobile)
+    },[]);
+    
+
+    const hiddenCard = ()=>{
+        if(window.scrollY >= 1040){
+            setScrolled(true)
+        }else{
+            setScrolled(false)
+        }
+    }
+        
+    const mobile = ()=>{
+        if(window.screenX <= 640){
+            setScreenChange(true)
+        }else{
+            setScreenChange(false)
+        }
+    }
 
     return(
         <div className={`${theme? 'bg-[#18191a]':'bg-white'} 
-            w-[80%] mx-auto my-12 h-auto rounded  
+            w-[80%] mx-auto my-12 h-auto rounded  ${scrolled? 'opacity-100 transition-opacity ease-in delay-600':
+            'opacity-0 transition-opacity ease-out delay-600'}
             shadow-md md:shadow-xl md:hover:shadow-2xl`}>
             <div className="p-8">
                 <Typography 
@@ -68,12 +99,7 @@ export function InfoCard({Title,index,type}:Props){
                 <div className={`p-4 text-justify ${!theme?'text-blue-gray-600':'text-[whitesmoke]'}`}>
                     <div>
                         <p>
-                            Meu nome e Adriel, sou apaixonado por tecnologia e 
-                            com desejo empreendedor, me aprofundo em programação 
-                            desde de 2019 e venho me desenvolvendo ao longo do tempo 
-                            dentro de desenvolvimento Web e seu ecossytema, tenho como objetivo
-                            trabalhar em equipe e desenvolver com o que tem de melhor em tecnologia!.
-                            #neverstoplearning
+                            {text}
                         </p>
                         <p className="mt-2"></p>
                     </div>
@@ -114,7 +140,8 @@ export function InfoCard({Title,index,type}:Props){
                                         text: "Java Script",
                                         color: "bg-yellow-500",
                                         colorIcon: "text-black",
-                                        icon:icons.js
+                                        icon:icons.js,
+                                        mobile:screenChange
                                     }}
                                 /> 
                                 <ListTech 
@@ -122,7 +149,9 @@ export function InfoCard({Title,index,type}:Props){
                                         text: "Node JS",
                                         color: "bg-green-400",
                                         colorIcon: "text-white",
-                                        icon:icons.node
+                                        icon:icons.node,
+                                        mobile:screenChange
+
                                     }}
                                 /> 
                                 <ListTech 
@@ -130,7 +159,9 @@ export function InfoCard({Title,index,type}:Props){
                                         text: "React JS",
                                         color: "bg-light-blue-400",
                                         colorIcon: "text-white",
-                                        icon:icons.react
+                                        icon:icons.react,
+                                        mobile:screenChange
+
                                     }}
                                 />
                                 <ListTech 
@@ -138,7 +169,9 @@ export function InfoCard({Title,index,type}:Props){
                                         text: "Git",
                                         color: "bg-orange-900",
                                         colorIcon: "text-white",
-                                        icon:icons.git
+                                        icon:icons.git,
+                                        mobile:screenChange
+
                                     }}
                                 />  
                                 <ListTech 
@@ -146,7 +179,9 @@ export function InfoCard({Title,index,type}:Props){
                                         text: "Python",
                                         color: "bg-blue-900",
                                         colorIcon: "text-yellow-700",
-                                        icon:icons.python
+                                        icon:icons.python,
+                                        mobile:screenChange
+                                        
                                     }}
                                 />
                             </ul>
@@ -159,7 +194,9 @@ export function InfoCard({Title,index,type}:Props){
                                     text: "Portugues Brazil / level: native",
                                     color: "bg-green-800",
                                     colorIcon: "text-yellow-800",
-                                    icon:icons.brasil
+                                    icon:icons.brasil,
+                                    mobile:screenChange
+
                                 }}
                                 />
                             </ul>
@@ -174,7 +211,9 @@ export function InfoCard({Title,index,type}:Props){
                                     text: "Mongo DB",
                                     color: "bg-gray-900",
                                     colorIcon: "text-green-800",
-                                    icon:icons.mongo
+                                    icon:icons.mongo,
+                                    mobile:screenChange
+
                                 }}
                             />
                              <ListTech 
@@ -182,7 +221,9 @@ export function InfoCard({Title,index,type}:Props){
                                     text: "TailwindCss",
                                     color: "bg-gradient-to-r from-cyan-500 to-blue-500",
                                     colorIcon: "text-white",
-                                    icon:icons.tailwind
+                                    icon:icons.tailwind,
+                                    mobile:screenChange
+
                                 }}
                             />
                              <ListTech 
@@ -190,7 +231,9 @@ export function InfoCard({Title,index,type}:Props){
                                     text: "Grapql",
                                     color: "bg-pink-600",
                                     colorIcon: "text-white",
-                                    icon:icons.graph
+                                    icon:icons.graph,
+                                    mobile:screenChange
+
                                 }}
                             />
                             <ListTech 
@@ -198,7 +241,9 @@ export function InfoCard({Title,index,type}:Props){
                                     text: "Expo",
                                     color: "bg-black",
                                     colorIcon: "text-white",
-                                    icon:icons.expo
+                                    icon:icons.expo,
+                                    mobile:screenChange
+
                                 }}
                             />        
                         </ul></>):(<>
@@ -209,7 +254,9 @@ export function InfoCard({Title,index,type}:Props){
                                     text: "English / level: conversation",
                                     color: "bg-blue-500",
                                     colorIcon: "text-red-800",
-                                    icon:icons.eua
+                                    icon:icons.eua,
+                                    mobile:screenChange
+
                                 }}
                             />
                             </ul>
@@ -221,4 +268,13 @@ export function InfoCard({Title,index,type}:Props){
             </div>
         </div>
     )
+}
+
+
+export async function getStaticProps({locale}:GetStaticPropsContext){
+    return{
+        props:{
+            messages:{...require(`../messages/${locale}.json`)},
+        }
+    }
 }

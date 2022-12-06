@@ -1,16 +1,20 @@
+import React, { useEffect, useState } from 'react'; 
 import * as H from '../layout/home/home';
 import {FaDesktop,FaMobile,FaDatabase} from 'react-icons/fa'
 import { InfoCard } from '../components/infoCard';
 import { SwiperCard } from '../components/swiperCard';
-import { DialogCard } from '../components/dialogCard';
-// bg-gradient-to-r from-cyan-500 to-blue-500
+import content from '../messages/pt.json'
+import { FormCard } from '../components/formCard';
 
-export function Homepage(){
+
+export function Homepage(  ){
+    
     const icon = {
         front:<FaDesktop className='w-full h-full'/>,
         mobile:<FaMobile className='w-full h-full'/>,
         data:<FaDatabase className='w-full h-full'/>,
     }
+
     return(
         <div className="dark w-full h-auto bg-gradient-to-r from-cyan-400 to-blue-900
             dark:bg-gradient-to-r dark:to-[#8000f2] dark:from-[#911037]
@@ -18,12 +22,13 @@ export function Homepage(){
             <div>
                 <H.HeroSection/>
             </div>
-            <section className='mb-40'>
+            <section className='mb-40 pb-7'>
                 <div>
                     <H.PersonalCard/>
                 </div>
-                <div className="container mx-auto px-4">
+                <div className={`container mx-auto my-40 px-4`}>
                     <div className="flex flex-wrap justify-around">
+                        
                         <H.HomeCard
                             props={{
                                 title:'Mobile Dev',
@@ -56,14 +61,24 @@ export function Homepage(){
                         />
                     </div>
                 </div>
-            </section>
-    
-            <InfoCard Title={'About Me'} index={false} type={0}/>
-            <InfoCard Title={'Tecnologies'} index={true} type={0}/>
-            <InfoCard Title={'Language'} index={true} type={1}/>
-            <div className="flex flex-wrap justify-center gap-2">
+            <div className={``}>
+            <InfoCard Title={'About Me'} index={false} type={0}
+                text={content.aboutMe}
+                />
+            <InfoCard Title={'Tecnologies'} index={true} type={0}
+                text={''}
+                />
+            <InfoCard Title={'Language'} index={true} type={1}
+                text={''}
+                />
+            </div>
+            <div className={`
+                flex flex-wrap justify-center gap-2`}>
                 <SwiperCard/>
             </div>
+                <FormCard/>
+            </section>
         </div>
     )
 }
+

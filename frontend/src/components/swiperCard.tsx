@@ -5,10 +5,27 @@ import renderThemeChanger from '../hook/darkModeHook';
 
 import "swiper/css";
 import "swiper/css/pagination";
+import { useEffect, useState } from 'react';
 
 
 export function SwiperCard(){
     const theme = renderThemeChanger()
+
+    const [scrolled,setScrolled] = useState(false);
+
+    useEffect(()=>{
+        window.addEventListener('scroll',hiddenCard)
+    },[]);
+    
+
+    const hiddenCard = ()=>{
+        if(window.scrollY >= 2140){
+            setScrolled(true)
+        }else{
+            setScrolled(false)
+        }
+    }
+
     return(
         <Swiper
             slidesPerView={1}
@@ -22,7 +39,8 @@ export function SwiperCard(){
             //onSlideChange={()=>{}}
             //onSwiper={(swiper)=>{}}
             className={`${theme?'bg-gray-900':'bg-[whitesmoke]'} h-auto md:w-[80%] md:mx-auto my-20 rounded  
-            shadow-md md:shadow-xl md:hover:shadow-2xl`}
+            shadow-md md:shadow-xl md:hover:shadow-2xl  ${scrolled? 'opacity-100 transition-opacity ease-in delay-600':
+            'opacity-0 transition-opacity ease-out delay-600'}`}
         >
             <SwiperSlide>
                 <h3 

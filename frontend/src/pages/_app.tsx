@@ -1,6 +1,7 @@
 import { ReactElement, ReactNode } from 'react';
 import { NextPage } from 'next';
 import type { AppProps } from 'next/app';
+import { NextIntlProvider } from 'next-intl';
 
 import {ThemeProvider} from '@material-tailwind/react';
 import {ThemeProvider as ThemeNext} from 'next-themes';
@@ -21,10 +22,13 @@ export default function App({ Component, pageProps }:AppPropsWithLayout) {
   const getLayout = Component.getLayout ?? ((page) => page)
 
   return getLayout(
-  <ThemeNext enableSystem={true} attribute="class"> 
+    <ThemeNext enableSystem={true} attribute="class">
     <ThemeProvider>
       <Layout>
-        <Component {...pageProps} />
+        <NextIntlProvider 
+          messages={pageProps.messages}> 
+          <Component {...pageProps} />
+        </NextIntlProvider> 
       </Layout>
     </ThemeProvider>
   </ThemeNext>

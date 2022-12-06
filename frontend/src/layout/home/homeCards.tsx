@@ -1,6 +1,7 @@
 import {Tooltip,Button} from '@material-tailwind/react';
 import renderThemeChanger from '../../hook/darkModeHook';
-
+import changeHiddenCard from '../../hook/changeHiddenCard'; 
+import { useEffect, useState } from 'react';
 
 interface Props {
     props:{
@@ -14,9 +15,29 @@ interface Props {
 }
 
 export function HomeCard({props}:Props){
-    const theme = renderThemeChanger()
+    const theme = renderThemeChanger();
+    
+    const [scrolled,setScrolled] = useState(false);
+
+    useEffect(()=>{
+        window.addEventListener('scroll',hiddenCard)
+    },[]);
+    
+
+    const hiddenCard = ()=>{
+        if(window.scrollY >= 640){
+            setScrolled(true)
+
+        }else{
+            setScrolled(false)
+
+        }
+    }
+    
     return(
-        <div className="lg:pt-12 pt-6 w-full md:w-4/12 px-4 text-center z-10">
+        <div className={`${scrolled? 'opacity-100 transition-opacity ease-in delay-600':
+        'opacity-0 transition-opacity ease-out delay-600'}
+        lg:pt-12 pt-6 w-full md:w-4/12 px-4 text-center z-10`}>
             <div className={`px-4 py-5 flex-auto rounded 
             shadow-md md:shadow-xl md:hover:shadow-2xl 
             ${theme? 'bg-gray-900':'bg-white'}`}>

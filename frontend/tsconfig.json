@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/layout/home/home.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/layout/home/home.js", "src/utils/scriptsavuse.js"],
   "exclude": ["node_modules"]
 }
