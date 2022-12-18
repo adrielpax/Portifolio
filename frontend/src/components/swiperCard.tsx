@@ -38,7 +38,7 @@ export function SwiperCard(){
 
             //onSlideChange={()=>{}}
             //onSwiper={(swiper)=>{}}
-            className={`${theme?'bg-[#141414]':'bg-white'} h-auto md:w-[80%] md:mx-auto my-20 rounded  
+            className={`${theme?'bg-[#141414]':'bg-white border-b-4 border-light-blue-500'} h-auto md:w-[80%] md:mx-auto my-20 rounded  
             shadow-md md:shadow-xl md:hover:shadow-2xl  ${scrolled? 'opacity-100 transition-opacity ease-in delay-600':
             'opacity-0 transition-opacity ease-out delay-600'}`}
         >

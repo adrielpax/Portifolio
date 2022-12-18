@@ -21,14 +21,14 @@ export function ProjectCard(){
                     fill={true}
                 />
             </CardHeader>
-            <CardBody className="text-center">
-                {/*<Typography variant="h5" className="mb-2">
+            {/*<CardBody className="text-center">
+                <Typography variant="h5" className="mb-2">
                     YourFinance
                 </Typography>
                 <Typography>
                     Project use ReactJS , created to control your finance .. its to be a Real Project
-                </Typography>*/}
-            </CardBody>
+                </Typography>
+            </CardBody>*/}
             <CardFooter divider className={`flex gap-2 justify-between py-3 ${theme?'border-[#8800ff]':'border-light-blue-500'}`}>
                 <Typography variant="small" className='flex gap-2 justify-between'>
                     <a 

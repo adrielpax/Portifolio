@@ -83,7 +83,7 @@ export function InfoCard({Title,index,type,text}:Props){
     }
 
     return(
-        <div className={`${theme? 'bg-[#141414]':'bg-white'} 
+        <div className={`${theme? 'bg-[#141414]':'bg-white border-b-4 border-light-blue-500'} 
             w-[80%] mx-auto my-12 h-auto rounded  ${scrolled? 'opacity-100 transition-opacity ease-in delay-600':
             'opacity-0 transition-opacity ease-out delay-600'}
             shadow-md md:shadow-xl md:hover:shadow-2xl`}>
