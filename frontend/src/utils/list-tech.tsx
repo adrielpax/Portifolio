@@ -6,19 +6,19 @@ interface Props {
         color: string
         colorIcon: string
         icon: JSX.Element
-        mobile:boolean
+        mobile:string
     }
 }
 
 export function ListTech({props}:Props){
     const theme = renderThemeChanger();
-
+//
     return(
     <li>
         <Tooltip 
             interactive={true}
             content={props.text}
-            placement={props.mobile? 'right-start':'top'}
+            placement={'top'}
             >
             <Button
                 variant='filled' 

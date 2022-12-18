@@ -7,6 +7,7 @@ import {
   DialogFooter,
  } from '@material-tailwind/react';
 import { FormComponent } from './formComponent';
+import renderThemeChanger from '../hook/darkModeHook';
 
 interface Props{
   prop:{
@@ -22,7 +23,7 @@ export function DialogCard({prop}:Props){
 
     const handleOpen = () => setOpen(!open)
 
-    
+    const theme = renderThemeChanger();
     return(
         <>
         <Button 
@@ -38,25 +39,32 @@ export function DialogCard({prop}:Props){
          <span>{prop.text}</span> 
         </Button>
         <Dialog
-        dismiss={{
-          enabled:true, 
-        }} size='xxl' open={open} handler={handleOpen} className="backdrop-blur-none rounded">
-        <DialogHeader className='mx-auto'>Entre em Contato Comigo !</DialogHeader>
-        <DialogBody divider className='flex items-center flex-col 
-        '>
-          <h3 className='mb-4'>Me mande uma mensagem ou um email!</h3>
+          dismiss={{
+            enabled:true, 
+          }} 
+          size='xxl' 
+          open={open} 
+          handler={handleOpen} 
+          className={`${theme?'bg-[#141414]':''} backdrop-blur-none rounded`}>
+        <DialogHeader className={`${theme?'text-white':''} mx-auto`}>Entre em Contato Comigo !</DialogHeader>
+        <DialogBody divider className='flex items-center flex-col'>
+          <h3 className={`${theme?'text-white':''} mb-4`}>Me mande uma mensagem ou um email!</h3>
           <FormComponent/>
         </DialogBody>
         <DialogFooter className='mx-auto'>
           <Button
+            className={`${theme?'bg-[#3131315e]':'bg-[#e3e3e3] hover:bg-[#ff51517c]'} rounded mr-5`}
             variant="text"
             color="red"
             onClick={handleOpen}
-            className="mr-1"
           >
             <span>Cancel</span>
           </Button>
-          <Button variant="gradient" color="green" onClick={handleOpen}>
+          <Button 
+            className={`${theme?'bg-[#3131315e]':'bg-[#e3e3e3] hover:bg-light-blue-500 hover:text-white'} rounded`}
+            variant="text" 
+            color="blue" 
+            onClick={handleOpen}>
             <span>Confirm</span>
           </Button>
         </DialogFooter>

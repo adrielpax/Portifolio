@@ -40,7 +40,7 @@ export function HomeCard({props}:Props){
         lg:pt-12 pt-6 w-full md:w-4/12 px-4 text-center z-10`}>
             <div className={`px-4 py-5 flex-auto rounded 
             shadow-md md:shadow-xl md:hover:shadow-2xl 
-            ${theme? 'bg-gray-900':'bg-white'}`}>
+            ${theme? 'bg-[#141414]':'bg-white'}`}>
                 <Tooltip content={props.content}
                     interactive={true}
                 >
@@ -48,7 +48,7 @@ export function HomeCard({props}:Props){
                     className={`${props.color} p-3 
                     text-center inline-flex items-center 
                     justify-center w-12 h-12 mb-5 shadow-lg rounded 
-                    ${props.bgColor} `}>
+                    ${theme?'bg-[#313131] shadow-none hover:shadow-none hover:bg-[#8000f2] focus:bg-[#8000f2]':'bg-light-blue-500'} `}>
                         {props.icon}
                     </Button>
                 </Tooltip>

@@ -15,7 +15,6 @@ export function DarkMode(){
         }else{
             setTheme('light')
         }
-        console.log(darkMode)
     }
 
     const renderThemeChanger= () => {
@@ -35,14 +34,14 @@ export function DarkMode(){
                 '
                 //label={`${value? 'Light Mode':'Dark Mode'}`}
             />
-            {darkMode == true?
+            {darkMode == false?
                 <FaMoon 
                     className="m-2 w-4 h-4 
-                        text-gray-900 " role="button" //onClick={() => setTheme('dark')} 
+                        text-white " role="button" //onClick={() => setTheme('dark')} 
                     /> :
                 <FaSun 
                     className="m-2 w-4 h-4 
-                        text-yellow-500 " role="button" //onClick={() => setTheme('light')} 
+                        text-yellow-700 " role="button" //onClick={() => setTheme('light')} 
                     />}
         </div>
     )

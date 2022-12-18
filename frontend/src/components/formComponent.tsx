@@ -1,11 +1,15 @@
 import { InputComponent } from "./input";
 import { TextArea } from "./textArea";
+import renderThemeChanger from '../hook/darkModeHook';
 
 export function FormComponent(){
+    const theme = renderThemeChanger();
+    
     return(
         <form 
-        className="flex mx-auto flex-col gap-4 md:w-[30%] bg-white h-auto rounded">
-            <InputComponent prop={{
+            className={`${theme?'text-white':''} flex mx-auto flex-col gap-4 w-[60%] h-auto rounded`}>
+            <InputComponent
+            prop={{
                 text: 'Seu Nome'
             }}/>
             <InputComponent prop={{

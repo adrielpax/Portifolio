@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'; 
+import React from 'react'; 
 import * as H from '../layout/home/home';
 import {FaDesktop,FaMobile,FaDatabase} from 'react-icons/fa'
 import { InfoCard } from '../components/infoCard';
@@ -6,8 +6,22 @@ import { SwiperCard } from '../components/swiperCard';
 import content from '../messages/pt.json'
 import { FormCard } from '../components/formCard';
 
+export async function getStaticProps(){
+    const res = await fetch('/api/data/data.js')
+    const data = res.json()
 
-export function Homepage(  ){
+    return{
+        props:{
+            data,
+        }
+    }
+}
+
+interface props {
+    data: JSON
+}
+
+export function Homepage({data}:props){
     
     const icon = {
         front:<FaDesktop className='w-full h-full'/>,
@@ -15,6 +29,9 @@ export function Homepage(  ){
         data:<FaDatabase className='w-full h-full'/>,
     }
 
+    //const {aboutMe}:string = data
+    //console.log(aboutMe)
+    
     return(
         <div className="dark w-full h-auto bg-gradient-to-r from-cyan-400 to-blue-900
             dark:bg-gradient-to-r dark:to-[#8000f2] dark:from-[#911037]
@@ -22,6 +39,7 @@ export function Homepage(  ){
             <div>
                 <H.HeroSection/>
             </div>
+            <h1>{}</h1>
             <section className='mb-40 pb-7'>
                 <div>
                     <H.PersonalCard/>
@@ -63,7 +81,7 @@ export function Homepage(  ){
                 </div>
             <div className={``}>
             <InfoCard Title={'About Me'} index={false} type={0}
-                text={content.aboutMe}
+                text={""}
                 />
             <InfoCard Title={'Tecnologies'} index={true} type={0}
                 text={''}
@@ -81,4 +99,3 @@ export function Homepage(  ){
         </div>
     )
 }
-

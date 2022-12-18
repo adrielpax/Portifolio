@@ -20,7 +20,7 @@ import {
 } from 'react-icons/si';
 import {TbBrandNextjs} from 'react-icons/tb'
 import {GiBrazilFlag,GiUsaFlag} from 'react-icons/gi';
-import {FaGitAlt, FaPython} from 'react-icons/fa'
+import {FaDoorClosed, FaGitAlt, FaPython} from 'react-icons/fa'
 import { ListTech } from "../utils/list-tech";
 
 import renderThemeChanger from '../hook/darkModeHook';
@@ -58,7 +58,7 @@ export function InfoCard({Title,index,type,text}:Props){
     const theme = renderThemeChanger();
     
     const [scrolled,setScrolled] = useState(false);
-    const [screenChange,setScreenChange] = useState(false);
+    const [screenChange,setScreenChange] = useState(true);
 
     useEffect(()=>{
         window.addEventListener('scroll',hiddenCard)
@@ -75,7 +75,7 @@ export function InfoCard({Title,index,type,text}:Props){
     }
         
     const mobile = ()=>{
-        if(window.screenX <= 640){
+        if(window.screenX <= 540){
             setScreenChange(true)
         }else{
             setScreenChange(false)
@@ -83,7 +83,7 @@ export function InfoCard({Title,index,type,text}:Props){
     }
 
     return(
-        <div className={`${theme? 'bg-[#18191a]':'bg-white'} 
+        <div className={`${theme? 'bg-[#141414]':'bg-white'} 
             w-[80%] mx-auto my-12 h-auto rounded  ${scrolled? 'opacity-100 transition-opacity ease-in delay-600':
             'opacity-0 transition-opacity ease-out delay-600'}
             shadow-md md:shadow-xl md:hover:shadow-2xl`}>
@@ -110,8 +110,8 @@ export function InfoCard({Title,index,type,text}:Props){
                             size='sm'
                             color="light-blue"
                             className={`rounded ${theme?
-                                'bg-[#8000f2] text-white hover:bg-[#33005f]':
-                                'bg-[whitesmoke]'} 
+                                'bg-[#3131315e] text-white hover:bg-[#8000f2]':
+                                'bg-[whitesmoke] hover:text-white hover:bg-light-blue-500'} 
                             m-4`}
                         >   
                             GitHub
@@ -121,8 +121,8 @@ export function InfoCard({Title,index,type,text}:Props){
                             size='sm'
                             color="light-blue"
                             className={`rounded ${theme?
-                                'bg-[#8000f2] text-white hover:bg-[#33005f]':
-                                'bg-[whitesmoke]'} 
+                                'bg-[#3131315e] text-white hover:bg-[#8000f2]':
+                                'bg-[whitesmoke] hover:text-white hover:bg-light-blue-500'} 
                             m-4`}
                         > 
                             Linkedin
@@ -141,7 +141,7 @@ export function InfoCard({Title,index,type,text}:Props){
                                         color: "bg-yellow-500",
                                         colorIcon: "text-black",
                                         icon:icons.js,
-                                        mobile:screenChange
+                                        mobile:screenChange ? 'right-start':'top'
                                     }}
                                 /> 
                                 <ListTech 
@@ -150,8 +150,7 @@ export function InfoCard({Title,index,type,text}:Props){
                                         color: "bg-green-400",
                                         colorIcon: "text-white",
                                         icon:icons.node,
-                                        mobile:screenChange
-
+                                        mobile:screenChange ? 'right-start':'top'
                                     }}
                                 /> 
                                 <ListTech 
@@ -160,8 +159,8 @@ export function InfoCard({Title,index,type,text}:Props){
                                         color: "bg-light-blue-400",
                                         colorIcon: "text-white",
                                         icon:icons.react,
-                                        mobile:screenChange
-
+                                        mobile:screenChange ? 'right-start':'top'
+                                        
                                     }}
                                 />
                                 <ListTech 
@@ -170,8 +169,8 @@ export function InfoCard({Title,index,type,text}:Props){
                                         color: "bg-orange-900",
                                         colorIcon: "text-white",
                                         icon:icons.git,
-                                        mobile:screenChange
-
+                                        mobile:screenChange ? 'right-start':'top'
+                                        
                                     }}
                                 />  
                                 <ListTech 
@@ -180,8 +179,8 @@ export function InfoCard({Title,index,type,text}:Props){
                                         color: "bg-blue-900",
                                         colorIcon: "text-yellow-700",
                                         icon:icons.python,
-                                        mobile:screenChange
-                                        
+                                        mobile:screenChange ? 'right-start':'top'
+                                                                                
                                     }}
                                 />
                             </ul>
@@ -195,8 +194,8 @@ export function InfoCard({Title,index,type,text}:Props){
                                     color: "bg-green-800",
                                     colorIcon: "text-yellow-800",
                                     icon:icons.brasil,
-                                    mobile:screenChange
-
+                                    mobile:screenChange ? 'right-start':'top'
+                                    
                                 }}
                                 />
                             </ul>
@@ -212,8 +211,8 @@ export function InfoCard({Title,index,type,text}:Props){
                                     color: "bg-gray-900",
                                     colorIcon: "text-green-800",
                                     icon:icons.mongo,
-                                    mobile:screenChange
-
+                                    mobile:screenChange ? 'right-start':'top'
+                                    
                                 }}
                             />
                              <ListTech 
@@ -222,8 +221,8 @@ export function InfoCard({Title,index,type,text}:Props){
                                     color: "bg-gradient-to-r from-cyan-500 to-blue-500",
                                     colorIcon: "text-white",
                                     icon:icons.tailwind,
-                                    mobile:screenChange
-
+                                    mobile:screenChange ? 'right-start':'top'
+                                    
                                 }}
                             />
                              <ListTech 
@@ -232,8 +231,8 @@ export function InfoCard({Title,index,type,text}:Props){
                                     color: "bg-pink-600",
                                     colorIcon: "text-white",
                                     icon:icons.graph,
-                                    mobile:screenChange
-
+                                    mobile:screenChange ? 'right-start':'top'
+                                    
                                 }}
                             />
                             <ListTech 
@@ -242,8 +241,8 @@ export function InfoCard({Title,index,type,text}:Props){
                                     color: "bg-black",
                                     colorIcon: "text-white",
                                     icon:icons.expo,
-                                    mobile:screenChange
-
+                                    mobile:screenChange ? 'right-start':'top'
+                                    
                                 }}
                             />        
                         </ul></>):(<>
@@ -255,8 +254,8 @@ export function InfoCard({Title,index,type,text}:Props){
                                     color: "bg-blue-500",
                                     colorIcon: "text-red-800",
                                     icon:icons.eua,
-                                    mobile:screenChange
-
+                                    mobile:screenChange ? 'right-start':'top'
+                                    
                                 }}
                             />
                             </ul>
@@ -272,7 +271,7 @@ export function InfoCard({Title,index,type,text}:Props){
 
 
 export async function getStaticProps({locale}:GetStaticPropsContext){
-    return{
+    return{ 
         props:{
             messages:{...require(`../messages/${locale}.json`)},
         }
