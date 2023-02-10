@@ -1,12 +1,38 @@
 import React from 'react'; 
 import * as H from '../layout/home/home';
-import {FaDesktop,FaMobile,FaDatabase} from 'react-icons/fa'
+import {FaDesktop,FaMobile,FaDatabase} from 'react-icons/fa';
 import { InfoCard } from '../components/infoCard';
 import { SwiperCard } from '../components/swiperCard';
-import content from '../messages/pt.json'
 import { FormCard } from '../components/formCard';
 
+import {gql} from '@apollo/client';
+import client from './api/apollo-client';
+
 export async function getStaticProps(){
+    const {data} = await client.query({
+        query:gql`
+            query messages{
+                infoMessages{
+                    title
+                    message
+                    index
+                    type
+                }
+            } 
+        `
+    });
+
+    return {
+        props:{
+            msg: data.messages.title
+        }
+    }
+}
+
+
+//import content from '../messages/pt.json';
+
+/*export async function getStaticProps(){
     const res = await fetch('/api/data/data.js')
     const data = res.json()
 
@@ -15,13 +41,13 @@ export async function getStaticProps(){
             data,
         }
     }
-}
+}*/
 
 interface props {
-    data: JSON
+    msg: string
 }
 
-export function Homepage({data}:props){
+export function Homepage({msg}:props/*{data}:props*/){
     
     const icon = {
         front:<FaDesktop className='w-full h-full'/>,
@@ -39,7 +65,7 @@ export function Homepage({data}:props){
             <div>
                 <H.HeroSection/>
             </div>
-            <h1>{}</h1>
+            <h1>{msg}</h1>
             <section className='mb-40 pb-7'>
                 <div>
                     <H.PersonalCard/>
@@ -81,14 +107,14 @@ export function Homepage({data}:props){
                 </div>
             <div className={``}>
             <InfoCard Title={'About Me'} index={false} type={0}
-                text={""}
+                text={"bla bla"}
                 />
             <InfoCard Title={'Tecnologies'} index={true} type={0}
-                text={''}
+                text={'bla'}
                 />
             <InfoCard Title={'Language'} index={true} type={1}
-                text={''}
-                />
+                text={'bla bla'}
+                        />
             </div>
             <div className={`
                 flex flex-wrap justify-center gap-2`}>

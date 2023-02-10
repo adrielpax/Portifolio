@@ -10,7 +10,7 @@ import Image from "next/image";
 import renderThemeChanger from '../hook/darkModeHook';
 import {TbWorld} from 'react-icons/tb';
 
-export function ProjectCard(){
+export default function ProjectCard(){
     const theme = renderThemeChanger();
     return(
         <Card className={`${theme?'bg-[#313131b6]':'bg-[#c4c2c250]'} flex mx-auto w-96 rounded my-20 shadow-md md:shadow-xl md:hover:shadow-2xl`}>

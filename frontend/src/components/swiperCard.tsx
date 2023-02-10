@@ -1,17 +1,25 @@
 import {Swiper,SwiperSlide} from 'swiper/react';
-import { ProjectCard } from '../components/projectCard';
+//import { ProjectCard } from '../components/projectCard';
 import { Pagination } from 'swiper';
 import renderThemeChanger from '../hook/darkModeHook';
+import dynamic from 'next/dynamic';
 
 import "swiper/css";
 import "swiper/css/pagination";
 import { useEffect, useState } from 'react';
 
 
+const DynamicCard = dynamic(async ()=> await import('../components/projectCard'),{
+    ssr:false,
+    loading:()=> {
+        return <h2 className='flex justify-center p-4 mx-auto my-4'>Loading...</h2>
+    },
+})
+
 export function SwiperCard(){
     const theme = renderThemeChanger()
 
-    const [scrolled,setScrolled] = useState(false);
+    /*const [scrolled,setScrolled] = useState(false);
 
     useEffect(()=>{
         window.addEventListener('scroll',hiddenCard)
@@ -24,7 +32,7 @@ export function SwiperCard(){
         }else{
             setScrolled(false)
         }
-    }
+    }*/
 
     return(
         <Swiper
@@ -38,9 +46,10 @@ export function SwiperCard(){
 
             //onSlideChange={()=>{}}
             //onSwiper={(swiper)=>{}}
+            /** ${scrolled? 'opacity-100 transition-opacity ease-in delay-600':
+            'opacity-0 transition-opacity ease-out delay-600'} */
             className={`${theme?'bg-[#141414]':'bg-white border-b-4 border-light-blue-500'} h-auto md:w-[80%] md:mx-auto my-20 rounded  
-            shadow-md md:shadow-xl md:hover:shadow-2xl  ${scrolled? 'opacity-100 transition-opacity ease-in delay-600':
-            'opacity-0 transition-opacity ease-out delay-600'}`}
+            shadow-md md:shadow-xl md:hover:shadow-2xl `}
         >
             <SwiperSlide>
                 <h3 
@@ -49,7 +58,7 @@ export function SwiperCard(){
                 >
                     YourFinance
                 </h3>
-                <ProjectCard/>
+                <DynamicCard/>
             </SwiperSlide>
            
         </Swiper>

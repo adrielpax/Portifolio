@@ -57,22 +57,25 @@ export function InfoCard({Title,index,type,text}:Props){
 
     const theme = renderThemeChanger();
     
-    const [scrolled,setScrolled] = useState(false);
+    //const [scrolled,setScrolled] = useState(false);
     const [screenChange,setScreenChange] = useState(true);
 
     useEffect(()=>{
-        window.addEventListener('scroll',hiddenCard)
+        //window.addEventListener('scroll',hiddenCard)
         window.addEventListener('resize',mobile)
     },[]);
     
 
-    const hiddenCard = ()=>{
+    /*const hiddenCard = ()=>{
         if(window.scrollY >= 1040){
             setScrolled(true)
         }else{
             setScrolled(false)
         }
     }
+        ${scrolled? 'opacity-100 transition-opacity ease-in delay-600':
+            'opacity-0 transition-opacity ease-out delay-600'}
+    */
         
     const mobile = ()=>{
         if(window.screenX <= 540){
@@ -84,9 +87,7 @@ export function InfoCard({Title,index,type,text}:Props){
 
     return(
         <div className={`${theme? 'bg-[#141414]':'bg-white border-b-4 border-light-blue-500'} 
-            w-[80%] mx-auto my-12 h-auto rounded  ${scrolled? 'opacity-100 transition-opacity ease-in delay-600':
-            'opacity-0 transition-opacity ease-out delay-600'}
-            shadow-md md:shadow-xl md:hover:shadow-2xl`}>
+            w-[80%] mx-auto my-12 h-auto rounded shadow-md md:shadow-xl md:hover:shadow-2xl`}>
             <div className="p-8">
                 <Typography 
                     variant="h5"
@@ -110,7 +111,7 @@ export function InfoCard({Title,index,type,text}:Props){
                             size='sm'
                             color="light-blue"
                             className={`rounded ${theme?
-                                'bg-[#3131315e] text-white hover:bg-[#8000f2]':
+                                'bg-[#3131315e] text-white hover:bg-[#540DFA]':
                                 'bg-[whitesmoke] hover:text-white hover:bg-light-blue-500'} 
                             m-4`}
                         >   
@@ -121,7 +122,7 @@ export function InfoCard({Title,index,type,text}:Props){
                             size='sm'
                             color="light-blue"
                             className={`rounded ${theme?
-                                'bg-[#3131315e] text-white hover:bg-[#8000f2]':
+                                'bg-[#3131315e] text-white hover:bg-[#540DFA]':
                                 'bg-[whitesmoke] hover:text-white hover:bg-light-blue-500'} 
                             m-4`}
                         > 

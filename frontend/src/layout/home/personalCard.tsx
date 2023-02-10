@@ -31,7 +31,7 @@ export function PersonalCard(){
     <Card className={`${scrolled? 'opacity-100 transition-opacity ease-in delay-600':
         'opacity-0 transition-opacity ease-out delay-600'} rounded shadow-md 
         md:shadow-xl md:hover:shadow-2xl my-32 bg-transparent w-96 mx-auto 
-        ${renderThemeChanger()? 'bg-[#141414] border-b-8 border-[#8000f2]':'bg-white border-b-4 border-light-blue-500'}`}
+        ${renderThemeChanger()? 'bg-[#141414] border-b-8 border-[#540DFA]':'bg-white border-b-4 border-light-blue-500'}`}
         >
         <CardHeader floated={false} className={`relative
             self-center h-60 w-40 rounded shadow-2 shadow-none bg-transparent`}>
