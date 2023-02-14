@@ -21,6 +21,8 @@ export function Homepage(){
 
     const {loading ,data} = useQuery(GET_MESSAGE);
 
+    console.log(data)
+
     const icon = {
         front:<FaDesktop className='w-full h-full'/>,
         mobile:<FaMobile className='w-full h-full'/>,
