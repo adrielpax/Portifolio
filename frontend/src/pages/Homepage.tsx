@@ -14,14 +14,23 @@ const GET_MESSAGE = gql`
 `;
 
 export async function getStaticProps(){
-    
+    const {data} = await useQuery(GET_MESSAGE);
+    return {
+        props:{
+            message:data.aboutMe
+        }
+    }
 }
 
-export function Homepage(){
+interface props {
+    message:string
+}
 
-    const {loading ,data} = useQuery(GET_MESSAGE);
+export function Homepage({message}:props){
 
-    console.log(data)
+    //const {loading ,data} = useQuery(GET_MESSAGE);
+
+    console.log(message)
 
     const icon = {
         front:<FaDesktop className='w-full h-full'/>,

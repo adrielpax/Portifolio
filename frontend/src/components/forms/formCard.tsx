@@ -31,7 +31,7 @@ export function FormCard(){
                     >
                     <a
                         target="_blank" 
-                        href={`mailto:${email}`}
+                        href={`mailto:adrieldev174@gmail.com?CC=adriel.aprendiz@gmail.com&Subject=%F3la%20gostaria%20de%20entrar%20em%20contato%20com%20voc%EA%20%21&Body=%0A`}
                     >
                         Send a email
                     </a>
