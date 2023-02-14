@@ -1,5 +1,5 @@
 import { Input } from "@material-tailwind/react";
-import renderThemeChanger from '../hook/darkModeHook';
+import renderThemeChanger from '../../../hook/darkModeHook';
 interface Props {
     prop:{
         text:string

@@ -1,6 +1,6 @@
-import { InputComponent } from "./input";
-import { TextArea } from "./textArea";
-import renderThemeChanger from '../hook/darkModeHook';
+import { InputComponent } from "./input/input";
+import { TextArea } from "./input/textArea";
+import renderThemeChanger from '../../hook/darkModeHook';
 
 export function FormComponent(){
     const theme = renderThemeChanger();

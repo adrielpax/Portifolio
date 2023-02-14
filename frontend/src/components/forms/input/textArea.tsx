@@ -1,5 +1,5 @@
 import { Textarea } from "@material-tailwind/react";
-import renderThemeChanger from '../hook/darkModeHook';
+import renderThemeChanger from '../../../hook/darkModeHook';
 
 export function TextArea(){
     const theme = renderThemeChanger();

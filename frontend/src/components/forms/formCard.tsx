@@ -1,15 +1,17 @@
 import { useState } from 'react'
 import {Button, Input} from '@material-tailwind/react'
-import renderThemeChanger from '../hook/darkModeHook';
+import renderThemeChanger from '../../hook/darkModeHook';
+import { TextArea } from './input/textArea';
 
 
 export function FormCard(){
     const [email,setEmail] = useState(String);
     const theme =  renderThemeChanger()
     return(
-        <div className={`${theme? 'bg-[#141414]':'bg-white shadow shadow-blue-gray-200'} rounded p-4 w-96 md:w-[28rem] mx-auto`}>
+        <div className={`${theme? 'bg-[#141414]':'bg-white shadow shadow-blue-gray-200'} rounded p-4 w-96 h-[18rem] md:w-[28rem] mx-auto
+        border-b-4 ${theme?'border-[#8800ff]':'border-light-blue-500'}`}>
             <form 
-                className='flex flex-col md:flex-row gap-2 items-center justify-center bg-transparent mx-auto my-5 w-auto'
+                className='flex flex-col md:flex-col gap-2 items-center justify-center bg-transparent mx-auto my-5 w-auto h-auto'
             >
                 <Input 
                     className={``}
@@ -20,6 +22,7 @@ export function FormCard(){
                     value={email}
                     onChange={({target:{value}})=>setEmail(value)}
                 />  
+                <TextArea/>
                 <Button 
                     variant='text'
                     className={`${theme?

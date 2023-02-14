@@ -6,7 +6,7 @@ import {
   DialogBody,
   DialogFooter,
  } from '@material-tailwind/react';
-import { FormComponent } from './formComponent';
+import { FormComponent } from './forms/formDialog';
 import renderThemeChanger from '../hook/darkModeHook';
 
 interface Props{

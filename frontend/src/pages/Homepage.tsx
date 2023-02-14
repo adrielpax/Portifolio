@@ -5,7 +5,7 @@ import * as H from '../layout/home/home';//componente de layout footer e navbar
 import {FaDesktop,FaMobile,FaDatabase} from 'react-icons/fa'; //componente icone utilitario
 import { InfoCard } from '../components/infoCard'; //componente
 import { SwiperCard } from '../components/swiperCard'; //componente
-import { FormCard } from '../components/formCard'; //componente
+import { FormCard } from '../components/forms/formCard'; //componente
 
 const GET_MESSAGE = gql`
     query {
@@ -20,10 +20,6 @@ export async function getStaticProps(){
 export function Homepage(){
 
     const {loading ,data} = useQuery(GET_MESSAGE);
-
-    console.log(loading);
-    console.log(data);
-    console.log(JSON.stringify(data));
 
     const icon = {
         front:<FaDesktop className='w-full h-full'/>,
