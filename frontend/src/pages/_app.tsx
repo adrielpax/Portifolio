@@ -2,12 +2,12 @@ import { ReactElement, ReactNode } from 'react';
 import { NextPage } from 'next';
 import type { AppProps } from 'next/app';
 import { NextIntlProvider } from 'next-intl';
-import { ApolloProvider } from "@apollo/client";
-import client from '../pages/api/apollo-client';
+import { ApolloProvider } from '@apollo/client';
+import client from '../graphql/apollo-client';
 
-import {ThemeProvider} from '@material-tailwind/react';
-import {ThemeProvider as ThemeNext} from 'next-themes';
-import {Layout} from '../layout/layout';
+import { ThemeProvider } from '@material-tailwind/react';
+import { ThemeProvider as ThemeNext } from 'next-themes';
+import { Layout } from '../layout/layout';
 
 import '../styles/global.css';
 
@@ -25,16 +25,21 @@ export default function App({ Component, pageProps }:AppPropsWithLayout) {
 
   return getLayout(
     <ThemeNext enableSystem={true} attribute="class">
+    
     <ThemeProvider>
-      <ApolloProvider client={client}>
       <Layout>
+        
         <NextIntlProvider 
           messages={pageProps.messages}> 
-          <Component {...pageProps} />
+          
+          <ApolloProvider client={client}>
+            <Component {...pageProps} />  
+          </ApolloProvider>
+        
         </NextIntlProvider> 
       </Layout>
-      </ApolloProvider>
     </ThemeProvider>
+
   </ThemeNext>
   )
 }

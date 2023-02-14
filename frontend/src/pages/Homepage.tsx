@@ -1,62 +1,35 @@
 import React from 'react'; 
-import * as H from '../layout/home/home';
-import {FaDesktop,FaMobile,FaDatabase} from 'react-icons/fa';
-import { InfoCard } from '../components/infoCard';
-import { SwiperCard } from '../components/swiperCard';
-import { FormCard } from '../components/formCard';
+import { useQuery , gql} from '@apollo/client';
 
-import {gql} from '@apollo/client';
-import client from './api/apollo-client';
+import * as H from '../layout/home/home';//componente de layout footer e navbar
+import {FaDesktop,FaMobile,FaDatabase} from 'react-icons/fa'; //componente icone utilitario
+import { InfoCard } from '../components/infoCard'; //componente
+import { SwiperCard } from '../components/swiperCard'; //componente
+import { FormCard } from '../components/formCard'; //componente
+
+const GET_MESSAGE = gql`
+    query {
+        aboutMe
+    }
+`;
 
 export async function getStaticProps(){
-    const {data} = await client.query({
-        query:gql`
-            query messages{
-                infoMessages{
-                    title
-                    message
-                    index
-                    type
-                }
-            } 
-        `
-    });
-
-    return {
-        props:{
-            msg: data.messages.title
-        }
-    }
-}
-
-
-//import content from '../messages/pt.json';
-
-/*export async function getStaticProps(){
-    const res = await fetch('/api/data/data.js')
-    const data = res.json()
-
-    return{
-        props:{
-            data,
-        }
-    }
-}*/
-
-interface props {
-    msg: string
-}
-
-export function Homepage({msg}:props/*{data}:props*/){
     
+}
+
+export function Homepage(){
+
+    const {loading ,data} = useQuery(GET_MESSAGE);
+
+    console.log(loading);
+    console.log(data);
+    console.log(JSON.stringify(data));
+
     const icon = {
         front:<FaDesktop className='w-full h-full'/>,
         mobile:<FaMobile className='w-full h-full'/>,
         data:<FaDatabase className='w-full h-full'/>,
     }
-
-    //const {aboutMe}:string = data
-    //console.log(aboutMe)
     
     return(
         <div className="dark w-full h-auto bg-gradient-to-r from-cyan-400 to-blue-900
@@ -65,7 +38,7 @@ export function Homepage({msg}:props/*{data}:props*/){
             <div>
                 <H.HeroSection/>
             </div>
-            <h1>{msg}</h1>
+            <h1></h1>
             <section className='mb-40 pb-7'>
                 <div>
                     <H.PersonalCard/>
@@ -106,8 +79,17 @@ export function Homepage({msg}:props/*{data}:props*/){
                     </div>
                 </div>
             <div className={``}>
-            <InfoCard Title={'About Me'} index={false} type={0}
-                text={"bla bla"}
+            <InfoCard 
+                Title={`${ false ?
+                    'Loading..'
+                    :'Sobre mim'
+                }`} 
+                index={false} 
+                type={0}
+                text={`${ false ?
+                    'This message is Loading waiting ...'
+                    :'Olá, meu nome é Adriel e tenho 19 anos. Estou cursando Análise e Desenvolvimento de Sistemas e buscando um estágio na área de tecnologia da informação. Meu objetivo a longo prazo é me tornar um especialista no ecossistema JavaScript e tenho um grande interesse em aprender e aplicar as novas tecnologias nesse campo. Tenho habilidades sólidas em tecnologias como Node.js, React.js, React Native, MongoDB, Express, Tailwind, TypeScript, Next.js, GraphQL, API Rest e tenho fluência no inglês. Além disso, sou uma pessoa apaixonada por aprendizado rápido, comunicação eficiente, criatividade e design, e tenho conhecimentos básicos em contabilidade e mercado financeiro. Meu sonho é um dia desenvolver meu próprio negócio na área de tecnologia e criar soluções incríveis que possam transformar a vida das pessoas. Estou animado para começar essa jornada e contribuir para o crescimento de uma empresa.'
+                }`}
                 />
             <InfoCard Title={'Tecnologies'} index={true} type={0}
                 text={'bla'}
