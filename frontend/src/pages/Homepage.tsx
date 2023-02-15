@@ -7,7 +7,7 @@ import { InfoCard } from '../components/infoCard'; //componente
 import { SwiperCard } from '../components/swiperCard'; //componente
 import { FormCard } from '../components/forms/formCard'; //componente
 
-const GET_MESSAGE = gql`
+/*const GET_MESSAGE = gql`
     query {
         aboutMe
     }
@@ -24,13 +24,11 @@ export async function getStaticProps(){
 
 interface props {
     message:string
-}
+}*/
 
-export function Homepage({message}:props){
+export default function Homepage(){
 
     //const {loading ,data} = useQuery(GET_MESSAGE);
-
-    console.log(message)
 
     const icon = {
         front:<FaDesktop className='w-full h-full'/>,

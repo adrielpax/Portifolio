@@ -28,11 +28,12 @@ export function NavbarPage(){
     //const darkIcon = <FaCloudSun/>
 
     return(
+        <div className='mx-auto max-w-screen-xl'>
         <Navbar 
             color='white'
             fullWidth
             className='fixed mx-auto max-w-screen-xl py-2 px-4 lg:px-8 lg:py-4 
-            z-50 bg-opacity-100 shadow-md md:shadow-xl md:hover:shadow-2xl
+            z-50 bg-opacity-100 shadow-md md:shadow-xl md:hover:shadow-2xl rounded-sm
             dark:border-[#18191a] bg-[#fdfeff] dark:bg-[#18191a]'
         >
             <div className='container mx-auto flex items-center justify-between text-blue-gray-900'>
@@ -88,5 +89,6 @@ export function NavbarPage(){
                 }}/>
             </MobileNav>
         </Navbar>    
+        </div>
     )    
 }

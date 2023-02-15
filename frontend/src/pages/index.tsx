@@ -2,7 +2,7 @@
 //import Image from 'next/image'
 import type {ReactElement} from 'react'
 import { NextPageWithLayout } from './_app'
-import { Homepage } from './Homepage'
+import  Homepage  from './Homepage'
 
 const Page: NextPageWithLayout = ()=>{
   return (
