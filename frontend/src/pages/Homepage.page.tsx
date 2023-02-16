@@ -28,8 +28,6 @@ interface props {
 
 export default function Homepage(){
 
-    //const {loading ,data} = useQuery(GET_MESSAGE);
-
     const icon = {
         front:<FaDesktop className='w-full h-full'/>,
         mobile:<FaMobile className='w-full h-full'/>,
