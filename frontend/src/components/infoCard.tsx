@@ -106,6 +106,7 @@ export function InfoCard({Title,index,type,text}:Props){
                     </div>
                 </div>
                 <div className="relative bottom-0">
+                        <a href="https://github.com/T4SpaX" target={'_blank'}>
                         <Button 
                             variant="text"
                             size='sm'
@@ -117,6 +118,8 @@ export function InfoCard({Title,index,type,text}:Props){
                         >   
                             GitHub
                         </Button>
+                        </a>
+                        <a href="https://www.linkedin.com/in/adriel-lucas/" target={'_blank'}>
                         <Button 
                             variant="text"
                             size='sm'
@@ -126,8 +129,9 @@ export function InfoCard({Title,index,type,text}:Props){
                                 'bg-[whitesmoke] hover:text-white hover:bg-light-blue-500'} 
                             m-4`}
                         > 
-                            Linkedin
+                                Linkedin
                         </Button>
+                        </a>
                 </div>
                 </>) : (
                 <div className={`p-4 grid md:grid-flow-col ${!theme?'text-blue-gray-600':'text-[whitesmoke]'}`}>

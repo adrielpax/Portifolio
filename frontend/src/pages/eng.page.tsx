@@ -7,26 +7,8 @@ import { InfoCard } from '../components/infoCard'; //componente
 import { SwiperCard } from '../components/swiperCard'; //componente
 import { FormCard } from '../components/forms/formCard'; //componente
 
-/*const GET_MESSAGE = gql`
-    query {
-        aboutMe
-    }
-`;
 
-export async function getStaticProps(){
-    const {data} = await useQuery(GET_MESSAGE);
-    return {
-        props:{
-            message:data.aboutMe
-        }
-    }
-}
-
-interface props {
-    message:string
-}*/
-
-export default function Homepage(){
+export default function ENG_PAGE(){
 
     const icon = {
         front:<FaDesktop className='w-full h-full'/>,
@@ -39,7 +21,7 @@ export default function Homepage(){
             dark:bg-gradient-to-r dark:to-[#8000f2] dark:from-[#911037]
         ">
             <div>
-                <H.HeroSection text='Sua Historia começa com quem faz Historia !'/>
+                <H.HeroSection text='Your story begins with those who are prepared to make history.'/>
             </div>
             <h1></h1>
             <section className='mb-40 pb-7'>
@@ -85,13 +67,13 @@ export default function Homepage(){
             <InfoCard 
                 Title={`${ false ?
                     'Loading..'
-                    :'Sobre mim'
+                    :'About Me'
                 }`} 
                 index={false} 
                 type={0}
                 text={`${ false ?
                     'This message is Loading waiting ...'
-                    :'Olá, meu nome é Adriel e tenho 19 anos. Estou cursando Análise e Desenvolvimento de Sistemas e buscando um estágio na área de tecnologia da informação. Meu objetivo a longo prazo é me tornar um especialista no ecossistema JavaScript e tenho um grande interesse em aprender e aplicar as novas tecnologias nesse campo. Tenho habilidades sólidas em tecnologias como Node.js, React.js, React Native, MongoDB, Express, Tailwind, TypeScript, Next.js, GraphQL, API Rest e tenho fluência no inglês. Além disso, sou uma pessoa apaixonada por aprendizado rápido, comunicação eficiente, criatividade e design, e tenho conhecimentos básicos em contabilidade e mercado financeiro. Meu sonho é um dia desenvolver meu próprio negócio na área de tecnologia e criar soluções incríveis que possam transformar a vida das pessoas. Estou animado para começar essa jornada e contribuir para o crescimento de uma empresa.'
+                    :"Hello, my name is Adriel and I'm 19 years old. I'm currently studying Systems Analysis and Development and looking for an internship in the field of information technology. My long-term goal is to become an expert in the JavaScript ecosystem and I have a keen interest in learning and applying new technologies in this field. I have solid skills in technologies such as Node.js, React.js, React Native, MongoDB, Express, Tailwind, TypeScript, Next.js, GraphQL, Rest API, and I'm fluent in English. Additionally, I'm a person passionate about fast learning, efficient communication, creativity, and design, and I have basic knowledge in accounting and financial markets. My dream is to one day develop my own business in the technology industry and create incredible solutions that can transform people's lives. I'm excited to start this journey and contribute to the growth of a company.."
                 }`}
                 />
             <InfoCard Title={'Tecnologies'} index={true} type={0}

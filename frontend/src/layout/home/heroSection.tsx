@@ -1,4 +1,8 @@
-export function HeroSection(){
+interface Prop {
+    text: string
+}
+
+export function HeroSection({text}:Prop){
     return(
     <>
         <div className="relative pt-16 pb-32
@@ -15,7 +19,8 @@ export function HeroSection(){
                     <div className="w-full lg:w-6/12 px-4 mx-auto text-center">
                         <div>
                             <div className="text-white font-semibold text-3xl md:text-5xl">
-                                Sua historia começa com quem faz historia !
+                                {/*Sua historia começa com quem faz historia !*/}
+                                {text}
                             </div>
                             <p className="text-white">
                                 "#NeverStopLearning"
