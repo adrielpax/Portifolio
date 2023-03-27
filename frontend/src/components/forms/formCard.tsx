@@ -1,15 +1,38 @@
 import { useState } from 'react'
-import {Button, Input} from '@material-tailwind/react'
 import renderThemeChanger from '../../hook/darkModeHook';
 import { TextArea } from './input/textArea';
+import {
+    Popover,PopoverHandler,PopoverContent,Button,Input
+} from '@material-tailwind/react';
+
 
 
 export function FormCard(){
     const [email,setEmail] = useState(String);
     const theme =  renderThemeChanger()
     return(
-        <div className={`${theme? 'bg-[#141414]':'bg-white shadow shadow-blue-gray-200'} rounded p-4 w-96 h-[18rem] md:w-[28rem] mx-auto
+        <div className={`        
+        rounded p-4 lg:w-96 h-auto md:w-[28rem] mx-auto
+        ${theme? 'bg-[#141414]':'bg-white shadow shadow-blue-gray-200'} 
         border-b-4 ${theme?'border-[#8800ff]':'border-light-blue-500'}`}>
+
+            <div className='flex mx-auto'>
+            <Popover 
+            animate={{
+                mount: { scale: 1, y: 0 },
+                unmount: { scale: 0, y: 25 },
+                }}
+            >
+                <PopoverHandler>
+                    <Button className='mx-auto text-md' 
+                    variant='text'>Me mande uma mensagem</Button>
+                </PopoverHandler>
+                <PopoverContent>
+                    Responderei no maximo em UM{'(1)'} dia ou Dois{'(2)'}
+                </PopoverContent>
+            </Popover>
+            </div>
+
             <form 
                 className='flex flex-col md:flex-col gap-2 items-center justify-center bg-transparent mx-auto my-5 w-auto h-auto'
             >

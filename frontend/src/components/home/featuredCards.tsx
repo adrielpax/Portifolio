@@ -43,6 +43,10 @@ export function HomeCard({props}:Props){
             ${theme? 'bg-[#141414]':'bg-white border-b-4 border-light-blue-500'}`}>
                 <Tooltip content={props.content}
                     interactive={true}
+                    animate={{
+                        mount: { scale: 1, y: 0 },
+                        unmount: { scale: 0, y: 25 },
+                      }}
                 >
                     <Button variant='filled' 
                     className={`${props.color} p-3 
@@ -55,7 +59,7 @@ export function HomeCard({props}:Props){
                 <h6 className={`text-xl font-semibold ${theme? 'text-[whitesmoke]':'text-blue-gray-600'}`}>
                     {props.title}
                 </h6>
-                <p className={`mt-2 mb-4 text-slate-500 text-justify ${theme?'text-[whitesmoke]':'text-blue-gray-600'}`}>
+                <p className={`mt-2 mb-4 text-slate-500 text-center ${theme?'text-[whitesmoke]':'text-blue-gray-600'}`}>
                     {props.text}
                 </p>
             </div>

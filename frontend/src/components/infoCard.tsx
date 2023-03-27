@@ -86,12 +86,13 @@ export function InfoCard({Title,index,type,text}:Props){
     }
 
     return(
-        <div className={`${theme? 'bg-[#141414]':'bg-white border-b-4 border-light-blue-500'} 
-            w-[80%] mx-auto my-12 h-auto rounded shadow-md md:shadow-xl md:hover:shadow-2xl`}>
+        <div className={` scale-90 lg:w-[80%] mx-auto my-12 h-auto rounded shadow-md md:shadow-xl md:hover:shadow-2xl
+            ${theme? 'bg-[#141414]':'bg-white border-b-4 border-light-blue-500'} 
+            `}>
             <div className="p-8">
                 <Typography 
                     variant="h5"
-                    className={`${!theme?'text-blue-gray-600':'text-[whitesmoke]'}`}
+                    className={`text-2xl ${!theme?'text-blue-gray-600':'text-[whitesmoke]'}`}
                 >
                     {Title}
                 </Typography>
@@ -99,19 +100,19 @@ export function InfoCard({Title,index,type,text}:Props){
                 <>
                 <div className={`p-4 text-justify ${!theme?'text-blue-gray-600':'text-[whitesmoke]'}`}>
                     <div>
-                        <p>
+                        <p className="text-xl">
                             {text}
                         </p>
                         <p className="mt-2"></p>
                     </div>
                 </div>
-                <div className="relative bottom-0">
+                <div className="flex relative bottom-0 justify-around lg:justify-start">
                         <a href="https://github.com/T4SpaX" target={'_blank'}>
                         <Button 
                             variant="text"
-                            size='sm'
+                            size='lg'
                             color="light-blue"
-                            className={`rounded ${theme?
+                            className={`rounded scale-150 lg:scale-100 ${theme?
                                 'bg-[#3131315e] text-white hover:bg-[#540DFA]':
                                 'bg-[whitesmoke] hover:text-white hover:bg-light-blue-500'} 
                             m-4`}
@@ -122,9 +123,9 @@ export function InfoCard({Title,index,type,text}:Props){
                         <a href="https://www.linkedin.com/in/adriel-lucas/" target={'_blank'}>
                         <Button 
                             variant="text"
-                            size='sm'
+                            size='lg'
                             color="light-blue"
-                            className={`rounded ${theme?
+                            className={`rounded scale-150 lg:scale-100 ${theme?
                                 'bg-[#3131315e] text-white hover:bg-[#540DFA]':
                                 'bg-[whitesmoke] hover:text-white hover:bg-light-blue-500'} 
                             m-4`}
@@ -134,7 +135,7 @@ export function InfoCard({Title,index,type,text}:Props){
                         </a>
                 </div>
                 </>) : (
-                <div className={`p-4 grid md:grid-flow-col ${!theme?'text-blue-gray-600':'text-[whitesmoke]'}`}>
+                <div className={`p-4 grid grid-flow-col ${!theme?'text-blue-gray-600':'text-[whitesmoke]'}`}>
                     <div className="relative p-4">
                             {!type ? 
                             (<>

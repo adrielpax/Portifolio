@@ -19,6 +19,10 @@ export function ListTech({props}:Props){
             interactive={true}
             content={props.text}
             placement={'top'}
+            animate={{
+                mount: { scale: 1, y: 0 },
+                unmount: { scale: 0, y: 25 },
+              }}
             >
             <Button
                 variant='filled' 
