@@ -42,7 +42,7 @@ export default function Homepage(){
                 <H.HeroSection text='Sua Historia começa com quem faz Historia !'/>
             </div>
             <h1></h1>
-            <section className='mb-40 pb-7'>
+            <section className='pb-7'>
                 <div>
                     <H.PersonalCard/>
                 </div>
