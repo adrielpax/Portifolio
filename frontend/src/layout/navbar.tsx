@@ -1,5 +1,6 @@
 //import Link from 'next/link';
-import {useState,useEffect} from 'react';
+import dynamic from 'next/dynamic';
+import React,{useState,useEffect,Suspense} from 'react';
 import {
     MenuClose,
     MenuOpen
@@ -13,7 +14,10 @@ import {
     IconButton,
 } from '@material-tailwind/react';
 import { DarkMode } from '../components/darkModeButtom';
-import { DialogCard } from '../components/dialogCard';
+import { DialogButton } from '../components/dialog/dialogButton';
+import Modal from '../components/dialog/dialogCard';
+
+const DialogCard = React.lazy(()=>import('../components/dialog/dialogCard'))
 
 export function NavbarPage(){
     const [openNav,setOpenNav] = useState(false)
@@ -23,7 +27,7 @@ export function NavbarPage(){
             "resize",
             ()=> window.innerWidth >= 960 && setOpenNav(false)
         )
-    },[])    
+    },[])  
 
     //const darkIcon = <FaCloudSun/>
 
@@ -49,12 +53,13 @@ export function NavbarPage(){
                 <div className='flex flex-1 flex-row-reverse mr-8'>
                     <DarkMode/>
                 </div>
-               
-                <DialogCard prop={{
+                <DialogButton prop={{
                     text:'Contact Me',
                     full:false,
-                    hidden:'hidden'
-                }}/>
+                    hidden:'hidden',
+                }}
+                
+                />
 
                 <IconButton
                     variant='text'
@@ -82,10 +87,10 @@ export function NavbarPage(){
             </div>
             <MobileNav open={openNav}>
                 {/*NavList*/}
-                <DialogCard prop={{
+                <DialogButton prop={{
                     text:'Contact Me',
                     full:true,
-                    hidden:'hidden-none'
+                    hidden:'hidden-none',
                 }}/>
             </MobileNav>
         </Navbar>    

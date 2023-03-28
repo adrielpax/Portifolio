@@ -2,14 +2,15 @@ import { useState } from 'react'
 import renderThemeChanger from '../../hook/darkModeHook';
 import { TextArea } from './input/textArea';
 import {
-    Popover,PopoverHandler,PopoverContent,Button,Input
+    Button,Input,Tooltip
 } from '@material-tailwind/react';
 
 
 
 export function FormCard(){
     const [email,setEmail] = useState(String);
-    const theme =  renderThemeChanger()
+    const [name,setName] = useState(String);
+    const theme =  renderThemeChanger();    
     return(
         <div className={`        
         rounded p-4 lg:w-96 h-auto md:w-[28rem] mx-auto
@@ -17,20 +18,10 @@ export function FormCard(){
         border-b-4 ${theme?'border-[#8800ff]':'border-light-blue-500'}`}>
 
             <div className='flex mx-auto'>
-            <Popover 
-            animate={{
-                mount: { scale: 1, y: 0 },
-                unmount: { scale: 0, y: 25 },
-                }}
-            >
-                <PopoverHandler>
-                    <Button className='mx-auto text-md' 
-                    variant='text'>Me mande uma mensagem</Button>
-                </PopoverHandler>
-                <PopoverContent>
-                    Responderei no maximo em UM{'(1)'} dia ou Dois{'(2)'}
-                </PopoverContent>
-            </Popover>
+
+                <h2 className='mx-auto text-xl text-gray-800'
+                >Me mande uma mensagem</h2>
+                    
             </div>
 
             <form 
@@ -38,14 +29,33 @@ export function FormCard(){
             >
                 <Input 
                     className={``}
+                    type='nome'
+                    variant='outlined'
+                    label='Seu nome ou Empresa'
+                    color={theme?'purple':'blue'}
+                    value={name}
+                    onChange={({target:{value}})=>setName(value)}
+                /> 
+                <Input 
+                    className={``}
                     type='email'
                     variant='outlined'
-                    label='Your email'
+                    label='Seu email'
                     color={theme?'purple':'blue'}
                     value={email}
                     onChange={({target:{value}})=>setEmail(value)}
                 />  
                 <TextArea/>
+
+                <Tooltip
+                interactive={true}
+                content={'Responderei em no maximo (1)um ou (2)Dois Dias'}
+                placement={'top'}
+                animate={{
+                    mount: { scale: 1, y: 0 },
+                    unmount: { scale: 0, y: 25 },
+                  }}
+                >
                 <Button 
                     variant='text'
                     className={`${theme?
@@ -59,6 +69,7 @@ export function FormCard(){
                         Send a email
                     </a>
                 </Button>
+                </Tooltip>
             </form>
         </div>
     )
