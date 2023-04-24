@@ -32,11 +32,11 @@ export function NavbarPage(){
     //const darkIcon = <FaCloudSun/>
 
     return(
-        <div className='mx-auto max-w-screen-xl'>
+        <div className='mx-auto'>
         <Navbar 
             color='white'
             fullWidth
-            className='fixed mx-auto max-w-screen-xl py-2 px-4 lg:px-8 lg:py-4 
+            className='fixed mx-auto py-2 px-4 lg:px-8 lg:py-4 
             z-50 bg-opacity-100 shadow-md md:shadow-xl md:hover:shadow-2xl rounded-sm
             dark:border-[#18191a] bg-[#fdfeff] dark:bg-[#18191a]'
         >

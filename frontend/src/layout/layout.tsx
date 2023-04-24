@@ -7,7 +7,7 @@ export function Layout({children}:any){
     return(
      <>
         <NavbarPage/>
-            <main className='h-auto'>{children}</main>
+            <main>{children}</main>
         <Footer/>
      </>
     )

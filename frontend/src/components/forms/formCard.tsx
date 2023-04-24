@@ -4,13 +4,35 @@ import { TextArea } from './input/textArea';
 import {
     Button,Input,Tooltip
 } from '@material-tailwind/react';
-
+import { useFormik } from 'formik';
+import requestBodyForm from '../../hook/requestBodyForm';
 
 
 export function FormCard(){
     const [email,setEmail] = useState(String);
     const [name,setName] = useState(String);
-    const theme =  renderThemeChanger();    
+    const theme =  renderThemeChanger();   
+
+    const {schemaValidation,onSubmitPostApi} = requestBodyForm()
+
+    const { values, 
+        handleBlur, 
+        handleChange, 
+        handleSubmit,
+        errors,
+        touched,
+        } = useFormik({
+        initialValues:{
+            name:'',
+            email:'',
+            message:'',
+            date:new Date().toLocaleDateString()
+        },
+        validationSchema: schemaValidation,
+        onSubmit: onSubmitPostApi,
+    })
+
+
     return(
         <div className={`        
         rounded p-4 lg:w-96 h-auto md:w-[28rem] mx-auto
@@ -25,7 +47,9 @@ export function FormCard(){
             </div>
 
             <form 
-                className='flex flex-col md:flex-col gap-2 items-center justify-center bg-transparent mx-auto my-5 w-auto h-auto'
+                onSubmit={handleSubmit}
+                className='flex flex-col md:flex-col gap-2 items-center 
+                justify-center bg-transparent mx-auto my-5 w-auto h-auto'
             >
                 <Input 
                     className={``}
@@ -37,13 +61,16 @@ export function FormCard(){
                     onChange={({target:{value}})=>setName(value)}
                 /> 
                 <Input 
-                    className={``}
+                    className={`${errors.email && touched.email? 
+                        'text-pink-500':
+                        ''}`}
                     type='email'
                     variant='outlined'
                     label='Seu email'
                     color={theme?'purple':'blue'}
-                    value={email}
-                    onChange={({target:{value}})=>setEmail(value)}
+                    value={values.email}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
                 />  
                 <TextArea/>
 
@@ -57,17 +84,13 @@ export function FormCard(){
                   }}
                 >
                 <Button 
+                    type='submit'
                     variant='text'
                     className={`${theme?
                         'text-white bg-[#313131b6] hover:bg-[#8000f2] shadow-none hover:shadow hover:shadow-[#8000f2]'
                         :'bg-[#c5c4c46c] hover:bg-light-blue-600 hover:text-white hover:border-white'} h-10 w-48 rounded`}
                     >
-                    <a
-                        target="_blank" 
-                        href={`mailto:adrieldev174@gmail.com?CC=adriel.aprendiz@gmail.com&Subject=%F3la%20gostaria%20de%20entrar%20em%20contato%20com%20voc%EA%20%21&Body=%0A`}
-                    >
-                        Send a email
-                    </a>
+                    Send a email
                 </Button>
                 </Tooltip>
             </form>

@@ -14,7 +14,7 @@ const Page: NextPageWithLayout = ()=>{
 
 Page.getLayout = function getLayout(page:ReactElement){
   return(
-    <main className='mx-auto'>{page}</main>
+    <main className=''>{page}</main>
   )
 }
 
