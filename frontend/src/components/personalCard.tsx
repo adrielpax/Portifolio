@@ -8,11 +8,12 @@ import {
   Tooltip,
   Button,
 } from "@material-tailwind/react";
-import renderThemeChanger from "../../hook/darkModeHook";
+import renderThemeChanger from "../hook/darkModeHook";
 import Image from "next/image";
 
-import { ListTech } from "../../utils/list-tech";
-import icons from "../../utils/icons/icons";
+import { ListTech } from "../utils/list-tech";
+import icons from "../utils/icons/icons";
+import DownloadButton from "./buttons/downloadButton";
 
 export function PersonalCard() {
   const [scrolled, setScrolled] = useState(false);
@@ -106,22 +107,6 @@ export function PersonalCard() {
                 </Button>
               </Tooltip>
             </a>
-            {/* <a
-          href="https://instagram.com/adriel_adrion"
-          target="_blank"
-          rel="noreferrer"
-          >
-          <Tooltip content="Instagram">
-          <Button
-          size="lg"
-          color="blue"
-          className="flex items-center gap-3 rounded-none p-2  bg-transparent text-blue-gray-900"
-          variant="text"
-          >
-          {icons.instagram}
-          </Button>
-          </Tooltip>
-        </a> */}
           </div>
         </CardBody>
 
@@ -233,13 +218,15 @@ export function PersonalCard() {
             <ListTech
               props={{
                 text: "Axios",
-                color:
-                  " rounded-full bg-purple-500",
+                color: " rounded-full bg-purple-500",
                 colorIcon: "text-white",
                 icon: icons.axios,
                 mobile: "",
               }}
             />
+          </div>
+          <div className="flex w-full justify-center mx-auto mt-10">
+            <DownloadButton fileUrl={"/Curriculum-Adriel.pdf"} fileName={"curriculum-Adriel.pdf"} />
           </div>
         </CardFooter>
       </Card>

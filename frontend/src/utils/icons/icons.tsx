@@ -12,6 +12,7 @@ import {
   SiTypescript,
   SiExpress,
 } from "react-icons/si";
+import {BiDownload} from 'react-icons/bi'
 import { TbBrandNextjs } from "react-icons/tb";
 
 const axios = (
@@ -38,6 +39,7 @@ const icons = {
   typescript: <SiTypescript className="h-[100%] w-[100%]" />,
   axios: axios,
   express: <SiExpress className="h-[100%] w-[100%]" />,
+  download: <BiDownload className="h-6 w-6" />,
   next: <TbBrandNextjs className="h-[100%] w-[100%]" />,
   expo: <SiExpo className="h-[100%] w-[100%]" />,
   brasil: <GiBrazilFlag className="h-[100%] w-[100%]" />,

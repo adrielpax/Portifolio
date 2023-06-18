@@ -1,50 +1,84 @@
-import {
-    Card,
-    CardHeader,
-    CardBody,
-    CardFooter,
-    Typography,
-    Chip
-} from "@material-tailwind/react";
 import Image from "next/image";
-import renderThemeChanger from '../hook/darkModeHook';
-import {TbWorld} from 'react-icons/tb';
+import React from "react";
+import { ButtonComponent } from "./index";
 
-export default function ProjectCard(){
-    const theme = renderThemeChanger();
-    return(
-        <Card className={`${theme?'bg-[#313131b6]':'bg-[#c4c2c250]'} flex mx-auto w-96 rounded my-20 shadow-md md:shadow-xl md:hover:shadow-2xl`}>
-            <CardHeader color="gray" className="relative h-56 rounded text-center">
-                <Image
-                    alt="Image YourFinance"
-                    src="/imgs/yourfinance.png"
-                    fill={true}
-                />
-            </CardHeader>
-            {/*<CardBody className="text-center">
-                <Typography variant="h5" className="mb-2">
-                    YourFinance
-                </Typography>
-                <Typography>
-                    Project use ReactJS , created to control your finance .. its to be a Real Project
-                </Typography>
-            </CardBody>*/}
-            <CardFooter divider className={`flex gap-2 justify-between py-3 ${theme?'border-[#8800ff]':'border-light-blue-500'}`}>
-                <Typography variant="small" className='flex gap-2 justify-between'>
-                    <a 
-                        className={`flex items-center gap-1 ${theme?'text-[#d324ea]':'text-light-blue-500'}`}
-                        target="_blank"
-                        href="https://yourfinance.netlify.app/" rel="noreferrer">
-                        <TbWorld 
-                        className="m-1 mt-0"
-                        />
-                        Site
-                    </a>
-                    <Chip variant="filled" value={"Tecnical Project"} 
-                        className={`${theme?'bg-[#8800ff]':'bg-light-blue-500'}`}
-                    />
-                </Typography>
-            </CardFooter>
-        </Card>
-    )
+
+interface Project {
+  id: number;
+  title: string;
+  subtitle: string;
+  image: string;
+  link: string;
 }
+
+interface GalleryProps {
+  projects: Project[];
+  columns: number;
+}
+
+const Gallery: React.FC<GalleryProps> = ({ projects, columns }) => {
+  const rows = Math.ceil(projects.length / columns);
+
+  const renderProjects = () => {
+    const renderedProjects = [];
+
+    for (let row = 0; row < rows; row++) {
+      const projectRow = [];
+
+      for (let col = 0; col < columns; col++) {
+        const index = row * columns + col;
+
+        if (index < projects.length) {
+          const project = projects[index];
+
+          projectRow.push(
+            <div
+              key={project.id}
+              className={`col-span-1 md:col-span-${12 / columns} mb-4 md:mb-0`}
+            >
+              <div className="relative w-auto">
+                <a href={project.link} target="_blank" rel="noreferrer">
+                 {project.image? <Image
+                    src={project.image}
+                    alt={project.title}
+                    width={150}
+                    height={150}
+                    className="w-auto h-auto object-cover rounded-t"
+                  />:<div className="md:w-80 h-80 object-cover rounded-t text-white flex
+                  items-center justify-center bg-blue-gray-600">Em Breve</div>}
+                </a>
+                <div className="block inset-0 bg-black rounded-b bg-opacity-20  flex-col items-center justify-center p-4">
+                  <h2 className="text-white text-2xl text-center mb-2">
+                    {project.title}
+                  </h2>
+                  <p className="text-white text-lg text-center">
+                    {project.subtitle}
+                  </p>
+                  <button className="w-full flex items-center justify-center mt-4 
+                  disabled:hidden"
+                  disabled={project.link?false:true}>
+                    <a href={project.link} target="_blank" rel="noreferrer">
+                      <ButtonComponent>Ver Mais</ButtonComponent>
+                    </a>
+                  </button>
+                </div>
+              </div>
+            </div>
+          );
+        }
+      }
+
+      renderedProjects.push(
+        <div key={row} className="flex gap-4 flex-col md:flex-row md:-mx-4">
+          {projectRow}
+        </div>
+      );
+    }
+
+    return renderedProjects;
+  };
+
+  return <div>{renderProjects()}</div>;
+};
+
+export default Gallery;

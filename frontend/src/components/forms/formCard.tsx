@@ -1,12 +1,14 @@
-import { Button, Input, Textarea, Tooltip } from "@material-tailwind/react";
+import { ChangeEvent, useState } from "react";
 import { useFormik } from "formik";
 import requestBodyForm from "../../hook/requestBodyForm";
-import InputRow from "./input/inputRow";
-import { useState } from "react";
+
+import { TextAreaRow,InputRow } from "./input";
+import {ButtonComponent} from "../index";
 
 export function FormCard() {
   const [email, setEmail] = useState(String);
   const [name, setName] = useState(String);
+  const [message, setMessage] = useState(String);
 
   const { schemaValidation } = requestBodyForm();
 
@@ -42,15 +44,11 @@ export function FormCard() {
 
   return (
     <div className={`rounded p-4 w-full h-auto mx-auto`}>
-      {/* <div className="flex mx-auto">
-        <h2 className="mx-auto text-xl text-gray-800">Me mande uma mensagem</h2>
-      </div> */}
-
       <form
         onSubmit={handleSubmit}
-        // className="flex flex-col md:flex-col items-center justify-center bg-transparent "
+        className="m-0"
       >
-        <div className="flex justify-around">
+        <div className="flex flex-col items-center gap-2">
           <InputRow
             id={"name"}
             type={"text"}
@@ -68,52 +66,24 @@ export function FormCard() {
             value={email}
           />
         </div>
-        {/* <Input
-          id="name"
-          className={`${errors.name && touched.name ? "text-pink-500" : ""}`}
-          type="text"
-          variant="outlined"
-          label="Seu nome ou Empresa"
-          color={"blue"}
-          value={values.name}
-          onChange={handleChange}
-        />
-        <Input
-          id="email"
-          className={`${errors.email && touched.email ? "text-pink-500" : ""}`}
-          type="email"
-          variant="outlined"
-          label="Seu email"
-          color={"blue"}
-          value={values.email}
-          onChange={handleChange}
-        />
-        <Textarea
-          id="message"
-          className={`${errors.message && touched.message ? "text-pink-500" : ""}`}
-          value={values.message}
-          label="Deixe uma mensagem!"
-          color={`blue`}
-          onChange={handleChange}
-        /> */}
-        {/* 
-        <Tooltip
-          interactive={true}
-          content={"Responderei em no maximo (1)um ou (2)Dois Dias"}
-          placement={"top"}
-          animate={{
-            mount: { scale: 1, y: 0 },
-            unmount: { scale: 0, y: 25 },
-          }}
+        <div className="flex justify-center mt-4">
+          <TextAreaRow 
+          id={"message"} 
+          holder={""} 
+          label="Mensagem"
+          handle={(e:any)=>setMessage(e.target.value)}
+          value={message}
+          />
+        </div>
+        <div className="w-full flex justify-center mb-4">
+
+        <ButtonComponent 
+          type="submit"
+          onClick={onSubmitPostApi}
         >
-          <Button
-            type="submit"
-            variant="text"
-            className={`bg-[#c5c4c46c] hover:bg-light-blue-600 hover:text-white hover:border-white h-10 w-48 rounded`}
-          >
-            Send a email
-          </Button>
-        </Tooltip> */}
+          Enviar mensagem
+        </ButtonComponent>
+        </div>
       </form>
     </div>
   );

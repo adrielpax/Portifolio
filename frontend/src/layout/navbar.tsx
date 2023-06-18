@@ -1,20 +1,13 @@
 //import Link from 'next/link';
-import dynamic from "next/dynamic";
-import React, { useState, useEffect, Suspense } from "react";
+import React, { useState, useEffect } from "react";
 import { MenuClose, MenuOpen } from "../utils/nav-utils";
 // M of Material tailwind
 import {
   Typography,
   Navbar,
-  Button,
   MobileNav,
   IconButton,
 } from "@material-tailwind/react";
-import { DarkMode } from "../components/darkModeButtom";
-import { DialogButton } from "../components/dialog/dialogButton";
-import Modal from "../components/dialog/dialogCard";
-
-const DialogCard = React.lazy(() => import("../components/dialog/dialogCard"));
 
 export function NavbarPage() {
   const [openNav, setOpenNav] = useState(false);
@@ -48,17 +41,6 @@ export function NavbarPage() {
               Adriel Dev
             </span>
           </Typography>
-          {/*<div className='hidden lg:block'>{NavList}</div>*/}
-          {/* <div className='flex flex-1 flex-row-reverse mr-8'>
-                    <DarkMode/>
-                </div> */}
-          {/* <DialogButton
-            prop={{
-              text: "Contact Me",
-              full: false,
-              hidden: "hidden",
-            }}
-          /> */}
 
           <IconButton
             variant="text"
@@ -74,16 +56,7 @@ export function NavbarPage() {
             {openNav ? <>{MenuOpen}</> : <>{MenuClose}</>}
           </IconButton>
         </div>
-        <MobileNav open={openNav}>
-          {/*NavList*/}
-          <DialogButton
-            prop={{
-              text: "Contact Me",
-              full: true,
-              hidden: "hidden-none",
-            }}
-          />
-        </MobileNav>
+        <MobileNav open={openNav}>{/*NavList*/}</MobileNav>
       </Navbar>
     </div>
   );

@@ -33,7 +33,7 @@ const InputRow:React.FC<inputProps> = ({ id, type, holder, value, handle, label 
                 <input
                     ref={inputRef}
                     className={`border border-gray-500 rounded-md z-50 appearance-none 
-                    bg-white w-full md:w-full py-3 px-3 text-gray-800 leading-tight focus:outline-none
+                    bg-white w-80 md:w-96 py-3 px-3 text-gray-800 leading-tight focus:outline-none
                      focus:bg-white focus:ring-2 focus:ring-blue-500
                      ${isFocused ? 'focus:shadow-outline bg-white' : ''}`}
                     name={id}
