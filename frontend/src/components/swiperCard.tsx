@@ -48,12 +48,12 @@ export function SwiperCard(){
             //onSwiper={(swiper)=>{}}
             /** ${scrolled? 'opacity-100 transition-opacity ease-in delay-600':
             'opacity-0 transition-opacity ease-out delay-600'} */
-            className={`${theme?'bg-[#141414]':'bg-white border-b-4 border-light-blue-500'} h-auto md:w-[80%] md:mx-auto my-20 rounded  
+            className={`bg-white border-b-4 border-light-blue-500 h-auto md:w-[80%] md:mx-auto my-20 rounded  
             shadow-md md:shadow-xl md:hover:shadow-2xl `}
         >
             <SwiperSlide>
                 <h3 
-                    className={`${theme?'text-[whitesmoke]':'text-blue-gray-600'} 
+                    className={`${theme?'text-[whitesmoke]':'text-white'} 
                     text-xl font-bold text-center mt-4 mx-auto w-[100%]`}
                 >
                     YourFinance

@@ -1,7 +1,7 @@
 import React from 'react'; 
 import { useQuery , gql} from '@apollo/client';
 
-import * as H from '../components/home/home';//componente de layout footer e navbar
+import * as H from '../components/homeComponents/home';//componente de layout footer e navbar
 import {FaDesktop,FaMobile,FaDatabase} from 'react-icons/fa'; //componente icone utilitario
 import { InfoCard } from '../components/infoCard'; //componente
 import { SwiperCard } from '../components/swiperCard'; //componente

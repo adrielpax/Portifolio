@@ -3,13 +3,15 @@
 const withMT = require("@material-tailwind/react/utils/withMT");
 
 module.exports = withMT({
-  darkMode:'class',
+  darkMode: "class",
   content: [
-    './src/**/*.tsx'
+    "./src/**/*.tsx",
+    // "./node_modules/flowbite/**/cle*.js"
   ],
   theme: {
     extend: {
-      sans:'Roboto, sans-serif'
+      sans: "Roboto, sans-serif",
     },
   },
-})
+  // plugins: [require("flowbite/plugin")],
+});

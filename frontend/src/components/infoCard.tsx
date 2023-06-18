@@ -87,18 +87,18 @@ export function InfoCard({Title,index,type,text}:Props){
 
     return(
         <div className={` scale-90 lg:w-[80%] mx-auto my-12 h-auto rounded shadow-md md:shadow-xl md:hover:shadow-2xl
-            ${theme? 'bg-[#141414]':'bg-white border-b-4 border-light-blue-500'} 
+            ${theme? 'bg-[#141414]':'bg-transparent border-b-4 border-light-blue-500'} 
             `}>
             <div className="p-8">
                 <Typography 
                     variant="h5"
-                    className={`text-2xl ${!theme?'text-blue-gray-600':'text-[whitesmoke]'}`}
+                    className={`text-2xl text-white`}
                 >
                     {Title}
                 </Typography>
             {!index ? (
                 <>
-                <div className={`p-4 text-justify ${!theme?'text-blue-gray-600':'text-[whitesmoke]'}`}>
+                <div className={`p-4 text-justify text-white`}>
                     <div>
                         <p className="text-xl">
                             {text}
@@ -107,7 +107,7 @@ export function InfoCard({Title,index,type,text}:Props){
                     </div>
                 </div>
                 <div className="flex relative bottom-0 justify-around lg:justify-start">
-                        <a href="https://github.com/T4SpaX" target={'_blank'}>
+                        <a href="https://github.com/T4SpaX" target={'_blank'} rel="noreferrer">
                         <Button 
                             variant="text"
                             size='lg'
@@ -120,7 +120,7 @@ export function InfoCard({Title,index,type,text}:Props){
                             GitHub
                         </Button>
                         </a>
-                        <a href="https://www.linkedin.com/in/adriel-lucas/" target={'_blank'}>
+                        <a href="https://www.linkedin.com/in/adriel-lucas/" target={'_blank'} rel="noreferrer">
                         <Button 
                             variant="text"
                             size='lg'
@@ -161,7 +161,7 @@ export function InfoCard({Title,index,type,text}:Props){
                                 /> 
                                 <ListTech 
                                     props={{
-                                        text: "React JS",
+                                        text: "ReactJS",
                                         color: "bg-light-blue-400",
                                         colorIcon: "text-white",
                                         icon:icons.react,

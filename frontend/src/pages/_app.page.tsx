@@ -6,7 +6,7 @@ import { ApolloProvider } from '@apollo/client';
 import client from '../graphql/apollo-client';
 
 import { ThemeProvider } from '@material-tailwind/react';
-import { ThemeProvider as ThemeNext } from 'next-themes';
+//import { ThemeProvider as ThemeNext } from 'next-themes';
 import { Layout } from '../layout/layout';
 
 import '../styles/global.css';
@@ -18,13 +18,13 @@ export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
 type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout
 }
-
+/*<ThemeNext enableSystem={true} attribute="class">*/
+/*</ThemeNext>*/
 export default function App({ Component, pageProps }:AppPropsWithLayout) {
   
   const getLayout = Component.getLayout ?? ((page) => page)
-
+  
   return getLayout(
-    <ThemeNext enableSystem={true} attribute="class">
     
     <ThemeProvider>
       <Layout>
@@ -40,6 +40,5 @@ export default function App({ Component, pageProps }:AppPropsWithLayout) {
       </Layout>
     </ThemeProvider>
 
-  </ThemeNext>
   )
 }

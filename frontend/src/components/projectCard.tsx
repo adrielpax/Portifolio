@@ -34,7 +34,7 @@ export default function ProjectCard(){
                     <a 
                         className={`flex items-center gap-1 ${theme?'text-[#d324ea]':'text-light-blue-500'}`}
                         target="_blank"
-                        href="https://yourfinance.netlify.app/">
+                        href="https://yourfinance.netlify.app/" rel="noreferrer">
                         <TbWorld 
                         className="m-1 mt-0"
                         />
