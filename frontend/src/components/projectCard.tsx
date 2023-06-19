@@ -78,7 +78,7 @@ const Gallery: React.FC<GalleryProps> = ({ projects, columns }) => {
       }
 
       renderedProjects.push(
-        <div key={row} className="flex gap-4 flex-col md:flex-row md:-mx-4">
+        <div key={row} className="flex gap-4 flex-col md:flex-row mb-4 md:-mx-4">
           {projectRow}
         </div>
       );

@@ -1,5 +1,5 @@
 import React from "react";
-import dynamic from 'next/dynamic';
+import dynamic from "next/dynamic";
 //componente de layout footer e navbar
 import {
   InfoCard,
@@ -17,12 +17,15 @@ const InfoCardComponent = React.lazy(() => import("../components/infoCard"));
 const FeaturesComponent = React.lazy(
   () => import("../components/featuredCards")
 );
-const ProjectComponent = dynamic(async() => await import("../components/projectCard"),{
-  ssr:false,
-  loading:()=>{
-    return <Loading/>
+const ProjectComponent = dynamic(
+  async () => await import("../components/projectCard"),
+  {
+    ssr: false,
+    loading: () => {
+      return <Loading />;
+    },
   }
-});
+);
 
 export default function Homepage() {
   const [isLoading, setIsLoading] = React.useState(true);
@@ -32,7 +35,7 @@ export default function Homepage() {
       setIsLoading(false);
     }, 3000);
   }, []);
-  
+
   const projects = [
     {
       id: 1,
@@ -42,14 +45,21 @@ export default function Homepage() {
       link: "https://yourfinance.netlify.app/",
     },
     {
-      id: 1,
+      id: 2,
+      title: "Elluxus",
+      subtitle: "Create With Next.JS is a Freelancer real project",
+      image: "/imgs/elluxus.gif",
+      link: "https://elluxus.com/",
+    },
+    {
+      id: 3,
       title: "Ecommerce",
       subtitle: "em breve",
       image: "",
       link: "",
     },
     {
-      id: 1,
+      id: 4,
       title: "FullStack Dashboard",
       subtitle: "em Breve",
       image: "",
@@ -115,7 +125,7 @@ export default function Homepage() {
             </React.Suspense>
             <div className="flex justify-center gap-4">
               <React.Suspense fallback={<Loading />}>
-                <ProjectComponent projects={projects} columns={3} />
+                <ProjectComponent projects={projects} columns={2} />
               </React.Suspense>
             </div>
           </div>
