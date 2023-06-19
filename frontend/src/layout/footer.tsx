@@ -62,7 +62,7 @@ export function Footer() {
                 className="text-blue-gray-900 hover:text-light-blue-300
                   dark:text-white dark:hover:text-[#a53fff]"
               >
-                Adriel Dev
+                adrielDev174@gmail.com
               </a>
               .
             </div>

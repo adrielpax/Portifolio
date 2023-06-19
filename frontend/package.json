@@ -10,7 +10,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@apollo/client": "^3.7.7",
     "@material-tailwind/react": "^1.2.4",
     "@types/node": "18.11.9",
     "@types/react": "18.0.25",
@@ -18,13 +17,13 @@
     "apollo-boost": "^0.4.9",
     "apollo-server": "^3.11.1",
     "apollo-server-express": "^3.11.1",
+    "axios": "^1.4.0",
     "eslint": "8.26.0",
     "eslint-config-next": "13.0.2",
     "express": "^4.18.2",
     "firebase": "^9.17.1",
     "formik": "^2.2.9",
     "googleapis": "^114.0.0",
-    "graphql": "^16.6.0",
     "next": "13.0.2",
     "next-intl": "^2.9.1",
     "next-themes": "^0.2.1",

@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/homeComponents/home.js", "src/utils/scriptsavuse.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/homeComponents/home.js", "src/utils/scriptsavuse.js", "src/pages/api/submit.js"],
   "exclude": ["node_modules"]
 }

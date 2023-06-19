@@ -2,8 +2,8 @@ import { ReactElement, ReactNode } from 'react';
 import { NextPage } from 'next';
 import type { AppProps } from 'next/app';
 import { NextIntlProvider } from 'next-intl';
-import { ApolloProvider } from '@apollo/client';
-import client from '../graphql/apollo-client';
+// import { ApolloProvider } from '@apollo/client';
+// import client from '../graphql/apollo-client';
 
 import { ThemeProvider } from '@material-tailwind/react';
 //import { ThemeProvider as ThemeNext } from 'next-themes';
@@ -32,9 +32,9 @@ export default function App({ Component, pageProps }:AppPropsWithLayout) {
         <NextIntlProvider 
           messages={pageProps.messages}> 
           
-          <ApolloProvider client={client}>
+          {/* <ApolloProvider client={client}> */}
             <Component {...pageProps} />  
-          </ApolloProvider>
+          {/* </ApolloProvider> */}
         
         </NextIntlProvider> 
       </Layout>

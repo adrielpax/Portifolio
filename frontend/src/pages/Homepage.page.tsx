@@ -25,6 +25,14 @@ const ProjectComponent = dynamic(async() => await import("../components/projectC
 });
 
 export default function Homepage() {
+  const [isLoading, setIsLoading] = React.useState(true);
+
+  React.useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+  }, []);
+  
   const projects = [
     {
       id: 1,

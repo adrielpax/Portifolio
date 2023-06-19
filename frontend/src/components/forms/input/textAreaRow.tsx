@@ -5,7 +5,9 @@ interface textareaProps {
   holder: string;
   value?: string;
   label?: string;
+  error?: string;
   handle: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  blur:(e:any)=>void
 }
 
 const TextAreaRow: React.FC<textareaProps> = ({
@@ -14,6 +16,8 @@ const TextAreaRow: React.FC<textareaProps> = ({
   value,
   handle,
   label,
+  error,
+  blur
 }: textareaProps) => {
   const [isFocused, setIsFocused] = useState(false);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
@@ -38,13 +42,15 @@ const TextAreaRow: React.FC<textareaProps> = ({
       <div className={`relative ${isFocused ? 'mb-2' : 'mb-4'}`}>
         <textarea
           ref={textareaRef}
-          className={`border border-gray-500 rounded-md z-50 appearance-none bg-white w-80 md:w-96 h-64 py-3 px-3 text-gray-800 leading-tight focus:outline-none focus:bg-white focus:ring-2 focus:ring-blue-500 ${isFocused ? 'focus:shadow-outline bg-white' : ''}`}
+          className={`
+          ${error ? "border-pink-500 text-pink-500" : ""}
+          border border-gray-500 rounded-md z-50 appearance-none bg-white w-80 md:w-96 h-64 py-3 px-3 text-gray-800 leading-tight focus:outline-none focus:bg-white focus:ring-2 focus:ring-blue-500 ${isFocused ? 'focus:shadow-outline bg-white' : ''}`}
           name={id}
           value={value}
           onChange={handle}
           placeholder={holder}
           onFocus={handleFocus}
-          onBlur={handleBlur}
+          onBlur={blur}
         ></textarea>
         {label && (
           <label

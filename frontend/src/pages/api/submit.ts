@@ -41,7 +41,7 @@ export default async function handler(
 
     const response = await sheets.spreadsheets.values.append({
       spreadsheetId: GOOGLE_SHEET_ID,
-      range: "Emails!A1:D1",
+      range: "Contact!A2:E2",
       valueInputOption: "USER_ENTERED",
       requestBody: {
         values: [
