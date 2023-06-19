@@ -43,7 +43,8 @@ export function FormCard() {
   }
 
   return (
-    <div className={`rounded p-4 w-full h-auto mx-auto`}>
+    <div  
+    className={`rounded p-4 w-full h-auto mx-auto`}>
       <form
         onSubmit={handleSubmit}
         className="m-0"

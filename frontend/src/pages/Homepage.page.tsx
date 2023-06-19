@@ -1,4 +1,5 @@
 import React from "react";
+import dynamic from 'next/dynamic';
 //componente de layout footer e navbar
 import {
   InfoCard,
@@ -6,9 +7,22 @@ import {
   HeroSection,
   PersonalCard,
   Features,
+  Loading,
 } from "../components/index"; //componente
 
 import icons from "../utils/icons/icons";
+import FloatButton from "../components/buttons/floatButton";
+
+const InfoCardComponent = React.lazy(() => import("../components/infoCard"));
+const FeaturesComponent = React.lazy(
+  () => import("../components/featuredCards")
+);
+const ProjectComponent = dynamic(async() => await import("../components/projectCard"),{
+  ssr:false,
+  loading:()=>{
+    return <Loading/>
+  }
+});
 
 export default function Homepage() {
   const projects = [
@@ -54,44 +68,60 @@ export default function Homepage() {
       id: 1,
       icon: icons.mongo,
       title: "M.E.R.N - STACK",
-      description: "Mongo DB, Express, React and Node.js Tecnologias escalaveis e modernas para sistemas web",
+      colorIcon: "text-green-500",
+      description:
+        "Mongo DB, Express, React and Node.js Tecnologias escalaveis e modernas para sistemas web",
     },
     {
       id: 2,
       icon: icons.next,
       title: "J.A.M - STACK",
-      description: "Javascript, Apis, Markup, usando tecnologias como Next strapi e git desenvolvendo soluçues seguras e escalavais para Web",
+      colorIcon: "text-black",
+      description:
+        "Javascript, Apis, Markup, usando tecnologias como Next strapi e git desenvolvendo soluções seguras e escalavais para Web",
     },
     {
       id: 3,
       icon: icons.js,
       title: "FULL WEB - STACK",
-      description: "Uma analise profunda desde a abistração a parte tecnica de um projeto trazendo soluçoes atuais e metodos de pagamentos como stripe",
+      colorIcon: "text-yellow-800",
+      description:
+        "Uma analise profunda desde a abstração a parte tecnica de um projeto trazendo soluções atuais e metodos de pagamentos como stripe",
     },
-   
   ];
+
   return (
     <>
       <div className="dark w-full h-auto bg-gradient-to-r from-cyan-400 to-blue-900">
-        <div>
+        <div id="up">
           <HeroSection text="Sua Historia começa com quem faz Historia !" />
         </div>
         <section className="pb-7">
-          <div>
+          <FloatButton />
+          <div id="profile">
             <PersonalCard />
           </div>
-          <div className="mb-24">
-            <InfoCard textsProps={textProps} index={0}/>
+          <div id="projects" className="mb-24">
+            <React.Suspense fallback={<Loading />}>
+              <InfoCardComponent textsProps={textProps} index={0} />
+            </React.Suspense>
             <div className="flex justify-center gap-4">
-              <ProjectCard projects={projects} columns={3} />
+              <React.Suspense fallback={<Loading />}>
+                <ProjectComponent projects={projects} columns={3} />
+              </React.Suspense>
             </div>
           </div>
-          <div>
-            <InfoCard textsProps={textProps} index={1}/>
+          <div id="stacks">
+            <React.Suspense fallback={<Loading />}>
+              <InfoCardComponent textsProps={textProps} index={1} />
+            </React.Suspense>
             <div className="mb-24">
-              <Features features={featuresData}></Features>
+              <React.Suspense fallback={<Loading />}>
+                <FeaturesComponent features={featuresData}></FeaturesComponent>
+              </React.Suspense>
             </div>
           </div>
+          <div id="contact"></div>
         </section>
       </div>
     </>

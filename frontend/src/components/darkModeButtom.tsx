@@ -17,11 +17,7 @@ export function DarkMode(){
         }
     }
 
-    const renderThemeChanger= () => {
-        const currentTheme = theme === "system" ? systemTheme : theme ;
-        /*if(currentTheme ==="dark"){
-       }*/ 
-    };
+  
 
     
     return(

@@ -8,7 +8,7 @@ import {
   Tooltip,
   Button,
 } from "@material-tailwind/react";
-import renderThemeChanger from "../hook/darkModeHook";
+
 import Image from "next/image";
 
 import { ListTech } from "../utils/list-tech";
@@ -33,17 +33,14 @@ export function PersonalCard() {
   return (
     <div>
       <Card
-        className={`${
+        className={`bg-white
+        ${
           scrolled
             ? "opacity-100 transition-opacity ease-in delay-600"
             : "opacity-0 transition-opacity ease-out delay-600"
         } rounded shadow-md 
-      md:shadow-xl md:hover:shadow-2xl my-32 bg-transparent sm:w-96 mx-auto 
-      ${
-        renderThemeChanger()
-          ? "bg-[#141414] border-b-8 border-[#540DFA]"
-          : "bg-white border-b-4 border-light-blue-500"
-      }`}
+      md:shadow-xl md:hover:shadow-2xl my-32 bg-white sm:w-96 mx-auto 
+      `}
       >
         <CardHeader
           floated={false}
@@ -62,15 +59,15 @@ export function PersonalCard() {
           <Typography
             variant="h4"
             color="blue-gray"
-            className={`${renderThemeChanger() ? "text-white" : ""} mb-2`}
+            className={`"text-white" `}
           >
             Adriel Lucas
           </Typography>
           <Typography
             color="blue"
-            className={`${
-              renderThemeChanger() ? "text-[#c37fff]" : ""
-            } font-medium`}
+            className={`
+           "text-[#c37fff]"
+             font-medium`}
             textGradient
           >
             Desenvolvedor Web / Full-Stack

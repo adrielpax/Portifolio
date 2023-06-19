@@ -1,5 +1,5 @@
 import { Input } from "@material-tailwind/react";
-import renderThemeChanger from '../../../hook/darkModeHook';
+
 interface Props {
     prop:{
         text:string
@@ -7,13 +7,13 @@ interface Props {
 }
 
 export function InputComponent({prop}:Props){
-    const theme = renderThemeChanger()
+   
     return(
         <Input 
-        className={`${theme?'text-white':''}`}
+        className={`text-white`}
         label={prop.text} 
         size="md"
-        color={`${theme?'purple':'blue'}`}
+        color={`blue`}
         />
     )
 }

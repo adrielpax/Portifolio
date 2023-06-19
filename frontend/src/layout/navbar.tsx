@@ -8,6 +8,7 @@ import {
   MobileNav,
   IconButton,
 } from "@material-tailwind/react";
+import { ButtonComponent } from "../components";
 
 export function NavbarPage() {
   const [openNav, setOpenNav] = useState(false);
@@ -40,9 +41,39 @@ export function NavbarPage() {
             <span className="font-semibold text-lg dark:text-white">
               Adriel Dev
             </span>
+            
           </Typography>
-
-          <IconButton
+          <div className='hidden lg:block'>
+            <ul className="flex gap-4">
+              <li className="hover:text-blue-500">
+                <a href="#profile">
+                  Profile
+                </a>
+              </li>
+              <li className="hover:text-blue-500">
+                <a href="#projects">
+                  Projects
+                </a>
+              </li>
+              <li className="hover:text-blue-500">
+                <a href="#stacks">
+                  Stacks
+                </a>
+              </li>
+              <li className="hover:text-blue-500">
+                <a href="#contact">
+                  Contate-me
+                </a>
+              </li>
+            </ul>
+          </div>
+          <a href="#contact" className="block lg:hidden">
+          
+          <ButtonComponent>
+            Contate - Me
+          </ButtonComponent>
+          </a>
+          {/* <IconButton
             variant="text"
             className="ml-auto h-6 w-6 
                         text-inherit 
@@ -54,9 +85,8 @@ export function NavbarPage() {
             onClick={() => setOpenNav(!openNav)}
           >
             {openNav ? <>{MenuOpen}</> : <>{MenuClose}</>}
-          </IconButton>
-        </div>
-        <MobileNav open={openNav}>{/*NavList*/}</MobileNav>
+          </IconButton> */}
+          </div>
       </Navbar>
     </div>
   );

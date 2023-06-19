@@ -2,7 +2,6 @@ import Image from "next/image";
 import React from "react";
 import { ButtonComponent } from "./index";
 
-
 interface Project {
   id: number;
   title: string;
@@ -38,25 +37,35 @@ const Gallery: React.FC<GalleryProps> = ({ projects, columns }) => {
             >
               <div className="relative w-auto">
                 <a href={project.link} target="_blank" rel="noreferrer">
-                 {project.image? <Image
-                    src={project.image}
-                    alt={project.title}
-                    width={150}
-                    height={150}
-                    className="w-auto h-auto object-cover rounded-t"
-                  />:<div className="md:w-80 h-80 object-cover rounded-t text-white flex
-                  items-center justify-center bg-blue-gray-600">Em Breve</div>}
+                  {project.image ? (
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      width={150}
+                      height={150}
+                      className="w-80 h-80 object-cover rounded-t"
+                    />
+                  ) : (
+                    <div
+                      className="w-80 h-80 object-cover rounded-t text-black flex
+                      items-center justify-center bg-[whitesmoke] text-4xl"
+                    >
+                      Em Breve
+                    </div>
+                  )}
                 </a>
-                <div className="block inset-0 bg-black rounded-b bg-opacity-20  flex-col items-center justify-center p-4">
+                <div className="block w-80 inset-0 bg-black rounded-b bg-opacity-20  flex-col items-center justify-center p-4">
                   <h2 className="text-white text-2xl text-center mb-2">
                     {project.title}
                   </h2>
                   <p className="text-white text-lg text-center">
                     {project.subtitle}
                   </p>
-                  <button className="w-full flex items-center justify-center mt-4 
+                  <button
+                    className="w-full flex items-center justify-center mt-4 
                   disabled:hidden"
-                  disabled={project.link?false:true}>
+                    disabled={project.link ? false : true}
+                  >
                     <a href={project.link} target="_blank" rel="noreferrer">
                       <ButtonComponent>Ver Mais</ButtonComponent>
                     </a>
