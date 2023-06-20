@@ -13,7 +13,7 @@ import Image from "next/image";
 
 import { ListTech } from "../utils/list-tech";
 import icons from "../utils/icons/icons";
-import DownloadButton from "./buttons/downloadButton";
+// import DownloadButton from "./buttons/downloadButton";
 
 export function PersonalCard() {
   const [scrolled, setScrolled] = useState(false);
@@ -223,7 +223,7 @@ export function PersonalCard() {
             />
           </div>
           <div className="flex w-full justify-center mx-auto mt-10">
-            <DownloadButton fileUrl={"/Curriculum-Adriel.pdf"} fileName={"curriculum-Adriel.pdf"} />
+            {/* <DownloadButton fileUrl={"/Curriculum-Adriel.pdf"} fileName={"curriculum-Adriel.pdf"} /> */}
           </div>
         </CardFooter>
       </Card>
