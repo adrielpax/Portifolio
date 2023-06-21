@@ -3,14 +3,13 @@ import React from "react";
 interface Feature {
   id: number;
   icon: JSX.Element;
-  colorIcon?:string
+  colorIcon?: string;
   title: string;
   description: string;
 }
 
 interface FeaturesProps {
   features: Feature[];
-
 }
 
 const Features: React.FC<FeaturesProps> = ({ features }) => {
