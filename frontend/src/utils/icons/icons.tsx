@@ -11,10 +11,15 @@ import {
   SiTailwindcss,
   SiTypescript,
   SiExpress,
+  SiPhp,
+  SiMysql,
+  SiFuturelearn
 } from "react-icons/si";
 import { BiDownload } from "react-icons/bi";
-import { TbBrandNextjs } from "react-icons/tb";
-import { AiOutlineArrowUp } from "react-icons/ai";
+import { TbBrandNextjs,  } from "react-icons/tb";
+import { AiOutlineArrowUp,AiOutlineAntDesign, AiOutlineConsoleSql } from "react-icons/ai";
+import {HiComputerDesktop} from 'react-icons/hi2';
+import {FaMoneyBill} from 'react-icons/fa'
 
 const axios = (
   <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -43,9 +48,15 @@ const icons = {
   brasil: <GiBrazilFlag className="h-[100%] w-[100%]" />,
   eua: <GiUsaFlag className="h-[100%] w-[100%]" />,
   github: <IoLogoGithub className="w-6 h-6" />,
+  sql: <AiOutlineConsoleSql className="w-6 h-6" />,
+  php: <SiPhp className="w-6 h-6" />,
+  learn: <SiFuturelearn className="w-6 h-6" />,
   linkedin: <SiLinkedin className="w-6 h-6" />,
   instagram: <SiInstagram className="w-6 h-6" />,
   arrowUp: <AiOutlineArrowUp className="w-6 h-6" />,
+  computer: <HiComputerDesktop className="w-7 h-7" />,
+  design: <AiOutlineAntDesign className="w-7 h-7" />,
+  money: <FaMoneyBill className="w-7 h-7" />,
 };
 
 export default icons;

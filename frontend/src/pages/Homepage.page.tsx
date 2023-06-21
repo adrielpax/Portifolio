@@ -67,6 +67,7 @@ export default function Homepage() {
     },
     // Adicione mais objetos de projeto conforme necessário
   ];
+
   const textProps = [
     {
       id: 1,
@@ -81,6 +82,7 @@ export default function Homepage() {
         "Stacks construidas ao longo do tempo, com melhorias contantes e objetivos diferentes",
     },
   ];
+  
   const featuresData = [
     {
       id: 1,
@@ -88,7 +90,7 @@ export default function Homepage() {
       title: "M.E.R.N - STACK",
       colorIcon: "text-green-500",
       description:
-        "Mongo DB, Express, React and Node.js Tecnologias escalaveis e modernas para sistemas web",
+        "Mongo DB, Express, React and Node.js Tecnologias escalaveis e modernas para sistemas web complexos, trazendo o que há de poder em javascript.",
     },
     {
       id: 2,
@@ -96,15 +98,47 @@ export default function Homepage() {
       title: "J.A.M - STACK",
       colorIcon: "text-black",
       description:
-        "Javascript, Apis, Markup, usando tecnologias como Next strapi e git desenvolvendo soluções seguras e escalavais para Web",
+        "Javascript, Apis, Markup, usando tecnologias como Next strapi e git desenvolvendo soluções seguras e escalavais para Toda a Web, uma stack que traz versatilidade e economia.",
     },
     {
       id: 3,
-      icon: icons.js,
+      icon: icons.computer,
       title: "FULL WEB - STACK",
-      colorIcon: "text-yellow-800",
+      colorIcon: "text-blue-800",
       description:
-        "Uma analise profunda desde a abstração a parte tecnica de um projeto trazendo soluções atuais e metodos de pagamentos como stripe",
+        "Uma analise profunda desde a abstração a parte tecnica de um projeto trazendo soluções atuais e praticas para o negocio.",
+    },
+    {
+      id: 4,
+      icon: icons.eua,
+      title: "Ingles",
+      colorIcon: "text-red-800",
+      description:
+        "Devido ao contexto , o ingles e fundamental no Desenvolvimento e entendimento de novas tecnologias, se tornando umas das minhas principais habilidades de comunicação.",
+    },
+    {
+      id: 5,
+      icon: icons.design,
+      title: "Design",
+      colorIcon: "text-pink-800",
+      description:
+        'Uma habilidade que muda a percepção das pessoas sobre algo,"Branding não e so deixar as coisas bonitinhas e a arte de fazer essas coisas se venderem por si so"',
+    },
+    {
+      id: 6,
+      icon: icons.money,
+      title: "Contabilidade e Finanças",
+      colorIcon: "text-green-800",
+      description:
+        'Uma habilidade desenvolvida para entender o peso e o valor de tudo, como tempo e informação são a verdadeira moeda desse jogo',
+    },
+    {
+      id: 7,
+      icon: icons.learn,
+      title: "Auto De Data",
+      colorIcon: "text-purple-800",
+      description:
+        'Uma habilidade desenvolvida na nescessidade de construir soluções especificas, essa habilidade me trouxe empenho nescessario pra construção de habilidades solidas',
     },
   ];
 

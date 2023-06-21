@@ -10,14 +10,14 @@ export function Footer() {
       "
     >
       <div className="container mx-auto px-4 dark:text-white">
-        <div className="flex flex-wrap">
-          <div className="w-full lg:w-6/12 px-4">
+        <div className="flex flex-wrap ">
+          <div className="w-full lg:w-6/12 px-4 flex flex-col items-center justify-center text-center">
             <h4 className="text-3xl font-semibold">Vamos manter contato !</h4>
             <h5 className="dark:text-white text-lg mt-0 mb-2 text-blue-gray-900">
               Encontre-me em qualquer uma dessas plataformas, responderei de 1
               a 2 dias úteis.
             </h5>
-            <div className="mt-6">
+            <div className="">
               <FormCard/>
             </div>
           </div>
@@ -57,13 +57,13 @@ export function Footer() {
           <div className="w-full md:w-4/12 px-4 mx-auto text-center">
             <div className="text-sm text-blue-gray-900 font-semibold py-1 dark:text-white">
               Copyright © {new Date().getFullYear()} by{" "}
-              <a
+              {/* <a
                 href="https://www.creative-tim.com"
                 className="text-blue-gray-900 hover:text-light-blue-300
                   dark:text-white dark:hover:text-[#a53fff]"
-              >
-                adrielDev174@gmail.com
-              </a>
+              > */}
+                adrieldev
+              {/* </a> */}
               .
             </div>
           </div>

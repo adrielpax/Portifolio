@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef } from "react";
 
 interface textareaProps {
   id: string;
@@ -7,7 +7,7 @@ interface textareaProps {
   label?: string;
   error?: string;
   handle: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
-  blur:(e:any)=>void
+  blur: (e: any) => void;
 }
 
 const TextAreaRow: React.FC<textareaProps> = ({
@@ -17,7 +17,7 @@ const TextAreaRow: React.FC<textareaProps> = ({
   handle,
   label,
   error,
-  blur
+  blur,
 }: textareaProps) => {
   const [isFocused, setIsFocused] = useState(false);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
@@ -31,20 +31,23 @@ const TextAreaRow: React.FC<textareaProps> = ({
     setIsFocused(false);
   };
 
-  let labelClass = 'text-base';
+  let labelClass = "text-base";
   if (isFocused || value) {
     labelClass =
-      'text-md -translate-y-6 bg-white w-auto px-2 text-center rounded';
+      "text-md -translate-y-6 bg-white w-auto px-2 text-center rounded";
   }
 
   return (
     <div className="mb-6">
-      <div className={`relative ${isFocused ? 'mb-2' : 'mb-4'}`}>
+      <div className={`relative ${isFocused ? "mb-2" : "mb-4"}`}>
         <textarea
           ref={textareaRef}
           className={`
           ${error ? "border-pink-500 text-pink-500" : ""}
-          border border-gray-500 rounded-md z-50 appearance-none bg-white w-80 md:w-96 h-64 py-3 px-3 text-gray-800 leading-tight focus:outline-none focus:bg-white focus:ring-2 focus:ring-blue-500 ${isFocused ? 'focus:shadow-outline bg-white' : ''}`}
+          border border-gray-500 rounded-md z-50 appearance-none bg-white w-80 md:w-96 h-auto
+          py-3 px-3 text-gray-800 leading-tight focus:outline-none focus:bg-white focus:ring-2 focus:ring-blue-500 ${
+            isFocused ? "focus:shadow-outline bg-white" : ""
+          }`}
           name={id}
           value={value}
           onChange={handle}

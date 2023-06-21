@@ -13,6 +13,7 @@ import Image from "next/image";
 
 import { ListTech } from "../utils/list-tech";
 import icons from "../utils/icons/icons";
+import ButtonComponent from "./buttons/button";
 // import DownloadButton from "./buttons/downloadButton";
 
 export function PersonalCard() {
@@ -221,9 +222,35 @@ export function PersonalCard() {
                 mobile: "",
               }}
             />
+            <ListTech
+              props={{
+                text: "SQL",
+                color: " rounded-full bg-blue-700",
+                colorIcon: "text-white",
+                icon: icons.sql,
+                mobile: "",
+              }}
+            />
+            <ListTech
+              props={{
+                text: "PHP",
+                color: " rounded-full bg-orange-500",
+                colorIcon: "text-white",
+                icon: icons.php,
+                mobile: "",
+              }}
+            />
           </div>
           <div className="flex w-full justify-center mx-auto mt-10">
             {/* <DownloadButton fileUrl={"/Curriculum-Adriel.pdf"} fileName={"curriculum-Adriel.pdf"} /> */}
+            <a href="#contact">
+              <ButtonComponent
+                className="text-blue-gray-500 font-bold py-2 px-4 rounded bg-white
+              border border-blue-gray-100 hover:bg-blue-500 hover:text-white hover:border-white"
+              >
+                Download CV
+              </ButtonComponent>
+            </a>
           </div>
         </CardFooter>
       </Card>

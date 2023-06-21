@@ -3,11 +3,13 @@
 import type {ReactElement} from 'react';
 import { NextPageWithLayout } from './_app.page';
 import  Homepage  from './Homepage.page';
+// import PageNotFound from './404.page';
 
 const Page: NextPageWithLayout = ()=>{
   return (
     <>
       <Homepage/>
+      
     </>
   )
 }

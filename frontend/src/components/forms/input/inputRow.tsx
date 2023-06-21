@@ -40,12 +40,12 @@ const InputRow: React.FC<inputProps> = ({
   }
 
   return (
-    <div className="mb-6">
-      <div className={`relative ${isFocused ? "mb-2" : "mb-4"}`}>
+    <div className="mb-2">
+      <div className={`relative ${isFocused ? "mb" : "mb"}`}>
         <input
           ref={inputRef}
-          className={`border border-gray-500 rounded-md z-50 appearance-none 
-                    bg-white w-80 md:w-96 py-3 px-3 text-gray-800 leading-tight focus:outline-none
+          className={`border border-gray-500 rounded-md z-50 appearance-none
+                    bg-white w-80 md:w-96 py-2 px-3 text-gray-800 leading-tight focus:outline-none
                      focus:bg-white focus:ring-2 focus:ring-blue-500
                      ${isFocused ? "focus:shadow-outline bg-white" : ""}
                      ${error ? "border-pink-500 text-pink-500" : ""}`}
@@ -60,7 +60,7 @@ const InputRow: React.FC<inputProps> = ({
         {label && (
           <label
             onClick={handleFocus}
-            className={`absolute z-0 top-3 left-3 text-gray-700 font-regular transition-all duration-300 ${labelClass}`}
+            className={`absolute z-0 top-2 left-3 text-gray-700 font-regular transition-all duration-300 ${labelClass}`}
             htmlFor={id}
           >
             {label}

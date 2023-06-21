@@ -19,13 +19,14 @@ const Features: React.FC<FeaturesProps> = ({ features }) => {
       {features.map((feature) => (
         <div
           key={feature.id}
-          className={`w-80 lg:w-96 p-4 bg-white shadow-lg rounded my-2 border border-blue-500 `}
+          className={`w-80 lg:w-96 p-4 bg-white shadow-lg rounded my-2 border border-blue-gray-800 
+          hover:border-blue-400 `}
         >
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center cursor-default">
             <div className={`${feature.colorIcon} h-8 w-8 my-4`}>
               {feature.icon}
             </div>
-            <h3 className="text-lg font-bold mb-2 text-blue-500 text-center">
+            <h3 className="text-lg font-bold mb-2  text-center ">
               {feature.title}
             </h3>
             <p className="text-blue-gray-500 text-center">

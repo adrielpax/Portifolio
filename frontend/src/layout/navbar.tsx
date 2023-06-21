@@ -41,37 +41,32 @@ export function NavbarPage() {
             <span className="font-semibold text-lg dark:text-white">
               Adriel Dev
             </span>
-            
           </Typography>
-          <div className='hidden lg:block'>
+          <div className="hidden lg:block">
             <ul className="flex gap-4">
               <li className="hover:text-blue-500">
-                <a href="#profile">
-                  Profile
-                </a>
+                <a href="#profile">Profile</a>
               </li>
               <li className="hover:text-blue-500">
-                <a href="#projects">
-                  Projects
-                </a>
+                <a href="#projects">Projects</a>
               </li>
               <li className="hover:text-blue-500">
-                <a href="#stacks">
-                  Stacks
-                </a>
+                <a href="#stacks">Stacks</a>
               </li>
               <li className="hover:text-blue-500">
-                <a href="#contact">
-                  Contate-me
-                </a>
+                <a href="#contact">Contate me</a>
               </li>
             </ul>
           </div>
           <a href="#contact" className="block lg:hidden">
-          
-          <ButtonComponent>
-            Contate - Me
-          </ButtonComponent>
+            <ButtonComponent
+              className={`  
+              text-blue-gray-500 font-semibold py-2 px-4 rounded border border-blue-gray-100
+              bg-[whitesmoke] hover:text-blue-500 hover:bg-white shadow-xl hover:border-blue-100
+              `}
+            >
+              Entrar em Contato
+            </ButtonComponent>
           </a>
           {/* <IconButton
             variant="text"
@@ -86,7 +81,7 @@ export function NavbarPage() {
           >
             {openNav ? <>{MenuOpen}</> : <>{MenuClose}</>}
           </IconButton> */}
-          </div>
+        </div>
       </Navbar>
     </div>
   );

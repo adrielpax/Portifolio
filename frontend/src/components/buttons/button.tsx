@@ -3,10 +3,11 @@ import React, { ButtonHTMLAttributes } from 'react';
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   // Adicione quaisquer propriedades personalizadas que você desejar
   customProp?: string;
-  disable?:boolean
+  disable?:boolean;
+  icon?:JSX.Element
 }
 
-const ButtonComponent: React.FC<ButtonProps> = ({ children, disable, ...rest }) => {
+const ButtonComponent: React.FC<ButtonProps> = ({ children, disable, icon,...rest }) => {
   return (
     <button
       className={`  text-white font-bold py-2 px-4 rounded
@@ -14,6 +15,7 @@ const ButtonComponent: React.FC<ButtonProps> = ({ children, disable, ...rest }) 
       disabled={disable}
       {...rest}
     >
+      {icon}
       {children}
     </button>
   );
