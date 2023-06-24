@@ -9,7 +9,6 @@ export const useFormPostApi = () => {
   const router = useRouter();
 
   const [isLoading, setIsLoading] = React.useState(Boolean);
-  const [displayErrors, setDisplayErrors] = React.useState(Boolean);
 
   const phoneRegex = /^\(?([0-9]{3})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/;
   const nameRegex = /^[a-z A-Z]+$/;
