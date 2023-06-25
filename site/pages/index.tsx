@@ -10,7 +10,6 @@ const Page: NextPageWithLayout = ()=>{
   return (
     <>
       <Homepage/>   
-      <Dashboard/> 
     </>
   )
 }
