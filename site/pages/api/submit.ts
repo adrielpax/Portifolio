@@ -64,7 +64,7 @@ export default async function handler(
       data: response.data,
     });
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     return res.status(500).send({ message: "Something went wrong in server" });
   }
 }

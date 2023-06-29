@@ -13,13 +13,19 @@ import {
   SiExpress,
   SiPhp,
   SiMysql,
-  SiFuturelearn
+  SiFuturelearn,
 } from "react-icons/si";
 import { BiDownload } from "react-icons/bi";
-import { TbBrandNextjs,  } from "react-icons/tb";
-import { AiOutlineArrowUp,AiOutlineAntDesign, AiOutlineConsoleSql } from "react-icons/ai";
-import {HiComputerDesktop} from 'react-icons/hi2';
-import {FaMoneyBill} from 'react-icons/fa'
+import { TbBrandNextjs } from "react-icons/tb";
+import {
+  AiOutlineArrowUp,
+  AiOutlineAntDesign,
+  AiOutlineConsoleSql,
+} from "react-icons/ai";
+import { HiComputerDesktop } from "react-icons/hi2";
+import { FaMoneyBill } from "react-icons/fa";
+import { RiDeleteBin2Fill } from "react-icons/ri";
+import { MdAttachEmail } from "react-icons/md";
 
 const axios = (
   <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -57,6 +63,8 @@ const icons = {
   computer: <HiComputerDesktop className="w-7 h-7" />,
   design: <AiOutlineAntDesign className="w-7 h-7" />,
   money: <FaMoneyBill className="w-7 h-7" />,
+  delete: <RiDeleteBin2Fill className="w-7 h-7" />,
+  email: <MdAttachEmail className="w-7 h-7" />,
 };
 
 export default icons;
