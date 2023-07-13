@@ -1,17 +1,15 @@
 import axios from "axios";
 import { useRouter } from "next/router";
-import React from 'react';
+import React from "react";
 import { toast } from "react-toastify";
 import * as Yup from "yup";
 import { useFormik } from "formik";
-
-
 
 export const useFormPostApi = () => {
   const router = useRouter();
 
   const [isLoading, setIsLoading] = React.useState(Boolean);
-  const[showConfetti,setShowConfetti] = React.useState(false);
+  const [showConfetti, setShowConfetti] = React.useState(false);
 
   const phoneRegex = /^\(?([0-9]{3})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/;
   const nameRegex = /^[a-z A-Z]+$/;
@@ -60,7 +58,9 @@ export const useFormPostApi = () => {
           }
         );
         const content = await response.data;
-        toast.success("Sua mensagem foi enviada com sucesso, Obrigado pelo Contato!");
+        toast.success(
+          "Sua mensagem foi enviada com sucesso, Obrigado pelo Contato!"
+        );
         console.log(content);
         resetForm();
         router.push("#up");
@@ -113,6 +113,6 @@ export const useFormPostApi = () => {
     handleBlur,
     values,
     resetForm,
-    showConfetti
+    showConfetti,
   };
 };

@@ -17,7 +17,7 @@ export default async function handler(
   if (req.method !== "POST") {
     res.status(405).send({ message: "Only Post request are allowed" });
   } else {
-    res.status(200).send({ message: "Post Recebido com sucesso" });
+    // res.status(200).send({ message: "Post Recebido com sucesso" });
   }
 
   const body = req.body as SheetForm;
