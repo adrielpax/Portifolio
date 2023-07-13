@@ -78,7 +78,7 @@ const Dashboard = () => {
 
   const getData = async () => {
     try{
-      const response = (await axios.get('api/getdata'))
+      const response = await axios.get('api/getdata')
       console.log(response)
     }catch(err){
       console.log(err)
