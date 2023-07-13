@@ -2,10 +2,14 @@ import React, { useRef } from "react";
 import { toast } from "react-toastify";
 
 export const useHandleCopy = () => {
-  const textRef = useRef(null);
+  const textRef = useRef<HTMLDivElement>(null);
 
   const handleCopy = () => {
-    const text = textRef.current.innerText;
+    let text = '';
+
+    if(textRef.current != null){
+      text = textRef.current.innerText;
+    }
 
     navigator.clipboard
       .writeText(text)
