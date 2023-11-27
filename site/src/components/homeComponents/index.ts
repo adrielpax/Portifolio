@@ -1,5 +1,4 @@
 import InfoCard from "./infoCard";
-import { LocaleSwitcher } from "./localeSwitcher";
 import ProjectCard from "./projectCard";
 import DownloadButton from "../buttons/downloadButton";
 import { FormCard } from "../forms/formCard";
@@ -11,7 +10,6 @@ import Loading from "./Loading";
 
 export {
   InfoCard,
-  LocaleSwitcher,
   ProjectCard,
   FormCard,
   ButtonComponent,

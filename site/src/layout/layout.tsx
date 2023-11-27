@@ -1,4 +1,4 @@
-import {NavbarPage} from './navbar';
+import Navbar from './navbar';
 import {Footer} from './footer';
 
 export function Layout({children}:any){
@@ -6,7 +6,7 @@ export function Layout({children}:any){
 
     return(
      <>
-        <NavbarPage/>
+        <Navbar/>
             <main>{children}</main>
         <Footer/>
      </>
