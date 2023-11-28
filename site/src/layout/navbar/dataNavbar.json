@@ -1,11 +1,11 @@
 {
   "data": {
     "menu": [
-      { "id": 1, "name": "ABOUT", "route": "/about" },
-      { "id": 2, "name": "PROJECTS", "route": "/projects" },
-      { "id": 3, "name": "SERVICES", "route": "/services" },
-      { "id": 4, "name": "CONTACTS", "route": "/contacts" },
-      { "id": 5, "name": "PRODUCTS", "subMenu": true }
+      { "id": 1, "name": "SOBRE", "route": "/about" },
+      { "id": 2, "name": "PROJETOS", "route": "/projects" },
+      { "id": 3, "name": "SERVIÇOS", "route": "/services" },
+      { "id": 4, "name": "CONTATOS", "route": "/contacts" },
+      { "id": 5, "name": "PRODUTOS", "subMenu": true }
     ],
     "subMenu": [
       { "id": 1, "name": "Sites", "url": "/" },

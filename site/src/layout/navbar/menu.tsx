@@ -16,10 +16,10 @@ export default function Menu({ showSubmenu, setShowSubmenu }: MenuProps) {
           <React.Fragment key={item.id}>
             {!!item?.subMenu ? (
               <li
-                className="cursor-pointer flex items-center gap-2 select-none text-[#12121299] 
-              hover:text-light-blue-500 transition-all ease-in-out"
+                className="cursor-pointer flex items-center gap-2 relative select-none text-[#12121299] 
+              hover:text-light-blue-500 transform-translate transition-all delay-600"
                 onMouseEnter={() => setShowSubmenu(true)}
-                // onMouseLeave={() => setShowSubmenu(false)}
+                onMouseLeave={() => setShowSubmenu(false)}
               >
                 {item.name}
                 <FaAngleDown
@@ -31,13 +31,18 @@ export default function Menu({ showSubmenu, setShowSubmenu }: MenuProps) {
                 />
                 {showSubmenu && (
                   <ul
-                    className="bg-white flex flex-col top-12 right-20 min-w-[250px]
-                    p-2 text-slate-700 shadow gap-2"
+                    className="bg-[#f1f1f199] absolute top-5 -right-14 min-w-[250px]
+                    p-2 text-slate-700 shadow-md flex flex-col gap-1 justify-between rounded z-50
+                    transition-transform duration-700"
                   >
                     {hardData.data.subMenu.map((subItem) => {
                       return (
-                        <li key={subItem.id} className="text-[#12121299] hover:text-light-blue-500 transition-all ease-in-out
-                        cursor-pointer flex p-3 bg-[whitesmoke] hover:bg-white rounded ">
+                        <li
+                          key={subItem.id}
+                          className="text-[#12121299] hover:text-light-blue-500 
+                       transition-all ease-in-out
+                        cursor-pointer flex p-3 hover:bg-[whitesmoke] bg-white rounded "
+                        >
                           <Link href={subItem.url}>
                             {subItem.name}
                             {/* <span className="opacity-50 text-sm">

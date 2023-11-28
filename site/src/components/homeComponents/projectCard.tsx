@@ -66,12 +66,14 @@ const Gallery: React.FC<GalleryProps> = ({ projects, columns }) => {
                   disabled:hidden"
                     disabled={project.link ? false : true}
                   >
-                    <a href={project.link} target="_blank" rel="noreferrer">
-                      <ButtonComponent
+                    <ButtonComponent
                       className="text-blue-gray-500 font-bold px-4 py-2 rounded border border-blue-gray-500
                       hover:text-blue-500 hover:border-blue-500"
-                      >Ver Mais</ButtonComponent>
-                    </a>
+                    >
+                      <a href={project.link} target="_blank" rel="noreferrer">
+                        Ver Mais
+                      </a>
+                    </ButtonComponent>
                   </button>
                 </div>
               </div>
