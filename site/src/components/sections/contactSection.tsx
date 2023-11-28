@@ -1,5 +1,6 @@
 import React from "react";
 import { ButtonComponent } from "../homeComponents";
+import { FaGithub } from "react-icons/fa";
 
 export default function ContactSection() {
   return (
@@ -9,22 +10,19 @@ export default function ContactSection() {
         bg-gradient-to-t from-[#0047FF] to-[#00F0FF] flex-col md:flex-row
         text-white items-start gap-10 self-stretch px-6 py-12"
       >
-        <div
-          className="w-[303.435px] h-[213.808px] shrink-0 bg-white
-        md:w-[488px] md:h-[396px]"
-        ></div>
+        <div className="w-auto h-[213.808px] shrink-0 bg-white opacity-50"></div>
         <div className="flex flex-col items-start gap-8 self-stretch">
           <div className="flex items-center gap-6"></div>
-          <h1>about me</h1>
-          <h2>Sub title here ok ??</h2>
+          <h1 className="text-[#7DFFAF] text-regular text-base">contato</h1>
+          <h2 className="font-semibold text-4xl font-sans">
+            Entre em contato conosco hoje mesmo.
+          </h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
-            voluptatum eligendi quaerat illum placeat optio, assumenda dolor sed
-            aliquam? Officia, totam natus nulla provident ipsam ullam quo
-            officiis tempore voluptatem?
+            Estou sempre pronto para um bate-papo. Envie-me um e-mail para
+            hi@linalevi.com ou dê-me um alô nas redes sociais.
           </p>
-          <ButtonComponent className="bg-blue-500 rounded-md">
-            My Resume
+          <ButtonComponent className="bg-white rounded-md">
+            <FaGithub className="text-[#12121299] w-5 h-5" />
           </ButtonComponent>
         </div>
       </div>
