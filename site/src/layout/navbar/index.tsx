@@ -7,6 +7,7 @@ import Menu from "./menu";
 import { ButtonComponent } from "../../components/homeComponents";
 
 import { HiCheckCircle } from "react-icons/hi2";
+import { SiNintendogamecube } from "react-icons/si";
 
 export default function Navbar() {
   const [showSubmenu, setShowSubmenu] = React.useState(false);
@@ -41,9 +42,11 @@ export default function Navbar() {
     >
       <Wrapper className="flex flex-row items-center justify-between py-1 h-full w-full">
         <Link href={"/"}>
-          <div className="text-center font-sans font-extrabold text-[#12121299] px-5">
+          <div className="text-center font-sans font-extrabold text-[#12121299] px-5
+          flex items-center gap-2">
             {/* <Image src={""} alt={""}/> */}
-            LOGO HERE
+            <SiNintendogamecube className="w-10 h-10" />
+            SQUARE ODEN
           </div>
         </Link>
         <Menu showSubmenu={showSubmenu} setShowSubmenu={setShowSubmenu} />
@@ -51,7 +54,7 @@ export default function Navbar() {
           <ButtonComponent
             className="scale-90 bg-[whitesmoke] text-[#12121299]
               rounded-md hover:text-white hover:bg-gradient-to-r from-[#0047FF] to-[#00F0FF]
-              shadow transition-transform active:scale-95 hover:opacity-75"
+              shadow transition-transform active:scale-95 hover:opacity-75 py-2 px-4"
             icon={<HiCheckCircle className="w-5 h-5" />}
           >
             solicitar serviço

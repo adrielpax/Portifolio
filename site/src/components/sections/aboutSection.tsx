@@ -2,7 +2,12 @@ import React from "react";
 import { ButtonComponent } from "../homeComponents";
 // import { ListTech } from "../../utils/list-tech";
 // import icons from "../../utils/icons/icons";
-import { FaPython, FaReact, FaNodeJs, FaLongArrowAltRight } from "react-icons/fa";
+import {
+  FaPython,
+  FaReact,
+  FaNodeJs,
+  FaLongArrowAltRight,
+} from "react-icons/fa";
 import { SiJavascript, SiTailwindcss } from "react-icons/si";
 
 export default function AboutSection() {
@@ -13,9 +18,7 @@ export default function AboutSection() {
         bg-gradient-to-t from-[#0047FF] to-[#00F0FF] flex-col md:flex-row
         text-white items-start gap-10 self-stretch px-6 py-12"
       >
-        <div
-          className="w-auto  h-[266px] shrink-0 bg-white opacity-50"
-        ></div>
+        <div className="w-auto  h-[266px] shrink-0 bg-white opacity-50"></div>
         <div className="flex flex-col items-start w-auto md:w-[592px]  md:gap-8 self-stretch">
           <div className="flex items-center gap-6  text-[#654AEE]">
             <FaPython className="w-5 h-5" />
@@ -35,9 +38,10 @@ export default function AboutSection() {
             negócio.
           </p>
           <ButtonComponent
-            className="bg-white rounded-md text-blue-gray-500
-            shadow transition-transform active:scale-95 active:bg-blue-gray-50
-            border border-transparent hover:border-gray-500"
+            className="bg-[#121212] rounded-md z-20 
+            shadow-none transition-transform py-2 px-4
+            active:scale-95  text-white active:bg-[#12121299]
+            border border-transparent hover:border-white"
           >
             My Resume
             <FaLongArrowAltRight />

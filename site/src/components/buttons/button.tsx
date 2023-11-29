@@ -17,7 +17,7 @@ const ButtonComponent: React.FC<ButtonProps> = ({
 }) => {
   return (
     <button
-      className={`font-semibold font-sans py-2 px-4 shadow-md
+      className={`font-semibold font-sans  shadow-md
       flex items-center justify-center text-center gap-2 ${className}
       ${disable ? "bg-gray-500" : ""}`}
       disabled={disable}

@@ -1,6 +1,7 @@
 import React from "react";
 import { ButtonComponent } from "../homeComponents";
 import CardProject from "../cards/projectCard";
+import { FaLongArrowAltRight } from "react-icons/fa";
 
 export default function ProjectSection() {
   return (
@@ -10,8 +11,13 @@ export default function ProjectSection() {
         <CardProject />
         <CardProject />
       </div>
-      <ButtonComponent className="flex min-w-[112px] justify-center items-center gap-2 px-6 py-4 rounded-lg">
+      <ButtonComponent
+        className="bg-white rounded-md text-blue-gray-500 py-2 px-4
+            shadow transition-transform active:scale-95 active:bg-blue-gray-50
+            border border-transparent hover:border-gray-500"
+      >
         See All
+        <FaLongArrowAltRight />
       </ButtonComponent>
     </div>
   );

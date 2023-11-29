@@ -1,6 +1,6 @@
 import React from "react";
 import { ButtonComponent } from "../homeComponents";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 export default function ContactSection() {
   return (
@@ -21,9 +21,26 @@ export default function ContactSection() {
             Estou sempre pronto para um bate-papo. Envie-me um e-mail para
             hi@linalevi.com ou dê-me um alô nas redes sociais.
           </p>
-          <ButtonComponent className="bg-white rounded-md">
-            <FaGithub className="text-[#12121299] w-5 h-5" />
-          </ButtonComponent>
+          <div className="flex items-start gap-2">
+            <ButtonComponent
+              className="bg-white rounded-md p-3 hover:bg-blue-gray-100
+            shadow transition-transform active:scale-95 active:bg-blue-gray-50"
+            >
+              <FaGithub className="text-[#121212] w-5 h-5" />
+            </ButtonComponent>
+            <ButtonComponent
+              className="bg-white rounded-md p-3 hover:bg-blue-gray-100
+            shadow transition-transform active:scale-95 active:bg-blue-gray-50"
+            >
+              <FaLinkedin className="text-[#121212] w-5 h-5" />
+            </ButtonComponent>
+            <ButtonComponent
+              className="bg-white rounded-md p-3 hover:bg-blue-gray-100
+            shadow transition-transform active:scale-95 active:bg-blue-gray-50"
+            >
+              <FaInstagram className="text-[#121212] w-5 h-5" />
+            </ButtonComponent>
+          </div>
         </div>
       </div>
     </div>
