@@ -1,5 +1,5 @@
 import InputRow from './inputRow'
-import { InputComponent } from './input'
+import { InputComponent } from './inputButton'
 import TextAreaRow from './textAreaRow'
 
 export {

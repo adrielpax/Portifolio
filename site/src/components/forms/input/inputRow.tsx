@@ -7,8 +7,9 @@ interface inputProps {
   value?: string;
   label?: string;
   error?: string;
+  className?: string;
   handle: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  blur:(e: any) => void
+  blur: (e: any) => void;
 }
 
 const InputRow: React.FC<inputProps> = ({
@@ -19,7 +20,8 @@ const InputRow: React.FC<inputProps> = ({
   handle,
   label,
   error,
-  blur
+  blur,
+  className,
 }: inputProps) => {
   const [isFocused, setIsFocused] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -40,13 +42,13 @@ const InputRow: React.FC<inputProps> = ({
   }
 
   return (
-    <div className="mb-4">
+    <div className={``}>
       <div className={`relative ${isFocused ? "mb" : "mb"}`}>
         <input
           ref={inputRef}
           className={`border border-gray-500 rounded-md z-50 appearance-none
                     bg-white w-80 md:w-96 py-2 px-3 text-gray-800 leading-tight focus:outline-none
-                     focus:bg-white focus:ring-2 focus:ring-blue-500
+                     focus:bg-white focus:ring-2 focus:ring-blue-500 ${className || ""}
                      ${isFocused ? "focus:shadow-outline bg-white" : ""}
                      ${error ? "border-pink-500 text-pink-500" : ""}`}
           name={id}

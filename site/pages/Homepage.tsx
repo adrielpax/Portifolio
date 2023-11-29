@@ -16,6 +16,9 @@ import { useFormPostApi } from "../src/hook/form";
 import Confetti from "react-confetti";
 import { AboutSection, ProjectSection } from "../src/components/sections";
 import ContactSection from "../src/components/sections/contactSection";
+import Section from "../src/components/sections/sectionOne";
+import SectionOne from "../src/components/sections/sectionOne";
+import SectionTwo from "../src/components/sections/sectionTwo";
 
 const InfoCardComponent = React.lazy(
   () => import("../src/components/homeComponents/infoCard")
@@ -46,6 +49,8 @@ export default function Homepage() {
       <div className="dark w-full h-auto bg-gradient-to-r from-cyan-400 to-blue-900">
         <HeroSection text="Sua Historia começa com quem faz Historia !" />
         <AboutSection />
+        <SectionOne/>
+        <SectionTwo/>
         <ProjectSection />
         <ContactSection />
       </div>

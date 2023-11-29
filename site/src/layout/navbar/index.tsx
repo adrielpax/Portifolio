@@ -42,7 +42,7 @@ export default function Navbar() {
     >
       <Wrapper className="flex flex-row items-center justify-between py-1 h-full w-full">
         <Link href={"/"}>
-          <div className="text-center font-sans font-extrabold text-[#12121299] px-5
+          <div className="text-center font-sans font-extrabold text-[#12121299] hover:text-[#0047FF] px-5
           flex items-center gap-2">
             {/* <Image src={""} alt={""}/> */}
             <SiNintendogamecube className="w-10 h-10" />
