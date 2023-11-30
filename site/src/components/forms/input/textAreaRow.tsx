@@ -38,7 +38,7 @@ const TextAreaRow: React.FC<textareaProps> = ({
   }
 
   return (
-    <div className="mb-6">
+    <div className="">
       <div className={`relative ${isFocused ? "mb-2" : "mb-4"}`}>
         <textarea
           ref={textareaRef}

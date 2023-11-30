@@ -3,8 +3,19 @@ import { ButtonComponent } from "../homeComponents";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { InputRow, TextAreaRow } from "../forms/input";
 import { IoSend } from "react-icons/io5";
+import { useFormPostApi } from "../../hook/form";
 
 export default function ContactSection() {
+  const {
+    isLoading,
+    handleChange,
+    handleSubmit,
+    errors,
+    touched,
+    handleBlur,
+    values,
+    resetForm,
+  } = useFormPostApi();
   return (
     <div className="flex items-start gap-[136px] self-stretch md:p-10 bg-white">
       <div
@@ -44,46 +55,47 @@ export default function ContactSection() {
             </ButtonComponent>
           </div>
         </div>
-        <form className="flex flex-col gap-4 items-start">
+        <form
+          onSubmit={handleSubmit}
+          className="flex flex-col gap-4 items-start"
+        >
           <InputRow
-            id={""}
-            type={""}
+            id={"name"}
+            type={"name"}
+            value={values.name}
+            error={errors.name}
             holder={"Nome"}
-            handle={function (e: React.ChangeEvent<HTMLInputElement>): void {
-              throw new Error("Function not implemented.");
-            }}
-            blur={function (e: any): void {
-              throw new Error("Function not implemented.");
-            }}
+            handle={handleChange}
+            blur={handleBlur}
           />
           <InputRow
-            id={""}
-            type={""}
+            id={"email"}
+            type={"email"}
+            value={values.email}
+            error={errors.email}
             holder={"Email"}
-            handle={function (e: React.ChangeEvent<HTMLInputElement>): void {
-              throw new Error("Function not implemented.");
-            }}
-            blur={function (e: any): void {
-              throw new Error("Function not implemented.");
-            }}
+            handle={handleChange}
+            blur={handleBlur}
           />
 
           <TextAreaRow
-            id={""}
+            id={"message"}
             holder={"Mensagem"}
-            handle={function (e: React.ChangeEvent<HTMLTextAreaElement>): void {
-              throw new Error("Function not implemented.");
-            }}
-            blur={function (e: any): void {
-              throw new Error("Function not implemented.");
-            }}
+            value={values.message}
+            error={errors.message}
+            handle={handleChange}
+            blur={handleBlur}
           />
+
+          <p className="text-justify w-80">Ao enviar essa mensagem o tempo de resposta sera de 1 a 2 dias uteis.</p>
+          {/* <p>Ao enviar essa mensagem voce aceitar receber emails como resposta.</p> */}
 
           <ButtonComponent
             className="bg-blue-500 rounded-md z-20 
             shadow-none transition-transform py-2 px-4
             active:scale-95  text-white active:bg-[#4f94e448]
             border border-transparent hover:border-white"
+            type="submit"
           >
             Enviar Mensagem
             <IoSend />

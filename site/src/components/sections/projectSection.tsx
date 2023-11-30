@@ -6,6 +6,10 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 export default function ProjectSection() {
   return (
     <div className="flex flex-col items-center gap-10 self-stretch px-6 py-12 md:px-28 md:py-[72px] bg-[#E3F7FF]">
+      <h1 className="text-[#7DFFAF] text-regular text-base">Projects</h1>
+      <h2 className="font-semibold text-4xl font-sans">
+        Nossos principais Projetos
+      </h2>
       <div className="flex flex-col md:flex-row items-start gap-8 ">
         <CardProject />
         <CardProject />
