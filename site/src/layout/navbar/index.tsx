@@ -5,15 +5,20 @@ import Link from "next/link";
 import Image from "next/image";
 import Menu from "./menu";
 import { ButtonComponent } from "../../components/homeComponents";
+import { VscAccount } from "react-icons/vsc";
 
 import { HiCheckCircle } from "react-icons/hi2";
 import { SiNintendogamecube } from "react-icons/si";
+import { FaTools } from "react-icons/fa";
+import { useRouter } from "next/navigation";
+
 
 export default function Navbar() {
   const [showSubmenu, setShowSubmenu] = React.useState(false);
   const [mobileMenu, setMobileMenu] = React.useState(false);
   const [showNav, setShowNav] = React.useState("translate-y-0");
   const [scrollNav, setScrollNav] = React.useState(0);
+  const route = useRouter();
 
   React.useEffect(() => {
     const controllNavbar = () => {
@@ -42,8 +47,10 @@ export default function Navbar() {
     >
       <Wrapper className="flex flex-row items-center justify-between py-1 h-full w-full">
         <Link href={"/"}>
-          <div className="text-center font-sans font-extrabold text-[#12121299] hover:text-[#0047FF] px-5
-          flex items-center gap-2">
+          <div
+            className="text-center font-sans font-extrabold text-[#12121299] hover:text-[#0047FF] px-5
+          flex items-center gap-2"
+          >
             {/* <Image src={""} alt={""}/> */}
             <SiNintendogamecube className="w-10 h-10" />
             SQUARE ODEN
@@ -56,11 +63,36 @@ export default function Navbar() {
               rounded-md hover:text-white hover:bg-gradient-to-r from-[#0047FF] to-[#00F0FF]
               shadow transition-transform active:scale-95 hover:opacity-75 py-2 px-4"
             icon={<HiCheckCircle className="w-5 h-5" />}
+            onClick={()=>{
+              route.push("/(landing_page)/service/request-service")
+            }}
           >
             solicitar serviço
           </ButtonComponent>
         </div>
+        <div className="flex justify-between items-center">
+          <div>
+            <ButtonComponent
+              className="scale-90 bg-[white] text-[#12121299] shadow-none
+            rounded-md hover:text-[#0047FF] hover:bg-white border border-transparent
+            transition-transform active:scale-95 hover:opacity-75 p-4"
+              icon={<VscAccount className="w-8 h-8" />}
+            >
+              <div className="bg-red-500 rounded-full w-4 h-4 z-50 absolute bottom-3 right-3"></div>
+            </ButtonComponent>
+          </div>
+        </div>
       </Wrapper>
+      <div className="flex w-full justify-end">
+        <ButtonComponent
+          className="scale-90 bg-[#ffffff99] text-[#12121299] shadow-none
+            rounded-md hover:text-[#0047FF] hover:bg-white border border-transparent
+            transition-transform active:scale-95 hover:opacity-75 p-4"
+          icon={<FaTools className="w-6 h-6"/>}
+        >
+          In development
+        </ButtonComponent>
+      </div>
     </header>
   );
 }

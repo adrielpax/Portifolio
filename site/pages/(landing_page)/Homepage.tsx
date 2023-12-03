@@ -8,26 +8,26 @@ import {
   PersonalCard,
   Features,
   Loading,
-} from "../src/components/homeComponents/index"; //componente
+} from "../../src/components/homeComponents/index"; //componente
 
-import FloatButton from "../src/components/buttons/floatButton";
-import { useHomePopulation } from "../src/hook/useHomePupulation";
-import { useFormPostApi } from "../src/hook/form";
+import FloatButton from "../../src/components/buttons/floatButton";
+import { useHomePopulation } from "../../src/hook/useHomePupulation";
+import { useFormPostApi } from "../../src/hook/form";
 import Confetti from "react-confetti";
-import { AboutSection, ProjectSection } from "../src/components/sections";
-import ContactSection from "../src/components/sections/contactSection";
-import Section from "../src/components/sections/sectionOne";
-import SectionOne from "../src/components/sections/sectionOne";
-import SectionTwo from "../src/components/sections/sectionTwo";
+import { AboutSection, ProjectSection } from "../../src/components/sections";
+import ContactSection from "../../src/components/sections/contactSection";
+import Section from "../../src/components/sections/sectionOne";
+import SectionOne from "../../src/components/sections/sectionOne";
+import SectionTwo from "../../src/components/sections/sectionTwo";
 
 const InfoCardComponent = React.lazy(
-  () => import("../src/components/homeComponents/infoCard")
+  () => import("../../src/components/homeComponents/infoCard")
 );
 const FeaturesComponent = React.lazy(
-  () => import("../src/components/homeComponents/featuredCards")
+  () => import("../../src/components/homeComponents/featuredCards")
 );
 const ProjectComponent = dynamic(
-  async () => await import("../src/components/homeComponents/projectCard"),
+  async () => await import("../../src/components/homeComponents/projectCard"),
   {
     ssr: false,
     loading: () => {

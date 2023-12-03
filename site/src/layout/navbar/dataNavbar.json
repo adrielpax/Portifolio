@@ -1,17 +1,17 @@
 {
   "data": {
     "menu": [
-      { "id": 1, "name": "SOBRE", "route": "/about" },
-      { "id": 2, "name": "PROJETOS", "route": "/projects" },
-      { "id": 3, "name": "SERVIÇOS", "route": "/services" },
-      { "id": 4, "name": "CONTATOS", "route": "/contacts" },
+      { "id": 1, "name": "SOBRE", "route": "/(landing_page)/about/" },
+      { "id": 2, "name": "PROJETOS", "route": "/(landing_page)/projects/" },
+      { "id": 3, "name": "SERVIÇOS", "route": "/(landing_page)/services/" },
+      { "id": 4, "name": "CONTATOS", "route": "/(landing_page)/contacts/" },
       { "id": 5, "name": "PRODUTOS", "subMenu": true }
     ],
     "subMenu": [
-      { "id": 1, "name": "Sites", "url": "/" },
-      { "id": 2, "name": "Serviços de Marketing", "url": "/" },
-      { "id": 3, "name": "Serviços de Design", "url": "/" },
-      { "id": 4, "name": "Tratamento de dados", "url": "/" }
+      { "id": 1, "name": "Sites", "url": "/(landing_page)/products/sites-service" },
+      { "id": 2, "name": "Serviços de Marketing", "url": "/(landing_page)/products/mkt-service" },
+      { "id": 3, "name": "Serviços de Design", "url": "/(landing_page)/products/design-service" },
+      { "id": 4, "name": "Tratamento de dados", "url": "/(landing_page)/products/data-service" }
     ]
   }
 }

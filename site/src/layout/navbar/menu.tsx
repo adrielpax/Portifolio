@@ -37,19 +37,18 @@ export default function Menu({ showSubmenu, setShowSubmenu }: MenuProps) {
                   >
                     {hardData.data.subMenu.map((subItem) => {
                       return (
-                        <li
-                          key={subItem.id}
-                          className="text-[#12121299] hover:text-light-blue-500 
-                       transition-all ease-in-out
-                        cursor-pointer flex p-3 hover:bg-[whitesmoke] bg-white rounded "
-                        >
-                          <Link href={subItem.url}>
+                        <Link key={subItem.id} href={subItem.url}>
+                          <li
+                            className="text-[#12121299] hover:text-light-blue-500 
+                            transition-all ease-in-out
+                            cursor-pointer flex p-3 hover:bg-[whitesmoke] bg-white rounded "
+                          >
                             {subItem.name}
                             {/* <span className="opacity-50 text-sm">
                               {subItem?.doc_count}
                             </span> */}
-                          </Link>
-                        </li>
+                          </li>
+                        </Link>
                       );
                     })}
                   </ul>
