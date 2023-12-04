@@ -23,7 +23,7 @@ export default function ContactSection() {
         bg-gradient-to-t from-[#0047FF] to-[#00F0FF] flex-col md:flex-row
         text-white gap-6 self-stretch px-6 py-12 justify-center"
       >
-        <div className="w-72 h-[220px] shrink-0 bg-white opacity-50"></div>
+        {/* <div className="w-72 h-[220px] shrink-0 bg-white opacity-50"></div> */}
         <div className="flex flex-col items-start gap-8 self-stretch w-96 md:w-1/3">
           <div className="flex items-center gap-6"></div>
           <h1 className="text-[#7DFFAF] text-regular text-base">contato</h1>

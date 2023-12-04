@@ -10,7 +10,7 @@ export default function ProjectSection() {
       <h2 className="font-semibold text-4xl font-sans">
         Nossos principais Projetos
       </h2>
-      <div className="flex flex-col md:flex-row items-start gap-8 ">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 items-start  ">
         <CardProject />
         <CardProject />
         <CardProject />

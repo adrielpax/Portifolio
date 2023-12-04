@@ -19,7 +19,7 @@ export default function InputButton() {
     <form onSubmit={handleSubmit} className="flex items-center mx-2 gap-0">
       
       <InputRow
-        className="w-56 ml-4"
+        className="mr-4"
         id={"email"}
         type={""}
         error={errors.email}

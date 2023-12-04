@@ -6,11 +6,11 @@ export default function CardProject() {
   return (
     <Link href={`/(landing_page)/projects/$DevLinks`}>
       <div
-        className="flex flex-col items-start gap-6 w-96 p-6 rounded-2xl
+        className="flex flex-col items-start gap-6 w-auto p-6 rounded-md
       bg-white text-[#4E4563] border border-transparent hover:border-[#0047FF60]
       transition-all duration-75"
       >
-        <div className="h-40 self-stretch rounded-2xl bg-gray-500"></div>
+        <div className="h-40 self-stretch rounded-md bg-gray-500"></div>
         <div className="flex justify-between items-start self-stretch">
           <p className="text-sm not-italic font-normal leading-6">
             Jul - Dec 2022

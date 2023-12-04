@@ -48,7 +48,7 @@ export default function SectionOne() {
           </ButtonComponent>
         </div>
 
-        <div className="w-80  h-[266px] shrink-0 bg-gray-300 opacity-50"></div>
+        {/* <div className="w-80  h-[266px] shrink-0 bg-gray-300 opacity-50"></div> */}
       </div>
     </div>
   );

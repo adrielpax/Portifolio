@@ -36,11 +36,11 @@ export function PersonalCard() {
       <Card
         className={`bg-white
         ${
-          scrolled
+          !scrolled
             ? "opacity-100 transition-opacity ease-in delay-600"
-            : "opacity-0 transition-opacity ease-out delay-600"
+            : ""
         } rounded shadow-md 
-      md:shadow-xl md:hover:shadow-2xl my-32 bg-white sm:w-96 mx-auto 
+      md:shadow-xl md:hover:shadow-2xl bg-white sm:w-96 mx-auto 
       `}
       >
         <CardHeader

@@ -47,6 +47,7 @@ export default function Homepage() {
         </div>
       )}
       <div className="dark w-full h-auto bg-gradient-to-r from-cyan-400 to-blue-900">
+        
         <HeroSection text="Sua Historia começa com quem faz Historia !" />
         <AboutSection />
         <SectionOne/>

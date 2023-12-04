@@ -23,7 +23,7 @@ export default function SectionTwo() {
         bg-white flex-col md:flex-row
         text-white items-start gap-10 self-stretch px-6 py-12"
       >
-        <div className="w-80  h-[266px] shrink-0 bg-gray-300 opacity-50"></div>
+        {/* \ */}
         <div className="flex flex-col items-start w-auto md:w-[592px]  md:gap-8 self-stretch">
           <div className="flex items-center justify-between gap-6  text-[#654AEE]">
             <GiReceiveMoney className="w-5 h-5" />

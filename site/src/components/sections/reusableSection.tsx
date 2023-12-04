@@ -2,7 +2,7 @@ import React from "react";
 import { ButtonComponent } from "../homeComponents";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 
-export default function ContactSection() {
+export default function ReusableSection() {
   return (
     <div className="flex items-start gap-[136px] self-stretch md:p-10 bg-white">
       <div

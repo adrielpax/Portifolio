@@ -18,7 +18,7 @@ export default function AboutSection() {
         bg-gradient-to-t from-[#0047FF] to-[#00F0FF] flex-col md:flex-row
         text-white items-start gap-10 self-stretch px-6 py-12"
       >
-        <div className="w-80  h-[266px] shrink-0 bg-white opacity-50"></div>
+        {/* <div className="w-80  h-[266px] shrink-0 bg-white opacity-50"></div> */}
         <div className="flex flex-col items-start w-auto md:w-[592px]  md:gap-8 self-stretch">
           <div className="flex items-center gap-6  text-[#654AEE]">
             <FaPython className="w-5 h-5" />
