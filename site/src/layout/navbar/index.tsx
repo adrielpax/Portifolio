@@ -4,7 +4,7 @@ import Wrapper from "../wrapper";
 import Link from "next/link";
 import Image from "next/image";
 import Menu from "./menu";
-import { ButtonComponent } from "../../components/homeComponents";
+import { ButtonComponent } from "../../components/utilsComponents";
 import { VscAccount } from "react-icons/vsc";
 
 import { HiCheckCircle } from "react-icons/hi2";
@@ -64,7 +64,7 @@ export default function Navbar() {
               shadow transition-transform active:scale-95 hover:opacity-75 py-2 px-4"
             icon={<HiCheckCircle className="w-5 h-5" />}
             onClick={() => {
-              route.push("/(landing_page)/service/request-service");
+              route.push("/(landing_page)/services/request-service");
             }}
           >
             solicitar serviço

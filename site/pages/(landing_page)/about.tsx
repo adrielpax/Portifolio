@@ -4,7 +4,7 @@ import Wrapper from "../../src/layout/wrapper";
 import {
   ButtonComponent,
   PersonalCard,
-} from "../../src/components/homeComponents";
+} from "../../src/components/utilsComponents";
 import ContactSection from "../../src/components/sections/contactSection";
 
 export default function AboutPage() {
@@ -13,7 +13,7 @@ export default function AboutPage() {
       <div className="flex items-start justify-center mx-auto gap-[136px] self-stretch md:p-10 bg-white">
         <div
           className="flex md:items-start justify-center mx-auto md:gap-8 flex-[1_0_0] md:rounded-2xl p-[72px]
-        bg-gradient-to-t from-[#0047FF] to-[#00F0FF] flex-col md:flex-row
+        bg-gradient-to-b from-[#0047FF] to-[#00F0FF] flex-col md:flex-row
         text-white items-start gap-10 self-stretch px-6 py-12"
         >
           <PersonalCard />
@@ -25,9 +25,9 @@ export default function AboutPage() {
             <FaNodeJs className="w-5 h-5" />
             <SiTailwindcss className="w-5 h-5" /> */}
             </div>
-            <h1 className="text-[#7DFFAF] text-regular text-base">Sobre nós</h1>
+            <h1 className="text-[#7DFFAF] text-regular text-base">Sobre mim</h1>
             <h2 className="font-semibold text-4xl font-sans">
-              Alcance seu público-alvo
+              Sua Historia começa com quem faz Historia !
             </h2>
             <p className="font-regular font-medium font-sans text-justify">
               Com a Digital Boost, você poderá alcançar seu público-alvo de

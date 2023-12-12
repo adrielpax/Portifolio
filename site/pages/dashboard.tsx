@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import dynamic from "next/dynamic";
-import { Loading } from "../src/components/homeComponents";
+import { Loading } from "../src/components/utilsComponents";
 
 import { useGetData } from "../src/hook/useGetData";
 // import Card from "../src/components/cards/card";

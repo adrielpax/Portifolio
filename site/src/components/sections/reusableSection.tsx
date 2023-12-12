@@ -1,5 +1,5 @@
 import React from "react";
-import { ButtonComponent } from "../homeComponents";
+import { ButtonComponent } from "../utilsComponents";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 export default function ReusableSection() {

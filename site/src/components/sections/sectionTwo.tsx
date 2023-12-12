@@ -1,5 +1,5 @@
 import React from "react";
-import { ButtonComponent } from "../homeComponents";
+import { ButtonComponent } from "../utilsComponents";
 // import { ListTech } from "../../utils/list-tech";
 // import icons from "../../utils/icons/icons";
 import {
@@ -14,6 +14,7 @@ import { SiJavascript, SiTailwindcss } from "react-icons/si";
 import { BsGraphUpArrow } from "react-icons/bs";
 import { GiReceiveMoney } from "react-icons/gi";
 import InputButton from "../forms/input/inputButton";
+import Image from "next/image";
 
 export default function SectionTwo() {
   return (
@@ -23,7 +24,7 @@ export default function SectionTwo() {
         bg-white flex-col md:flex-row
         text-white items-start gap-10 self-stretch px-6 py-12"
       >
-        {/* \ */}
+        <Image src={'/imgs/two.png'} alt="image" width={300} height={300}/>
         <div className="flex flex-col items-start w-auto md:w-[592px]  md:gap-8 self-stretch">
           <div className="flex items-center justify-between gap-6  text-[#654AEE]">
             <GiReceiveMoney className="w-5 h-5" />
@@ -35,7 +36,7 @@ export default function SectionTwo() {
             Atraia mais clientes e aumente suas vendas
           </h2>
           <p className="font-regular font-medium font-sans text-justify text-[#12121299]">
-            Com a Digital Boost, você poderá atrair mais clientes e aumentar
+            Com a Square Oden, você poderá atrair mais clientes e aumentar
             suas vendas. Nossas soluções de marketing digital são projetadas
             para gerar leads qualificados e converter visitantes em clientes
             fiéis.
@@ -54,6 +55,7 @@ export default function SectionTwo() {
             </ButtonComponent> */}
           </div>
         </div>
+      
       </div>
     </div>
   );

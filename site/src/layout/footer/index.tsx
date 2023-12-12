@@ -1,6 +1,6 @@
 import { BsFillArrowUpCircleFill } from "react-icons/bs";
 import { FormCard } from "../../components/forms/formCard";
-import { ButtonComponent } from "../../components/homeComponents";
+import { ButtonComponent } from "../../components/utilsComponents";
 import { FooterList } from "../../utils/footer-utils";
 import { SiNintendogamecube } from "react-icons/si";
 

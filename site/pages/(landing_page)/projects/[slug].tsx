@@ -1,6 +1,6 @@
 import React from "react";
 import Wrapper from "../../../src/layout/wrapper";
-import { ButtonComponent } from "../../../src/components/homeComponents";
+import { ButtonComponent } from "../../../src/components/utilsComponents";
 import { CgAlbum } from "react-icons/cg";
 import { FaArrowLeft, FaLongArrowAltRight } from "react-icons/fa";
 import { useRouter } from "next/navigation";

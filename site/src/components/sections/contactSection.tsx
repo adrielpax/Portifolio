@@ -1,5 +1,5 @@
 import React from "react";
-import { ButtonComponent } from "../homeComponents";
+import { ButtonComponent } from "../utilsComponents";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { InputRow, TextAreaRow } from "../forms/input";
 import { IoSend } from "react-icons/io5";

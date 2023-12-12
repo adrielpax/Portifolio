@@ -1,5 +1,5 @@
 import React from "react";
-import { ButtonComponent } from "../homeComponents";
+import { ButtonComponent } from "../utilsComponents";
 import icons from "../../utils/icons/icons";
 import { useHandleCopy } from "../../hook/useHandleCopy";
 

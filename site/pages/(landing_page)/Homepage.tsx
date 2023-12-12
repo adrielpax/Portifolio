@@ -8,7 +8,7 @@ import {
   PersonalCard,
   Features,
   Loading,
-} from "../../src/components/homeComponents/index"; //componente
+} from "../../src/components/utilsComponents/index"; //componente
 
 import FloatButton from "../../src/components/buttons/floatButton";
 import { useHomePopulation } from "../../src/hook/useHomePupulation";
@@ -21,13 +21,13 @@ import SectionOne from "../../src/components/sections/sectionOne";
 import SectionTwo from "../../src/components/sections/sectionTwo";
 
 const InfoCardComponent = React.lazy(
-  () => import("../../src/components/homeComponents/infoCard")
+  () => import("../../src/components/utilsComponents/infoCard")
 );
 const FeaturesComponent = React.lazy(
-  () => import("../../src/components/homeComponents/featuredCards")
+  () => import("../../src/components/utilsComponents/featuredCards")
 );
 const ProjectComponent = dynamic(
-  async () => await import("../../src/components/homeComponents/projectCard"),
+  async () => await import("../../src/components/utilsComponents/projectCard"),
   {
     ssr: false,
     loading: () => {

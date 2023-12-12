@@ -1,5 +1,5 @@
 import React from "react";
-import { ButtonComponent } from "../homeComponents";
+import { ButtonComponent } from "../utilsComponents";
 import CardProject from "../cards/projectCard";
 import { FaLongArrowAltRight } from "react-icons/fa";
 

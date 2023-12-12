@@ -1,5 +1,5 @@
 import React from "react";
-import { ButtonComponent } from "../homeComponents";
+import { ButtonComponent } from "../utilsComponents";
 // import { ListTech } from "../../utils/list-tech";
 // import icons from "../../utils/icons/icons";
 import {
@@ -9,6 +9,7 @@ import {
   FaLongArrowAltRight,
 } from "react-icons/fa";
 import { SiJavascript, SiTailwindcss } from "react-icons/si";
+import Image from 'next/image'
 
 export default function AboutSection() {
   return (
@@ -18,7 +19,7 @@ export default function AboutSection() {
         bg-gradient-to-t from-[#0047FF] to-[#00F0FF] flex-col md:flex-row
         text-white items-start gap-10 self-stretch px-6 py-12"
       >
-        {/* <div className="w-80  h-[266px] shrink-0 bg-white opacity-50"></div> */}
+        <Image src={"/imgs/about.png"} alt="image" width={300} height={300}/>
         <div className="flex flex-col items-start w-auto md:w-[592px]  md:gap-8 self-stretch">
           <div className="flex items-center gap-6  text-[#654AEE]">
             <FaPython className="w-5 h-5" />
@@ -32,7 +33,7 @@ export default function AboutSection() {
             Alcance seu público-alvo
           </h2>
           <p className="font-regular font-medium font-sans text-justify">
-            Com a Digital Boost, você poderá alcançar seu público-alvo de forma
+            Com a Square Oden, você poderá alcançar seu público-alvo de forma
             eficiente e direcionada. Nossas soluções de marketing digital são
             personalizadas para atender às necessidades específicas do seu
             negócio.

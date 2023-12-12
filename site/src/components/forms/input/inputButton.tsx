@@ -1,6 +1,6 @@
 import React from "react";
 import InputRow from "./inputRow";
-import { ButtonComponent } from "../../homeComponents";
+import { ButtonComponent } from "../../utilsComponents";
 import { RiMailSendFill } from "react-icons/ri";
 import { useFormPostApi } from "../../../hook/form";
 

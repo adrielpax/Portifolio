@@ -1,5 +1,5 @@
 import React from "react";
-import { ButtonComponent } from "../homeComponents";
+import { ButtonComponent } from "../utilsComponents";
 // import { ListTech } from "../../utils/list-tech";
 // import icons from "../../utils/icons/icons";
 import {
@@ -12,6 +12,7 @@ import {
 import { IoEyeSharp, IoPeopleSharp } from "react-icons/io5";
 import { SiJavascript, SiTailwindcss } from "react-icons/si";
 import { BsGraphUpArrow } from "react-icons/bs";
+import Image from 'next/image'
 
 export default function SectionOne() {
   return (
@@ -32,7 +33,7 @@ export default function SectionOne() {
             Aumente sua visibilidade online
           </h2>
           <p className="font-regular font-medium font-sans text-justify text-[#12121299]">
-            Com a Digital Boost, você poderá alcançar seu público-alvo de forma
+            Com a Square Oden, você poderá alcançar seu público-alvo de forma
             eficiente e direcionada. Nossas soluções de marketing digital são
             personalizadas para atender às necessidades específicas do seu
             negócio.
@@ -48,7 +49,7 @@ export default function SectionOne() {
           </ButtonComponent>
         </div>
 
-        {/* <div className="w-80  h-[266px] shrink-0 bg-gray-300 opacity-50"></div> */}
+        <Image src={"/imgs/one.png"} alt="images" width={300} height={300} />
       </div>
     </div>
   );
