@@ -58,29 +58,29 @@ export default function Navbar() {
         </Link>
         <Menu showSubmenu={showSubmenu} setShowSubmenu={setShowSubmenu} />
         <div className="hidden md:flex items-center gap-1">
+          <div className="flex justify-between items-center">
+            <div>
+              <ButtonComponent
+                className="scale-90 bg-[white] text-[#12121299] shadow-none
+                  rounded-md hover:text-[#0047FF] hover:bg-white border border-transparent
+                  transition-transform active:scale-95 hover:opacity-75 p-4"
+                icon={<VscAccount className="w-8 h-8" />}
+              >
+                <div className="bg-red-500 rounded-full w-4 h-4 z-50 absolute bottom-3 right-3"></div>
+              </ButtonComponent>
+            </div>
+          </div>
           <ButtonComponent
             className="scale-90 bg-[whitesmoke] text-[#12121299]
               rounded-md hover:text-white hover:bg-gradient-to-r from-[#0047FF] to-[#00F0FF]
-              shadow transition-transform active:scale-95 hover:opacity-75 py-2 px-4"
-            icon={<HiCheckCircle className="w-5 h-5" />}
+              shadow-sm transition-all active:scale-95 hover:opacity-75 py-2 px-4"
+            icon={<HiCheckCircle className="w-5 h-5"/>}
             onClick={() => {
               route.push("/(landing_page)/services/request-service");
             }}
           >
             solicitar serviço
           </ButtonComponent>
-        </div>
-        <div className="flex justify-between items-center">
-          <div>
-            <ButtonComponent
-              className="scale-90 bg-[white] text-[#12121299] shadow-none
-                  rounded-md hover:text-[#0047FF] hover:bg-white border border-transparent
-                  transition-transform active:scale-95 hover:opacity-75 p-4"
-              icon={<VscAccount className="w-8 h-8" />}
-            >
-              <div className="bg-red-500 rounded-full w-4 h-4 z-50 absolute bottom-3 right-3"></div>
-            </ButtonComponent>
-          </div>
         </div>
       </Wrapper>
       <div className="flex w-full justify-end">
