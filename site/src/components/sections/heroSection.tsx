@@ -12,11 +12,11 @@ export function HeroSection({ text }: Prop) {
   return (
     <div
       className="bg-gradient-to-b from-[#0047FF] to-[#00F0FF] w-auto bg-opacity-50
-      flex sm:flex-col justify-center items-start gap-4 self-stretch px-6 py-12
+      flex flex-col-reverse justify-center items-start gap-16 self-stretch px-6 py-12
       md:gap-6 lg:gap-32 md:px-28 md:py-24 md:items-center md:flex-row mx-auto"
     >
       <div
-        className="flex flex-col w-auto items-start gap-6 self-stretch md:text-left
+        className="flex flex-col w-auto items-start gap-7 self-stretch md:text-left
           lg:w-[592px] md:flex-col md:items-start md:gap-8 text-white font-sans"
       >
         <h1 className="text-4xl font-bold ">
@@ -52,10 +52,8 @@ export function HeroSection({ text }: Prop) {
           </ButtonComponent>
         </div>
       </div>
-      <div className="flex justify-center w-full md:w-auto h-auto">
-        <div className="w-96">
-          <Image src={"/imgs/heroImage.png"} alt="hero Image" width={300} height={300} />
-        </div>
+      <div className="flex justify-center items-center w-full md:w-auto h-auto">
+          <Image src={"/imgs/heroImage.png"} alt="hero Image" width={400} height={400} />
       </div>
     </div>
   );

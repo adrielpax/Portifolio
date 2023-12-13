@@ -6,6 +6,7 @@ import Image from "next/image";
 import Menu from "./menu";
 import { ButtonComponent } from "../../components/utilsComponents";
 import { VscAccount } from "react-icons/vsc";
+import MobileMenu from "./mobileMenu"
 
 import { HiCheckCircle } from "react-icons/hi2";
 import { SiNintendogamecube } from "react-icons/si";
@@ -45,7 +46,7 @@ export default function Navbar() {
       className={`${showNav} bg-white shrink-0 w-max-[1440px] h-20 overflow-visible sticky z-50 top-0 shadow
       transition-all ease-in-out decoration-lime-300`}
     >
-      <Wrapper className="flex flex-row items-center justify-between py-1 h-full w-full">
+      <Wrapper className="flex flex-row items-center justify-around md:justify-between py-1 h-full w-full">
         <Link href={"/"}>
           <div
             className="text-center font-sans font-extrabold text-[#12121299] hover:text-[#0047FF] px-5
@@ -57,6 +58,7 @@ export default function Navbar() {
           </div>
         </Link>
         <Menu showSubmenu={showSubmenu} setShowSubmenu={setShowSubmenu} />
+        <MobileMenu/>
         <div className="hidden md:flex items-center gap-1">
           <div className="flex justify-between items-center">
             <div>

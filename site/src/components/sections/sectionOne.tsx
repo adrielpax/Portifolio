@@ -19,10 +19,10 @@ export default function SectionOne() {
     <div className="flex items-start justify-center mx-auto gap-[136px] self-stretch md:p-10 bg-white ">
       <div
         className="flex md:items-start justify-center mx-auto md:gap-8 flex-[1_0_0] md:rounded-2xl p-[72px]
-        bg-white flex-col md:flex-row
+        bg-white flex-col-reverse md:flex-row
         text-white items-start gap-10 self-stretch px-6 py-12"
       >
-        <div className="flex flex-col items-start w-auto md:w-[592px]  md:gap-8 self-stretch">
+        <div className="flex flex-col items-start w-auto md:w-[592px] gap-7 md:gap-8 self-stretch">
           <div className="flex items-center gap-6  text-[#654AEE]">
             <BsGraphUpArrow className="w-5 h-5" />
             <IoEyeSharp className="w-5 h-5" />
@@ -48,8 +48,10 @@ export default function SectionOne() {
             <FaLongArrowAltRight />
           </ButtonComponent>
         </div>
+        <div className="w-full md:w-auto flex justify-center">
 
         <Image src={"/imgs/one.png"} alt="images" width={300} height={300} />
+        </div>
       </div>
     </div>
   );

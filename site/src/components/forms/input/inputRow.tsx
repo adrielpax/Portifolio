@@ -46,7 +46,7 @@ const InputRow: React.FC<inputProps> = ({
       <div className={`relative ${isFocused ? "mb" : "mb"}`}>
         <input
           ref={inputRef}
-          className={`border border-gray-500 rounded-md z-50 appearance-none
+          className={`border border-white rounded-md z-50 appearance-none
                     bg-white w-80 md:w-96 py-2 px-3 text-gray-800 leading-tight focus:outline-none
                      focus:bg-white focus:ring-2 focus:ring-blue-500 ${className || ""}
                      ${isFocused ? "focus:shadow-outline bg-white" : ""}

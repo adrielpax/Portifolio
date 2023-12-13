@@ -39,7 +39,7 @@ export function PersonalCard() {
           !scrolled
             ? "opacity-100 transition-opacity ease-in delay-600"
             : ""
-        } rounded shadow-md 
+        } rounded-lg shadow-md 
       md:shadow-xl md:hover:shadow-2xl bg-white sm:w-96 mx-auto 
       `}
       >
@@ -116,7 +116,7 @@ export function PersonalCard() {
             <ListTech
               props={{
                 text: "Next13.JS",
-                color: " rounded-full bg-black ",
+                color: " rounded bg-black ",
                 colorIcon: "text-white",
                 icon: icons.next,
                 mobile: "",
@@ -125,7 +125,7 @@ export function PersonalCard() {
             <ListTech
               props={{
                 text: "Node.JS",
-                color: " rounded-full bg-green-400 ",
+                color: " rounded bg-green-400 ",
                 colorIcon: "text-white",
                 icon: icons.node,
                 mobile: "",
@@ -134,7 +134,7 @@ export function PersonalCard() {
             <ListTech
               props={{
                 text: "React.JS",
-                color: " rounded-full bg-light-blue-400 ",
+                color: " rounded bg-light-blue-400 ",
                 colorIcon: "text-white",
                 icon: icons.react,
                 mobile: "",
@@ -143,7 +143,7 @@ export function PersonalCard() {
             <ListTech
               props={{
                 text: "JavaScript",
-                color: " rounded-full bg-yellow-500 ",
+                color: " rounded bg-yellow-500 ",
                 colorIcon: "text-black",
                 icon: icons.js,
                 mobile: "",
@@ -152,7 +152,7 @@ export function PersonalCard() {
             <ListTech
               props={{
                 text: "MongoDB",
-                color: " rounded-full bg-gray-900",
+                color: " rounded bg-gray-900",
                 colorIcon: "text-green-800 ",
                 icon: icons.mongo,
                 mobile: "",
@@ -161,7 +161,7 @@ export function PersonalCard() {
             <ListTech
               props={{
                 text: "GrapQL",
-                color: " rounded-full bg-pink-600 ",
+                color: " rounded bg-pink-600 ",
                 colorIcon: "text-white",
                 icon: icons.graph,
                 mobile: "",
@@ -170,7 +170,7 @@ export function PersonalCard() {
             <ListTech
               props={{
                 text: "Git",
-                color: " rounded-full bg-orange-900",
+                color: " rounded bg-orange-900",
                 colorIcon: "text-white",
                 icon: icons.git,
                 mobile: "",
@@ -179,7 +179,7 @@ export function PersonalCard() {
             <ListTech
               props={{
                 text: "Python",
-                color: " rounded-full bg-blue-900",
+                color: " rounded bg-blue-900",
                 colorIcon: "text-yellow-700",
                 icon: icons.python,
                 mobile: "",
@@ -189,7 +189,7 @@ export function PersonalCard() {
               props={{
                 text: "Tailwind",
                 color:
-                  " rounded-full bg-gradient-to-r from-cyan-500 to-blue-500",
+                  " rounded bg-gradient-to-r from-cyan-500 to-blue-500",
                 colorIcon: "text-white",
                 icon: icons.tailwind,
                 mobile: "",
@@ -198,7 +198,7 @@ export function PersonalCard() {
             <ListTech
               props={{
                 text: "Express",
-                color: " rounded-full bg-black",
+                color: " rounded bg-black",
                 colorIcon: "text-white",
                 icon: icons.express,
                 mobile: "",
@@ -207,7 +207,7 @@ export function PersonalCard() {
             <ListTech
               props={{
                 text: "Typescript",
-                color: " rounded-full bg-blue-500",
+                color: " rounded bg-blue-500",
                 colorIcon: "text-white",
                 icon: icons.typescript,
                 mobile: "",
@@ -216,7 +216,7 @@ export function PersonalCard() {
             <ListTech
               props={{
                 text: "Axios",
-                color: " rounded-full bg-purple-500",
+                color: " rounded bg-purple-500",
                 colorIcon: "text-white",
                 icon: icons.axios,
                 mobile: "",
@@ -225,7 +225,7 @@ export function PersonalCard() {
             <ListTech
               props={{
                 text: "SQL",
-                color: " rounded-full bg-blue-700",
+                color: " rounded bg-blue-700",
                 colorIcon: "text-white",
                 icon: icons.sql,
                 mobile: "",
@@ -234,14 +234,14 @@ export function PersonalCard() {
             <ListTech
               props={{
                 text: "PHP",
-                color: " rounded-full bg-orange-500",
+                color: " rounded bg-orange-500",
                 colorIcon: "text-white",
                 icon: icons.php,
                 mobile: "",
               }}
             />
           </div>
-          <div className="flex w-full justify-center mx-auto mt-10">
+          {/* <div className="flex w-full justify-center mx-auto mt-10">
             <a href="#contact">
               <ButtonComponent
                 className="text-blue-gray-500 font-bold py-2 px-4 rounded bg-white
@@ -250,7 +250,7 @@ export function PersonalCard() {
                 Download CV
               </ButtonComponent>
             </a>
-          </div>
+          </div> */}
         </CardFooter>
       </Card>
     </div>

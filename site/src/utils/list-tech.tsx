@@ -28,7 +28,7 @@ export function ListTech({ props }: Props) {
                 text-center inline-flex items-center
                 justify-center mb-5 w-12 rounded-none 
                 ${props.color} font-semibold hover:-translate-y-1
-                shadow m-0`}
+                shadow m-1`}
         >
           {props.icon}
         </Button>

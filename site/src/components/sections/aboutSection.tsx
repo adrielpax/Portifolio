@@ -15,12 +15,15 @@ export default function AboutSection() {
   return (
     <div className="flex items-start justify-center mx-auto gap-[136px] self-stretch md:p-10 bg-white">
       <div
-        className="flex md:items-start justify-center mx-auto md:gap-8 flex-[1_0_0] md:rounded-2xl p-[72px]
+        className="flex md:items-start justify-center mx-auto md:gap-16 flex-[1_0_0] md:rounded-2xl p-[72px]
         bg-gradient-to-t from-[#0047FF] to-[#00F0FF] flex-col md:flex-row
-        text-white items-start gap-10 self-stretch px-6 py-12"
+        text-white items-start gap-16 self-stretch px-6 py-12"
       >
+        <div className="flex w-full md:w-auto justify-center">
+
         <Image src={"/imgs/about.png"} alt="image" width={300} height={300}/>
-        <div className="flex flex-col items-start w-auto md:w-[592px]  md:gap-8 self-stretch">
+        </div>
+        <div className="flex flex-col items-start w-auto md:w-[592px] gap-7  md:gap-8 self-stretch">
           <div className="flex items-center gap-6  text-[#654AEE]">
             <FaPython className="w-5 h-5" />
             <FaReact className="w-5 h-5" />
