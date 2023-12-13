@@ -60,7 +60,7 @@ export default function ContactSection() {
        
           <form
             onSubmit={handleSubmit}
-            className="flex flex-col gap-4 w-auto md:w-96 items-center md:items-start"
+            className="flex flex-col gap-4 w-auto md:w-96 items-center md:items-start w-"
           >     
             <InputRow
               id={"name"}
@@ -70,7 +70,7 @@ export default function ContactSection() {
               holder={"Nome"}
               handle={handleChange}
               blur={handleBlur}
-              className="w-60"
+              className="w-[238px]"
               />
            
             <InputRow
@@ -81,7 +81,7 @@ export default function ContactSection() {
               holder={"Email"}
               handle={handleChange}
               blur={handleBlur}
-              className="w-60"
+              className="w-[238px]"
               />
 
             <TextAreaRow

@@ -40,7 +40,7 @@ export function PersonalCard() {
             ? "opacity-100 transition-opacity ease-in delay-600"
             : ""
         } rounded-lg shadow-md 
-      md:shadow-xl md:hover:shadow-2xl bg-white sm:w-96 mx-auto 
+      md:shadow-xl md:hover:shadow-2xl bg-white md:w-96 scale-90 md:scale-100 mx-auto 
       `}
       >
         <CardHeader

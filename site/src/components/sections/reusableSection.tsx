@@ -8,7 +8,7 @@ export default function ReusableSection() {
       <div
         className="flex md:items-start md:gap-[136px] flex-[1_0_0] md:rounded-2xl p-[72px]
         bg-gradient-to-t from-[#0047FF] to-[#00F0FF] flex-col md:flex-row
-        text-white items-start gap-10 self-stretch px-6 py-12"
+        text-white items-start gap-10 self-stretch md:px-6 py-12"
       >
         <div className="w-auto h-[213.808px] shrink-0 bg-white opacity-50"></div>
         <div className="flex flex-col items-start gap-8 self-stretch">

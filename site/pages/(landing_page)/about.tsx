@@ -13,11 +13,11 @@ export default function AboutPage() {
       <div className="flex items-start justify-center mx-auto gap-[136px] self-stretch md:p-10 bg-white">
         <div
           className="flex md:items-start justify-center mx-auto md:gap-8 flex-[1_0_0] md:rounded-2xl p-[72px]
-        bg-gradient-to-b from-[#0047FF] to-[#00F0FF] flex-col md:flex-row
+        bg-gradient-to-b from-[#0047FF] to-[#00F0FF] flex-col lg:flex-row
         text-white items-start gap-10 self-stretch px-6 py-12"
         >
           <PersonalCard />
-          <div className="flex flex-col items-start w-auto md:w-[592px]  md:gap-8 self-stretch">
+          <div className="flex flex-col items-start w-auto md:w-[592px] p-6 gap-7 md:gap-8 self-stretch">
             <div className="flex items-center gap-6  text-[#654AEE]">
               {/* <FaPython className="w-5 h-5" />
             <FaReact className="w-5 h-5" />
