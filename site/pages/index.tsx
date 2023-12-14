@@ -2,8 +2,8 @@
 //import Image from 'next/image'
 import type {ReactElement} from 'react';
 import { NextPageWithLayout } from './_app';
-import  Homepage  from './(landing_page)/Homepage';
 import Dashboard from './dashboard';
+import Homepage from './(landing_page)/Homepage';
 // import PageNotFound from './404.page';
 
 const Page: NextPageWithLayout = ()=>{

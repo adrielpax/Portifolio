@@ -14,7 +14,11 @@ import FloatButton from "../../src/components/buttons/floatButton";
 import { useHomePopulation } from "../../src/hook/useHomePupulation";
 import { useFormPostApi } from "../../src/hook/form";
 import Confetti from "react-confetti";
-import { AboutSection, ProjectSection } from "../../src/components/sections";
+import {
+  AboutSection,
+  HeroSectionSlide,
+  ProjectSection,
+} from "../../src/components/sections";
 import ContactSection from "../../src/components/sections/contactSection";
 import Section from "../../src/components/sections/sectionOne";
 import SectionOne from "../../src/components/sections/sectionOne";
@@ -47,11 +51,11 @@ export default function Homepage() {
         </div>
       )}
       <div className="dark w-full h-auto bg-gradient-to-r from-cyan-400 to-blue-900">
-        
         <HeroSection text="Sua Historia começa com quem faz Historia !" />
+        {/* <HeroSectionSlide /> */}
         <AboutSection />
-        <SectionOne/>
-        <SectionTwo/>
+        <SectionOne />
+        <SectionTwo />
         <ProjectSection />
         <ContactSection />
       </div>

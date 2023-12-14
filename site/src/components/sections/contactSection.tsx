@@ -20,14 +20,12 @@ export default function ContactSection() {
   return (
     <div className="flex items-start gap-[136px] self-stretch md:p-10 bg-white">
       <div
-        className="flex items-center md:gap-8 flex-[1_0_0] md:rounded-2xl p-[72px]
+        className="flex items-start md:gap-8 flex-[1_0_0] md:rounded-2xl p-[72px]
         bg-gradient-to-t from-[#0047FF] to-[#00F0FF] flex-col md:flex-row
         text-white gap-6 px-6 py-12 justify-center self-stretch"
       >
-        {/* <div className="w-72 h-[220px] shrink-0 bg-white opacity-50"></div> */}
-
         <div className="flex flex-col items-start gap-7  w-autohora md:w-1/3">
-          <div className="flex items-center gap-6"></div>
+          <div className="flex gap-6"></div>
           <h1 className="text-[#7DFFAF] text-regular text-base">contato</h1>
           <h2 className="font-semibold text-4xl font-sans">
             Entre em contato conosco hoje mesmo.
@@ -56,12 +54,19 @@ export default function ContactSection() {
               <FaInstagram className="text-[#121212] w-5 h-5" />
             </ButtonComponent>
           </div>
+          <div className="w-72 h-[220px] shrink-0 bg-white opacity-50"></div>
         </div>
-       
+        <div>
+          <div className="w-full h-auto text-center p-3 my-4 text-medium text-lg shrink-0">
+            <h3>
+              Mande uma Mensagem
+              <br /> ou solicite um serviço
+            </h3>
+          </div>
           <form
             onSubmit={handleSubmit}
             className="flex flex-col gap-4 w-auto md:w-96 items-center md:items-start w-"
-          >     
+          >
             <InputRow
               id={"name"}
               type={"name"}
@@ -71,8 +76,8 @@ export default function ContactSection() {
               handle={handleChange}
               blur={handleBlur}
               className="w-[238px]"
-              />
-           
+            />
+
             <InputRow
               id={"email"}
               type={"email"}
@@ -82,7 +87,7 @@ export default function ContactSection() {
               handle={handleChange}
               blur={handleBlur}
               className="w-[238px]"
-              />
+            />
 
             <TextAreaRow
               id={"message"}
@@ -91,30 +96,29 @@ export default function ContactSection() {
               error={errors.message}
               handle={handleChange}
               blur={handleBlur}
-              
-              />
+            />
 
-              
-            <p className="text-justify">
+            {/* <p className="text-justify">
               Ao enviar essa mensagem o tempo de resposta sera de 1 a 2 dias
               uteis.
-            </p>
-            <p>
-              Ao enviar essa mensagem voce aceitar receber emails como resposta.
+            </p> */}
+            <p className="text-justify">
+              Ao enviar essa mensagem voce aceitar receber e-mails como
+              resposta.
             </p>
 
             <ButtonComponent
               className="bg-blue-500 rounded-md z-20 
-              shadow-none transition-transform py-2 px-4
-              active:scale-95  text-white active:bg-[#4f94e448]
-              border border-transparent hover:border-white"
+            shadow-none transition-transform py-2 px-4
+            active:scale-95  text-white active:bg-[#4f94e448]
+            border border-transparent hover:border-white"
               type="submit"
             >
               Enviar Mensagem
               <IoSend />
             </ButtonComponent>
           </form>
-
+        </div>
       </div>
     </div>
   );

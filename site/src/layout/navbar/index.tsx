@@ -6,7 +6,7 @@ import Image from "next/image";
 import Menu from "./menu";
 import { ButtonComponent } from "../../components/utilsComponents";
 import { VscAccount } from "react-icons/vsc";
-import MobileMenu from "./mobileMenu"
+import MobileMenu from "./mobileMenu";
 
 import { HiCheckCircle } from "react-icons/hi2";
 import { SiNintendogamecube } from "react-icons/si";
@@ -43,13 +43,13 @@ export default function Navbar() {
 
   return (
     <header
-      className={`${showNav} bg-white shrink-0 w-max-[1440px] h-20 overflow-visible sticky z-50 top-0 shadow
+      className={`${showNav} bg-gradient-to-b from-white to-[whitesmoke] shrink-0 w-max-[1440px] h-20 overflow-visible sticky z-50 top-0 shadow
       transition-all ease-in-out decoration-lime-300`}
     >
-      <Wrapper className="flex flex-row items-center justify-around md:justify-between py-1 h-full w-full">
+      <Wrapper className="flex flex-row items-center text-[#12121299] justify-around md:justify-between py-1 h-full w-full">
         <Link href={"/"}>
           <div
-            className="text-center font-sans font-extrabold text-[#12121299] hover:text-[#0047FF] px-5
+            className="text-center font-sans font-extrabold  hover:text-[#0047FF] px-5
           flex items-center gap-2"
           >
             {/* <Image src={""} alt={""}/> */}
@@ -58,25 +58,25 @@ export default function Navbar() {
           </div>
         </Link>
         <Menu showSubmenu={showSubmenu} setShowSubmenu={setShowSubmenu} />
-        <MobileMenu/>
+        <MobileMenu />
         <div className="hidden md:flex items-center gap-1">
           <div className="flex justify-between items-center">
             <div>
               <ButtonComponent
-                className="scale-90 bg-[white] text-[#12121299] shadow-none
-                  rounded-md hover:text-[#0047FF] hover:bg-white border border-transparent
+                className="scale-90 bg-transparent  shadow-none
+                  rounded-md hover:text-[#0047FF] border border-transparent
                   transition-transform active:scale-95 hover:opacity-75 p-4"
                 icon={<VscAccount className="w-8 h-8" />}
               >
-                <div className="bg-red-500 rounded-full w-4 h-4 z-50 absolute bottom-3 right-3"></div>
+                <span className="bg-red-500 rounded-full w-4 h-4 z-50 absolute bottom-3 right-3"></span>
               </ButtonComponent>
             </div>
           </div>
           <ButtonComponent
-            className="scale-90 bg-[whitesmoke] text-[#12121299]
+            className="scale-90 bg-transparent border
               rounded-md hover:text-white hover:bg-gradient-to-r from-[#0047FF] to-[#00F0FF]
-              shadow-sm transition-all active:scale-95 hover:opacity-75 py-2 px-4"
-            icon={<HiCheckCircle className="w-5 h-5"/>}
+              shadow-sm transition-all active:scale-95 hover:opacity-95 py-2 px-4"
+            icon={<HiCheckCircle className="w-5 h-5" />}
             onClick={() => {
               route.push("/(landing_page)/services/request-service");
             }}
@@ -87,7 +87,7 @@ export default function Navbar() {
       </Wrapper>
       <div className="flex w-full justify-end">
         <ButtonComponent
-          className="scale-90 bg-[#ffffff99] text-[#12121299] shadow-none
+          className="scale-90 bg-[#ffffff99]  shadow-none text-[#12121299]
             rounded-md hover:text-[#0047FF] hover:bg-white border border-transparent
             transition-transform active:scale-95 hover:opacity-75 p-4"
           icon={<FaTools className="w-6 h-6" />}

@@ -21,8 +21,8 @@ export default function SectionTwo() {
     <div className="flex items-start justify-center mx-auto gap-[136px] self-stretch md:p-10 bg-white ">
       <div
         className="flex md:items-start justify-center mx-auto md:gap-8 flex-[1_0_0] md:rounded-2xl p-[72px]
-        bg-white flex-col md:flex-row
-        text-white items-start gap-16 self-stretch px-6 py-12"
+        bg-[whitesmoke] flex-col md:flex-row
+        text-[#12121299] items-start gap-16 self-stretch px-6 py-12"
       >
         <div className="w-full md:w-auto justify-center flex ">
         <Image src={'/imgs/two.png'} alt="image" width={300} height={300}/>
@@ -34,10 +34,10 @@ export default function SectionTwo() {
             <IoPeopleSharp className="w-5 h-5" />
           </div>
           <h1 className="text-[#7DFFAF] text-regular text-base"></h1>
-          <h2 className="font-semibold text-4xl font-sans text-[#12121299]">
+          <h2 className="font-semibold text-4xl font-sans ">
             Atraia mais clientes e aumente suas vendas
           </h2>
-          <p className="font-regular font-medium font-sans text-justify text-[#12121299]">
+          <p className="font-regular font-medium font-sans text-justify ">
             Com a Square Oden, você poderá atrair mais clientes e aumentar
             suas vendas. Nossas soluções de marketing digital são projetadas
             para gerar leads qualificados e converter visitantes em clientes

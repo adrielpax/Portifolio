@@ -11,7 +11,7 @@ export function Footer() {
       <div className="flex items-center gap-6 md:px-28 py-8 bg-black text-white">
         <Wrapper >
 
-        <div className="w-full flex justify-between md:flex-row items-center flex-col-reverse gap-8">
+        <div className="w-full flex justify-between md:flex-row items-center flex-col-reverse gap-8 font-sans text-xs">
           <a
             href="/"
             className="flex items-center text-white hover:text-[#0047FF] gap-2"
@@ -21,9 +21,9 @@ export function Footer() {
           </a>
 
           <div className="flex flex-row gap-4 items-center">
-            <a href="/">Github</a>
-            <a href="/">Linkedin</a>
-            <a href="/">Instagram</a>
+            <a href="https://github.com/" className="hover:text-light-blue-500">Github</a>
+            <a href="https://linkedin.com/" className="hover:text-light-blue-500">Linkedin</a>
+            <a href="https://instagram.com/" className="hover:text-light-blue-500">Instagram</a>
             <ButtonComponent
               className="bg-white rounded-md p-2 hover:bg-blue-gray-100
               shadow transition-transform active:scale-95 active:bg-blue-gray-50"
