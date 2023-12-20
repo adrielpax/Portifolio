@@ -19,7 +19,7 @@ export default function Page() {
             <FaArrowLeft className="text-[#121212] w-5 h-5" />
           </ButtonComponent>
         </div>
-        <div className="bg-[whitesmoke] rounded-b-md pt-8 pr-12 pb-12 pl-12 flex flex-col gap-6 items-start justify-start shrink-0 md:w-[800px] relative ">
+        <div className="bg-[whitesmoke] shadow-md rounded-b-md pt-8 pr-12 pb-12 pl-12 flex flex-col gap-6 items-start justify-start shrink-0 md:w-[800px] relative ">
           <div className="flex flex-row items-center justify-between self-stretch shrink-0 relative">
             <div>Jul - 20 . 2023</div>
             <div>icon icon icon</div>
