@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 export default function Page() {
   const router = useRouter()
   return (
-    <Wrapper className="w-screen h-full flex flex-col items-center md:flex-row md:items-start gap-6 bg-white">
+    <Wrapper className="w-screen h-full flex flex-col items-center md:flex-row md:items-start gap-6 bg-white mt-20">
       <div className="py-6">
         <div className="md:w-[800px] h-[300px] self-stretch bg-[#12121260] rounded-t-md">
           <ButtonComponent

@@ -12,47 +12,54 @@ import {
 import { IoEyeSharp, IoPeopleSharp } from "react-icons/io5";
 import { SiJavascript, SiTailwindcss } from "react-icons/si";
 import { BsGraphUpArrow } from "react-icons/bs";
-import Image from 'next/image'
+import Image from "next/image";
+import Wrapper from "../../layout/wrapper";
 
 export default function SectionOne() {
   return (
     <div className="flex items-start justify-center mx-auto gap-[136px] self-stretch md:p-10 bg-white ">
-      <div
-        className="flex md:items-start justify-center mx-auto md:gap-8 flex-[1_0_0] md:rounded-2xl p-[72px]
+      <Wrapper>
+        <div
+          className="flex md:items-start justify-center mx-auto md:gap-8 flex-[1_0_0] md:rounded-md p-[72px]
         bg-white flex-col-reverse md:flex-row
         text-white items-start gap-10 self-stretch px-6 py-12"
-      >
-        <div className="flex flex-col items-start w-auto md:w-[592px] gap-7 md:gap-8 self-stretch">
-          <div className="flex items-center gap-6  text-[#654AEE]">
-            <BsGraphUpArrow className="w-5 h-5" />
-            <IoEyeSharp className="w-5 h-5" />
-            <FaInstagram className="w-5 h-5"/>
-          </div>
-          <h1 className="text-[#7DFFAF] text-regular text-base"></h1>
-          <h2 className="font-semibold text-4xl font-sans text-[#12121299]">
-            Aumente sua visibilidade online
-          </h2>
-          <p className="font-regular font-medium font-sans text-justify text-[#12121299]">
-            Com a Square Oden, você poderá alcançar seu público-alvo de forma
-            eficiente e direcionada. Nossas soluções de marketing digital são
-            personalizadas para atender às necessidades específicas do seu
-            negócio.
-          </p>
-          <ButtonComponent
-            className="bg-[#121212] rounded-md z-20 
+        >
+          <div className="flex flex-col items-start w-auto md:w-[592px] gap-7 md:gap-8 self-stretch">
+            <div className="flex items-center gap-6  text-[#654AEE]">
+              <BsGraphUpArrow className="w-5 h-5" />
+              <IoEyeSharp className="w-5 h-5" />
+              <FaInstagram className="w-5 h-5" />
+            </div>
+            <h1 className="text-[#7DFFAF] text-regular text-base"></h1>
+            <h2 className="font-semibold text-4xl font-sans text-[#12121299]">
+              Aumente sua visibilidade online
+            </h2>
+            <p className="font-regular font-medium font-sans text-justify text-[#12121299]">
+              Com a Square Oden, você poderá alcançar seu público-alvo de forma
+              eficiente e direcionada. Nossas soluções de marketing digital são
+              personalizadas para atender às necessidades específicas do seu
+              negócio.
+            </p>
+            <ButtonComponent
+              className="bg-[#121212] rounded-md z-20 
             shadow-none transition-transform py-2 px-4
             active:scale-95  text-white active:bg-[#12121299]
             border border-transparent hover:border-white"
-          >
-            My Resume
-            <FaLongArrowAltRight />
-          </ButtonComponent>
+            >
+              My Resume
+              <FaLongArrowAltRight />
+            </ButtonComponent>
+          </div>
+          <div className="w-full md:w-auto flex justify-center">
+            <Image
+              src={"/imgs/one.png"}
+              alt="images"
+              width={300}
+              height={300}
+            />
+          </div>
         </div>
-        <div className="w-full md:w-auto flex justify-center">
-
-        <Image src={"/imgs/one.png"} alt="images" width={300} height={300} />
-        </div>
-      </div>
+      </Wrapper>
     </div>
   );
 }

@@ -50,7 +50,7 @@ export default function Homepage() {
           <Confetti className="flex w-screen" />
         </div>
       )}
-      <div className="dark w-full h-auto bg-gradient-to-r from-cyan-400 to-blue-900">
+      <div className="w-full h-auto bg-white">
         <HeroSection text="Sua Historia começa com quem faz Historia !" />
         {/* <HeroSectionSlide /> */}
         <AboutSection />

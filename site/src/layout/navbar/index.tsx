@@ -25,9 +25,9 @@ export default function Navbar() {
     const controllNavbar = () => {
       if (window.scrollY > 100) {
         if (window.scrollY > scrollNav) {
-          setShowNav("-translate-y-[80px]");
+          setShowNav("-translate-y-[80px] scale-95");
         } else {
-          setShowNav("shadow");
+          setShowNav("shadow md:scale-95 rounded-md");
         }
       } else {
         setShowNav("translate-y-0");
@@ -43,13 +43,13 @@ export default function Navbar() {
 
   return (
     <header
-      className={`${showNav} bg-gradient-to-b from-white to-[whitesmoke] shrink-0 w-max-[1440px] h-20 overflow-visible sticky z-50 top-0 shadow
-      transition-all ease-in-out decoration-lime-300`}
+      className={`${showNav} bg-white shrink-0 w-full h-20 overflow-visible fixed z-50 top-0 shadow
+      transition-all ease-in-out decoration-lime-300 `}
     >
       <Wrapper className="flex flex-row items-center text-[#12121299] justify-around md:justify-between py-1 h-full w-full">
         <Link href={"/"}>
           <div
-            className="text-center font-sans font-extrabold  hover:text-[#0047FF] px-5
+            className="text-center font-sans font-extrabold text-[#181d41] hover:text-[#0047FF] px-5
           flex items-center gap-2"
           >
             {/* <Image src={""} alt={""}/> */}
@@ -85,16 +85,18 @@ export default function Navbar() {
           </ButtonComponent>
         </div>
       </Wrapper>
-      <div className="flex w-full justify-end">
-        <ButtonComponent
-          className="scale-90 bg-[#ffffff99]  shadow-none text-[#12121299]
-            rounded-md hover:text-[#0047FF] hover:bg-white border border-transparent
-            transition-transform active:scale-95 hover:opacity-75 p-4"
-          icon={<FaTools className="w-6 h-6" />}
-        >
-          In development
-        </ButtonComponent>
-      </div>
+      <Wrapper>
+        <div className="flex w-full justify-end">
+          <ButtonComponent
+            className="bg-[#ffffff99]  shadow-none text-[#12121299]
+          rounded-md hover:text-[#0047FF] hover:bg-white border border-transparent
+          transition-transform active:scale-90 hover:opacity-75 p-4 py-2 my-1 scale-75"
+            icon={<FaTools className="w-6 h-6" />}
+          >
+            In development
+          </ButtonComponent>
+        </div>
+      </Wrapper>
     </header>
   );
 }

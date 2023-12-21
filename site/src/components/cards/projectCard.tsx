@@ -7,8 +7,8 @@ export default function CardProject() {
     <Link href={`/(landing_page)/projects/$DevLinks`}>
       <div
         className="flex flex-col items-start gap-6 w-auto p-3 rounded-md
-      bg-white text-[#4E4563] border border-transparent hover:border-blue-gray-200
-      transition-all duration-75 shadow"
+      bg-white text-[#4E4563] border border-transparent hover:-translate-y-1
+      transition-all duration-100 shadow hover:shadow-md"
       >
         <div className="h-40 self-stretch rounded-md bg-gray-500"></div>
         <div className="flex justify-between items-start self-stretch">

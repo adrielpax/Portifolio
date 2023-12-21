@@ -12,11 +12,11 @@ export function HeroSection({ text }: Prop) {
   return (
     <div
       className="bg-gradient-to-b from-[#0047FF] to-[#00F0FF] w-auto bg-opacity-50
-      flex flex-col-reverse justify-center items-start gap-16 self-stretch px-6 py-12
+      flex flex-col-reverse justify-center items-start gap-16 self-stretch p-12
       md:gap-6 lg:gap-32 md:px-28 md:py-24 md:items-center md:flex-row mx-auto"
     >
       <div
-        className="flex flex-col w-auto items-start gap-7 self-stretch md:text-left
+        className="flex flex-col w-auto items-start gap-7 self-stretch md:text-left pt-14
           lg:w-[592px] md:flex-col md:items-start md:gap-8 text-white font-sans"
       >
         <h1 className="text-4xl font-bold ">

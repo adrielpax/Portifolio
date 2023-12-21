@@ -10,7 +10,7 @@ import ContactSection from "../../src/components/sections/contactSection";
 export default function AboutPage() {
   return (
     <div className="h-auto">
-      <div className="flex items-start justify-center mx-auto gap-[136px] self-stretch md:p-10 bg-white">
+      <div className="flex items-start justify-center mx-auto gap-[136px] self-stretch md:p-10 bg-white mt-20">
         <div
           className="flex md:items-start justify-center mx-auto md:gap-8 flex-[1_0_0] md:rounded-2xl p-[72px]
         bg-gradient-to-b from-[#0047FF] to-[#00F0FF] flex-col lg:flex-row
