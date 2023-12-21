@@ -6,9 +6,7 @@ import Wrapper from "../../../src/layout/wrapper";
 export default function Index() {
   return (
     <div className="h-auto">
-      <Wrapper className="mt-20">
-        <ServiceSection />
-      </Wrapper>
+      <ServiceSection />
       <ContactSection />
     </div>
   );
