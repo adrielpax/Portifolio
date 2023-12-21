@@ -43,7 +43,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`${showNav} bg-white shrink-0 w-full h-20 overflow-visible fixed z-50 top-0 shadow
+      className={`${showNav} bg-white shrink-0 w-full h-16 overflow-visible fixed z-50 top-0 shadow
       transition-all ease-in-out decoration-lime-300 `}
     >
       <Wrapper className="flex flex-row items-center text-[#12121299] justify-around md:justify-between py-1 h-full w-full">

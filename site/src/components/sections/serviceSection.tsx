@@ -12,7 +12,7 @@ export default function ServiceSection() {
         <div className="flex flex-col items-center gap-10 self-stretch px-6 py-12 md:px-28 md:py-[72px]">
           <h1 className="text-[#7DFFAF] text-regular text-base">Services</h1>
           <h2 className="font-semibold text-4xl font-sans">Nossos Serviços</h2>
-          <div className="grid lg:grid-cols-2 md:grid-cols-1 grid-cols-1 gap-8 items-start  ">
+          <div className="grid lg:grid-cols-1 md:grid-cols-1 grid-cols-1 gap-8 items-start  ">
             <ServiceCard />
             <ServiceCard />
             <ServiceCard />

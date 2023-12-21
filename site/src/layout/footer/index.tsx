@@ -10,7 +10,7 @@ export function Footer() {
   const route = useRouter();
   const pathname = usePathname();
   return (
-    <div>
+    <div className="relative bottom-0">
       <div className="flex items-center gap-6 md:px-28 py-3 bg-black text-white">
         <Wrapper>
           <div className="w-full flex justify-between md:flex-row items-center flex-col-reverse gap-8 font-sans text-xs">

@@ -4,6 +4,7 @@ import Wrapper from "../../../src/layout/wrapper";
 import { ButtonComponent } from "../../../src/components/utilsComponents";
 import { FaArrowLeft, FaLongArrowAltRight } from "react-icons/fa";
 import { CgAlbum } from "react-icons/cg";
+import ContactSection from "../../../src/components/sections/contactSection";
 
 export default function servicesPages() {
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -11,8 +12,8 @@ export default function servicesPages() {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const router = useRouter()
   return (
-    <div>
-      servicesPages : {pathname}
+    <div className="mt-20">
+      {/* servicesPages : {pathname} */}
       <Wrapper className="w-screen h-full flex flex-col items-center md:flex-row md:items-start gap-6 bg-white">
         <div className="py-6">
           <div className="md:w-[800px] h-[300px] self-stretch bg-[#12121260] rounded-t-md">
@@ -73,6 +74,7 @@ export default function servicesPages() {
           </div>
         </div>
       </Wrapper>{" "}
+      <ContactSection/>
     </div>
   );
 }
