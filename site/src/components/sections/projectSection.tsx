@@ -19,9 +19,9 @@ export default function ProjectSection() {
             <CardProject />
           </div>
           <ButtonComponent
-            className="bg-white rounded-md text-blue-gray-500 py-2 px-4
-            shadow transition-transform active:scale-95 active:bg-blue-gray-50
-            border border-transparent hover:border-gray-500"
+            className="bg-white rounded-md text-blue-gray-500 py-4 px-10
+            shadow active:scale-95 active:bg-blue-gray-900
+            border border-transparent hover:bg-gray-900 hover:text-white transition-all"
           >
             See All
             <FaLongArrowAltRight />

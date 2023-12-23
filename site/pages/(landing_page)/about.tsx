@@ -36,14 +36,14 @@ export default function AboutPage() {
               específicas do seu negócio.
             </p>
             <ButtonComponent
-              className="bg-[#121212] rounded-md z-20 
-            shadow-none transition-transform py-2 px-4
-            active:scale-95  text-white active:bg-[#12121299]
-            border border-transparent hover:border-white"
+              className="bg-[#121212] rounded-lg z-20 
+                shadow-none py-4 px-10 text-base hover:bg-white hover:text-cyan-600
+              text-white active:bg-gray-400 scale-90
+                border-4 border-transparent active:border-gray-600 transition-all"
             >
-              My Resume
               {/* <FaLongArrowAltRight /> */}
             </ButtonComponent>
+            
           </div>
         </div>
       </div>

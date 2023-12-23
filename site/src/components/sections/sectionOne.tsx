@@ -20,7 +20,7 @@ export default function SectionOne() {
     <div className="flex items-start justify-center mx-auto gap-[136px] self-stretch md:p-10 bg-white ">
       <Wrapper>
         <div
-          className="flex md:items-start justify-center mx-auto md:gap-8 flex-[1_0_0] md:rounded-md p-[72px]
+          className="flex md:items-start justify-center mx-auto md:gap-8 flex-[1_0_0] md:rounded-lg p-[72px]
         bg-white flex-col-reverse md:flex-row
         text-white items-start gap-10 self-stretch px-6 py-12"
         >
@@ -41,10 +41,10 @@ export default function SectionOne() {
               negócio.
             </p>
             <ButtonComponent
-              className="bg-[#121212] rounded-md z-20 
-            shadow-none transition-transform py-2 px-4
-            active:scale-95  text-white active:bg-[#12121299]
-            border border-transparent hover:border-white"
+              className="bg-white rounded-lg z-20 
+            shadow-none transition-transform py-4 px-10 text-base
+            active:scale-95  text-[#12121299] active:bg-gray-100 hover:bg-[whitesmoke]
+            border-4 border-transparent active:border-gray-300"
             >
               My Resume
               <FaLongArrowAltRight />

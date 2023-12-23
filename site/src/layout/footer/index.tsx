@@ -11,7 +11,7 @@ export function Footer() {
   const pathname = usePathname();
   return (
     <div className="relative bottom-0">
-      <div className="flex items-center gap-6 md:px-28 py-3 bg-black text-white">
+      <div className="flex items-center gap-6 md:px-28 py-10 bg-black text-white">
         <Wrapper>
           <div className="w-full flex justify-between md:flex-row items-center flex-col-reverse gap-8 font-sans text-xs">
             <a
@@ -42,7 +42,7 @@ export function Footer() {
                 Instagram
               </a>
               <ButtonComponent
-                className="bg-[#121212] rounded p-2 hover:bg-blue-gray-900
+                className="bg-[#121212] rounded p-2 hover:bg-gray-900
               shadow transition-transform active:scale-95 active:bg-blue-500"
               onClick={()=>route.push(`${pathname}`)}
               >

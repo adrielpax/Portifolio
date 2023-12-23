@@ -32,20 +32,20 @@ export function HeroSection({ text }: Prop) {
           ut reprehenderit doloribus, facilis velit animi adipisci. Voluptas,
           dolorum mollitia!
         </p>
-        <div className="flex md:items-start justify-around md:justify-between w-full md:w-[330px] gap-4">
+        <div className="flex md:items-start justify-around md:justify-between w-full md:w-[430px] gap-4">
           <ButtonComponent
-            className="bg-[#121212] rounded-md z-20 
-            shadow-none transition-transform py-2 px-4
-            active:scale-95  text-white active:bg-[#12121299]
-            border border-transparent hover:border-white"
+            className="bg-[#121212] rounded-lg z-20 font-light
+            shadow-none transition-transform py-4 px-10 text-base
+            active:scale-100 text-white hover:bg-gray-900 scale-90
+            active:border-gray-700 border-4 border-transparent"
           >
             <CgAlbum className="w-5 h-5" />
             My Resume
           </ButtonComponent>
           <ButtonComponent
-            className="bg-white rounded-md text-blue-gray-500 py-2 px-4
-            shadow transition-transform active:scale-95 active:bg-blue-gray-50
-            border border-transparent hover:border-gray-500"
+            className="bg-white rounded-lg text-blue-gray-500 py-4 px-10 text-base
+            shadow transition-transform active:scale-100 active:bg-blue-gray-50 scale-90
+            hover:bg-gray-100 active:border-gray-400 border-4 border-transparent"
           >
             Get in Touch
             <FaLongArrowAltRight />

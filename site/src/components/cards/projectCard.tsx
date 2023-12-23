@@ -6,9 +6,9 @@ export default function CardProject() {
   return (
     <Link href={`/(landing_page)/projects/$DevLinks`}>
       <div
-        className="flex flex-col items-start gap-6 w-auto p-3 rounded-md
+        className="flex flex-col items-start gap-6 w-auto py-4 px-6 rounded-lg
       bg-white text-[#4E4563] border border-transparent hover:-translate-y-1
-      transition-all duration-100 shadow hover:shadow-md"
+      transition-all shadow hover:shadow-md"
       >
         <div className="h-40 self-stretch rounded-md bg-gray-500"></div>
         <div className="flex justify-between items-start self-stretch">

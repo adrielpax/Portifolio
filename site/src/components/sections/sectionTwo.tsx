@@ -22,7 +22,7 @@ export default function SectionTwo() {
     <div className="flex items-start justify-center mx-auto gap-[136px] self-stretch md:p-10 bg-white ">
       <Wrapper>
         <div
-          className="flex md:items-start justify-center mx-auto md:gap-8 flex-[1_0_0] md:rounded-md p-[72px]
+          className="flex md:items-start justify-center mx-auto md:gap-8 flex-[1_0_0] md:rounded-lg p-[72px]
         bg-[whitesmoke] flex-col md:flex-row
         text-[#12121299] items-start gap-16 self-stretch px-6 py-12"
         >

@@ -17,7 +17,7 @@ export default function AboutSection() {
     <div className="flex items-start justify-center mx-auto gap-[136px] self-stretch md:p-10 bg-white">
       <Wrapper>
         <div
-          className="flex md:items-start justify-center mx-auto md:gap-16 flex-[1_0_0] md:rounded-md p-[72px]
+          className="flex md:items-start justify-center mx-auto md:gap-16 flex-[1_0_0] md:rounded-lg p-[72px]
         bg-gradient-to-t from-[#0047FF] to-[#00F0FF] flex-col md:flex-row
         text-white items-start gap-16 self-stretch px-6 py-12"
         >
@@ -48,10 +48,10 @@ export default function AboutSection() {
               negócio.
             </p>
             <ButtonComponent
-              className="bg-[#121212] rounded-md z-20 
-            shadow-none transition-transform py-2 px-4
-            active:scale-95  text-white active:bg-[#12121299]
-            border border-transparent hover:border-white"
+              className="bg-[#121212] rounded-lg z-20 
+            shadow-none transition-transform py-4 px-10 text-base
+            active:scale-95  text-white active:bg-gray-900 hover:bg-gray-900
+            border-4 border-transparent active:border-gray-800"
             >
               My Resume
               <FaLongArrowAltRight />

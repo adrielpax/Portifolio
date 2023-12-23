@@ -110,9 +110,10 @@ export default function ContactSection() {
 
               <ButtonComponent
                 className="bg-blue-500 rounded-md z-20 
-            shadow-none transition-transform py-2 px-4
-            active:scale-95  text-white active:bg-[#4f94e448]
-            border border-transparent hover:border-white"
+                  shadow-none py-4 px-10
+                  active:scale-95  text-white active:bg-[whitesmoke]
+                  border-4 border-transparent active:border-gray-400
+                  hover:bg-white hover:text-cyan-500 transition-all"
                 type="submit"
               >
                 Enviar Mensagem
