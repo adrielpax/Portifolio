@@ -1,9 +1,5 @@
-import InputRow from './inputRow'
-import { InputComponent } from './inputButton'
-import TextAreaRow from './textAreaRow'
+import InputRow from "./inputRow";
+import InputComponent from "./inputButton";
+import TextAreaRow from "./textAreaRow";
 
-export {
-    InputRow,
-    TextAreaRow,
-    InputComponent
-}
+export { InputRow, TextAreaRow, InputComponent };
