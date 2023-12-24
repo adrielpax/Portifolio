@@ -10,15 +10,18 @@ import MobileMenu from "./mobileMenu";
 
 import { HiCheckCircle } from "react-icons/hi2";
 import { SiNintendogamecube } from "react-icons/si";
-import { FaTools } from "react-icons/fa";
+import { FaTools, FaWindowClose } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 import { Button, Tooltip } from "@material-tailwind/react";
+import { RiCloseCircleFill } from "react-icons/ri";
+import WarnningNavbar from "../../components/utilsComponents/warnningNavbar";
 
 export default function Navbar() {
   const [showSubmenu, setShowSubmenu] = React.useState(false);
   const [mobileMenu, setMobileMenu] = React.useState(false);
   const [showNav, setShowNav] = React.useState("translate-y-0");
   const [scrollNav, setScrollNav] = React.useState(0);
+
   const route = useRouter();
 
   React.useEffect(() => {
@@ -49,7 +52,7 @@ export default function Navbar() {
       <Wrapper className="flex flex-row items-center text-[#12121299] justify-around md:justify-between py-1 h-full w-full">
         <Link href={"/"}>
           <div
-            className="text-center font-sans font-extrabold text-[#0047FF] hover:text-[#005eff] px-5
+            className="text-center font-sans font-extrabold text-[#0047FF] hover:text-[#0008ff] px-5
           flex items-center gap-2"
           >
             {/* <Image src={""} alt={""}/> */}
@@ -59,10 +62,10 @@ export default function Navbar() {
         </Link>
         <Menu showSubmenu={showSubmenu} setShowSubmenu={setShowSubmenu} />
         <MobileMenu />
-       
       </Wrapper>
+      <WarnningNavbar scrollNav={scrollNav}/>
       <Wrapper>
-        <div className="flex w-full justify-end">
+        <div className="flex w-full justify-end mt-5">
           <ButtonComponent
             className="bg-[#ffffff99]  shadow-none text-[#12121299]
           rounded-md hover:text-[#0047FF] hover:bg-white border border-transparent
