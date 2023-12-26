@@ -5,6 +5,8 @@ import { InputRow, TextAreaRow } from "../forms/input";
 import { IoSend } from "react-icons/io5";
 import { useFormPostApi } from "../../hook/form";
 import Wrapper from "../../layout/wrapper";
+import { TiWarning } from "react-icons/ti";
+import { MdError } from "react-icons/md";
 
 export default function ContactSection() {
   const {
@@ -22,8 +24,8 @@ export default function ContactSection() {
       <Wrapper>
         <div
           className="flex items-start md:gap-8 flex-[1_0_0] md:rounded-md p-[72px]
-        bg-gradient-to-t from-[#0047FF] to-[#00F0FF] flex-col md:flex-row
-        text-white gap-6 px-6 py-12 justify-center self-stretch"
+          bg-gradient-to-t from-[#0047FF] to-[#00F0FF] flex-col md:flex-row
+          text-white gap-6 px-6 py-12 justify-center self-stretch"
         >
           <div className="flex flex-col items-start gap-7  w-autohora md:w-1/3">
             <div className="flex gap-6"></div>
@@ -55,19 +57,27 @@ export default function ContactSection() {
                 <FaInstagram className="text-[#121212] w-5 h-5" />
               </ButtonComponent>
             </div>
-            <div className="w-72 h-[220px] shrink-0 bg-white opacity-50"></div>
+            {/* IMAGE HERE 
+            <div className="w-72 h-[220px] shrink-0 bg-white opacity-50"></div> */}
           </div>
           <div>
-            <div className="w-full h-auto text-center p-3 my-4 text-medium text-lg shrink-0">
-              <h3>
-                Mande uma Mensagem
-                <br /> ou solicite um serviço
-              </h3>
+            <div className="w-full h-auto p-0 mb-5 text-medium text-lg shrink-0 text-left">
+              <h3>Mande uma Mensagem ou solicite um serviço</h3>
             </div>
             <form
               onSubmit={handleSubmit}
-              className="flex flex-col gap-4 w-auto md:w-96 items-center md:items-start w-"
+              className="flex flex-col gap-4 w-auto md:w-96 items-center md:items-start"
             >
+              {errors.name && touched.name ? (
+                <span className="text-white -mb-4 flex items-center gap-2 select-none">
+                  <MdError className="w-5 h-5 text-pink-600" /> {errors.name}
+                </span>
+              ) : (
+                <span className="text-white -mb-4 flex items-center gap-2 select-none">
+                  {" "}
+                  Nome
+                </span>
+              )}
               <InputRow
                 id={"name"}
                 type={"name"}
@@ -79,17 +89,79 @@ export default function ContactSection() {
                 className="w-[238px]"
               />
 
+              {errors.email && touched.email ? (
+                <span className="text-white -mb-4 -mt-1 flex items-center gap-2 select-none">
+                  <MdError className="w-5 h-5 text-pink-600" /> {errors.email}
+                </span>
+              ) : (
+                <span className="text-white -mb-4 -mt-1 flex items-center gap-2 select-none">
+                  {" "}
+                  E-mail
+                </span>
+              )}
               <InputRow
                 id={"email"}
                 type={"email"}
                 value={values.email}
                 error={errors.email}
-                holder={"Email"}
+                holder={"Email de contato"}
                 handle={handleChange}
                 blur={handleBlur}
                 className="w-[238px]"
               />
 
+              {errors.number && touched.number ? (
+                <span className="text-white -mb-4 -mt-1 flex items-center gap-2 select-none">
+                  <MdError className="w-5 h-5 text-pink-600" /> {errors.number}
+                </span>
+              ) : (
+                <span className="text-white -mb-4 -mt-1 flex items-center gap-2 select-none">
+                  {" "}
+                  Numero
+                </span>
+              )}
+              <InputRow
+                id={"number"}
+                type={""}
+                value={values.number}
+                error={errors.number}
+                holder={"Numero de contato"}
+                handle={handleChange}
+                blur={handleBlur}
+                className="w-[238px]"
+              />
+
+              {errors.business && touched.business ? (
+                <span className="text-white -mb-4 -mt-1 flex items-center gap-2 select-none">
+                  <MdError className="w-5 h-5 text-pink-600" /> {errors.business}
+                </span>
+              ) : (
+                <span className="text-white -mb-4 -mt-1 flex items-center gap-2 select-none">
+                  {" "}
+                  Nome da sua empresa
+                </span>
+              )}
+              <InputRow
+                id={"number"}
+                type={""}
+                value={values.number}
+                error={errors.number}
+                holder={"Nome da sua empresa"}
+                handle={handleChange}
+                blur={handleBlur}
+                className="w-[238px]"
+              />
+
+              {errors.message && touched.message ? (
+                <span className="text-white -mb-4 -mt-1 flex items-center gap-2 select-none">
+                  <MdError className="w-5 h-5 text-pink-600" /> {errors.message}
+                </span>
+              ) : (
+                <span className="text-white -mb-4 flex items-center gap-2 select-none">
+                  {" "}
+                  Mensagem
+                </span>
+              )}
               <TextAreaRow
                 id={"message"}
                 holder={"Mensagem"}
@@ -103,22 +175,23 @@ export default function ContactSection() {
               Ao enviar essa mensagem o tempo de resposta sera de 1 a 2 dias
               uteis.
             </p> */}
-              <p className="text-justify">
+              <p className="text-center text-sm scale-90 -mt-6 ">
                 Ao enviar essa mensagem voce aceitar receber e-mails como
                 resposta.
               </p>
-
-              <ButtonComponent
-                className="bg-blue-500 rounded-md z-20 
-                  shadow-none py-4 px-10
-                  active:scale-95  text-white active:bg-[whitesmoke]
-                  border-4 border-transparent active:border-gray-400
-                  hover:bg-white hover:text-cyan-500 transition-all"
-                type="submit"
-              >
-                Enviar Mensagem
-                <IoSend />
-              </ButtonComponent>
+              <div className="w-full flex justify-center items-center">
+                <ButtonComponent
+                  className="bg-blue-500 rounded-full z-20 
+                shadow-none py-4 px-10 w-full
+                active:scale-95  text-white active:bg-[whitesmoke]
+                border-4 border-transparent active:border-gray-400
+                hover:bg-white hover:text-cyan-500 transition-all"
+                  type="submit"
+                >
+                  Enviar Mensagem
+                  <IoSend />
+                </ButtonComponent>
+              </div>
             </form>
           </div>
         </div>

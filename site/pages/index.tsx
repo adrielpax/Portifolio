@@ -1,15 +1,20 @@
 //import Head from 'next/head'
 //import Image from 'next/image'
-import type {ReactElement} from 'react';
+import {useEffect, type ReactElement} from 'react';
 import { NextPageWithLayout } from './_app';
 import Dashboard from './dashboard';
-import Homepage from './(landing_page)/Homepage';
+// import Homepage from './web-page/homepage.tsx';
+import { useRouter } from 'next/navigation';
 // import PageNotFound from './404.page';
 
 const Page: NextPageWithLayout = ()=>{
+  const router = useRouter();
+  useEffect(()=>{
+    router.push('web-page/homepage')
+  },[router])
   return (
     <>
-      <Homepage/>   
+      {/* <Homepage/>    */}
     </>
   )
 }

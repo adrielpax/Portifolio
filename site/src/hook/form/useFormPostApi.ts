@@ -16,16 +16,16 @@ export const useFormPostApi = () => {
 
   const schemaValidation = Yup.object().shape({
     name: Yup.string()
-      .min(4, "O nome deve ter mais que 4 caracteres")
-      .max(30, "O nome nao pode ter mais de 30 caracteres")
-      .matches(nameRegex, "esse formato nao é valido")
-      .required("O seu nome é nescessario"),
+      .min(8, "Adicione nome e sobrenome")
+      .max(60, "Seu nome é extenso demais")
+      .matches(nameRegex, "esse formato nao é valido.")
+      .required("O seu nome é nescessario."),
     email: Yup.string()
-      .email("O email deve ser valido")
-      .required("O email é invalido"),
+      .email("Escreva um e-mail valido.")
+      .required("Esse e-mail não é valido."),
     message: Yup.string()
       .required("Não deixe de mandar sua mensagem")
-      .max(80, "A mensagem deve ser de no maximo 80 caracteres"),
+      .max(300, "Sua Mensagem exedeu 300 caracteres"),
     number: Yup.string()
       .min(9, "O numero deve conter no minino 11 numeros com o DDD")
       .max(12, "O numero deve conter 11 numeros com o DDD")

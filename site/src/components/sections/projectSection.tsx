@@ -19,7 +19,7 @@ export default function ProjectSection() {
             <CardProject />
           </div>
           <ButtonComponent
-            className="bg-white rounded-md text-blue-gray-500 py-4 px-10
+            className="bg-white rounded-full text-blue-gray-500 py-4 px-10
             shadow active:scale-95 active:bg-blue-gray-900
             border border-transparent hover:bg-gray-900 hover:text-white transition-all"
           >

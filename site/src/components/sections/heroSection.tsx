@@ -26,15 +26,15 @@ export function HeroSection({ text }: Prop) {
           Oferecemos soluções de marketing digital personalizadas para
           impulsionar seus negócios.
         </h2>
-        <p className="text-justify">
+        {/* <p className="text-justify">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. A nam
           placeat tempora dicta omnis consequuntur non rerum dolore quis natus
           ut reprehenderit doloribus, facilis velit animi adipisci. Voluptas,
           dolorum mollitia!
-        </p>
+        </p> */}
         <div className="flex flex-col md:flex-row md:items-start justify-around md:justify-between w-full md:w-[430px] gap-4">
           <ButtonComponent
-            className="bg-[#121212] rounded-lg z-20 font-light
+            className="bg-[#121212] rounded-full z-20 font-light
             shadow-none transition-transform py-3 px-9 text-base
             active:scale-100 text-white hover:bg-gray-900 scale-100
             active:border-gray-700 border-4 border-transparent"
@@ -43,7 +43,7 @@ export function HeroSection({ text }: Prop) {
             My Resume
           </ButtonComponent>
           <ButtonComponent
-            className="bg-white rounded-lg text-blue-gray-500 py-3 px-9 text-base
+            className="bg-white rounded-full text-blue-gray-500 py-3 px-9 text-base
             shadow transition-transform active:scale-100 active:bg-blue-gray-50 scale-100
             hover:bg-gray-100 active:border-gray-400 border-4 border-transparent"
           >

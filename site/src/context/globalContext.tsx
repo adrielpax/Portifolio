@@ -5,7 +5,7 @@ interface ContextProps {
 }
 
 interface ComponentsContextState {
-  warnning: boolean;
+  warning: boolean;
   hiddenWarnning: () => void;
 }
 
@@ -14,25 +14,25 @@ const GlobalContext = createContext<ComponentsContextState | undefined>(
 );
 
 export const SiteContextProvider = ({ children }: ContextProps) => {
-  const [warnning, setWarnning] = React.useState<boolean>(() => {
+  const [warning, setWarnning] = React.useState<boolean>(() => {
     if (typeof localStorage !== "undefined") {
-      const storedState = localStorage.getItem("warnning");
+      const storedState = localStorage.getItem("warning");
       return storedState ? JSON.parse(storedState) :false;
     } else {
       return false;
     }
   });
   const hiddenWarnning = () => {
-    return setWarnning(!warnning);
+    return setWarnning(!warning);
   };
   const values: ComponentsContextState = {
-    warnning,
+    warning,
     hiddenWarnning,
   };
   React.useEffect(() => {
     // Atualize o localStorage sempre que o estado mudar
-    localStorage.setItem("warnning", JSON.stringify(warnning));
-  }, [warnning]);
+    localStorage.setItem("warning", JSON.stringify(warning));
+  }, [warning]);
 
   return (
     <GlobalContext.Provider value={values}>{children}</GlobalContext.Provider>

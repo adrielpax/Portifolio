@@ -47,10 +47,10 @@ const InputRow: React.FC<inputProps> = ({
         <input
           ref={inputRef}
           className={`border border-white rounded-md z-50 appearance-none
-                    bg-white w-80 md:w-96 py-2 px-3 text-gray-800 leading-tight focus:outline-none
+                    bg-white w-80 md:w-96 py-3 px-2 text-gray-800 leading-tight focus:outline-none
                      focus:bg-white focus:ring-2 focus:ring-blue-500 ${className || ""}
                      ${isFocused ? "focus:shadow-outline bg-white" : ""}
-                     ${error ? "border-pink-500 text-pink-500" : ""}`}
+                     ${error ? "border-pink-500 text-pink-800" : ""}`}
           name={id}
           value={value}
           onChange={handle}

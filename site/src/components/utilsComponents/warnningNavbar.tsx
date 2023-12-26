@@ -8,17 +8,17 @@ interface ComponentProps {
 }
 
 export default function WarnningNavbar({ scrollNav }: ComponentProps) {
-  const { warnning, hiddenWarnning } = useGlobalContext();
+  const { warning, hiddenWarnning } = useGlobalContext();
 
   return (
     <span
-      className={` ${warnning ? "hidden" : ""} 
+      className={` ${warning ? "hidden" : ""} 
         ${
           scrollNav
             ? "mt-4 text-medium font-semibold scale-75"
             : "mt-0 scale-75 text-medium"
         } flex justify-center bg-[#7dffaf] py-3 px-5 max-w-[1200px] text-[#121212] rounded-full
-        transition-all z-50 gap-4 text-center`}
+        transition-all gap-4 text-center z-20`}
     >
       <p className="">
         {" "}

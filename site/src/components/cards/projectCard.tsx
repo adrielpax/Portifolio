@@ -4,7 +4,7 @@ import { SiJavascript } from "react-icons/si";
 
 export default function CardProject() {
   return (
-    <Link href={`/(landing_page)/projects/$DevLinks`}>
+    <Link href={`/web-page/projects/$DevLinks`}>
       <div
         className="flex flex-col items-start gap-6 w-auto py-4 px-6 rounded-lg
       bg-white text-[#4E4563] border border-transparent hover:-translate-y-1

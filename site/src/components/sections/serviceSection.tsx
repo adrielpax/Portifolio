@@ -18,7 +18,7 @@ export default function ServiceSection() {
             <ServiceCard />
           </div>
           <ButtonComponent
-            className="bg-white rounded-md text-blue-gray-500 py-2 px-4
+            className="bg-white rounded-full text-blue-gray-500 py-2 px-4
             shadow transition-transform active:scale-95 active:bg-blue-gray-50
             border border-transparent hover:border-gray-500"
           >

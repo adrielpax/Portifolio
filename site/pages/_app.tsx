@@ -1,7 +1,6 @@
 import { ReactElement, ReactNode } from "react";
 import { NextPage } from "next";
 import type { AppProps } from "next/app";
-
 import { Layout } from "../src/layout/layout";
 import "../src/styles/global.css";
 import { SiteContextProvider } from "../src/context/globalContext";

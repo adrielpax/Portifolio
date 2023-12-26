@@ -48,7 +48,7 @@ export default function AboutSection() {
               negócio.
             </p>
             <ButtonComponent
-              className="bg-[#121212] rounded-lg z-20 
+              className="bg-[#121212] rounded-full z-20 
             shadow-none transition-transform py-4 px-10 text-base
             active:scale-95  text-white active:bg-gray-900 hover:bg-gray-900
             border-4 border-transparent active:border-gray-800"

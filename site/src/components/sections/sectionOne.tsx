@@ -41,7 +41,7 @@ export default function SectionOne() {
               negócio.
             </p>
             <ButtonComponent
-              className="bg-white rounded-lg z-20 
+              className="bg-white rounded-full z-20 
             shadow-none transition-transform py-4 px-10 text-base
             active:scale-95  text-[#12121299] active:bg-gray-100 hover:bg-[whitesmoke]
             border-4 border-transparent active:border-gray-300"

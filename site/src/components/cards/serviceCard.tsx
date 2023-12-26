@@ -32,7 +32,7 @@ export default function ServiceCard() {
           incidunt exercitationem accusantium, nihil laudantium saepe dolores
         </p>
         <div className="w-full flex justify-center">
-          <Link href={`/(landing_page)/services/$serviceX`}>
+          <Link href={`/web-page/services/$serviceX`}>
             <ButtonComponent
               className="bg-white rounded-md text-blue-gray-500 py-2 px-4
             shadow-sm transition-transform active:scale-95 active:bg-blue-gray-50

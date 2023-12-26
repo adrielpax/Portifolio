@@ -75,28 +75,28 @@ export default function Menu({ showSubmenu, setShowSubmenu }: MenuProps) {
         })}
         <div className="hidden md:flex items-center ">
           <ButtonComponent
-            className="bg-transparent rounded-lg border-transparent w-44
+            className="bg-transparent rounded-full border-transparent w-44 text-xs
             hover:text-[#fbfcff] hover:bg-gray-900 active:border-gray-500 border-4
               shadow-sm transition-all hover:opacity-95 py-2 px-5 md:scale-75 lg:scale-100"
             icon={<HiCheckCircle className="w-5 h-5 " />}
             onClick={() => {
-              route.push("/(landing_page)/services/request-service");
+              route.push("/web-page/services/request-service");
             }}
           >
             solicitar serviço
           </ButtonComponent>
-          <div className="flex justify-between items-center">
+          {/* <div className="flex justify-between items-center">
             <div>
               <ButtonComponent
                 className="scale-75 bg-transparent shadow-none hover:bg-[whitesmoke]
-                  rounded-lg hover:text-[#0047FF] border-transparent active:border-gray-500 border-4
+                  rounded-full hover:text-[#0047FF] border-transparent active:border-gray-500 border-4
                   transition-transform active:scale-90 hover:opacity-75 py-2 px-3"
                 icon={<VscAccount className="w-8 h-8" />}
               >
                 <span className="bg-red-500 rounded-full w-4 h-4 z-50 absolute bottom-1 right-2"></span>
               </ButtonComponent>
             </div>
-          </div>
+          </div> */}
         </div>
       </ul>
     </>
