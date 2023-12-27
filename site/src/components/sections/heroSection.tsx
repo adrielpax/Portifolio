@@ -10,14 +10,14 @@ interface Prop {
 
 export function HeroSection({ text }: Prop) {
   return (
+    // bg-gradient-to-b from-[#0047FF] to-[#00F0FF]
     <div
-      className="bg-gradient-to-b from-[#0047FF] to-[#00F0FF] w-auto bg-opacity-50
-      flex flex-col-reverse justify-center items-start gap-16 self-stretch p-12
+      className=" w-auto bg-[#f3fbfb] flex flex-col-reverse justify-center items-start gap-16 self-stretch p-12
       md:gap-6 lg:gap-32 md:px-28 md:py-24 md:items-center md:flex-row mx-auto"
     >
       <div
         className="flex flex-col w-auto items-start gap-7 self-stretch md:text-left pt-14
-          lg:w-[592px] md:flex-col md:items-start md:gap-8 text-white font-sans"
+          lg:w-[592px] md:flex-col md:items-start md:gap-8 text-[#12121299] font-sans"
       >
         <h1 className="text-4xl font-bold ">
           Potencialize sua presença online com a Square Oden
@@ -53,7 +53,8 @@ export function HeroSection({ text }: Prop) {
         </div>
       </div>
       <div className="flex justify-center items-center w-full md:w-auto h-auto">
-          <Image src={"/imgs/heroImage.png"} alt="hero Image" width={400} height={400} />
+          <Image src={"/imgs/hero-image.png"} alt="hero-image" width={400} height={400} 
+          className=" pointer-events-none select-none"/>
       </div>
     </div>
   );

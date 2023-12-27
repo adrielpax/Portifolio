@@ -10,18 +10,18 @@ export default function Page() {
   const router = useRouter();
   return (
     <div className="min-h-screen">
-      <Wrapper className="w-screen h-full flex flex-col items-center md:flex-row md:items-start gap-6 bg-white mt-20">
+      <Wrapper className="w-screen h-full flex flex-col items-center md:flex-row md:items-start gap-6 bg-white mt-20 font-semibold text-sm font-sans">
         <div className="py-6">
-          <div className="md:w-[800px] h-[300px] self-stretch bg-[#12121260] rounded-t-md">
+          <div className="md:w-[800px] h-[300px] self-stretch bg-[#12121299] rounded-t-md">
             <ButtonComponent
               className="bg-white rounded-md p-3 hover:bg-blue-gray-100 relative top-4 left-4
-            shadow transition-transform active:scale-95 active:bg-blue-gray-50"
+            shadow transition-transform active:scale-95 active:bg-blue-gray-50 z-50"
               onClick={() => router.back()}
             >
               <FaArrowLeft className="text-[#121212] w-5 h-5" />
             </ButtonComponent>
           </div>
-          <div className="bg-[whitesmoke] shadow-md rounded-b-md pt-8 pr-12 pb-12 pl-12 flex flex-col gap-6 items-start justify-start shrink-0 md:w-[800px] relative ">
+          <div className="bg-[whitesmoke] text-[#12121299] shadow-md rounded-b-md pt-8 pr-12 pb-12 pl-12 flex flex-col gap-6 items-start justify-start shrink-0 md:w-[800px] relative ">
             <div className="flex flex-row items-center justify-between self-stretch shrink-0 relative">
               <div>Jul - 20 . 2023</div>
               <div>icon icon icon</div>

@@ -48,7 +48,12 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500&family=Orbitron:wght@400;500&display=swap"
           rel="stylesheet"
         />
-
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <meta name="author" content="Adriel - Dev" />
+        <meta
+          name="description"
+          content="Potencializando Sua presença online, tenha um site em todas as plataformas, automatize serviços, seja visto seja lembrado !!"
+        />
         <title>Adriel Developer | Personal Portifolio</title>
       </Head>
       <body className="bg-[#e9eef3] dark:bg-[#18191a]">

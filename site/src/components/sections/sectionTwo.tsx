@@ -23,19 +23,19 @@ export default function SectionTwo() {
       <Wrapper>
         <div
           className="flex md:items-start justify-center mx-auto md:gap-8 flex-[1_0_0] md:rounded-lg p-[72px]
-        bg-[whitesmoke] flex-col md:flex-row
-        text-[#12121299] items-start gap-16 self-stretch px-6 py-12"
+        bg-[#121212] opacity-95 flex-col md:flex-row
+        text-[white] items-start gap-16 self-stretch px-6 py-12"
         >
           <div className="w-full md:w-auto justify-center flex ">
-            <Image src={"/imgs/two.png"} alt="image" width={300} height={300} />
+            <Image src={"/imgs/more-costumers.png"} alt="more-costumers" width={300} height={300} />
           </div>
           <div className="flex flex-col items-start w-auto md:w-[592px] gap-7  md:gap-8 self-stretch">
-            <div className="flex items-center justify-between gap-6  text-[#654AEE]">
+            {/* <div className="flex items-center justify-between gap-6  text-[#654AEE]">
               <GiReceiveMoney className="w-5 h-5" />
               <FaMoneyBillWave className="w-5 h-5" />
               <IoPeopleSharp className="w-5 h-5" />
             </div>
-            <h1 className="text-[#7DFFAF] text-regular text-base"></h1>
+            <h1 className="text-[#7DFFAF] text-regular text-base"></h1> */}
             <h2 className="font-semibold text-4xl font-sans ">
               Atraia mais clientes e aumente suas vendas
             </h2>

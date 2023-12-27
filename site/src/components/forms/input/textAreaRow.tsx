@@ -44,7 +44,7 @@ const TextAreaRow: React.FC<textareaProps> = ({
           ref={textareaRef}
           className={`
           ${error ? "border-pink-500 text-pink-500" : ""}
-          border border-white rounded-md z-50 appearance-none bg-white w-60 md:w-96
+          border-2 border-gray-300 rounded-md z-50 appearance-none bg-gray-100 w-60 md:w-96
           py-3 px-3 text-gray-800 leading-tight focus:outline-none focus:bg-white focus:ring-2 focus:ring-blue-500 ${
             isFocused ? "focus:shadow-outline bg-white" : ""
           }`}

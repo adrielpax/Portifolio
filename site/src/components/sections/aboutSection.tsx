@@ -16,28 +16,29 @@ export default function AboutSection() {
   return (
     <div className="flex items-start justify-center mx-auto gap-[136px] self-stretch md:p-10 bg-white">
       <Wrapper>
+        {/* bg-gradient-to-t from-[#0047FF] to-[#00F0FF] */}
         <div
           className="flex md:items-start justify-center mx-auto md:gap-16 flex-[1_0_0] md:rounded-lg p-[72px]
-        bg-gradient-to-t from-[#0047FF] to-[#00F0FF] flex-col md:flex-row
-        text-white items-start gap-16 self-stretch px-6 py-12"
+         flex-col md:flex-row bg-[whitesmoke] text-[#12121299] items-start gap-16 self-stretch px-6 py-12"
         >
           <div className="flex w-full md:w-auto justify-center">
             <Image
-              src={"/imgs/about.png"}
-              alt="image"
+              src={"/imgs/target-audience.png"}
+              alt="target-audience"
               width={300}
               height={300}
+              className=""
             />
           </div>
           <div className="flex flex-col items-start w-auto md:w-[592px] gap-7  md:gap-8 self-stretch">
-            <div className="flex items-center gap-6  text-[#654AEE]">
+            {/* <div className="flex items-center gap-6  text-[#654AEE]">
               <FaPython className="w-5 h-5" />
               <FaReact className="w-5 h-5" />
               <SiJavascript className="w-5 h-5" />
               <FaNodeJs className="w-5 h-5" />
               <SiTailwindcss className="w-5 h-5" />
             </div>
-            <h1 className="text-[#7DFFAF] text-regular text-base">Sobre nós</h1>
+            <h1 className="text-[#7DFFAF] text-regular text-base">Sobre nós</h1> */}
             <h2 className="font-semibold text-4xl font-sans">
               Alcance seu público-alvo
             </h2>

@@ -85,7 +85,7 @@ export default function Homepage() {
           href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500&display=swap"
           rel="stylesheet"
         />
-        <title>Adriel Developer | Personal Portifolio</title>
+        <title>Square Oden | Soluções Digitais</title>
       </Head>
       {showConfetti && (
         <div className="fixed h-auto items-center mx-auto">

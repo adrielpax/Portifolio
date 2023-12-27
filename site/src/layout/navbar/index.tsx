@@ -74,9 +74,9 @@ export default function Navbar() {
       <Wrapper>
         <div className="flex w-full justify-end mt-5">
           <ButtonComponent
-            className="bg-[#ffffff99]  shadow-none text-[#12121299]
-          rounded-md hover:text-[#0047FF] hover:bg-white border border-transparent
-          transition-transform active:scale-90 hover:opacity-75 p-4 py-2 my-1 scale-75"
+            className="bg-[#f1f1f199]  shadow-none text-[#12121299]
+          rounded-full hover:text-[#0047FF] hover:bg-white border-4 border-gray-100
+          transition-transform active:scale-90 py-4 px-10 my-1 scale-75"
             icon={<FaTools className="w-6 h-6" />}
           >
             Em desenvolvimento

@@ -21,20 +21,20 @@ export default function SectionOne() {
       <Wrapper>
         <div
           className="flex md:items-start justify-center mx-auto md:gap-8 flex-[1_0_0] md:rounded-lg p-[72px]
-        bg-white flex-col-reverse md:flex-row
+          bg-gradient-to-b from-[#0047FF] to-[#00F0FF] flex-col-reverse md:flex-row
         text-white items-start gap-10 self-stretch px-6 py-12"
         >
           <div className="flex flex-col items-start w-auto md:w-[592px] gap-7 md:gap-8 self-stretch">
-            <div className="flex items-center gap-6  text-[#654AEE]">
+            {/* <div className="flex items-center gap-6  text-[#654AEE]">
               <BsGraphUpArrow className="w-5 h-5" />
               <IoEyeSharp className="w-5 h-5" />
               <FaInstagram className="w-5 h-5" />
             </div>
-            <h1 className="text-[#7DFFAF] text-regular text-base"></h1>
-            <h2 className="font-semibold text-4xl font-sans text-[#12121299]">
+            <h1 className="text-[#7DFFAF] text-regular text-base"></h1> */}
+            <h2 className="font-semibold text-4xl font-sans">
               Aumente sua visibilidade online
             </h2>
-            <p className="font-regular font-medium font-sans text-justify text-[#12121299]">
+            <p className="font-regular font-medium font-sans text-justify">
               Com a Square Oden, você poderá alcançar seu público-alvo de forma
               eficiente e direcionada. Nossas soluções de marketing digital são
               personalizadas para atender às necessidades específicas do seu
@@ -52,8 +52,8 @@ export default function SectionOne() {
           </div>
           <div className="w-full md:w-auto flex justify-center">
             <Image
-              src={"/imgs/one.png"}
-              alt="images"
+              src={"/imgs/performance-overview.png"}
+              alt="performance-overview"
               width={300}
               height={300}
             />
