@@ -13,15 +13,15 @@ export default function CardProject() {
         <div className="h-40 self-stretch rounded-md bg-gray-500"></div>
         <div className="flex justify-between items-start self-stretch">
           <p className="text-sm not-italic font-normal leading-6">
-            Jul - Dec 2022
+            Jul - Dec 2022{}
           </p>
           <p>
             <SiJavascript className="w-6 h-6" />
           </p>
         </div>
-        <h2 className="text-xl not-italic font-semibold leading-6">DevLinks</h2>
+        <h2 className="text-xl not-italic font-semibold leading-6">DevLinks{}</h2>
         <p className="text-ellipsis text-medium not-italic font-normal leading-6">
-          A link agragator for social media.
+          A link agragator for social media.{}
         </p>
       </div>
     </Link>

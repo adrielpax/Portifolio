@@ -16,8 +16,10 @@ import { GiReceiveMoney } from "react-icons/gi";
 import InputButton from "../forms/input/inputButton";
 import Image from "next/image";
 import Wrapper from "../../layout/wrapper";
+import localData from './dataSections.json'
 
 export default function SectionTwo() {
+  const {title,description,image} = localData.data["section-two"]
   return (
     <div className="flex items-start justify-center mx-auto gap-[136px] self-stretch md:p-10 bg-white ">
       <Wrapper>
@@ -27,7 +29,7 @@ export default function SectionTwo() {
         text-[white] items-start gap-16 self-stretch px-6 py-12"
         >
           <div className="w-full md:w-auto justify-center flex ">
-            <Image src={"/imgs/more-costumers.png"} alt="more-costumers" width={300} height={300} />
+            <Image src={image} alt="more-costumers" width={300} height={300} />
           </div>
           <div className="flex flex-col items-start w-auto md:w-[592px] gap-7  md:gap-8 self-stretch">
             {/* <div className="flex items-center justify-between gap-6  text-[#654AEE]">
@@ -37,13 +39,10 @@ export default function SectionTwo() {
             </div>
             <h1 className="text-[#7DFFAF] text-regular text-base"></h1> */}
             <h2 className="font-semibold text-4xl font-sans ">
-              Atraia mais clientes e aumente suas vendas
+              {title}
             </h2>
             <p className="font-regular font-medium font-sans text-justify ">
-              Com a Square Oden, você poderá atrair mais clientes e aumentar
-              suas vendas. Nossas soluções de marketing digital são projetadas
-              para gerar leads qualificados e converter visitantes em clientes
-              fiéis.
+              {description}
             </p>
             <div className="flex items-center justify-between">
               {/* <InputButton /> */}

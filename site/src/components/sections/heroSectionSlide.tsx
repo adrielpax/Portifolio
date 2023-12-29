@@ -38,10 +38,10 @@ export function HeroSectionSlide() {
       )}
     >
       <div>
-        <HeroSection text={""} />
+        <HeroSection />
       </div>
       <div>
-        <HeroSection text={""} />
+        <HeroSection  />
       </div>
     </Carousel>
   );

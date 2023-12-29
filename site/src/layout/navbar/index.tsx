@@ -12,8 +12,6 @@ import { useRouter } from "next/navigation";
 
 import WarnningNavbar from "../../components/utilsComponents/warnningNavbar";
 
-import { BiCube } from "react-icons/bi";
-
 export default function Navbar() {
   const [showSubmenu, setShowSubmenu] = React.useState(false);
   const [mobileMenu, setMobileMenu] = React.useState(false);
@@ -75,11 +73,11 @@ export default function Navbar() {
         <div className="flex w-full justify-end mt-5">
           <ButtonComponent
             className="bg-[#f1f1f199]  shadow-none text-[#12121299]
-          rounded-full hover:text-[#0047FF] hover:bg-white border-4 border-gray-100
+          rounded-lg hover:text-[#0047FF] hover:bg-white border-4 border-gray-100
           transition-transform active:scale-90 py-4 px-10 my-1 scale-75"
             icon={<FaTools className="w-6 h-6" />}
           >
-            Em desenvolvimento
+            <p className={``}>Em desenvolvimento</p>
           </ButtonComponent>
         </div>
       </Wrapper>
