@@ -1,13 +1,11 @@
 import { BsFillArrowUpCircleFill } from "react-icons/bs";
-import { FormCard } from "../../components/forms/formCard";
 import { ButtonComponent } from "../../components/utilsComponents";
-import { FooterList } from "../../utils/footer-utils";
-import { SiNintendogamecube } from "react-icons/si";
 import Wrapper from "../wrapper";
 import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 import { FaRegCopyright, FaRegRegistered } from "react-icons/fa";
 import { TbServicemark } from "react-icons/tb";
+import Link from "next/link";
 
 export function Footer() {
   const route = useRouter();
@@ -48,12 +46,12 @@ export function Footer() {
               <TbServicemark />
               </div>
             </div>
-            <a
+            <Link
               href="/"
               className="flex items-center text-white hover:text-[#00F0FF] gap-2"
             >
               All rights reserved SquareOden 2023
-            </a>
+            </Link>
 
             <div className="flex flex-row gap-12 items-center">
               <a
@@ -76,7 +74,7 @@ export function Footer() {
               </a>
               <ButtonComponent
                 className="bg-[whitesmoke] text-[#121212] rounded-lg p-2 hover:text-[#00F0FF]
-              shadow transition-transform active:scale-95 active:bg-blue-500 border-4 hover:border-blue-500"
+              shadow transition-transform active:scale-95 active:bg-[#121212] border-4 hover:border-[#00F0FF]"
                 onClick={() => route.push(`${pathname}`)}
               >
                 <BsFillArrowUpCircleFill className="w-5 h-5" />

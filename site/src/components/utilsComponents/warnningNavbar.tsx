@@ -17,7 +17,7 @@ export default function WarnningNavbar({ scrollNav }: ComponentProps) {
           scrollNav
             ? "mt-4 text-medium font-semibold scale-75"
             : "mt-0 scale-75 text-medium"
-        } flex justify-center bg-[#00eeffae] py-3 px-5 max-w-[1200px] text-[#121212] rounded-full
+        } flex justify-center bg-[#7DFFAF] py-3 px-5 max-w-[1200px] text-[#121212] rounded-full
         transition-all gap-4 text-center z-20`}
     >
       <p className="">

@@ -1,11 +1,12 @@
 {
   "data": {
     "menu": [
-      { "id": 1, "name": "Sobre", "route": "/web-page/about/" },
-      { "id": 2, "name": "Projetos", "route": "/web-page/projects/" },
-      { "id": 3, "name": "Serviços", "route": "/web-page/services/" },
-      { "id": 4, "name": "Contato", "route": "/web-page/contacts/" },
-      { "id": 5, "name": "Produtos", "subMenu": true }
+      { "id": 1, "name": "home", "route": "/web-page/homepage/" },
+      { "id": 2, "name": "Sobre", "route": "/web-page/about/" },
+      { "id": 3, "name": "Projetos", "route": "/web-page/projects/" },
+      { "id": 4, "name": "Serviços", "route": "/web-page/services/" },
+      { "id": 5, "name": "Contato", "route": "/web-page/contacts/" },
+      { "id": 6, "name": "Produtos", "subMenu": true }
     ],
     "subMenu": [
       { "id": 1, "name": "Sites", "url": "/web-page/products/sites-service" },

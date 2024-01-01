@@ -54,7 +54,7 @@ export default function Document() {
           name="description"
           content="Potencializando Sua presença online, tenha um site em todas as plataformas, automatize serviços, seja visto seja lembrado !!"
         />
-        <title>Adriel Developer | Personal Portifolio</title>
+        <title>Adriel Developer | Personal portfolio</title>
       </Head>
       <body className="bg-[#e9eef3] dark:bg-[#18191a]">
         <Main />

@@ -93,7 +93,7 @@ export default function Homepage() {
         </div>
       )}
       <div className="w-full h-auto bg-white">
-        <HeroSection text="Sua Historia começa com quem faz Historia !" />
+        <HeroSection />
         {/* <HeroSectionSlide /> */}
         <AboutSection />
         <SectionOne />

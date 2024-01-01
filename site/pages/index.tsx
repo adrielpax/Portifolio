@@ -10,7 +10,7 @@ import { useRouter } from 'next/navigation';
 const Page: NextPageWithLayout = ()=>{
   const router = useRouter();
   useEffect(()=>{
-    router.push('web-page/homepage')
+    router.push('web-page/portfolio')
   },[router])
   return (
     <>

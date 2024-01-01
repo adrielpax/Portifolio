@@ -1,11 +1,8 @@
 import ButtonComponent from "../buttons/button";
 import { FaLongArrowAltRight } from "react-icons/fa";
-import { CgAlbum } from "react-icons/cg";
-import Wrapper from "../../layout/wrapper";
-import Image from "next/image";
+import Image, { ImageLoader } from "next/image";
 
 import localData from "./dataSections.json";
-import { MdNotStarted } from "react-icons/md";
 import { VscDebugStart } from "react-icons/vsc";
 
 interface SectionProp {
@@ -19,10 +16,11 @@ interface SectionProp {
 export function HeroSection() {
   const { title, description, image, subtitle, background, btn_one, btn_two } =
     localData.data["hero-section"];
+
   return (
     // bg-gradient-to-b from-[#0047FF] to-[#00F0FF]
     <div
-      className={`w-auto bg-[#d0d0d0] flex flex-col-reverse justify-center items-start gap-16 self-stretch p-12
+      className={`w-auto bg-[#f1f1f110] flex flex-col-reverse justify-center items-start gap-16 self-stretch p-12
       md:gap-6 lg:gap-32 md:px-28 md:py-24 md:items-center md:flex-row mx-auto`}
     >
       <div
@@ -54,12 +52,14 @@ export function HeroSection() {
           </ButtonComponent>
         </div>
       </div>
+
       <div className="flex justify-center items-center w-full md:w-auto h-auto">
         <Image
           src={image}
           alt="hero-image"
           width={400}
           height={400}
+          loading="lazy"
           className=" pointer-events-none select-none"
         />
       </div>

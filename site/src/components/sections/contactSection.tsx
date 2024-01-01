@@ -24,7 +24,7 @@ export default function ContactSection() {
     <div className="flex items-start gap-[136px] self-stretch md:p-10 bg-white">
       <Wrapper>
         <div
-          className="flex items-start md:gap-8 flex-[1_0_0] md:rounded-md p-[72px]
+          className="flex items-start md:gap-8 flex-[1_0_0] md:rounded-2xl p-[72px]
           bg-[#121212] opacity-95 flex-col md:flex-row
           text-[white] gap-6 px-6 py-12 justify-center self-stretch"
         >

@@ -5,12 +5,12 @@ import { SiJavascript } from "react-icons/si";
 import { FaReact } from "react-icons/fa";
 import { MdOutlineStorage } from "react-icons/md";
 
-export default function CardProject() {
+export default function PersonalCardProject() {
   const url = "/web-page/porfolio/projects/YourFinance";
   return (
     <Link href={url}>
       <div className="hover:-translate-y-[2px] transition-all shadow hover:shadow-md rounded-2xl p-2
-      flex flex-col items-stretch">
+      flex flex-col items-stretch w-[300px]">
         <Image
           src={"/imgs/yourfinance.gif"}
           alt={`project-${"yourfinance image"}`}
@@ -38,26 +38,25 @@ export default function CardProject() {
             <h2 className="text-xl not-italic font-semibold font-sans">
               YourFinance{}
             </h2>
-           
-          </div>
-
-          <p className="text-ellipsis not-italic font-sans text-xs leading-1">
-            A web application that allows you to manage your finances. Profits and loses using a localStorage for you security data
-          </p>
-          <div className="flex items-center justify-between w-full">
+            <div className="flex gap-2">
               <p
-                className="h-auto w-auto bg-[#0047FF] py-2 px-3 rounded-full text-white
+                className="h-auto w-auto bg-[#0047FF] py-2 px-3 rounded-md text-white
             text-xs font-thin"
               >
                 Technical
               </p>
               <p
-                className="h-auto w-auto bg-[#cc00ff] py-2 px-3 rounded-full text-white
+                className="h-auto w-auto bg-[#cc00ff] py-2 px-3 rounded-md text-white
             text-xs font-thin"
               >
                 Personal
               </p>
             </div>
+          </div>
+
+          <p className="text-ellipsis not-italic font-sans text-xs leading-1">
+            A web application that allows you to manage your finances.
+          </p>
         </div>
       </div>
     </Link>

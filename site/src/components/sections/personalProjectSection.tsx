@@ -4,8 +4,9 @@ import CardProject from "../cards/projectCard";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import Wrapper from "../../layout/wrapper";
 import { usePathname } from "next/navigation";
+import PersonalCardProject from "../cards/personalProjectCard";
 
-export default function ProjectSection() {
+export default function PersonalProjectSection() {
   const pathname = usePathname();
   const portfolio = pathname.includes("portfolio");
   return (
@@ -20,13 +21,16 @@ export default function ProjectSection() {
             {portfolio ? "Personal Projects" : `${""}`}
           </h1>
           <h2 className="text-3xl font-semibold font-sans text-[#121212]">
-          {portfolio ? "Veja alguns projetos Tecnicos" : `${""}`}
+            {portfolio ? "Veja alguns projetos Tecnicos" : `${""}`}
           </h2>
-          <p className="text-xs text-[#12121299] mb-12">alguns dos nossos projetos tecnicos ainda estao em desenvolvimento !</p>
-          <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 items-start  ">
-            <CardProject />
-            <CardProject />
-            <CardProject />
+          <p className="text-xs text-[#12121299] mb-12">
+            alguns dos nossos projetos tecnicos ainda estao em desenvolvimento !
+          </p>
+          {/* <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 items-start  ">
+            <PersonalCardProject />
+          </div> */}
+          <div className="flex flex-wrap gap-8 ">
+            <PersonalCardProject />
           </div>
           <ButtonComponent
             className="bg-white rounded-full text-blue-gray-500 py-4 px-10

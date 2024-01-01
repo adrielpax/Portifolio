@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 import {
   Card,
   CardHeader,
@@ -7,14 +7,13 @@ import {
   Typography,
   Tooltip,
   Button,
-} from '@material-tailwind/react';
+} from "@material-tailwind/react";
 
 import Image from "next/image";
 
-import { ListTech } from '../../utils/list-tech';
+import { ListTech } from "../../utils/list-tech";
 import icons from "../../utils/icons/icons";
 import ButtonComponent from "../buttons/button";
-
 
 export function PersonalCard() {
   const [scrolled, setScrolled] = useState(false);
@@ -36,9 +35,7 @@ export function PersonalCard() {
       <Card
         className={`bg-white
         ${
-          !scrolled
-            ? "opacity-100 transition-opacity ease-in delay-600"
-            : ""
+          !scrolled ? "opacity-100 transition-opacity ease-in delay-600" : ""
         } rounded-lg shadow-md 
       md:shadow-xl md:hover:shadow-2xl bg-white md:w-96 scale-90 md:scale-100 mx-auto 
       `}
@@ -109,7 +106,8 @@ export function PersonalCard() {
         </CardBody>
 
         <CardFooter className="flex flex-col my-4 p-0">
-          <div className="flex mx-auto text-blue-gray-800 mb-6">
+          <div className="flex mx-auto text-base font-semibold 
+          text-blue-gray-800 border-t w-full text-center justify-center mb-6 pt-6">
             Technologias e Linguagens
           </div>
           <div className="block m-1 text-center">
@@ -188,8 +186,7 @@ export function PersonalCard() {
             <ListTech
               props={{
                 text: "Tailwind",
-                color:
-                  " rounded bg-gradient-to-r from-cyan-500 to-blue-500",
+                color: " rounded bg-gradient-to-r from-cyan-500 to-blue-500",
                 colorIcon: "text-white",
                 icon: icons.tailwind,
                 mobile: "",
