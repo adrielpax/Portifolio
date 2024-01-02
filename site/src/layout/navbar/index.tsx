@@ -14,13 +14,13 @@ import WarnningNavbar from "../../components/utilsComponents/warnningNavbar";
 
 export default function Navbar() {
   const [showSubmenu, setShowSubmenu] = React.useState(false);
-  const [separateRoute, setSeparateRoute] = React.useState(false);
   const [mobileMenu, setMobileMenu] = React.useState(false);
   const [showNav, setShowNav] = React.useState("translate-y-0");
   const [scrollNav, setScrollNav] = React.useState(0);
 
   const route = useRouter();
   const pathname = usePathname();
+  const [separateRoute, setSeparateRoute] = React.useState(false);
 
   //   if (window.scrollY > scrollNav) {
   //     setShowNav("-translate-y-[80px] scale-95");
@@ -43,6 +43,8 @@ export default function Navbar() {
         console.error("o pathname e indefinido");
       }
     };
+
+    path()
 
     const controllNavbar = () => {
       if (window.scrollY > 100) {
@@ -81,7 +83,7 @@ export default function Navbar() {
             </div>
           </Link>
         ) : (
-          <Link href={"/web-page/portfolio"}>
+          <Link href={"/portfolio"}>
             <h1 className="text-xl font-semibold font-sans text-[#121212] ml-10 text-center">
               Adriel{""}Dev
             </h1>

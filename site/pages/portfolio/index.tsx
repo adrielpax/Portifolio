@@ -2,13 +2,17 @@ import React from "react";
 import {
   ButtonComponent,
   PersonalCard,
-} from "../../../src/components/utilsComponents";
-import ContactSection from "../../../src/components/sections/contactSection";
-import { ProjectSection } from "../../../src/components/sections";
+} from "../../src/components/utilsComponents";
+import ContactSection from "../../src/components/sections/contactSection";
+import { ProjectSection } from "../../src/components/sections";
 import { FaLongArrowAltRight } from "react-icons/fa";
-import PersonalProjectSection from "../../../src/components/sections/personalProjectSection";
+import PersonalProjectSection from "../../src/components/sections/personalProjectSection";
+import PersonalContactSection from "../../src/components/sections/personalContactSection";
 
 export default function PersonalPortifolio() {
+  const handleContact = () => {
+    window.scrollBy(0, 1483);
+  };
   return (
     <div className="h-auto">
       <div className="flex items-start justify-center mx-auto gap-[136px] self-stretch md:p-10 bg-white mt-20">
@@ -30,18 +34,22 @@ export default function PersonalPortifolio() {
               Personal portfolio
             </h1>
             <h2 className="font-semibold text-4xl font-sans">
-              Sua Historia começa com quem faz Historia !
+              Transformando linhas de código em experiências inovadoras.
             </h2>
             <p className="font-regular font-medium font-sans text-justify">
-              Com a Digital Boost, você poderá alcançar seu público-alvo de
-              forma eficiente e direcionada. Nossas soluções de marketing
-              digital são personalizadas para atender às necessidades
-              específicas do seu negócio.
+              Sou um desenvolvedor full-stack apaixonado por transformar ideias
+              em soluções digitais.
             </p>
+            <p className="font-regular font-medium font-sans text-justify">
+              Busco meu primeiro desafio profissional para aplicar minha
+              habilidade técnica e contribuir para projetos inovadores.
+            </p>
+
             <ButtonComponent
               className="bg-[#121212] rounded-full z-20 font-medium
               shadow-none py-4 px-10 text-base hover:bg-white hover:text-cyan-600
             text-white active:bg-gray-400 border-4 border-transparent active:border-gray-600 transition-all"
+              onClick={() => handleContact()}
             >
               Entrar em contato <FaLongArrowAltRight />
             </ButtonComponent>
@@ -49,7 +57,7 @@ export default function PersonalPortifolio() {
         </div>
       </div>
       <PersonalProjectSection />
-      <ContactSection />
+      <PersonalContactSection />
     </div>
   );
 }
