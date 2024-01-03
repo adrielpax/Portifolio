@@ -18,7 +18,7 @@ import Image from "next/image";
 import Wrapper from "../../layout/wrapper";
 import localData from './dataSections.json'
 
-export default function SectionTwo() {
+export default function SectionCostumers() {
   const {title,description,image} = localData.data["section-two"]
   return (
     <div className="flex items-start justify-center mx-auto gap-[136px] self-stretch md:p-10 bg-white ">

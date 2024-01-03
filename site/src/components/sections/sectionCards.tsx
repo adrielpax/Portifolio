@@ -16,10 +16,10 @@ import { GiReceiveMoney } from "react-icons/gi";
 import InputButton from "../forms/input/inputButton";
 import Image from "next/image";
 import Wrapper from "../../layout/wrapper";
-import localData from './dataSections.json'
+import localData from "./dataSections.json";
 
-export default function SectionTwo() {
-  const {title,description,image} = localData.data["section-two"]
+export default function SectionCards() {
+  const { title, description, image } = localData.data["section-two"];
   return (
     <div className="flex items-start justify-center mx-auto gap-[136px] self-stretch md:p-10 bg-white ">
       <Wrapper>
@@ -38,9 +38,7 @@ export default function SectionTwo() {
               <IoPeopleSharp className="w-5 h-5" />
             </div>
             <h1 className="text-[#7DFFAF] text-regular text-base"></h1> */}
-            <h2 className="font-semibold text-4xl font-sans ">
-              {title}
-            </h2>
+            <h2 className="font-semibold text-4xl font-sans ">{title}</h2>
             <p className="font-regular font-medium font-sans text-justify ">
               {description}
             </p>

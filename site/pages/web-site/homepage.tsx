@@ -24,6 +24,8 @@ import Section from "../../src/components/sections/sectionOne";
 import SectionOne from "../../src/components/sections/sectionOne";
 import SectionTwo from "../../src/components/sections/sectionTwo";
 import Head from "next/head";
+import SectionCards from "../../src/components/sections/sectionCards";
+import SectionCostumers from "../../src/components/sections/sectionCostumers";
 
 const InfoCardComponent = React.lazy(
   () => import("../../src/components/utilsComponents/infoCard")
@@ -98,7 +100,9 @@ export default function Homepage() {
         <AboutSection />
         <SectionOne />
         <SectionTwo />
+        {/* <SectionCards /> */}
         <ProjectSection />
+        {/* <SectionCostumers /> */}
         <ContactSection />
       </div>
     </div>
