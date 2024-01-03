@@ -1,10 +1,10 @@
 import React from "react";
-import { ButtonComponent } from "../utilsComponents";
+import { ButtonComponent } from "../../../src/components/utilsComponents";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
-import { InputRow, TextAreaRow } from "../forms/input";
+import { InputRow, TextAreaRow } from "../../../src/components/forms/input";
 import { IoSend } from "react-icons/io5";
-import { useFormPostApi } from "../../hook/form";
-import Wrapper from "../../layout/wrapper";
+import { useFormPostApi } from "../../../src/hook/form";
+import Wrapper from "../../../src/layout/wrapper";
 import { TiWarning } from "react-icons/ti";
 import { MdError } from "react-icons/md";
 import Image from "next/image";
@@ -81,13 +81,13 @@ export default function PersonalContactSection() {
               />
             </div>
           </div>
-          <div className="flex flex-col justify-center bg-[white] text-[#121212] text-opacity-95 mt-10 py-4 px-6 rounded-xl shadow-md">
-            <div className="w-full h-full p-0 mt-5 rounded-t-lg font-semibold text-xl shrink-0 justify-center flex ">
+          <div className="flex flex-col  bg-[white] text-[#121212] text-opacity-95 m-0 mt-10 md:py-4 md:px-6 rounded-xl shadow-md">
+            <div className="md:w-full h-full p-0 mt-5 rounded-t-lg font-semibold text-xl shrink-0  flex ">
               <h3>Mande uma Mensagem.</h3>
             </div>
             <form
               onSubmit={handleSubmit}
-              className="flex flex-col gap-4 w-auto md:w-[385px] items-center md:items-start
+              className="flex flex-col gap-4 w-[320px] md:w-[385px] items-start md:items-start
                py-4 px-3 rounded-b-lg font-semibold text-sm font-sans justify-center"
             >
               {errors.name && touched.name ? (

@@ -56,7 +56,7 @@ export default function Document() {
         />
         <title>Adriel Developer | Personal portfolio</title>
       </Head>
-      <body className="bg-[#e9eef3] dark:bg-[#18191a]">
+      <body className="md:max-w-[1440px] min-w-max">
         <Main />
         <NextScript />
       </body>

@@ -14,6 +14,7 @@ import {
   SiPhp,
   SiMysql,
   SiFuturelearn,
+  SiAxios,
 } from "react-icons/si";
 import { BiDownload } from "react-icons/bi";
 import { TbBrandNextjs } from "react-icons/tb";
@@ -27,15 +28,6 @@ import { FaMoneyBill } from "react-icons/fa";
 import { RiDeleteBin2Fill } from "react-icons/ri";
 import { MdAttachEmail } from "react-icons/md";
 
-const axios = (
-  <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path
-      fill="white"
-      d="M11.0683 2.89968V22.2973l-2.11399 1.70265V7.8638H4.975l6.0933-4.96412zM14.93426 0v15.76724H19.025l-6.20044 5.08865V1.4689L14.93426 0z"
-    />
-  </svg>
-);
-
 const icons = {
   react: <SiReact className="h-[100%] w-[100%]" />,
   node: <IoLogoNodejs className="h-[100%] w-[100%]" />,
@@ -46,7 +38,7 @@ const icons = {
   python: <FaPython className="h-[100%] w-[100%]" />,
   tailwind: <SiTailwindcss className="h-[100%] w-[100%]" />,
   typescript: <SiTypescript className="h-[100%] w-[100%]" />,
-  axios: axios,
+  axios: <SiAxios className="h-[100%] w-[100%]" />,
   express: <SiExpress className="h-[100%] w-[100%]" />,
   download: <BiDownload className="h-6 w-6" />,
   next: <TbBrandNextjs className="h-[100%] w-[100%]" />,

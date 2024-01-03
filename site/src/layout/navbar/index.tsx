@@ -72,7 +72,7 @@ export default function Navbar() {
     >
       <Wrapper className="flex flex-row items-center text-[#12121299] justify-around md:justify-between py-1 h-full w-full">
         {!separateRoute ? (
-          <Link href={"/web-page/homepage"} className="flex ">
+          <Link href={"/web-site/homepage"} className="flex ">
             <div className="scale-75">
               <Image
                 src="/imgs/SquareOden-logo.svg"

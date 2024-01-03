@@ -1,9 +1,9 @@
 import React from "react";
-import { ButtonComponent } from "../utilsComponents";
+import { ButtonComponent } from "../../../src/components/utilsComponents";
 import { FaLongArrowAltRight } from "react-icons/fa";
-import Wrapper from "../../layout/wrapper";
+import Wrapper from "../../../src/layout/wrapper";
 import { usePathname } from "next/navigation";
-import PersonalCardProject from "../cards/personalProjectCard";
+import PersonalCardProject from "../conponents/personalProjectCard";
 
 export default function PersonalProjectSection() {
   const pathname = usePathname();

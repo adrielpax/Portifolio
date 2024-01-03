@@ -21,7 +21,7 @@ export default function ContactSection() {
     resetForm,
   } = useFormPostApi();
   return (
-    <div className="flex items-start gap-[136px] self-stretch md:p-10 bg-white">
+    <div className="flex items-start justify-center gap-[136px] self-stretch md:p-10 bg-white">
       <Wrapper>
         <div
           className="flex items-start md:gap-8 flex-[1_0_0] md:rounded-2xl p-[72px]
@@ -67,8 +67,9 @@ export default function ContactSection() {
               />
             </div>
           </div>
-          <div className="flex flex-col justify-center bg-[white] text-[#121212] text-opacity-95 mt-10 py-4 px-6 rounded-xl shadow-md">
-            <div className="w-full h-full p-0 mt-5 rounded-t-lg font-semibold text-xl shrink-0 justify-center flex ">
+
+          <div className="flex flex-col md:w-[420px] justify-start md:bg-transparent md:text-[white] text-opacity-95 mt-10 py-4 md:px-6 rounded-xl shadow-md">
+            <div className="w-full h-full p-0 mt-5 rounded-t-lg font-semibold text-xl shrink-0 text-justify flex ">
               <h3>Mande uma Mensagem ou solicite um serviço</h3>
             </div>
             <form
@@ -77,11 +78,11 @@ export default function ContactSection() {
                py-4 px-3 rounded-b-lg font-semibold text-sm font-sans"
             >
               {errors.name && touched.name ? (
-                <span className="text-[#121212] text-opacity-95 -mb-4 flex items-center gap-2 select-none">
+                <span className="text-[white] text-opacity-95 -mb-4 flex items-center gap-2 select-none">
                   <MdError className="w-5 h-5 text-pink-600" /> {errors.name}
                 </span>
               ) : (
-                <span className="text-[#121212] text-opacity-95 -mb-4 flex items-center gap-2 select-none">
+                <span className="text-[white] jus text-opacity-95 -mb-4 flex items-center  gap-2 select-none">
                   {" "}
                   Nome
                 </span>
@@ -98,11 +99,11 @@ export default function ContactSection() {
               />
 
               {errors.email && touched.email ? (
-                <span className="text-[#121212] text-opacity-95 -mb-4 -mt-1 flex items-center gap-2 select-none">
+                <span className="text-[white] text-opacity-95 -mb-4 -mt-1 flex items-center gap-2 select-none">
                   <MdError className="w-5 h-5 text-pink-600" /> {errors.email}
                 </span>
               ) : (
-                <span className="text-[#121212] text-opacity-95 -mb-4 -mt-1 flex items-center gap-2 select-none">
+                <span className="text-[white] text-opacity-95 -mb-4 -mt-1 flex items-center gap-2 select-none">
                   {" "}
                   E-mail
                 </span>
@@ -119,11 +120,11 @@ export default function ContactSection() {
               />
 
               {errors.number && touched.number ? (
-                <span className="text-[#121212] text-opacity-95 -mb-4 -mt-1 flex items-center gap-2 select-none">
+                <span className="text-[white] text-opacity-95 -mb-4 -mt-1 flex items-center gap-2 select-none">
                   <MdError className="w-5 h-5 text-pink-600" /> {errors.number}
                 </span>
               ) : (
-                <span className="text-[#121212] text-opacity-95 -mb-4 -mt-1 flex items-center gap-2 select-none">
+                <span className="text-[white] text-opacity-95 -mb-4 -mt-1 flex items-center gap-2 select-none">
                   {" "}
                   Numero
                 </span>
@@ -140,12 +141,12 @@ export default function ContactSection() {
               />
 
               {errors.business && touched.business ? (
-                <span className="text-[#121212] text-opacity-95 -mb-4 -mt-1 flex items-center gap-2 select-none">
+                <span className="text-[white] text-opacity-95 -mb-4 -mt-1 flex items-center gap-2 select-none">
                   <MdError className="w-5 h-5 text-pink-600" />{" "}
                   {errors.business}
                 </span>
               ) : (
-                <span className="text-[#121212] text-opacity-95 -mb-4 -mt-1 flex items-center gap-2 select-none">
+                <span className="text-[white] text-opacity-95 -mb-4 -mt-1 flex items-center gap-2 select-none">
                   {" "}
                   Nome da sua empresa
                 </span>
@@ -162,11 +163,11 @@ export default function ContactSection() {
               />
 
               {errors.message && touched.message ? (
-                <span className="text-[#121212] text-opacity-95 -mb-4 -mt-1 flex items-center gap-2 select-none">
+                <span className="text-[white] text-opacity-95 -mb-4 -mt-1 flex items-center gap-2 select-none">
                   <MdError className="w-5 h-5 text-pink-600" /> {errors.message}
                 </span>
               ) : (
-                <span className="text-[#121212] text-opacity-95 -mb-4 flex items-center gap-2 select-none">
+                <span className="text-[white] text-opacity-95 -mb-4 flex items-center gap-2 select-none">
                   {" "}
                   Mensagem
                 </span>

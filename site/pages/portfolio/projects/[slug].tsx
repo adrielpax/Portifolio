@@ -10,7 +10,7 @@ import { SiJavascript } from "react-icons/si";
 import { FaReact } from "react-icons/fa";
 import { MdOutlineStorage } from "react-icons/md";
 import { TbWorld } from "react-icons/tb";
-import PersonalContactSection from "../../../src/components/sections/personalContactSection";
+import PersonalContactSection from "../../../portfolio/src/sections/personalContactSection";
 
 export default function PersonalPage() {
   const router = useRouter();

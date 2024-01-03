@@ -80,7 +80,7 @@ export default function Menu({ showSubmenu, setShowSubmenu }: MenuProps) {
               shadow-sm transition-all hover:opacity-95 py-2 px-5 md:scale-75 lg:scale-100"
             icon={<HiCheckCircle className="w-5 h-5 " />}
             onClick={() => {
-              route.push("/web-page/services/request-service");
+              route.push("/web-site/services/request-service");
             }}
           >
             solicitar serviço

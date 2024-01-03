@@ -1,12 +1,15 @@
 {
-    "data":{
-        "projects":[
-            {
-                "name":"project 01",
-                "description":"Descrição do projeto e etc",
-                "data_post":"12/12/2023",
-                "icon":""
-            }
-        ]
-    }
+  "data": {
+    "projects": [
+      {
+        "name": "App-Finance",
+        "description": "A web application that allows you to manage your finances.",
+        "date_post": "Jul - Dec - 2021",
+        "type": ["Web Application", "Technical", "Personal"],
+        "github_code": "no code",
+        "url_link": "https://yourfinance.netlify.app",
+        "image": "/imgs/yourfinance.gif"
+      }
+    ]
+  }
 }

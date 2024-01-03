@@ -185,7 +185,7 @@ export function PersonalCard() {
             />
             <ListTech
               props={{
-                text: "Tailwind",
+                text: "TailwindCss",
                 color: " rounded bg-gradient-to-r from-cyan-500 to-blue-500",
                 colorIcon: "text-white",
                 icon: icons.tailwind,

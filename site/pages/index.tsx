@@ -2,8 +2,8 @@
 //import Image from 'next/image'
 import {useEffect, type ReactElement} from 'react';
 import { NextPageWithLayout } from './_app';
-import Dashboard from './dashboard';
-// import Homepage from './web-page/homepage.tsx';
+import Dashboard from './web-app/dashboard';
+// import Homepage from './web-site/homepage.tsx';
 import { useRouter } from 'next/navigation';
 // import PageNotFound from './404.page';
 

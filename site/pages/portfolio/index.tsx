@@ -6,8 +6,8 @@ import {
 import ContactSection from "../../src/components/sections/contactSection";
 import { ProjectSection } from "../../src/components/sections";
 import { FaLongArrowAltRight } from "react-icons/fa";
-import PersonalProjectSection from "../../src/components/sections/personalProjectSection";
-import PersonalContactSection from "../../src/components/sections/personalContactSection";
+import PersonalProjectSection from "../../portfolio/src/sections/personalProjectSection";
+import PersonalContactSection from "../../portfolio/src/sections/personalContactSection";
 
 export default function PersonalPortifolio() {
   const handleContact = () => {

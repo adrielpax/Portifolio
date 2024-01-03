@@ -6,11 +6,11 @@ import { FaReact } from "react-icons/fa";
 import { MdOutlineStorage } from "react-icons/md";
 
 export default function CardProject() {
-  const url = "/web-page/porfolio/projects/YourFinance";
+  const url = "/web-site/projects/$asd";
   return (
     <Link href={url}>
       <div className="hover:-translate-y-[2px] transition-all shadow hover:shadow-md rounded-2xl p-2
-      flex flex-col items-stretch">
+      flex flex-col items-stretch bg-white">
         <Image
           src={"/imgs/yourfinance.gif"}
           alt={`project-${"yourfinance image"}`}
@@ -28,11 +28,11 @@ export default function CardProject() {
             <p className="text-xs not-italic font-semibold leading-6">
               Jul - Dec - 2021{}
             </p>
-            <p className="flex items-center gap-4 ">
+            {/* <p className="flex items-center gap-4 ">
               <SiJavascript className="w-4 h-4" />
               <FaReact className="w-4 h-4" />
               <MdOutlineStorage className="w-4 h-4" />
-            </p>
+            </p> */}
           </div>
           <div className="flex flex-col w-full  items-start gap-4">
             <h2 className="text-xl not-italic font-semibold font-sans">
@@ -44,7 +44,7 @@ export default function CardProject() {
           <p className="text-ellipsis not-italic font-sans text-xs leading-1">
             A web application that allows you to manage your finances. Profits and loses using a localStorage for you security data
           </p>
-          <div className="flex items-center justify-between w-full">
+          {/* <div className="flex items-center justify-between w-full">
               <p
                 className="h-auto w-auto bg-[#0047FF] py-2 px-3 rounded-full text-white
             text-xs font-thin"
@@ -57,7 +57,7 @@ export default function CardProject() {
               >
                 Personal
               </p>
-            </div>
+            </div> */}
         </div>
       </div>
     </Link>
