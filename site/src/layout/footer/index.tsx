@@ -35,11 +35,31 @@ export function Footer() {
       <div className="flex flex-col items-center gap-6 md:px-28 py-10 bg-[#121212] opacity-95 text-white font-semibold text-sm font-sans">
         {!separateRoute ? (
           <Wrapper className="flex flex-row justify-between h-40">
-            <div className="opacity-95 h-full w-80 text-white text-base text-left py-4 px-6 hover:text-[#00F0FF]">
+            <div className="opacity-95 h-full w-80 text-white text-base text-left py-4 px-6">
               Site Map
+              <ul className="mt-3 font-normal flex flex-col gap-1">
+                <li className="cursor-pointer hover:text-[#00F0FF]">
+                  Home
+                </li>
+                <li className="cursor-pointer hover:text-[#00F0FF]">Sobre</li>
+                <li className="cursor-pointer hover:text-[#00F0FF]">Projetos</li>
+                <li className="cursor-pointer hover:text-[#00F0FF]">Serviços</li>
+                <li className="cursor-pointer hover:text-[#00F0FF]">Contato</li>
+                <li className="cursor-pointer hover:text-[#00F0FF]">Produtos</li>
+              </ul>
             </div>
-            <div className="opacity-95 h-full w-80 text-white text-base text-left py-4 px-6 hover:text-[#00F0FF]">
+            <div className="opacity-95 h-full w-80 text-white text-base text-left py-4 px-6 ">
               Nossas Politicas
+              <ul className="mt-3 font-normal flex flex-col gap-1">
+                <li className="cursor-pointer hover:text-[#00F0FF]">
+                  Política de privacidade
+                </li>
+                <li className="cursor-pointer hover:text-[#00F0FF]">Termos e condições</li>
+                <li className="cursor-pointer hover:text-[#00F0FF]">Política de entrega</li>
+                <li className="cursor-pointer hover:text-[#00F0FF]">Política de segurança</li>
+                <li className="cursor-pointer hover:text-[#00F0FF]">Política de Cookies</li>
+                <li className="cursor-pointer hover:text-[#00F0FF]">Política de Terceiros</li>
+              </ul>
             </div>
             <div className="flex flex-wrap opacity-95 h-full w-80 text-white text-base text-left hover:text-[#00F0FF]">
               {/* <div className="w-40 h-40 ">

@@ -2,64 +2,79 @@ import Link from "next/link";
 import Image from "next/image";
 import React from "react";
 import { SiJavascript } from "react-icons/si";
-import { FaReact } from "react-icons/fa";
-import { MdOutlineStorage } from "react-icons/md";
+import { FaFire, FaReact } from "react-icons/fa";
+import { ButtonComponent } from "../utilsComponents";
+import { useRouter } from "next/navigation";
 
-export default function CardProject() {
-  const url = "/web-site/projects/$asd";
+interface CardProps {
+  name: string;
+  description: string;
+  date_posted: string;
+  github_link: string;
+  url_link: string;
+  image: string;
+  type: string[];
+}
+
+export default function CardProject({
+  name,
+  description,
+  date_posted,
+  github_link,
+  url_link,
+  image,
+  type,
+}: CardProps) {
+  const route = useRouter()
+  const dynamicUrl = `/web-site/projects/${name.toLowerCase().replace(/\s/g, "")}`;
+
   return (
-    <Link href={url}>
-      <div className="hover:-translate-y-[2px] transition-all shadow hover:shadow-md rounded-2xl p-2
-      flex flex-col items-stretch bg-white">
+    <div
+      className="hover:-translate-y-[2px] transition-all shadow hover:shadow-md rounded-2xl p-2
+      flex flex-col items-stretch bg-white w-[300px]"
+    >
+      {image ? (
         <Image
-          src={"/imgs/yourfinance.gif"}
+          src={image}
           alt={`project-${"yourfinance image"}`}
           width={300}
           height={300}
           className="rounded-lg"
         />
-        <div
-          className="flex flex-col items-start gap-6 w-auto py-4 px-6
-      bg-white text-[#12121299] border border-transparent rounded-b-2xl
-       font-semibold text-sm font-sans"
-        >
-          {/* <div className="h-40 self-stretch rounded-md bg-gray-500"></div> */}
-          <div className="flex justify-between items-center self-stretch text-[#0047FF]">
-            <p className="text-xs not-italic font-semibold leading-6">
-              Jul - Dec - 2021{}
-            </p>
-            {/* <p className="flex items-center gap-4 ">
-              <SiJavascript className="w-4 h-4" />
-              <FaReact className="w-4 h-4" />
-              <MdOutlineStorage className="w-4 h-4" />
-            </p> */}
-          </div>
-          <div className="flex flex-col w-full  items-start gap-4">
-            <h2 className="text-xl not-italic font-semibold font-sans">
-              YourFinance{}
-            </h2>
-           
-          </div>
-
-          <p className="text-ellipsis not-italic font-sans text-xs leading-1">
-            A web application that allows you to manage your finances. Profits and loses using a localStorage for you security data
+      ) : (
+        <div className="w-auto h-[264px] bg-gray-200 rounded-lg"></div>
+      )}
+      <div
+        className="flex flex-col items-start gap-2  w-auto py-4 px-2
+        bg-white text-[#12121299] border border-transparent rounded-b-2xl
+          font-semibold text-sm font-sans"
+      >
+        <div className="flex justify-between items-center px-2 self-stretch text-[#0047FF]">
+          <p className="text-xs not-italic font-semibold">
+            {date_posted}
           </p>
-          {/* <div className="flex items-center justify-between w-full">
-              <p
-                className="h-auto w-auto bg-[#0047FF] py-2 px-3 rounded-full text-white
-            text-xs font-thin"
-              >
-                Technical
-              </p>
-              <p
-                className="h-auto w-auto bg-[#cc00ff] py-2 px-3 rounded-full text-white
-            text-xs font-thin"
-              >
-                Personal
-              </p>
-            </div> */}
+          <p className="flex items-center gap-4 ">
+            <FaFire className="w-4 h-4" />
+          </p>
         </div>
+        <div className="flex flex-col w-full mx-2  items-start">
+          <h2 className="text-xl not-italic font-semibold font-sans">{name}</h2>
+        </div>
+        <p className="text-ellipsis not-italic mx-2 font-sans text-xs leading-1">
+          {description}
+        </p>
+     
+          <ButtonComponent
+            className="bg-white rounded-full text-[#121212] py-2 px-5
+            w-full shadow active:scale-95 active:bg-blue-gray-900 border
+            hover:bg-gray-900 hover:text-white transition-all m-0"
+
+            onClick={()=>route.push(dynamicUrl)}
+          >
+            Ver mais
+          </ButtonComponent>
+    
       </div>
-    </Link>
+    </div>
   );
 }
