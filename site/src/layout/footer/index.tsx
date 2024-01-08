@@ -149,7 +149,7 @@ export function Footer() {
                   </a>
                 </div>
               ) : (
-                <div className="flex flex-col w-auto gap-6 font-normal font-sans text-base">
+                <div className="flex flex-col md:flex-row w-auto gap-6 font-normal font-sans text-base">
                   All rights reserved adriel dev 2023
                   <a
                     href="https://github.com/"
