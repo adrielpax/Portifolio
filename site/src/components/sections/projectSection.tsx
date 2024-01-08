@@ -32,10 +32,10 @@ export default function ProjectSection() {
   return (
     <div
       className={`${
-        pathname.includes("portfolio") ? "bg-white" : "bg-[whitesmoke]"
+        pathname.includes("portfolio") ? "bg-white" : "bg-[white]"
       }`}
     >
-      <Wrapper>
+      <Wrapper className="bg-[white] rounded-lg px-0">
         <div className="flex flex-col items-center gap-5 self-stretch px-6 py-12 md:px-28 md:py-[72px] bg-[transparent] rounded-md">
           <h1 className="text-[#0047FF] text-regular text-base">
             {portfolio ? "Personal Projects" : `${"Nossos Projetos"}`}
@@ -61,7 +61,7 @@ export default function ProjectSection() {
                 type={item.type}
               />
             ))}
-            {pages}
+            {/* {pages} */}
           </div>
           <ButtonComponent
             className="bg-white rounded-full text-[#121212] py-4 px-10

@@ -6,7 +6,7 @@
       "description": "A Square Oden é uma plataforma online que permite oferece",
       "image": "/imgs/hero-image.png",
       "background": "#d0d0d0",
-      "btn_one": "Comece ja",
+      "btn_one": "Começe já",
       "btn_two": "Explorar Mais"
     },
     "about-section": {
@@ -16,7 +16,8 @@
     },
     "section-one": {
       "title": "Aumente sua visibilidade online",
-      "description": "Com a Square Oden, você poderá alcançar seu público-alvo de forma eficiente e direcionada. Nossas soluções de marketing digital são personalizadas para atender às necessidades específicas do seu negócio.",
+      "description": "Com a Square Oden, você poderá alcançar seu público-alvo de forma eficiente e direcionada.",
+      "descrip_p2": "Nossas soluções de marketing digital são personalizadas para atender às necessidades específicas do seu negócio.",
       "image": "/imgs/performance-overview.png",
       "CTA_btn": ""
     },

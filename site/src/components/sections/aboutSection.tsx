@@ -44,11 +44,12 @@ export default function AboutSection() {
             </h2>
             <p className="font-regular font-medium font-sans text-justify">
               Com a Square Oden, você poderá alcançar seu público-alvo de forma
-              eficiente e direcionada. Nossas soluções de marketing digital são
-              personalizadas para atender às necessidades específicas do seu
-              negócio.
+              eficiente e direcionada. <br />
+
+              Nossas soluções de marketing digital são personalizadas para encontrar 
+              quem precisa do seu negocio.
             </p>
-            <ButtonComponent
+            {/* <ButtonComponent
               className="bg-[#121212] rounded-full z-20 
             shadow-none transition-transform py-4 px-10 text-base
             active:scale-95  text-white active:bg-gray-900 hover:bg-gray-900
@@ -56,7 +57,7 @@ export default function AboutSection() {
             >
               My Resume
               <FaLongArrowAltRight />
-            </ButtonComponent>
+            </ButtonComponent> */}
           </div>
         </div>
       </Wrapper>

@@ -18,7 +18,8 @@ import Wrapper from "../../layout/wrapper";
 import localData from "./dataSections.json";
 
 export default function SectionOne() {
-  const { title, description, image, CTA_btn } = localData.data["section-one"];
+  const { title, description, image, CTA_btn, descrip_p2 } =
+    localData.data["section-one"];
   return (
     <div className="flex items-start justify-center mx-auto gap-[136px] self-stretch md:p-10 bg-white ">
       <Wrapper>
@@ -35,10 +36,13 @@ export default function SectionOne() {
             </div>
             <h1 className="text-[#7DFFAF] text-regular text-base"></h1> */}
             <h2 className="font-semibold text-4xl font-sans">{title}</h2>
-            <p className="font-regular font-medium font-sans text-justify">
+            <p className="font-regular break-normal font-medium font-sans text-justify">
               {description}
+              <br />
+              <br />
+              {descrip_p2}
             </p>
-            <ButtonComponent
+            {/* <ButtonComponent
               className="bg-white rounded-full z-20 
             shadow-none transition-transform py-4 px-10 text-base
             active:scale-95  text-[#12121299] active:bg-gray-100 hover:bg-[whitesmoke]
@@ -46,7 +50,7 @@ export default function SectionOne() {
             >
               {CTA_btn}
               <FaLongArrowAltRight />
-            </ButtonComponent>
+            </ButtonComponent> */}
           </div>
           <div className="w-full md:w-auto flex justify-center">
             <Image

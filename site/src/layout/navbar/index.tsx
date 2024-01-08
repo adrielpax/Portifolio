@@ -44,7 +44,7 @@ export default function Navbar() {
       }
     };
 
-    path()
+    path();
 
     const controllNavbar = () => {
       if (window.scrollY > 100) {
@@ -72,7 +72,7 @@ export default function Navbar() {
     >
       <Wrapper className="flex flex-row items-center text-[#12121299] justify-around md:justify-between py-1 h-full w-full">
         {!separateRoute ? (
-          <Link href={"/web-site/homepage"} className="flex ">
+          <Link href={"/web-site/"} className="flex ">
             <div className="scale-75">
               <Image
                 src="/imgs/SquareOden-logo.svg"
@@ -91,7 +91,10 @@ export default function Navbar() {
         )}
 
         {!separateRoute ? (
-          <Menu showSubmenu={showSubmenu} setShowSubmenu={setShowSubmenu} />
+          // <Menu showSubmenu={showSubmenu} setShowSubmenu={setShowSubmenu} />
+          <>
+            <MobileMenu />
+          </>
         ) : (
           <div className="flex w-full justify-end">
             <ButtonComponent
@@ -104,7 +107,6 @@ export default function Navbar() {
             </ButtonComponent>
           </div>
         )}
-        <MobileMenu />
       </Wrapper>
       {/* <div className="w-full flex items-center justify-center">
         <WarnningNavbar scrollNav={scrollNav} />

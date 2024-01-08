@@ -87,8 +87,8 @@ export default function PersonalContactSection() {
             </div>
             <form
               onSubmit={handleSubmit}
-              className="flex flex-col gap-4 w-[320px] md:w-[385px] items-start md:items-start
-               py-4 px-3 rounded-b-lg font-semibold text-sm font-sans justify-center"
+              className="flex flex-col gap-4 w-[280px] md:w-[385px] items-start md:items-start
+               py-4 px-3 rounded-b-lg font-semibold text-sm font-sans justify-center "
             >
               {errors.name && touched.name ? (
                 <span className="text-[#121212] text-opacity-95 -mb-4 flex items-center gap-2 select-none">

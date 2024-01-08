@@ -20,15 +20,16 @@ export function HeroSection() {
   return (
     // bg-gradient-to-b from-[#0047FF] to-[#00F0FF]
     <div
-      className={`w-auto bg-[#f1f1f110] flex flex-col-reverse justify-center items-start gap-16 self-stretch p-12
-      md:gap-6 lg:gap-32 md:px-28 md:py-24 md:items-center md:flex-row mx-auto`}
+      className={`w-auto bg-[#f1f1f110] flex flex-col-reverse justify-center items-start gap-0 
+      self-stretch py-12 px-4 
+      md:gap-6 lg:gap-32 md:px-28 md:py-24 md:items-center md:flex-row mx-auto mt-20 md:mt-5`}
     >
       <div
         className="flex flex-col w-auto items-start gap-7 self-stretch md:text-left pt-14
           lg:w-[592px] md:flex-col md:items-start md:gap-8 text-[#12121299] font-sans"
       >
-        <h1 className="text-4xl font-bold ">{title}</h1>
-        <h2 className="text-2xl font-medium">{subtitle}</h2>
+        <h1 className="md:text-4xl text-2xl font-bold ">{title}</h1>
+        <h2 className="me:text-2xl font-medium">{subtitle}</h2>
         {/* <p className="text-justify">
           {description}
         </p> */}

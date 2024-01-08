@@ -88,6 +88,17 @@ export default function Homepage() {
           rel="stylesheet"
         />
         <title>Square Oden | Soluções Digitais</title>
+        <meta name="author" content="AdrielDev-for-SquareOden" />
+        <meta
+          name="keywords"
+          content="presença online, marketing digital, impulsionar seus negócios, Square Oden, Desenvolvimento web, Trafego Online"
+        />
+        <meta
+          name="description"
+          content="Potencialize sua presença online com a Square Oden,
+          Oferecemos soluções de marketing digital personalizadas para impulsionar seus negócios.
+          Desenvolvimento Web, Design, Marketing Digital, Trafego Online"
+        />
       </Head>
       {showConfetti && (
         <div className="fixed h-auto items-center mx-auto">
@@ -101,7 +112,7 @@ export default function Homepage() {
         <SectionOne />
         <SectionTwo />
         {/* <SectionCards /> */}
-        <ProjectSection />
+        {/* <ProjectSection /> */}
         {/* <SectionCostumers /> */}
         <ContactSection />
       </div>

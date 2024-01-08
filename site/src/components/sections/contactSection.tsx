@@ -35,8 +35,8 @@ export default function ContactSection() {
               Entre em contato conosco hoje mesmo.
             </h2>
             <p>
-              Estou sempre pronto para um bate-papo. Envie-me um e-mail para
-              hi@linalevi.com ou dê-me um alô nas redes sociais.
+              Envie-nos uma mensagem para entrar em contato e siga-nos nas redes
+              sociais.
             </p>
             <div className="flex justify-start w-full gap-2 mb-10 md:mb-0">
               <ButtonComponent
