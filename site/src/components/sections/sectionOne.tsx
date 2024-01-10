@@ -25,7 +25,7 @@ export default function SectionOne() {
       <Wrapper>
         <div
           className="flex md:items-start justify-center mx-auto md:gap-8 flex-[1_0_0] md:rounded-lg p-[72px]
-          bg-gradient-to-b from-[#0047FF] to-[#00F0FF] flex-col-reverse md:flex-row
+          bg-gradient-to-t from-[#0047FF] to-[#00F0FF] flex-col-reverse md:flex-row
         text-white items-start gap-10 self-stretch px-6 py-12"
         >
           <div className="flex flex-col items-start w-auto md:w-[592px] gap-7 md:gap-8 self-stretch">

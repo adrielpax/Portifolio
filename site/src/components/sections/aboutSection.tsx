@@ -19,7 +19,7 @@ export default function AboutSection() {
         {/* bg-gradient-to-t from-[#0047FF] to-[#00F0FF] */}
         <div
           className="flex md:items-start justify-center mx-auto md:gap-16 flex-[1_0_0] md:rounded-lg p-[72px]
-         flex-col md:flex-row bg-[whitesmoke] text-[#12121299] items-start gap-16 self-stretch px-6 py-12"
+         flex-col md:flex-row bg-gradient-to-b from-[#0047FF] to-[#00F0FF] text-[white] items-start gap-16 self-stretch px-6 py-12"
         >
           <div className="flex w-full md:w-auto justify-center">
             <Image
@@ -45,9 +45,8 @@ export default function AboutSection() {
             <p className="font-regular font-medium font-sans text-justify">
               Com a Square Oden, você poderá alcançar seu público-alvo de forma
               eficiente e direcionada. <br />
-
-              Nossas soluções de marketing digital são personalizadas para encontrar 
-              quem precisa do seu negocio.
+              Nossas soluções de marketing digital são personalizadas para
+              encontrar quem precisa do seu negocio.
             </p>
             {/* <ButtonComponent
               className="bg-[#121212] rounded-full z-20 
