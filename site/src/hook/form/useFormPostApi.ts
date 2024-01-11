@@ -4,6 +4,7 @@ import React from "react";
 import { toast } from "react-toastify";
 import * as Yup from "yup";
 import { useFormik } from "formik";
+import {parseCookies,setCookie,destroyCookie} from "nookies";
 
 export const useFormPostApi = () => {
   const router = useRouter();
@@ -61,7 +62,7 @@ export const useFormPostApi = () => {
         toast.success(
           "Sua mensagem foi enviada com sucesso, Obrigado pelo Contato!"
         );
-        console.log(content);
+        setCookie( null, "send_message", `${true}` , { path: "/" });
         resetForm();
         router.push("#up");
       } catch (error) {
@@ -100,7 +101,7 @@ export const useFormPostApi = () => {
     if (isLoading) {
       setTimeout(() => {
         resetForm();
-      }, 3000);
+      }, 500);
     }
   }, [isLoading, resetForm]);
 

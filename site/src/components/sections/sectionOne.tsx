@@ -26,7 +26,7 @@ export default function SectionOne() {
         <div
           className="flex md:items-start justify-center mx-auto md:gap-8 flex-[1_0_0] md:rounded-lg p-[72px]
             bg-[whitesmoke] flex-col-reverse md:flex-row
-          text-[#121212] items-start gap-10 self-stretch px-6 py-12"
+          text-[#12121299] items-start gap-10 self-stretch px-6 py-12"
         >
           <div className="flex flex-col items-start w-auto md:w-[592px] gap-7 md:gap-8 self-stretch">
             {/* <div className="flex items-center gap-6  text-[#654AEE]">
@@ -39,7 +39,7 @@ export default function SectionOne() {
             <p className="font-regular break-normal font-medium font-sans text-justify">
               {description}
               <br />
-              <br />
+            
               {descrip_p2}
             </p>
             {/* <ButtonComponent
