@@ -35,9 +35,9 @@ export function HeroSection() {
         </p> */}
         <div className="flex flex-col md:flex-row md:items-start justify-around md:justify-between w-full md:w-[430px] gap-4">
           <ButtonComponent
-            className="bg-[#121212] rounded-full z-20 font-light
+            className="bg-[#0048ffdd] rounded-full z-20 font-light
             shadow transition-transform py-3 px-9 text-base
-            active:scale-100 text-white hover:bg-[#0048ffdd] scale-100
+            active:scale-100 text-white hover:bg-[#121212] scale-100
             active:border-gray-700 border-4 border-transparent"
           >
             {btn_one}

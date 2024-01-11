@@ -25,9 +25,9 @@ export default function SectionTwo() {
       <Wrapper>
         <div
           className="flex md:items-start justify-center mx-auto md:gap-8 flex-[1_0_0] md:rounded-lg p-[72px]
-        bg-[#121212] opacity-95 flex-col md:flex-row
-        text-[white] items-start gap-16 self-stretch px-6 py-12"
-        >
+            bg-gradient-to-t from-[#0047FF] to-[#00F0FF] opacity-95 flex-col md:flex-row
+          text-[white] items-start gap-16 self-stretch px-6 py-12"
+          >
           <div className="w-full md:w-auto justify-center flex ">
             <Image src={image} alt="more-costumers" width={300} height={300} />
           </div>

@@ -70,7 +70,7 @@ export default function Navbar() {
       className={`${showNav} bg-white shrink-0 w-full h-[80px] overflow-visible fixed z-50 top-0 shadow
       transition-all ease-in-out decoration-lime-300 `}
     >
-      <Wrapper className="flex flex-row items-center text-[#12121299] justify-around md:justify-between py-1 h-full w-full">
+      <Wrapper className="flex flex-row items-center text-[#12121299] md:justify-around justify-between py-1 h-full w-full">
         {!separateRoute ? (
           <Link href={"/web-site/"} className="flex ">
             <div className="scale-75">
@@ -79,6 +79,7 @@ export default function Navbar() {
                 alt={""}
                 width={200}
                 height={200}
+                className="scale-90 md:scale-100"
               />
             </div>
           </Link>
