@@ -74,7 +74,7 @@ export default function Menu({ showSubmenu, setShowSubmenu }: MenuProps) {
           );
         })}
         <div className="hidden md:flex items-center ">
-          {/* <ButtonComponent
+          <ButtonComponent
             className="bg-transparent rounded-full border-transparent w-44 text-xs
             hover:text-[#fbfcff] hover:bg-gray-900 active:border-gray-500 border-4
               shadow-sm transition-all hover:opacity-95 py-2 px-5 md:scale-75 lg:scale-100"
@@ -84,7 +84,7 @@ export default function Menu({ showSubmenu, setShowSubmenu }: MenuProps) {
             }}
           >
             solicitar serviço
-          </ButtonComponent> */}
+          </ButtonComponent>
           {/* <div className="flex justify-between items-center">
             <div>
               <ButtonComponent

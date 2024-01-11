@@ -82,10 +82,10 @@ export function Footer() {
             </div>
             <div className="flex md:flex-wrap opacity-95 h-auto w-80 text-white text-base font-normal text-center">
               <div className="flex w-auto h-auto items-center gap-1">
-                <FaExpeditedssl className="w-12 h-12" /> SSL Security Protection
+                <FaExpeditedssl className="w-12 h-12 text-green-500" /> SSL Security Protection
               </div>
               <div className="flex items-center w-auto h-auto gap-1">
-                <MdOutlineSecurity className="w-12 h-12" /> LGPD data Protection
+                <MdOutlineSecurity className="w-12 h-12 text-cyan-500" /> LGPD data Protection
               </div>
             </div>
           </Wrapper>

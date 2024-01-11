@@ -1,7 +1,8 @@
 {
   "data": {
     "menu": [
-      { "id": 1, "name": "Home", "route": "/web-site/", "subMenu": false }
+      { "id": 1, "name": "Quem Somos", "route": "/web-site/about", "subMenu": false },
+      { "id": 2, "name": "Serviços", "route": "/web-site/services", "subMenu": false }
     ],
     "subMenu": [
       { "id": 1, "name": "Sites", "url": "/web-site/products/sites-service" },
