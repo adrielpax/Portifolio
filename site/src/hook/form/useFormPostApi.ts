@@ -20,23 +20,23 @@ export const useFormPostApi = () => {
       .min(8, "Adicione nome e sobrenome")
       .max(60, "Seu nome é extenso demais")
       .matches(nameRegex, "esse formato nao é valido.")
-      .required("O seu nome é nescessario."),
+      .required("Este campo é obrigatorio."),
     email: Yup.string()
       .email("Escreva um e-mail valido.")
       .required("Esse e-mail não é valido."),
     message: Yup.string()
-      .required("Não deixe de mandar sua mensagem")
+      .required("Mande sua mensagem")
       .max(300, "Sua Mensagem exedeu 300 caracteres"),
     number: Yup.string()
       .min(9, "O numero deve conter no minino 11 numeros com o DDD")
       .max(12, "O numero deve conter 11 numeros com o DDD")
-      .matches(phoneRegex, "coloque o formato certo")
-      .required("O numero de celular com DDD é nescessario"),
+      .matches(phoneRegex, "Coloque o formato certo")
+      .required("DDD é nescessario"),
     business: Yup.string()
       .min(4, "O nome da empresa deve ter mais que 4 caracteres")
       .max(30, "O nome da empresa nao pode ter mais de 30 caracteres")
       .matches(nameRegex, "esse formato nao é valido")
-      .required("O nome da sua empresa é nescessario"),
+      .required("Este campo é obrigatorio"),
     // emailmarkup: Yup.boolean(),
     date: Yup.string().default(() => new Date().toLocaleDateString()),
   });
@@ -64,7 +64,6 @@ export const useFormPostApi = () => {
         );
         setCookie( null, "send_message", `${true}` , { path: "/" });
         resetForm();
-        router.push("#up");
       } catch (error) {
         toast.error("ops algo deu errado !");
         if (error) {

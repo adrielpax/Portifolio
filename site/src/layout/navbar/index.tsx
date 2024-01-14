@@ -116,11 +116,11 @@ export default function Navbar() {
           <div className="flex w-full justify-end mt-5">
             <ButtonComponent
               className="bg-[#f1f1f199]  shadow-none text-[#12121299]
-          rounded-lg hover:text-[#0047FF] hover:bg-white border-4 border-gray-100
-          transition-transform active:scale-90 py-4 px-10 my-1 scale-75"
+              rounded-lg hover:text-[#0047FF] hover:bg-white border-4 border-gray-100
+              transition-transform active:scale-90 py-4 px-10 my-1 scale-90"
               icon={<FaTools className="w-6 h-6" />}
             >
-              {/* <p className={``}>Em desenvolvimento</p> */}
+              <p className={``}>Em desenvolvimento</p>
             </ButtonComponent>
           </div>
         </Wrapper>

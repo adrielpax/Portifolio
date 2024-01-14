@@ -2,12 +2,10 @@ import React from "react";
 import { ButtonComponent } from "../../components/utilsComponents";
 import { MdOutlineMenuOpen } from "react-icons/md";
 import { VscCloseAll } from "react-icons/vsc";
-import Menu from "./menu";
 import hardData from "./dataNavbar.json";
 import Link from "next/link";
 import { FaAngleDown } from "react-icons/fa";
 import { HiCheckCircle } from "react-icons/hi2";
-import { useRouter } from "next/router";
 
 interface MenuProps {
   showSubmenu: boolean;
@@ -15,7 +13,6 @@ interface MenuProps {
 }
 
 export default function MobileMenu({ showSubmenu, setShowSubmenu }: MenuProps) {
-  const route = useRouter();
   const [openMenu, setOpenMenu] = React.useState(true);
 
   const clickToggle = () => {
@@ -34,7 +31,8 @@ export default function MobileMenu({ showSubmenu, setShowSubmenu }: MenuProps) {
           <VscCloseAll className="w-8 h-8 text-[#12121299]" />
         )}
       </ButtonComponent>
-      <div
+      <ButtonComponent
+        onClick={() => clickToggle()}
         className={`${
           openMenu ? "hidden" : "flex"
         } flex-col md:hidden font-bold absolute top-[50px] left-0 w-full
@@ -43,7 +41,7 @@ export default function MobileMenu({ showSubmenu, setShowSubmenu }: MenuProps) {
       >
         <ul
           className="flex flex-col justify-center items-center gap-2 font-semibold text-sm font-sans z-50
-    text-[#12121299] my-5 "
+        text-[#12121299] my-5 "
         >
           {hardData.data.menu.map((item) => {
             return (
@@ -100,18 +98,15 @@ export default function MobileMenu({ showSubmenu, setShowSubmenu }: MenuProps) {
             );
           })}
         </ul>
-        <ButtonComponent
+        <Link
+          href="/web-site/services/request-service"
           className="bg-transparent rounded-full border-transparent w-full text-xs
             hover:text-[#fbfcff] hover:bg-gray-900 active:border-gray-500 border-4
               shadow-sm transition-all hover:opacity-95 py-2 px-5 md:scale-75 lg:scale-100"
-          icon={<HiCheckCircle className="w-5 h-5 " />}
-          onClick={() => {
-            route.push("/web-site/services/request-service");
-          }}
         >
-          solicitar serviço
-        </ButtonComponent>
-      </div>
+          <HiCheckCircle className="w-5 h-5 " /> solicitar serviço
+        </Link>
+      </ButtonComponent>
     </div>
   );
 }

@@ -15,9 +15,10 @@ import { MdError } from "react-icons/md";
 import Image from "next/image";
 import { parseCookies } from "nookies";
 import { GiConfirmed } from "react-icons/gi";
+import { type } from "os";
 
 export default function ContactSection() {
-  const cookie = parseCookies().send_message;
+  const cookie =  parseCookies().send_message;
   const {
     isLoading,
     handleChange,
@@ -29,9 +30,6 @@ export default function ContactSection() {
     resetForm,
   } = useFormPostApi();
 
-  // const handleSended = () => {
-  //   resetForm();
-  // };
 
   return (
     <div className="flex items-start justify-center gap-[136px] self-stretch md:p-10 bg-white">
@@ -86,6 +84,7 @@ export default function ContactSection() {
             md:text-[#121212] text-opacity-95 self-center items-center gap-2
              shadow-md "
             >
+              
               <div
                 className="flex flex-col md:flex-row bg-white w-auto md:w-[420px] py-4 md:px-6 rounded-xl
               items-center gap-2"
@@ -94,12 +93,14 @@ export default function ContactSection() {
                 <p className="font-semibold text-xl font-sans text-[#121212] text-center md:text-left">
                   Sua mensagem foi enviada com sucesso!
                 </p>
+                
               </div>
               <p className="font-semibold text-center my-2 text-xl font-sans text-white">
-                Agradecemos por entrar em contato!<br/>
+                Agradecemos por entrar em contato!
+                <br />
                 Veja mais sobre nossos serviços clicando no botão abaixo.
               </p>
-             
+
               <ButtonComponent
                 className="bg-white rounded-full md:w-[420px]  text-[#121212] py-3 px-9 text-base
                 shadow transition-transform active:scale-100 active:bg-blue-gray-50 scale-100
@@ -110,120 +111,125 @@ export default function ContactSection() {
               </ButtonComponent>
             </div>
           ) : (
-            <div className="flex flex-col md:w-[420px] justify-start md:bg-transparent md:text-[white] text-opacity-95 mt-10 py-4 md:px-6 rounded-xl shadow-md">
-              <div className="w-full h-full p-0 mt-5 rounded-t-lg font-semibold text-lg shrink-0 text-center flex border-b">
-                <h3>Mande uma Mensagem ou solicite um serviço</h3>
-              </div>
+            <div className="flex justify-center md:w-[420px] md:text-[white] text-opacity-95 mt-10 md:py-4 md:px-6 rounded-xl shadow-md">
               <form
                 onSubmit={handleSubmit}
-                className="flex flex-col gap-4 w-auto md:w-[385px] items-center md:items-start
-                py-4 px-3 rounded-b-lg font-semibold text-sm font-sans"
+                className="flex flex-col gap-4 w-auto md:w-[385px] items-center md:items-start bg-[#313030]
+                py-5 md:px-3 rounded-b-lg font-semibold text-sm font-sans border-2 border-[#313030] rounded-lg"
               >
-                {errors.name && touched.name ? (
-                  <span className="text-[white] text-opacity-95 -mb-4 flex items-center gap-2 select-none">
-                    <MdError className="w-5 h-5 text-pink-600" /> {errors.name}
-                  </span>
-                ) : (
-                  <span className="text-[white] jus text-opacity-95 -mb-4 flex items-center  gap-2 select-none">
-                    {" "}
-                    Nome
-                  </span>
-                )}
-                <InputRow
-                  id={"name"}
-                  type={"name"}
-                  value={values.name}
-                  error={errors.name}
-                  holder={"Nome"}
-                  handle={handleChange}
-                  blur={handleBlur}
-                  className="w-[238px]"
-                />
-
-                {errors.email && touched.email ? (
-                  <span className="text-[white] text-opacity-95 -mb-4 -mt-1 flex items-center gap-2 select-none">
-                    <MdError className="w-5 h-5 text-pink-600" /> {errors.email}
-                  </span>
-                ) : (
-                  <span className="text-[white] text-opacity-95 -mb-4 -mt-1 flex items-center gap-2 select-none">
-                    {" "}
-                    E-mail
-                  </span>
-                )}
-                <InputRow
-                  id={"email"}
-                  type={"email"}
-                  value={values.email}
-                  error={errors.email}
-                  holder={"Email de contato"}
-                  handle={handleChange}
-                  blur={handleBlur}
-                  className="w-[238px]"
-                />
-
-                {errors.number && touched.number ? (
-                  <span className="text-[white] text-opacity-95 -mb-4 -mt-1 flex items-center gap-2 select-none">
-                    <MdError className="w-5 h-5 text-pink-600" />{" "}
-                    {errors.number}
-                  </span>
-                ) : (
-                  <span className="text-[white] text-opacity-95 -mb-4 -mt-1 flex items-center gap-2 select-none">
-                    {" "}
-                    Numero
-                  </span>
-                )}
-                <InputRow
-                  id={"number"}
-                  type={""}
-                  value={values.number}
-                  error={errors.number}
-                  holder={"Numero de contato"}
-                  handle={handleChange}
-                  blur={handleBlur}
-                  className="w-[238px]"
-                />
-
-                {errors.business && touched.business ? (
-                  <span className="text-[white] text-opacity-95 -mb-4 -mt-1 flex items-center gap-2 select-none">
-                    <MdError className="w-5 h-5 text-pink-600" />{" "}
-                    {errors.business}
-                  </span>
-                ) : (
-                  <span className="text-[white] text-opacity-95 -mb-4 -mt-1 flex items-center gap-2 select-none">
-                    {" "}
-                    Nome da sua empresa
-                  </span>
-                )}
-                <InputRow
-                  id={"business"}
-                  type={"text"}
-                  value={values.business}
-                  error={errors.business}
-                  holder={"Nome da sua empresa"}
-                  handle={handleChange}
-                  blur={handleBlur}
-                  className="w-[238px]"
-                />
-
-                {errors.message && touched.message ? (
-                  <span className="text-[white] text-opacity-95 -mb-4 -mt-1 flex items-center gap-2 select-none">
-                    <MdError className="w-5 h-5 text-pink-600" />{" "}
-                    {errors.message}
-                  </span>
-                ) : (
-                  <span className="text-[white] text-opacity-95 -mb-4 flex items-center gap-2 select-none">
-                    {" "}
-                    Mensagem
-                  </span>
-                )}
-                <TextAreaRow
-                  id={"message"}
-                  holder={"Mensagem"}
-                  value={values.message}
-                  error={errors.message}
-                  handle={handleChange}
-                  blur={handleBlur}
-                />
+                <div>
+                  {errors.name && touched.name ? (
+                    <span className="text-[white] flex items-center text-ellipsis text-opacity-95 gap-2 select-none">
+                      <MdError className="w-5 h-5 text-pink-600" />{" "}
+                      {errors.name}
+                    </span>
+                  ) : (
+                    <span className="text-[white] text-opacity-95 gap-2 select-none">
+                      {" "}
+                      Nome
+                    </span>
+                  )}
+                  <InputRow
+                    id={"name"}
+                    type={"name"}
+                    value={values.name}
+                    error={errors.name}
+                    holder={"Nome"}
+                    handle={handleChange}
+                    blur={handleBlur}
+                    className="w-[238px]"
+                  />
+                </div>
+                <div>
+                  {errors.email && touched.email ? (
+                    <span className="text-[white] text-opacity-95 flex items-center text-ellipsis gap-2 select-none">
+                      <MdError className="w-5 h-5 text-pink-600" />{" "}
+                      {errors.email}
+                    </span>
+                  ) : (
+                    <span className="text-[white] text-opacity-95  gap-2 select-none">
+                      {" "}
+                      E-mail
+                    </span>
+                  )}
+                  <InputRow
+                    id={"email"}
+                    type={"email"}
+                    value={values.email}
+                    error={errors.email}
+                    holder={"Email de contato"}
+                    handle={handleChange}
+                    blur={handleBlur}
+                    className="w-[238px]"
+                  />
+                </div>
+                <div>
+                  {errors.number && touched.number ? (
+                    <span className="text-[white] text-opacity-95 flex items-center text-ellipsis gap-2 select-none">
+                      <MdError className="w-5 h-5 text-pink-600" />{" "}
+                      {errors.number}
+                    </span>
+                  ) : (
+                    <span className="text-[white] text-opacity-95 gap-2 select-none">
+                      {" "}
+                      Numero
+                    </span>
+                  )}
+                  <InputRow
+                    id={"number"}
+                    type={""}
+                    value={values.number}
+                    error={errors.number}
+                    holder={"Numero de contato"}
+                    handle={handleChange}
+                    blur={handleBlur}
+                    className="w-[238px]"
+                  />
+                </div>
+                <div>
+                  {errors.business && touched.business ? (
+                    <span className="text-[white] text-opacity-95 flex items-center text-ellipsis gap-2 select-none">
+                      <MdError className="w-5 h-5 text-pink-600" />{" "}
+                      {errors.business}
+                    </span>
+                  ) : (
+                    <span className="text-[white] text-opacity-95 flex items-left gap-2 select-none">
+                      {" "}
+                      Nome da sua empresa
+                    </span>
+                  )}
+                  <InputRow
+                    id={"business"}
+                    type={"text"}
+                    value={values.business}
+                    error={errors.business}
+                    holder={"Nome da sua empresa"}
+                    handle={handleChange}
+                    blur={handleBlur}
+                    className="w-[238px]"
+                  />
+                </div>
+                <div>
+                  {errors.message && touched.message ? (
+                    <span className="text-[white] text-opacity-95 flex items-center gap-2 select-none">
+                      <MdError className="w-5 h-5 text-pink-600" />{" "}
+                      {errors.message}
+                    </span>
+                  ) : (
+                    <span className="text-[white] text-opacity-95 gap-2 select-none">
+                      {" "}
+                      Mensagem
+                    </span>
+                  )}
+                  <TextAreaRow
+                    id={"message"}
+                    holder={"Mensagem"}
+                    value={values.message}
+                    error={errors.message}
+                    handle={handleChange}
+                    blur={handleBlur}
+                  />
+                </div>
 
                 {/* <p className="text-justify">
               Ao enviar essa mensagem o tempo de resposta sera de 1 a 2 dias

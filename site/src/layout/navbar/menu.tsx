@@ -77,7 +77,7 @@ export default function Menu({ showSubmenu, setShowSubmenu }: MenuProps) {
           <ButtonComponent
             className="bg-transparent rounded-full border-transparent w-44 text-xs
             hover:text-[#fbfcff] hover:bg-gray-900 active:border-gray-500 border-4
-              shadow-sm transition-all hover:opacity-95 py-2 px-5 md:scale-75 lg:scale-100"
+              shadow-lg drop-shadow-md transition-all hover:opacity-95 py-2 px-5 md:scale-75 lg:scale-100"
             icon={<HiCheckCircle className="w-5 h-5 " />}
             onClick={() => {
               route.push("/web-site/services/request-service");
