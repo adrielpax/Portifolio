@@ -42,7 +42,7 @@ export const SiteContextProvider = ({ children }: ContextProps) => {
 export const useGlobalContext = () => {
   const context = useContext(GlobalContext);
   if (!context) {
-    throw new Error("useMyContext must be used within a MyContextProvider");
+    throw new Error("useMyContext must be used within MyContextProvider");
   }
   return context;
 };
