@@ -5,16 +5,17 @@ import { NextPageWithLayout } from './_app';
 import Dashboard from './web-app/dashboard';
 // import Homepage from './web-site/.tsx';
 import { useRouter } from 'next/navigation';
+import PersonalPortifolio from './portfolio';
 // import PageNotFound from './404.page';
 
 const Page: NextPageWithLayout = ()=>{
-  const router = useRouter();
-  useEffect(()=>{
-    router.push('/portfolio')
-  },[router])
+  // const router = useRouter();
+  // useEffect(()=>{
+  //   router.push('/portfolio')
+  // },[router])
   return (
     <>
-      {/* <Homepage/>    */}
+      <PersonalPortifolio/>
     </>
   )
 }
