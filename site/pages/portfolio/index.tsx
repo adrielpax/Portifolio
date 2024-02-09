@@ -69,7 +69,7 @@ export default function PersonalPortifolio() {
           </div>
         </div>
         <PersonalProjectSection />
-        <PersonalContactSection />
+        <ContactSection/>
       </div>
     </div>
   );
