@@ -111,7 +111,7 @@ export function Footer() {
                   href="/"
                   className="flex items-center text-white hover:text-[#00F0FF] gap-2 font-normal font-sans text-base"
                 >
-                  All rights reserved SquareOden 2022
+                  All rights reserved SquareOden 2021
                 </Link>
               </div>
             ) : (
@@ -150,7 +150,7 @@ export function Footer() {
                 </div>
               ) : (
                 <div className="flex flex-col md:flex-row w-auto gap-6 font-normal font-sans text-base">
-                  All rights reserved adriel dev 2022
+                  All rights reserved adriel dev 2021
                   <a
                     href="https://github.com/"
                     className="hover:text-[#00F0FF]"
