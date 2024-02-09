@@ -22,7 +22,7 @@ export function Footer() {
   React.useEffect(() => {
     const path = () => {
       if (pathname && pathname.includes("")) {
-        if (pathname.includes("portfolio")) {
+        if (pathname.includes("/")) {
           setSeparateRoute(true);
         } else {
           setSeparateRoute(false);
@@ -111,7 +111,7 @@ export function Footer() {
                   href="/"
                   className="flex items-center text-white hover:text-[#00F0FF] gap-2 font-normal font-sans text-base"
                 >
-                  All rights reserved SquareOden 2023
+                  All rights reserved SquareOden 2022
                 </Link>
               </div>
             ) : (
@@ -150,7 +150,7 @@ export function Footer() {
                 </div>
               ) : (
                 <div className="flex flex-col md:flex-row w-auto gap-6 font-normal font-sans text-base">
-                  All rights reserved adriel dev 2023
+                  All rights reserved adriel dev 2022
                   <a
                     href="https://github.com/"
                     className="hover:text-[#00F0FF]"

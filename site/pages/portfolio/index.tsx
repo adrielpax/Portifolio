@@ -36,10 +36,11 @@ export default function PersonalPortifolio() {
             <div className="flex flex-col items-start w-auto md:w-[592px] p-6 gap-7 md:gap-8 self-stretch">
               <div className="flex items-center gap-6  text-[#654AEE]">
                 {/* <FaPython className="w-5 h-5" />
-            <FaReact className="w-5 h-5" />
-            <SiJavascript className="w-5 h-5" />
-            <FaNodeJs className="w-5 h-5" />
-            <SiTailwindcss className="w-5 h-5" /> */}
+                  <FaReact className="w-5 h-5" />
+                  <SiJavascript className="w-5 h-5" />
+                  <FaNodeJs className="w-5 h-5" />
+                  <SiTailwindcss className="w-5 h-5" /> 
+                  */}
               </div>
               <h1 className="text-[#7DFFAF] text-regular text-base">
                 Personal portfolio

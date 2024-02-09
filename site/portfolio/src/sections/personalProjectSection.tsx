@@ -11,16 +11,16 @@ export default function PersonalProjectSection() {
   return (
     <div
       className={`${
-        pathname.includes("portfolio") ? "bg-white" : "bg-[whitesmoke]"
+        pathname.includes("/") ? "bg-white" : "bg-[whitesmoke]"
       }`}
     >
       <Wrapper>
         <div className="flex flex-col items-center gap-5 self-stretch px-6 py-12 md:px-28 md:py-[72px] bg-[transparent] rounded-md">
           <h1 className="text-[#0047FF] text-regular text-base">
-            {portfolio ? "Personal Projects" : `${""}`}
+            {"Personal Projects"}
           </h1>
           <h2 className="text-3xl font-semibold font-sans text-[#121212]">
-            {portfolio ? "Veja alguns projetos Tecnicos" : `${""}`}
+            {"Veja alguns projetos Tecnicos"}
           </h2>
           <p className="text-xs text-[#12121299] mb-12">
             alguns dos nossos projetos tecnicos ainda estao em desenvolvimento !

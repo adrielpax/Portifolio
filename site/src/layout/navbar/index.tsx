@@ -34,7 +34,7 @@ export default function Navbar() {
   React.useEffect(() => {
     const path = () => {
       if (pathname && pathname.includes("")) {
-        if (pathname.includes("portfolio")) {
+        if (pathname.includes("/")) {
           setSeparateRoute(true);
         } else {
           setSeparateRoute(false);

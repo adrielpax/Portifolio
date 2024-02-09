@@ -32,7 +32,7 @@ export default function ProjectSection() {
   return (
     <div
       className={`${
-        pathname.includes("portfolio") ? "bg-white" : "bg-[white]"
+        pathname.includes("/") ? "bg-white" : "bg-[white]"
       }`}
     >
       <Wrapper className="bg-[white] rounded-lg px-0">
