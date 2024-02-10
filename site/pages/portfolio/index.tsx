@@ -17,13 +17,16 @@ export default function PersonalPortifolio() {
   return (
     <div>
       <Head>
-        <title>Adriel Dev | Personal Portfolio</title>
-        <meta name="author" content="Adriell" />
+        <title>Adriel Developer Full-Stack | Personal Portfolio.</title>
+        <meta name="author" content="Adriel._ll" />
         <meta
           name="keywords"
-          content="Desenvolvimento Web , Desenvolvedor Full-Stack, NextJS, JavaScript"
+          content="Developer full-stack nextjs reactjs javascript mongodb postgreSql nodejs typescript express fastify axios"
         />
-        <meta name="description" content="Desenvolvedor web" />
+        <meta
+          name="description"
+          content="Desenvolvedor Web / Full-Stack - Transformando linhas de código em experiências inovadoras."
+        />
       </Head>
       <div className="h-auto">
         <div className="flex items-start justify-center mx-auto gap-[136px] self-stretch md:p-10 bg-white mt-20">
@@ -69,7 +72,7 @@ export default function PersonalPortifolio() {
           </div>
         </div>
         <PersonalProjectSection />
-        <ContactSection/>
+        <ContactSection />
       </div>
     </div>
   );
