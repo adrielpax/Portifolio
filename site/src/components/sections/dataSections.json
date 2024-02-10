@@ -1,0 +1,30 @@
+{
+  "data": {
+    "hero-section": {
+      "title": "Potencialize sua presença online com a Square Oden",
+      "subtitle": "Oferecemos soluções de marketing digital personalizadas para impulsionar seus negócios.",
+      "description": "A Square Oden é uma plataforma online que permite oferece",
+      "image": "/imgs/hero-image.png",
+      "background": "#d0d0d0",
+      "btn_one": "Começe já",
+      "btn_two": "Explorar Mais"
+    },
+    "about-section": {
+      "title": "Alcance seu público-alvo",
+      "description": "Com a Square Oden, você poderá alcançar seu público-alvo de forma eficiente e direcionada. Nossas soluções de marketing digital são personalizadas para atender às necessidades específicas do seu negócio.",
+      "image": "/imgs/target-audience.png"
+    },
+    "section-one": {
+      "title": "Aumente sua visibilidade online",
+      "description": "Com a Square Oden, você poderá alcançar seu público-alvo de forma eficiente e direcionada.",
+      "descrip_p2": "Nossas soluções de marketing digital são personalizadas para atender às necessidades específicas do seu negócio.",
+      "image": "/imgs/performance-overview.png",
+      "CTA_btn": ""
+    },
+    "section-two": {
+      "title": "Atraia mais clientes e aumente suas vendas",
+      "description": "Com a Square Oden, você poderá atrair mais clientes e aumentar suas vendas. Nossas soluções de marketing digital são projetadas para gerar leads qualificados e converter visitantes em clientes fiéis.",
+      "image": "/imgs/more-costumers.png"
+    }
+  }
+}

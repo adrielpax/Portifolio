@@ -1,0 +1,18 @@
+{
+  "data": {
+    "menu": [
+      { "id": 1, "name": "Home", "route": "/web-site//" },
+      { "id": 2, "name": "Sobre", "route": "/web-site/about/" },
+      { "id": 3, "name": "Projetos", "route": "/web-site/projects/" },
+      { "id": 4, "name": "Serviços", "route": "/web-site/services/" },
+      { "id": 5, "name": "Contato", "route": "/web-site/contacts/" },
+      { "id": 6, "name": "Produtos", "subMenu": true }
+    ],
+    "subMenu": [
+      { "id": 1, "name": "Sites", "url": "/web-site/products/sites-service" },
+      { "id": 2, "name": "Serviços de Marketing", "url": "/web-site/products/mkt-service" },
+      { "id": 3, "name": "Serviços de Design", "url": "/web-site/products/design-service" },
+      { "id": 4, "name": "Tratamento de dados", "url": "/web-site/products/data-service" }
+    ]
+  }
+}
