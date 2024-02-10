@@ -4,15 +4,14 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 import Wrapper from "../../../src/layout/wrapper";
 import { usePathname } from "next/navigation";
 import PersonalCardProject from "../conponents/personalProjectCard";
+import itemData from "../conponents/projectData"
 
 export default function PersonalProjectSection() {
   const pathname = usePathname();
   const portfolio = pathname.includes("portfolio");
   return (
     <div
-      className={`${
-        pathname.includes("/") ? "bg-white" : "bg-[whitesmoke]"
-      }`}
+      className={`${pathname.includes("/") ? "bg-white" : "bg-[whitesmoke]"}`}
     >
       <Wrapper>
         <div className="flex flex-col items-center gap-5 self-stretch px-6 py-12 md:px-28 md:py-[72px] bg-[transparent] rounded-md">
@@ -29,14 +28,23 @@ export default function PersonalProjectSection() {
             <PersonalCardProject />
           </div> */}
           <div className="flex flex-wrap gap-8 ">
-            <PersonalCardProject />
+            {itemData.map((item, index) => (
+              <PersonalCardProject 
+              key={index}
+              slug={item.slug} 
+              image={item.image} 
+              date_post={item.date_post} 
+              title={item.title} 
+              description={item.description} 
+              tags={item.tags}
+              />))}
           </div>
           <ButtonComponent
-            className="bg-white rounded-full text-blue-gray-500 py-4 px-10
-            shadow active:scale-95 active:bg-blue-gray-900
-            border border-transparent hover:bg-gray-900 hover:text-white transition-all"
+            className="bg-white rounded-full md:w-auto  text-[#121212] py-3 px-9 text-base
+                shadow transition-transform active:scale-100 active:bg-blue-gray-50 scale-100
+              hover:bg-gray-100 active:border-gray-400 border-4 border-transparent"
           >
-            See All
+            Veja mais
             <FaLongArrowAltRight />
           </ButtonComponent>
         </div>

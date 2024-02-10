@@ -18,7 +18,7 @@ import { GiConfirmed } from "react-icons/gi";
 import { type } from "os";
 
 export default function ContactSection() {
-  const cookie =  parseCookies().send_message;
+  const cookie = parseCookies().send_message;
   const {
     isLoading,
     handleChange,
@@ -30,14 +30,13 @@ export default function ContactSection() {
     resetForm,
   } = useFormPostApi();
 
-
   return (
     <div className="flex items-start justify-center gap-[136px] self-stretch md:p-10 bg-white">
       <Wrapper>
         <div
           className="flex items-start md:gap-8 flex-[1_0_0] md:rounded-lg p-[72px]
-          bg-[#121212] opacity-95 flex-col md:flex-row
-          text-[white] gap-6 px-6 py-12 justify-center self-stretch"
+          bg-[white] opacity-95 flex-col md:flex-row
+          text-[#121212] gap-6 px-6 py-12 justify-center self-stretch"
         >
           <div className="flex flex-col items-start gap-7  w-auto md:w-1/3">
             <div className="flex gap-6"></div>
@@ -82,49 +81,47 @@ export default function ContactSection() {
             <div
               className="flex flex-col md:w-[420px] justify-center 
             md:text-[#121212] text-opacity-95 self-center items-center gap-2
-             shadow-md "
+             shadow-md rounded-lg border-2 border-[#31303099] px-4 py-2"
             >
-              
               <div
-                className="flex flex-col md:flex-row bg-white w-auto md:w-[420px] py-4 md:px-6 rounded-xl
-              items-center gap-2"
+                className="flex flex-col md:flex-row w-auto md:w-[420px] py-4 md:px-6 rounded-xl
+              items-center gap-2 "
               >
                 <GiConfirmed className="w-20 h-20 text-[#4af583]" />
                 <p className="font-semibold text-xl font-sans text-[#121212] text-center md:text-left">
                   Sua mensagem foi enviada com sucesso!
                 </p>
-                
               </div>
-              <p className="font-semibold text-center my-2 text-xl font-sans text-white">
+              <p className="font-semibold text-center my-2 text-base font-sans text-[#12121299]">
                 Agradecemos por entrar em contato!
                 <br />
                 Veja mais sobre nossos serviços clicando no botão abaixo.
               </p>
 
-              <ButtonComponent
+              {/* <ButtonComponent
                 className="bg-white rounded-full md:w-[420px]  text-[#121212] py-3 px-9 text-base
                 shadow transition-transform active:scale-100 active:bg-blue-gray-50 scale-100
               hover:bg-gray-100 active:border-gray-400 border-4 border-transparent"
               >
                 Ver serviços
                 <FaLongArrowAltRight />
-              </ButtonComponent>
+              </ButtonComponent> */}
             </div>
           ) : (
-            <div className="flex justify-center md:w-[420px] md:text-[white] text-opacity-95 mt-10 md:py-4 md:px-6 rounded-xl shadow-md">
+            <div className="flex justify-center md:w-[420px] md:text-[#121212] text-opacity-95 mt-10 md:py-4 md:px-6 rounded-xl">
               <form
                 onSubmit={handleSubmit}
-                className="flex flex-col gap-4 w-auto md:w-[385px] items-center md:items-start bg-[#313030]
-                py-5 md:px-3 rounded-b-lg font-semibold text-sm font-sans border-2 border-[#313030] rounded-lg"
+                className="flex flex-col gap-4 w-auto md:w-[385px] items-center md:items-start bg-[white] shadow-md
+                py-5 md:px-3 rounded-b-lg font-semibold text-sm font-sans border-2 border-[#31303099] rounded-lg"
               >
                 <div>
                   {errors.name && touched.name ? (
-                    <span className="text-[white] flex items-center text-ellipsis text-opacity-95 gap-2 select-none">
+                    <span className="text-[#121212] flex items-center text-ellipsis text-opacity-95 gap-2 select-none">
                       <MdError className="w-5 h-5 text-pink-600" />{" "}
                       {errors.name}
                     </span>
                   ) : (
-                    <span className="text-[white] text-opacity-95 gap-2 select-none">
+                    <span className="text-[#121212] text-opacity-95 gap-2 select-none">
                       {" "}
                       Nome
                     </span>
@@ -142,12 +139,12 @@ export default function ContactSection() {
                 </div>
                 <div>
                   {errors.email && touched.email ? (
-                    <span className="text-[white] text-opacity-95 flex items-center text-ellipsis gap-2 select-none">
+                    <span className="text-[#121212] text-opacity-95 flex items-center text-ellipsis gap-2 select-none">
                       <MdError className="w-5 h-5 text-pink-600" />{" "}
                       {errors.email}
                     </span>
                   ) : (
-                    <span className="text-[white] text-opacity-95  gap-2 select-none">
+                    <span className="text-[#121212] text-opacity-95  gap-2 select-none">
                       {" "}
                       E-mail
                     </span>
@@ -165,12 +162,12 @@ export default function ContactSection() {
                 </div>
                 <div>
                   {errors.number && touched.number ? (
-                    <span className="text-[white] text-opacity-95 flex items-center text-ellipsis gap-2 select-none">
+                    <span className="text-[#121212] text-opacity-95 flex items-center text-ellipsis gap-2 select-none">
                       <MdError className="w-5 h-5 text-pink-600" />{" "}
                       {errors.number}
                     </span>
                   ) : (
-                    <span className="text-[white] text-opacity-95 gap-2 select-none">
+                    <span className="text-[#121212] text-opacity-95 gap-2 select-none">
                       {" "}
                       Numero
                     </span>
@@ -188,12 +185,12 @@ export default function ContactSection() {
                 </div>
                 <div>
                   {errors.business && touched.business ? (
-                    <span className="text-[white] text-opacity-95 flex items-center text-ellipsis gap-2 select-none">
+                    <span className="text-[#121212] text-opacity-95 flex items-center text-ellipsis gap-2 select-none">
                       <MdError className="w-5 h-5 text-pink-600" />{" "}
                       {errors.business}
                     </span>
                   ) : (
-                    <span className="text-[white] text-opacity-95 flex items-left gap-2 select-none">
+                    <span className="text-[#121212] text-opacity-95 flex items-left gap-2 select-none">
                       {" "}
                       Nome da sua empresa
                     </span>
@@ -211,12 +208,12 @@ export default function ContactSection() {
                 </div>
                 <div>
                   {errors.message && touched.message ? (
-                    <span className="text-[white] text-opacity-95 flex items-center gap-2 select-none">
+                    <span className="text-[#121212] text-opacity-95 flex items-center gap-2 select-none">
                       <MdError className="w-5 h-5 text-pink-600" />{" "}
                       {errors.message}
                     </span>
                   ) : (
-                    <span className="text-[white] text-opacity-95 gap-2 select-none">
+                    <span className="text-[#121212] text-opacity-95 gap-2 select-none">
                       {" "}
                       Mensagem
                     </span>
