@@ -27,7 +27,7 @@ export default function PersonalProjectSection() {
           {/* <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 items-start  ">
             <PersonalCardProject />
           </div> */}
-          <div className="flex flex-wrap gap-8 ">
+          <div className="flex flex-wrap justify-center gap-8 ">
             {itemData.map((item, index) => (
               <PersonalCardProject 
               key={index}

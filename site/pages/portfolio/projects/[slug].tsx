@@ -62,7 +62,7 @@ export default function PersonalPage({
           </ButtonComponent>
           <div className="md:w-[600px] h-[300px] flex justify-center self-stretch bg-[#12121220] rounded-t-2xl">
             <Image
-              src={`/imgs/${item.image}.gif`}
+              src={`/imgs/${item.image}`}
               alt={""}
               width={700}
               height={300}
