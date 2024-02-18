@@ -23,6 +23,7 @@ export default function PersonalPortifolio() {
           name="keywords"
           content="Developer full-stack nextjs reactjs javascript mongodb postgreSql nodejs typescript express fastify axios"
         />
+        <meta name="google-site-verification" content="lyLATx2xGBg3aE7QnaSKoOQ1bhgOfIW4dmTXN87C2QI" />
         <meta
           name="description"
           content="Desenvolvedor Web / Full-Stack - Transformando linhas de código em experiências inovadoras."
