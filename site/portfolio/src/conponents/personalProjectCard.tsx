@@ -30,7 +30,7 @@ export default function PersonalCardProject({
           flex flex-col items-stretch w-[300px] border-2 border-[#31303099]"
       >
         <Image
-          src={`/imgs/${image}.gif`}
+          src={`/imgs/${image}`}
           alt={`project-${"yourfinance image"}`}
           width={300}
           height={300}

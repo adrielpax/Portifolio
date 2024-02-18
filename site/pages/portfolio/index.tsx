@@ -12,7 +12,7 @@ import Head from "next/head";
 
 export default function PersonalPortifolio() {
   const handleContact = () => {
-    window.scrollBy(0, 1483);
+    window.scrollBy(0, 2120);
   };
   return (
     <div>
