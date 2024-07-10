@@ -109,7 +109,7 @@ export default function PersonalPage({
           </div>
         </div>
 
-        <div className="my-12 w-[500px] self-stretch">
+        <div className="my-12 w-auto md:w-[500px] self-stretch">
           <div className="bg-white border shadow rounded-xl p-8 flex flex-col gap-6 shrink-0 w-full relative ">
             <h1 className="text-lg text-blue-400">
               Ver mais:<span className="text-[#12121299]">{item.title}</span>{" "}
