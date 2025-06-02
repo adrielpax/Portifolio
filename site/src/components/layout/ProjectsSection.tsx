@@ -13,6 +13,12 @@ export default function ProjectsSection() {
 
       <p className="text-gray-400 text-base mb-6">
         Aqui você encontrará meus projetos mais recentes e relevantes.
+        ⚠️ todos os projetos estão em desenvolvimento, e alguns podem não estar
+        completos ou totalmente funcionais. Estou sempre trabalhando para
+        melhorar e atualizar meus projetos, então fique à vontade para voltar
+        mais tarde e conferir as novidades!
+        <br />
+        <br />
       </p>
 
       <div className="space-y-4">
@@ -116,12 +122,23 @@ export default function ProjectsSection() {
             Ver Projeto
           </a>
         </div>
-        <div className="rounded-lg px-4 py-3 border border-gray-700  transition-all duration-300">
+        <div className="flex flex-col gap-2 rounded-lg px-4 py-3 border border-gray-700  transition-all duration-300">
           <h3 className="text-lg font-semibold text-cyan-300">
             Blog API nodeJS: DevsBetim
           </h3>
           <div className="w-full h-32 object-cover rounded-lg mb-2 bg-gray-600" />
           <p className="text-gray-500 text-sm">em breve</p>
+            <a
+            href="https://the-blog-front.vercel.app/post/teste"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-5 py-2 rounded-lg text-sm 
+              font-semibold text-cyan-400 border border-cyan-400
+            hover:bg-cyan-400 hover:text-black
+              transition-all duration-300"
+          >
+            Ver Projeto
+          </a>
         </div>
       </div>
     </div>
