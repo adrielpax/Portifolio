@@ -5,14 +5,17 @@ import ContactSection from "@/src/components/layout/ContactSection";
 import MainCard from "@/src/components/layout/MainCard";
 import ProjectsSection from "@/src/components/layout/ProjectsSection";
 import Head from "next/head";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   const [bootDone, setBootDone] = useState(false);
 
-  if (!bootDone) {
-    return <BootSequence onFinish={() => setBootDone(true)} />;
-  }
+  // Simula o tempo de boot'
+
+    if (!bootDone) {
+      return <BootSequence onFinish={() => setBootDone(true)} />;
+    }
+
 
   return (
     <>

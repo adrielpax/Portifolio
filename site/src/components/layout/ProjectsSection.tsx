@@ -38,7 +38,9 @@ export default function ProjectsSection() {
             <br />
           </p>
           <a
-            href="/"
+            href="https://yourfinance.netlify.app/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block px-5 py-2 rounded-lg text-sm 
               font-semibold text-cyan-400 border border-cyan-400
             hover:bg-cyan-400 hover:text-black
@@ -70,7 +72,42 @@ export default function ProjectsSection() {
             checkout, integração com APIs de pagamento e muito mais.
           </p>
           <a
-            href="/"
+            href="https://precinhorei.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-5 py-2 rounded-lg text-sm 
+              font-semibold text-cyan-400 border border-cyan-400
+            hover:bg-cyan-400 hover:text-black
+              transition-all duration-300"
+          >
+            Ver Projeto
+          </a>
+        </div>
+        <div className="flex flex-col gap-2 rounded-lg px-4 py-3 border border-gray-700  transition-all duration-300">
+          <h3 className="text-lg font-semibold text-cyan-300">
+            Simple - site: Square oden
+          </h3>
+          <div className="w-full h-32 object-cover rounded-lg mb-2 bg-gray-600" />
+          <p className="text-gray-500 text-sm">
+            Crie esse site com o intuito de começar um pequeno negocio local com
+            serviços de programação marqueting digital.
+            <br />
+            <br />
+            O site é simples, mas tem um design moderno e responsivo, com
+            funcionalidades básicas como informações de contato, serviços
+            oferecidos e um formulário de contato.
+            <br />
+            <br />
+            O projeto foi uma ótima oportunidade para aprender sobre o
+            desenvolvimento de sites com Next.js, além de me ajudar a entender
+            melhor como funcionam os sites de negócios locais.
+            <br />
+            <br/>
+          </p>
+          <a
+            href="https://www.squareoden.com.br/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block px-5 py-2 rounded-lg text-sm 
               font-semibold text-cyan-400 border border-cyan-400
             hover:bg-cyan-400 hover:text-black

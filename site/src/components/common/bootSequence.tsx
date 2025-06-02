@@ -15,14 +15,23 @@ export default function BootSequence({ onFinish }: { onFinish: () => void }) {
   const [currentLine, setCurrentLine] = useState(0)
 
   useEffect(() => {
+      const hasBooted = localStorage.getItem("bootSequenceDone");
+
+    if (hasBooted) {
+      onFinish();
+      return;
+    }
     if (currentLine < messages.length) {
       const timeout = setTimeout(() => setCurrentLine(currentLine + 1), 1000)
       return () => clearTimeout(timeout)
     } else {
-      const finishTimeout = setTimeout(onFinish, 1500)
+      const finishTimeout = setTimeout(()=>{
+        localStorage.setItem("bootSequenceDone", "true"),
+        onFinish();
+      }, 1500)
       return () => clearTimeout(finishTimeout)
     }
-  }, [currentLine])
+  }, [currentLine, onFinish])
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black text-[#00ffc3] font-mono text-sm sm:text-lg px-4">
