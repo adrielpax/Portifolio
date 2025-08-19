@@ -13,8 +13,12 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true
+    "incremental": true,
+     "baseUrl": ".", // <- isso permite usar @ para importar da raiz
+    "paths": {
+      "@/*": ["./*"]
+    },
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/utilsComponents/home.js", "src/utils/scriptsavuse.js", "src/pages/api/submit.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "old_layout/components/utilsComponents/home.js", "old_layout/utils/scriptsavuse.js", "src/pages/api/submit.js"],
   "exclude": ["node_modules"]
 }

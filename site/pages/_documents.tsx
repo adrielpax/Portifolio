@@ -1,11 +1,5 @@
 import { Html, Head, Main, NextScript } from "next/document";
-// import { Poppins } from 'next/font/google';
 
-// const poppinsFont = Poppins({
-//   weight: '700',
-//   subsets: ['latin'],
-//   variable: '--font-poppins',
-// });
 
 export default function Document() {
   return (
@@ -56,7 +50,7 @@ export default function Document() {
         />
         <title>Adriel Developer | Personal portfolio</title>
       </Head>
-      <body className="md:max-w-[1440px] min-w-max">
+      <body>
         <Main />
         <NextScript />
       </body>
