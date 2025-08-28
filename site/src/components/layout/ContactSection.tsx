@@ -1,51 +1,55 @@
-export default function ContactSection() {
+import { FaEnvelope, FaUserShield } from 'react-icons/fa';
+import { ContactSectionProps } from '@/src/types';
+
+const ContactSection: React.FC<ContactSectionProps> = ({ 
+  onOpenContact, 
+  onOpenAdmin, 
+  showAdminButton 
+}) => {
   return (
-    <div
-      className="bg-black/50 backdrop-blur-xl 
-      border border-gray-700 rounded-2xl
-      px-6 py-8 max-w-md w-[90%]
-      hover:border-cyan-500
-      transition-all duration-500 ease-in-out
-      text-left text-white"
-    >
-      <h2 className="text-2xl sm:text-3xl font-semibold mb-4 text-cyan-400 tracking-wide">
-        Entre em Contato_
-      </h2>
-
-      <p className="text-gray-400 text-base mb-6">
-        Entre em contato para colaborar, discutir ideias ou iniciar um projeto.
-      </p>
-
-      <a
-        href="mailto:adriel.aprendiz@email.com"
-        className="inline-block px-5 py-2 rounded-lg text-sm 
-        font-semibold text-cyan-400 border border-cyan-400
-        hover:bg-cyan-400 hover:text-black
-        transition-all duration-300"
-      >
-        Enviar E-mail
-      </a>
-
-      <div className="flex justify-start gap-4 mt-6">
-        <a
-          href="https://www.linkedin.com/in/adriel-lucas/"
-          className="inline-block px-5 py-2 rounded-lg text-sm 
-          font-semibold text-cyan-400 border border-cyan-400
-          hover:bg-cyan-400 hover:text-black
-          transition-all duration-300"
-        >
-          LinkedIn
-        </a>
-        <a
-          href="https://github.com/T4SpaX"
-          className="inline-block px-5 py-2 rounded-lg text-sm 
-          font-semibold text-cyan-400 border border-cyan-400
-          hover:bg-cyan-400 hover:text-black
-          transition-all duration-300"
-        >
-          GitHub
-        </a>
+    <div className="w-full max-w-md">
+      <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6">
+        <h3 className="text-xl font-bold mb-4 text-cyan-400 flex items-center gap-2">
+          <FaEnvelope />
+          Contato
+        </h3>
+        
+        <div className="space-y-4">
+          <p className="text-gray-300 text-sm">
+            Interessado em trabalhar comigo? Tem algum projeto em mente? 
+            Vamos conversar sobre como posso ajudar a transformar suas ideias em realidade!
+          </p>
+          
+          <button 
+            onClick={onOpenContact}
+            className="w-full bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-green-500/25 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50"
+          >
+            Entrar em Contato
+          </button>
+          
+          {/* Admin Button (hidden by default) */}
+          {showAdminButton && (
+            <button 
+              onClick={onOpenAdmin}
+              className="w-full bg-red-600/80 hover:bg-red-600 px-4 py-2 rounded-lg text-sm transition-colors duration-300 flex items-center justify-center gap-2 border border-red-500/30 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-opacity-50"
+            >
+              <FaUserShield />
+              Painel Admin
+            </button>
+          )}
+          
+          {/* Contact Info */}
+          <div className="pt-4 border-t border-white/10">
+            <div className="space-y-2 text-xs text-white">
+              <p className='text-white'>📧 ...@email.com</p>
+              <p className='text-white'>📱 (31) 99999-9999</p>
+              <p className='text-white'>📍 Betim, Minas Gerais</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
-}
+};
+
+export default ContactSection;

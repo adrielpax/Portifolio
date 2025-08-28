@@ -1,146 +1,126 @@
-export default function ProjectsSection() {
-  return (
-    <div
-      className="bg-black/50 backdrop-blur-xl rounded-2xl
-      px-6 py-8 max-w-md w-[90%] border border-gray-700
-      hover:border-cyan-500
-      transition-all duration-500 ease-in-out
-      text-white text-left"
+import React, { ReactElement, useEffect } from 'react';
+import { 
+  FaCode, 
+  FaStar, 
+  FaCodeBranch, 
+  FaExternalLinkAlt, 
+  FaSpinner, 
+  FaExclamationTriangle, 
+  FaFolderOpen 
+} from 'react-icons/fa';
+import { useGitHub } from '@/src/hooks/useGitHub';
+import { GitHubRepo } from '@/src/types';
+
+interface ProjectCardProps {
+  project: GitHubRepo;
+}
+
+const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => (
+  <div className="bg-black/70 border border-white/10 rounded-lg p-4 hover:border-green-400/50 hover:-translate-y-1 hover:shadow-lg hover:shadow-green-400/10 transition-all duration-300">
+    <div className="flex justify-between items-start mb-2">
+      <h4 className="font-semibold text-cyan-400 text-sm truncate pr-2">
+        {project.name}
+      </h4>
+      <div className="flex gap-2 text-xs flex-shrink-0">
+        {project.language && (
+          <span className="bg-blue-600 px-2 py-1 rounded text-xs">
+            {project.language}
+          </span>
+        )}
+      </div>
+    </div>
+    
+    <p className="text-gray-300 text-xs mb-3 line-clamp-2">
+      {project.description || 'Sem descrição'}
+    </p>
+    
+    <div className="flex justify-between items-center">
+      <div className="flex items-center gap-4 text-xs text-gray-400">
+        <span className="flex items-center gap-1">
+          <FaStar className="text-yellow-500" />
+          {project.stargazers_count}
+        </span>
+        <span className="flex items-center gap-1">
+          <FaCodeBranch />
+          {project.forks_count}
+        </span>
+      </div>
+      <a 
+        href={project.html_url} 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="text-cyan-400 hover:text-green-300 transition-colors"
+        aria-label={`Ver projeto ${project.name} no GitHub`}
+      >
+        <FaExternalLinkAlt className="text-sm" />
+      </a>
+    </div>
+  </div>
+);
+
+const LoadingState: React.FC = () => (
+  <div className="text-center text-gray-400 py-8">
+    <FaSpinner className="animate-spin text-2xl mb-2 mx-auto" />
+    <p className="text-sm">Carregando projetos...</p>
+  </div>
+);
+
+interface ErrorStateProps {
+  onRetry: () => void;
+}
+
+const ErrorState: React.FC<ErrorStateProps> = ({ onRetry }) => (
+  <div className="text-center text-red-400 py-8">
+    <FaExclamationTriangle className="text-2xl mb-2 mx-auto" />
+    <p className="text-sm mb-2">Erro ao carregar projetos</p>
+    <button 
+      onClick={onRetry}
+      className="text-cyan-400 hover:text-green-300 text-sm underline focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50 rounded"
     >
-      <h2 className="text-2xl sm:text-3xl font-semibold mb-4 text-cyan-400 tracking-wide">
-        Projetos_
-      </h2>
+      Tentar novamente
+    </button>
+  </div>
+);
 
-      <p className="text-gray-400 text-base mb-6">
-        Aqui você encontrará meus projetos mais recentes e relevantes.
-        ⚠️ todos os projetos estão em desenvolvimento, e alguns podem não estar
-        completos ou totalmente funcionais. Estou sempre trabalhando para
-        melhorar e atualizar meus projetos, então fique à vontade para voltar
-        mais tarde e conferir as novidades!
-        <br />
-        <br />
-      </p>
+const EmptyState: React.FC = () => (
+  <div className="text-center text-gray-400 py-8">
+    <FaFolderOpen className="text-2xl mb-2 mx-auto" />
+    <p className="text-sm">Nenhum projeto encontrado</p>
+  </div>
+);
 
+const ProjectsSection: React.FC = () => {
+  const { projects, loading, error, loadProjects } = useGitHub();
+
+  useEffect(() => {
+    loadProjects();
+  }, [loadProjects]);
+
+  const renderContent = (): ReactElement => {
+    if (loading) return <LoadingState />;
+    if (error) return <ErrorState onRetry={loadProjects} />;
+    if (projects.length === 0) return <EmptyState />;
+
+    return (
       <div className="space-y-4">
-        <div className="flex flex-col gap-2 rounded-lg px-4 py-3 border border-gray-700  transition-all duration-300">
-          <h3 className="text-lg font-semibold text-cyan-300">
-            App React: YourFinance
-          </h3>
-          <img
-            src="/images/yourfinance.png"
-            alt="Precinho-Rei Project"
-            className="w-full h-32 object-cover rounded-lg mb-2"
-          />
-          <p className="text-gray-500 text-sm">
-            2020 um dos meus primeiros projetos, um app de finanças pessoais
-            desenvolvido em React. Ele permite que os usuários gerenciem suas
-            finanças de forma simples e intuitiva. O app inclui funcionalidades
-            como controle de despesas, receitas e relatórios financeiros.
-            <br />
-            <br />
-            O projeto foi uma ótima oportunidade para aprender sobre o
-            desenvolvimento de aplicações web com React, além de me ajudar a
-            entender melhor como funcionam as finanças pessoais.
-            <br />
-          </p>
-          <a
-            href="https://yourfinance.netlify.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block px-5 py-2 rounded-lg text-sm 
-              font-semibold text-cyan-400 border border-cyan-400
-            hover:bg-cyan-400 hover:text-black
-              transition-all duration-300"
-          >
-            Ver Projeto
-          </a>
-        </div>
-        <div className="flex flex-col gap-2 rounded-lg px-4 py-3 border border-gray-700  transition-all duration-300">
-          <h3 className="text-lg font-semibold text-cyan-300">
-            E-commerce Nextjs: Precinho-Rei
-          </h3>
-          <img
-            src="/images/precinhorei.png"
-            alt="Precinho-Rei Project"
-            className="w-full h-32 object-cover rounded-lg mb-2"
-          />
-          <p className="text-gray-500 text-sm">
-            um dos projetos que mais dediquei tempo e esforço. É um e-commerce
-            desenvolvido com Next.js, TypeScript e Tailwind CSS. O site é
-            responsivo e possui uma interface moderna e intuitiva.
-            <br />
-            <br />
-            O projeto foi uma ótima oportunidade para aprender sobre o
-            desenvolvimento de aplicações web com Next.js, além de me ajudar a
-            entender melhor como funcionam os e-commerces.
-            <br />
-            <br />O site inclui funcionalidades como carrinho de compras,
-            checkout, integração com APIs de pagamento e muito mais.
-          </p>
-          <a
-            href="https://precinhorei.vercel.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block px-5 py-2 rounded-lg text-sm 
-              font-semibold text-cyan-400 border border-cyan-400
-            hover:bg-cyan-400 hover:text-black
-              transition-all duration-300"
-          >
-            Ver Projeto
-          </a>
-        </div>
-        <div className="flex flex-col gap-2 rounded-lg px-4 py-3 border border-gray-700  transition-all duration-300">
-          <h3 className="text-lg font-semibold text-cyan-300">
-            Simple - site: Square oden
-          </h3>
-          <div className="w-full h-32 object-cover rounded-lg mb-2 bg-gray-600" />
-          <p className="text-gray-500 text-sm">
-            Crie esse site com o intuito de começar um pequeno negocio local com
-            serviços de programação marqueting digital.
-            <br />
-            <br />
-            O site é simples, mas tem um design moderno e responsivo, com
-            funcionalidades básicas como informações de contato, serviços
-            oferecidos e um formulário de contato.
-            <br />
-            <br />
-            O projeto foi uma ótima oportunidade para aprender sobre o
-            desenvolvimento de sites com Next.js, além de me ajudar a entender
-            melhor como funcionam os sites de negócios locais.
-            <br />
-            <br/>
-          </p>
-          <a
-            href="https://www.squareoden.com.br/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block px-5 py-2 rounded-lg text-sm 
-              font-semibold text-cyan-400 border border-cyan-400
-            hover:bg-cyan-400 hover:text-black
-              transition-all duration-300"
-          >
-            Ver Projeto
-          </a>
-        </div>
-        <div className="flex flex-col gap-2 rounded-lg px-4 py-3 border border-gray-700  transition-all duration-300">
-          <h3 className="text-lg font-semibold text-cyan-300">
-            Blog API nodeJS: DevsBetim
-          </h3>
-          <div className="w-full h-32 object-cover rounded-lg mb-2 bg-gray-600" />
-          <p className="text-gray-500 text-sm">em breve</p>
-            <a
-            href="https://the-blog-front.vercel.app/post/teste"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block px-5 py-2 rounded-lg text-sm 
-              font-semibold text-cyan-400 border border-cyan-400
-            hover:bg-cyan-400 hover:text-black
-              transition-all duration-300"
-          >
-            Ver Projeto
-          </a>
-        </div>
+        {projects.map((project) => (
+          <ProjectCard key={project.id} project={project} />
+        ))}
+      </div>
+    );
+  };
+
+  return (
+    <div className="w-full max-w-md">
+      <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6">
+        <h3 className="text-xl font-bold mb-4 text-cyan-400 flex items-center gap-2">
+          <FaCode />
+          Projetos
+        </h3>
+        {renderContent()}
       </div>
     </div>
   );
-}
+};
+
+export default ProjectsSection;
