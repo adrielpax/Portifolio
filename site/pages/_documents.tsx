@@ -50,7 +50,7 @@ export default function Document() {
         />
         <title>Adriel Developer | Personal portfolio</title>
       </Head>
-      <body>
+      <body >
         <Main />
         <NextScript />
       </body>

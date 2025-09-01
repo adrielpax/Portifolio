@@ -20,7 +20,7 @@ export default function Home(): ReactElement {
     let keySequence: string[] = [];
     
     const handleKeyPress = (e: KeyboardEvent): void => {
-      keySequence.push(e.key.toLowerCase());
+      keySequence.push(e.key);
       if (keySequence.length > 5) keySequence.shift();
       
       if (keySequence.join('').includes('admin')) {
@@ -72,21 +72,28 @@ export default function Home(): ReactElement {
           </div>
       </Head>
 
-      <main className="relative min-h-screen flex flex-col gap-4 justify-between font-mono">
+      <main className="relative min-h-screen flex flex-col gap-4 justify-between font-mono"
+   
+      >
         <LoadingScreen />
 
         {/* Background */}
-        <div
-          className="fixed inset-0 z-0 bg-cover bg-center bg-no-repeat brightness-[0.6]"
-          style={{
-            backgroundImage: "url('/images/bg.png')",
-            backgroundColor: "#0a0a0a",
-            objectFit:"cover"
-          }}
-        />
+         <div
+    className="relative w-full max-w-4xl h-80 rounded-3xl overflow-hidden
+           bg-gradient-to-br from-gray-800 via-gray-900 to-black shadow-2xl
+           /* blob cyan no topo-esquerdo */
+           before:content-[''] before:absolute before:-left-16 before:-top-12
+           before:w-72 before:h-72 before:rounded-full before:blur-3xl before:opacity-70
+           before:bg-cyan-400 before:mix-blend-screen before:rotate-12
+           /* blob verde-água no canto inferior-direito */
+           after:content-[''] after:absolute after:-right-24 after:-bottom-16
+           after:w-96 after:h-96 after:rounded-full after:blur-3xl after:opacity-50
+           after:bg-teal-300 after:mix-blend-overlay">
+    
+  </div>
 
         {/* Animated Background Elements */}
-        <div className="fixed inset-0 z-0">
+        <div className="fixed inset-0 z-0" >
           <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-cyan-500 opacity-10 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-blue-500 opacity-10 rounded-full blur-3xl animate-pulse delay-1000"></div>
         </div>
@@ -94,8 +101,8 @@ export default function Home(): ReactElement {
         <div className="relative z-10 text-white w-full">
           
           {/* Header simples */}
-          <header className="w-full text-center py-6">
-            <h1 className="w-full text-center py-4 text-sm text-white">Portfólio</h1>
+          <header className="w-full text-center py-8 my-6">
+            <h1 className="w-full text-center py-4 text-sm text-gray-400">Olá, bem vindo ao meu Portifolio </h1>
           </header>
 
           {/* Grid */}
