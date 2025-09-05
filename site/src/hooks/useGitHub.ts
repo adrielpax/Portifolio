@@ -2,7 +2,7 @@ import { useState, useCallback } from 'react';
 import { GitHubRepo, UseGitHubReturn } from '@/src/types';
 
 // Substitua pelo seu usuário do GitHub
-const GITHUB_USERNAME = process.env.NEXT_PUBLIC_GITHUB_USERNAME || 'SEU_USUARIO_GITHUB';
+const GITHUB_USERNAME = process.env.NEXT_PUBLIC_GITHUB_USERNAME || 'adrielpax';
 
 export const useGitHub = (): UseGitHubReturn => {
   const [projects, setProjects] = useState<GitHubRepo[]>([]);

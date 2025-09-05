@@ -72,41 +72,24 @@ export default function Home(): ReactElement {
           </div>
       </Head>
 
-      <main className="relative min-h-screen flex flex-col gap-4 justify-between font-mono"
-   
+      <main className="relative min-h-screen flex gap-4 justify-between font-mono">
+      <div className="fixed -z-50 h-full w-full"
+        
       >
-        <LoadingScreen />
-
-        {/* Background */}
-         <div
-    className="relative w-full max-w-4xl h-80 rounded-3xl overflow-hidden
-           bg-gradient-to-br from-gray-800 via-gray-900 to-black shadow-2xl
-           /* blob cyan no topo-esquerdo */
-           before:content-[''] before:absolute before:-left-16 before:-top-12
-           before:w-72 before:h-72 before:rounded-full before:blur-3xl before:opacity-70
-           before:bg-cyan-400 before:mix-blend-screen before:rotate-12
-           /* blob verde-água no canto inferior-direito */
-           after:content-[''] after:absolute after:-right-24 after:-bottom-16
-           after:w-96 after:h-96 after:rounded-full after:blur-3xl after:opacity-50
-           after:bg-teal-300 after:mix-blend-overlay">
-    
-  </div>
-
-        {/* Animated Background Elements */}
-        <div className="fixed inset-0 z-0" >
-          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-cyan-500 opacity-10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-blue-500 opacity-10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        </div>
+        <img src="/images/bg-two.png" width={"100%"}/>
+      </div>
+        {/* <LoadingScreen /> */}
 
         <div className="relative z-10 text-white w-full">
           
           {/* Header simples */}
           <header className="w-full text-center py-8 my-6">
-            <h1 className="w-full text-center py-4 text-sm text-gray-400">Olá, bem vindo ao meu Portifolio </h1>
+            <h1 className="w-full text-center py-4 text-sm text-gray-400"></h1>
           </header>
 
           {/* Grid */}
-          <section className="grid grid-cols-1 gap-x-2 gap-y-8 lg:px-32 py-16 max-w-7xl mx-auto">
+          <section className="grid grid-cols-1 gap-x-2 gap-y-8 lg:px-32 py-16 max-w-7xl mx-auto"
+         >
             <div className="flex flex-col items-center justify-start gap-6 px-4">
               <MainCard />
               <ProjectsSection />
@@ -122,8 +105,8 @@ export default function Home(): ReactElement {
           </section>
 
           {/* Rodapé */}
-          <footer className="w-full text-center py-4 text-sm text-zinc-500">
-            Desenvolvido por AdrielDev
+          <footer className="w-full text-center py-6 my-6 text-sm text-zinc-500">
+           
           </footer>
 
         </div>

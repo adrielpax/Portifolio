@@ -29,6 +29,8 @@ const ContactModal: React.FC<ContactModalProps> = ({ onClose }) => {
       
       if (success) {
         alert('Mensagem enviada com sucesso! Entrarei em contato em breve.');
+         localStorage.setItem("contactSubmitted", "true");
+         setFormData({ name: '', email: '', message: '' });
         onClose();
       }
     } catch (error) {
@@ -38,6 +40,8 @@ const ContactModal: React.FC<ContactModalProps> = ({ onClose }) => {
       setIsSubmitting(false);
     }
   };
+
+  const alreadySubmitted = typeof window !== "undefined" && localStorage.getItem("contactSubmitted") === "true";
 
   const isFormValid = formData.name.trim() && formData.email.trim() && formData.message.trim();
 
@@ -109,7 +113,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ onClose }) => {
           
           <button 
             type="submit"
-            disabled={!isFormValid || isSubmitting}
+            disabled={!isFormValid || isSubmitting || alreadySubmitted}
             className="w-full bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 disabled:from-gray-500 disabled:to-gray-600 disabled:cursor-not-allowed px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50 flex items-center justify-center gap-2"
           >
             {isSubmitting ? (

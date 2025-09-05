@@ -5,6 +5,8 @@ export const useContacts = (): UseContactsReturn => {
   const [contacts, setContacts] = useState<ContactForm[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
+  const [submitted, setSubmitted] = useState<boolean>(false);
+
 
   const loadContacts = useCallback(async (): Promise<void> => {
     try {
@@ -37,7 +39,7 @@ export const useContacts = (): UseContactsReturn => {
     try {
       setError(null);
       
-      const response = await fetch('/api/contact', {
+      const response = await fetch('/api/contacts', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -55,6 +57,7 @@ export const useContacts = (): UseContactsReturn => {
       const result = await response.json();
       
       if (result.success) {
+        setSubmitted(true);
         return true;
       } else {
         throw new Error(result.error || 'Erro ao enviar mensagem');
