@@ -20,7 +20,7 @@ export default function Home(): ReactElement {
     let keySequence: string[] = [];
     
     const handleKeyPress = (e: KeyboardEvent): void => {
-      keySequence.push(e.key.toLowerCase());
+      keySequence.push(e.key);
       if (keySequence.length > 5) keySequence.shift();
       
       if (keySequence.join('').includes('admin')) {
@@ -72,34 +72,24 @@ export default function Home(): ReactElement {
           </div>
       </Head>
 
-      <main className="relative min-h-screen flex flex-col gap-4 justify-between font-mono">
-        <LoadingScreen />
-
-        {/* Background */}
-        <div
-          className="fixed inset-0 z-0 bg-cover bg-center bg-no-repeat brightness-[0.6]"
-          style={{
-            backgroundImage: "url('/images/bg.png')",
-            backgroundColor: "#0a0a0a",
-            objectFit:"cover"
-          }}
-        />
-
-        {/* Animated Background Elements */}
-        <div className="fixed inset-0 z-0">
-          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-cyan-500 opacity-10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-blue-500 opacity-10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        </div>
+      <main className="relative min-h-screen flex gap-4 justify-between font-mono">
+      <div className="fixed -z-50 h-full w-full"
+        
+      >
+        <img src="/images/bg-two.png" width={"100%"}/>
+      </div>
+        {/* <LoadingScreen /> */}
 
         <div className="relative z-10 text-white w-full">
           
           {/* Header simples */}
-          <header className="w-full text-center py-6">
-            <h1 className="w-full text-center py-4 text-sm text-white">Portfólio</h1>
+          <header className="w-full text-center py-8 my-6">
+            <h1 className="w-full text-center py-4 text-sm text-gray-400"></h1>
           </header>
 
           {/* Grid */}
-          <section className="grid grid-cols-1 gap-x-2 gap-y-8 lg:px-32 py-16 max-w-7xl mx-auto">
+          <section className="grid grid-cols-1 gap-x-2 gap-y-8 lg:px-32 py-16 max-w-7xl mx-auto"
+         >
             <div className="flex flex-col items-center justify-start gap-6 px-4">
               <MainCard />
               <ProjectsSection />
@@ -115,8 +105,8 @@ export default function Home(): ReactElement {
           </section>
 
           {/* Rodapé */}
-          <footer className="w-full text-center py-4 text-sm text-zinc-500">
-            Desenvolvido por AdrielDev
+          <footer className="w-full text-center py-6 my-6 text-sm text-zinc-500">
+           
           </footer>
 
         </div>

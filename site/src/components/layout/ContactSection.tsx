@@ -41,8 +41,8 @@ const ContactSection: React.FC<ContactSectionProps> = ({
           {/* Contact Info */}
           <div className="pt-4 border-t border-white/10">
             <div className="space-y-2 text-xs text-white">
-              <p className='text-white'>📧 ...@email.com</p>
-              <p className='text-white'>📱 (31) 99999-9999</p>
+              {/* <p className='text-white'>📧 ...@email.com</p>
+              <p className='text-white'>📱 (31) 99999-9999</p> */}
               <p className='text-white'>📍 Betim, Minas Gerais</p>
             </div>
           </div>

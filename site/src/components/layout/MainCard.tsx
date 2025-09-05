@@ -1,8 +1,7 @@
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 const MainCard: React.FC = () => {
-  const avatarImage =
-    "https://media.licdn.com/dms/image/v2/D4D03AQEdx7KBS6-w7A/profile-displayphoto-shrink_800_800/B4DZaEk0EAHwAg-/0/1745980965619?e=1759363200&v=beta&t=-ygwtHlEDtjfwRFMpfyv_pkep8ZczaM7wC2ujcy6TcI";
+  const avatarImage = "/images/perfil-pro.jpeg";
   return (
     <div className="w-full max-w-md">
       <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6">

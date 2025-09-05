@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { ContactForm, ContactResponse, ContactsResponse } from '@/src/types';
 
 // URL do seu Google Apps Script - SUBSTITUA PELA SUA URL
-const APPS_SCRIPT_URL = process.env.GOOGLE_APPS_SCRIPT_URL || 'https://script.google.com/macros/s/SEU_SCRIPT_ID/exec';
+const APPS_SCRIPT_URL = process.env.GOOGLE_APPS_SCRIPT_URL || 'https://script.google.com/macros/s/AKfycbxe-caVf29viZ6lzA7_ejNUM61j-L3gNEakpb-tlVMkfte6riSAntbr-OSnn-GsZfqV/exec';
 
 export default async function handler(
   req: NextApiRequest,
