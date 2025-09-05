@@ -78,7 +78,7 @@ export default function Home(): ReactElement {
       >
         <img src="/images/bg-two.png" width={"100%"}/>
       </div>
-        {/* <LoadingScreen /> */}
+        <LoadingScreen />
 
         <div className="relative z-10 text-white w-full">
           
