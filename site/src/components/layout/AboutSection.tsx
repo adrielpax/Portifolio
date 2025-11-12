@@ -32,24 +32,24 @@ const AboutSection: React.FC = () => {
   ];
 
   return (
-    <div className="w-full max-w-md mt-4">
+    <div className="w-full max-w-md">
       <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6">
         <h3 className="text-xl font-bold mb-4 text-cyan-400 flex items-center gap-2">
           <FaUser />
-          Sobre Mim
+          Habilidade Tecnicas
         </h3>
         
         <div className="space-y-4 text-white">
-          <p className="text-white text-sm leading-relaxed">
+          {/* <p className="text-white text-sm leading-relaxed">
             Desenvolvedor Full Stack com experiência em tecnologias modernas como React, 
             Node.js, Python e muito mais. Apaixonado por criar soluções digitais inovadoras 
             e interfaces que proporcionam excelente experiência ao usuário.
-          </p>
+          </p> */}
           
-          <p className="text-white text-sm leading-relaxed">
+          {/* <p className="text-white text-sm leading-relaxed">
             Especializado em desenvolvimento web, automação de processos e integração de APIs. 
             Sempre buscando aprender novas tecnologias e aplicar as melhores práticas de desenvolvimento.
-          </p>
+          </p> */}
           
           {/* Skills Grid */}
           <div className="grid grid-cols-2 gap-3 mt-6">

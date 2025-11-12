@@ -3,9 +3,10 @@ import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 const MainCard: React.FC = () => {
   const avatarImage = "/images/perfil-pro.jpeg";
   return (
-    <div className="w-full max-w-md">
+    <div className="w-auto">
       <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6">
-        <div className="flex flex-col items-center text-center">
+        <div className="w-full max-w-[875px] flex flex-col md:flex-row items-center 
+        gap-4 justify-start md:items-start text-center md:text-left">
           {/* Avatar */}
 
           {!avatarImage ? (
@@ -13,16 +14,17 @@ const MainCard: React.FC = () => {
               AL
             </div>
           ) : (
-            <img className="rounded-lg my-4" src={avatarImage} />
+            <img className="rounded-full w-40 h-40" src={avatarImage} />
           )}
 
           {/* Info */}
-          <h2 className="text-2xl text-white font-bold mb-2">Adriel Lucas</h2>
-          <p className="text-cyan-400 mb-4">Desenvolvedor Full Stack</p>
-          <p className="text-gray-300 text-sm leading-relaxed mb-6">
-            Especializado em interfaces modernas, automação e soluções digitais.
-            Apaixonado por tecnologia e sempre em busca de novos desafios.
-          </p>
+          <div className="flex flex-col">
+            <h2 className="text-2xl text-white font-bold mb-2">Adriel Lucas</h2>
+            <p className="text-cyan-400 mb-4">Desenvolvedor Full Stack</p>
+            <p className="text-gray-300 text-sm leading-relaxed mb-6">
+              Especializado em interfaces modernas, automação e soluções digitais.
+              Apaixonado por tecnologia e sempre em busca de novos desafios.
+            </p>
 
           {/* Social Links */}
           <div className="flex gap-4">
@@ -32,7 +34,7 @@ const MainCard: React.FC = () => {
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 text-xl"
               aria-label="GitHub Profile"
-            >
+              >
               <FaGithub />
             </a>
             <a
@@ -41,16 +43,17 @@ const MainCard: React.FC = () => {
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 text-xl"
               aria-label="LinkedIn Profile"
-            >
+              >
               <FaLinkedin />
             </a>
             <a
               href="mailto:seu@email.com"
               className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 text-xl"
               aria-label="Send Email"
-            >
+              >
               <FaEnvelope />
             </a>
+              </div>
           </div>
         </div>
       </div>

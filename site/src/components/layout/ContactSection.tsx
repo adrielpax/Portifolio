@@ -8,7 +8,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({
 }) => {
   return (
     <div className="w-full max-w-md">
-      <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6">
+      <div className="w-full bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6">
         <h3 className="text-xl font-bold mb-4 text-cyan-400 flex items-center gap-2">
           <FaEnvelope />
           Contato
