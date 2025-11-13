@@ -1,15 +1,15 @@
-import React, { ReactElement, useEffect } from 'react';
-import { 
-  FaCode, 
-  FaStar, 
-  FaCodeBranch, 
-  FaExternalLinkAlt, 
-  FaSpinner, 
-  FaExclamationTriangle, 
-  FaFolderOpen 
-} from 'react-icons/fa';
-import { useGitHub } from '@/src/hooks/useGitHub';
-import { GitHubRepo } from '@/src/types';
+import React, { ReactElement, useEffect } from "react";
+import {
+  FaCode,
+  FaStar,
+  FaCodeBranch,
+  FaExternalLinkAlt,
+  FaSpinner,
+  FaExclamationTriangle,
+  FaFolderOpen,
+} from "react-icons/fa";
+import { useGitHub } from "@/src/hooks/useGitHub";
+import { GitHubRepo } from "@/src/types";
 
 interface ProjectCardProps {
   project: GitHubRepo;
@@ -29,11 +29,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => (
         )}
       </div>
     </div>
-    
+
     <p className="text-gray-300 text-xs mb-3 line-clamp-2">
-      {project.description || 'Sem descrição'}
+      {project.description || "Sem descrição"}
     </p>
-    
+
     <div className="flex justify-between items-center">
       <div className="flex items-center gap-4 text-xs text-gray-400">
         <span className="flex items-center gap-1">
@@ -45,9 +45,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => (
           {project.forks_count}
         </span>
       </div>
-      <a 
-        href={project.html_url} 
-        target="_blank" 
+      <a
+        href={project.html_url}
+        target="_blank"
         rel="noopener noreferrer"
         className="text-cyan-400 hover:text-green-300 transition-colors"
         aria-label={`Ver projeto ${project.name} no GitHub`}
@@ -73,7 +73,7 @@ const ErrorState: React.FC<ErrorStateProps> = ({ onRetry }) => (
   <div className="text-center text-red-400 py-8">
     <FaExclamationTriangle className="text-2xl mb-2 mx-auto" />
     <p className="text-sm mb-2">Erro ao carregar projetos</p>
-    <button 
+    <button
       onClick={onRetry}
       className="text-cyan-400 hover:text-green-300 text-sm underline focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50 rounded"
     >
@@ -111,7 +111,7 @@ const ProjectsSection: React.FC = () => {
   };
 
   return (
-    <div className="w-full max-w-md">
+    <div className="w-full max-w-[925px]">
       <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6">
         <h3 className="text-xl font-bold mb-4 text-cyan-400 flex items-center gap-2">
           <FaCode />
