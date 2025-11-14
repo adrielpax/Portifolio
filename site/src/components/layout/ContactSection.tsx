@@ -23,7 +23,8 @@ const ContactSection: React.FC<ContactSectionProps> = ({
 
           <button
             onClick={onOpenContact}
-            className="w-full bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-green-500/25 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50"
+            className="w-full bg-gradient-to-r from-green-500/80 to-blue-500/80 border-white/10 border-2 
+            hover:from-green-600 hover:to-blue-600 px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-green-500/25 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50"
           >
             Entrar em Contato
           </button>

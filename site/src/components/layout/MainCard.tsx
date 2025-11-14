@@ -20,7 +20,10 @@ const MainCard: React.FC<MainCardProps> = ({ onOpenContact }) => {
               AL
             </div>
           ) : (
-            <img className="rounded-full w-40 h-40" src={avatarImage} />
+           
+
+            <img className="rounded-full w-40 h-40 border-4 border-white/5" src={avatarImage} />
+         
           )}
 
           {/* Info */}
@@ -34,14 +37,16 @@ const MainCard: React.FC<MainCardProps> = ({ onOpenContact }) => {
             </p>
 
             {/* Social Links */}
-            <div className="flex gap-4 items-center">
+            <div className="flex md:flex-row flex-col gap-4 items-center">
+              <div className="flex flex-row gap-4 items-center">
+
               <a
                 href="https://github.com/SEU_USUARIO"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 text-xl"
                 aria-label="GitHub Profile"
-              >
+                >
                 <FaGithub />
               </a>
               <a
@@ -50,23 +55,24 @@ const MainCard: React.FC<MainCardProps> = ({ onOpenContact }) => {
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 text-xl"
                 aria-label="LinkedIn Profile"
-              >
+                >
                 <FaLinkedin />
               </a>
               <a
                 href="mailto:seu@email.com"
                 className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 text-xl"
                 aria-label="Send Email"
-              >
+                >
                 <FaEnvelope />
               </a>
-              <button
+              </div>
+              {/* <button
                 onClick={onOpenContact}
                 className="w-[200px] bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 
-                px-3 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-green-500/25 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50"
-              >
+                p-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-green-500/25 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50"
+                >
                 Vamos Conversar
-              </button>
+              </button> */}
             </div>
           </div>
         </div>

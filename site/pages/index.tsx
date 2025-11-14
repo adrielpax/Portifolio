@@ -75,7 +75,7 @@ export default function Home(): ReactElement {
         </div>
       </Head>
 
-      <main className="relative min-h-screen flex gap-4 justify-between font-mono">
+      <main className="relative min-h-screen flex gap-4 justify-between font-mono px-4 md:px-0">
         <div className="fixed -z-50 h-full w-full">
           <img src="/images/bg-two.png" width={"100%"} />
         </div>
@@ -90,24 +90,31 @@ export default function Home(): ReactElement {
           {/* Grid */}
           <section className="flex flex-col items-center justify-center gap-4 max-w-[875px] mx-auto">
             <MainCard onOpenContact={() => setShowContactModal(true)} />
+              <div className="flex gap-4 md:flex-row flex-col">
+
             <AboutSection />
-            <ProjectsSection />
             <ContactSection
               onOpenContact={() => setShowContactModal(true)}
               onOpenAdmin={() => setShowAdminPanel(true)}
               showAdminButton={adminAccess}
-            />
+              />
+              </div>
+            <ProjectsSection />
+
             <div className="flex flex-col md:flex-row gap-4"></div>
             <div className="flex flex-col gap-4">
               <div className="flex flex-row gap-4"></div>
-              <div className=" bg-white/5 backdrop-blur-md border border-white/10 rounded-xl gap-4 p-6 max-w-[875px]">
+              <div className=" bg-white/5 backdrop-blur-md border border-white/10 rounded-xl gap-4 p-6 max-w-[875px]
+              flex-col gap-4 ">
                 <h3 className="text-xl font-bold mb-4 text-cyan-400 flex items-center gap-2">
                   Minha Historia
                 </h3>
 
-                <div className="flex flex-row gap-2 bg-black/5 backdrop-blur-md border border-white/10 rounded-xl p-6">
-                  <img />
-                  <p>
+                <div className="flex flex-row gap-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6
+                group hover:border-cyan-500 mb-4">
+                  <img src="https://cdn.pixabay.com/photo/2022/09/27/19/46/ai-generated-7483596_960_720.jpg"
+                  className="rounded-lg max-w-md" />
+                  <p className="text-sm text-gray-600">
                     Sou um Profissional qualificado no desenvolvimento de
                     applicações <br />
                     de software interface de sistema e integração e comunicação
@@ -116,18 +123,103 @@ export default function Home(): ReactElement {
                   </p>
                 </div>
 
-                <div className="flex flex-row gap-2 bg-black/5 backdrop-blur-md border border-white/10 rounded-xl p-6">
-                  <img />
-                  <p>
+                <div className="flex flex-row gap-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6
+                mb-4">
+                  
+                  <p className="text-sm text-gray-600">
                     Sou um Profissional qualificado no desenvolvimento de
-                    applicações de software interface de sistema e integração e
-                    comunicação de dados entre sistemas, mas minha historia nao
-                    começa assim...{" "}
+                    applicações <br />
+                    de software interface de sistema e integração e comunicação
+                    de dados entre sistemas, mas minha historia nao começa
+                    assim...{" "}
+                  </p>
+                   <img src="https://cdn.pixabay.com/photo/2022/09/27/19/46/ai-generated-7483596_960_720.jpg"
+                  className="rounded-lg max-w-md" />
+                </div>
+
+                   <div className="flex flex-row gap-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6
+                group hover:border-cyan-500 mb-4">
+                  <img src="https://cdn.pixabay.com/photo/2022/09/27/19/46/ai-generated-7483596_960_720.jpg"
+                  className="rounded-lg max-w-md" />
+                  <p className="text-sm text-gray-600">
+                    Sou um Profissional qualificado no desenvolvimento de
+                    applicações <br />
+                    de software interface de sistema e integração e comunicação
+                    de dados entre sistemas, mas minha historia nao começa
+                    assim...{" "}
                   </p>
                 </div>
               </div>
             </div>
           </section>
+
+          {/* Galeria de Projetos */}
+          <section className="flex my-4 gap-4 flex-wrap max-w-lg items-center justify-center mt-6 mb-6
+           max-w-[875px] mx-auto">
+            <div className="max-w-[200px] bg-white/5 p-6 border border-white/10
+            rounded-lg  ">
+
+               <img src="https://cdn.pixabay.com/photo/2022/09/27/19/46/ai-generated-7483596_960_720.jpg"
+             className="w-md rounded-lg"/>
+             <h1>Projeto x data: 2020</h1>
+             <p>
+              descrição curta do proejto e o motivo do projeto
+             </p>
+             <button className="rounded-lg px-4 py-2 bg-blue-500
+             hover:bg-blue-500/50 self-center flex border border-white/10">
+              Saber mais !
+             </button>
+             </div>
+
+                <div className="ma[200px]wpx] bg-white/5 p-6 border border-white/10
+            rounded-lg  ">
+
+               <img src="https://cdn.pixabay.com/photo/2022/09/27/19/46/ai-generated-7483596_960_720.jpg"
+             className="w-md rounded-lg"/>
+             <h1>Projeto x data: 2020</h1>
+             <p>
+              descrição curta do proejto e o motivo do projeto
+             </p>
+             <button className="rounded-lg px-4 py-2 bg-blue-500
+             hover:bg-blue-500/50 self-center flex border border-white/10">
+              Saber mais !
+             </button>
+             </div>
+
+             
+                <div className="w-auto bg-white/5 p-6 border border-white/10
+            rounded-lg ">
+
+               <img src="https://cdn.pixabay.com/photo/2022/09/27/19/46/ai-generated-7483596_960_720.jpg"
+             className="w-md rounded-lg"/>
+             <h1>Projeto x data: 2020</h1>
+             <p>
+              descrição curta do proejto e o motivo do projeto
+             </p>
+             <button className="rounded-lg px-4 py-2 bg-blue-500
+             hover:bg-blue-500/50 self-center flex border border-white/10">
+              Saber mais !
+             </button>
+             </div>
+
+             
+                <div className="ma[200px]wpx] bg-white/5 p-6 border border-white/10
+            rounded-lg  ">
+
+               <img src="https://cdn.pixabay.com/photo/2022/09/27/19/46/ai-generated-7483596_960_720.jpg"
+             className="w-md rounded-lg"/>
+             <h1>Projeto x data: 2020</h1>
+             <p>
+              descrição curta do proejto e o motivo do projeto
+             </p>
+             <button className="rounded-lg px-4 py-2 bg-blue-500
+             hover:bg-blue-500/50 self-center flex border border-white/10">
+              Saber mais !
+             </button>
+             </div>
+             
+          </section>
+
           <section className="flex flex-col items-center justify-start"></section>
 
           {/* Rodapé */}
