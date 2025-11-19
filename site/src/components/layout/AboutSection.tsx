@@ -18,22 +18,22 @@ const AboutSection: React.FC = () => {
     {
       icon: <FaLaptopCode className="text-2xl text-cyan-400" />,
       label: "Frontend",
-      description: "React, Next.js, Vue.js",
+      description: "React, Next.js",
     },
     {
       icon: <FaServer className="text-2xl text-blue-400" />,
       label: "Backend",
-      description: "Node.js, Python, PHP",
+      description: "Node.js, Python",
     },
     {
       icon: <FaDatabase className="text-2xl text-purple-400" />,
       label: "Database",
-      description: "MySQL, PostgreSQL, MongoDB",
+      description: "MySQL, PostgreSQL",
     },
     {
       icon: <FaMobileAlt className="text-2xl text-red-400" />,
       label: "Mobile",
-      description: "React Native, Flutter",
+      description: "Flutter flow",
     },
   ];
 

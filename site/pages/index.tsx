@@ -5,11 +5,20 @@ import ContactSection from "@/src/components/layout/ContactSection";
 import MainCard from "@/src/components/layout/MainCard";
 import ProjectsSection from "@/src/components/layout/ProjectsSection";
 import ContactModal from "@/src/components/common/ContactModal";
-import AdminPanel from "@/src/components/layout/AdminPanel";
 import Head from "next/head";
 import { ReactElement, useEffect, useState } from "react";
+import { Box, Card, Inset, Strong,Text } from "@radix-ui/themes";
+import MarkdownRenderer from "@/src/components/MarkdownRenderer";
+import HistorySection from "@/src/components/layout/HistorySection";
+import { HistoryItem } from "@/src/types";
 
-export default function Home(): ReactElement {
+interface HomeProps {
+  markdownContent: string;
+  frontmatter?: Record<string, any> | null;
+  historyFiles: HistoryItem[];
+}
+
+export default function Home({ markdownContent, frontmatter, historyFiles }: HomeProps): ReactElement {
   const [bootDone, setBootDone] = useState<boolean>(false);
   const [showContactModal, setShowContactModal] = useState<boolean>(false);
   const [showAdminPanel, setShowAdminPanel] = useState<boolean>(false);
@@ -75,9 +84,9 @@ export default function Home(): ReactElement {
         </div>
       </Head>
 
-      <main className="relative min-h-screen flex gap-4 justify-between font-mono px-4 md:px-0">
+      <main className="relative min-h-screen flex gap-4 justify-between px-4 font-mono">
         <div className="fixed -z-50 h-full w-full">
-          <img src="/images/bg-two.png" width={"100%"} />
+          <img src="/images/bg-two.png" width={"100%"} height={"100"} />
         </div>
         <LoadingScreen />
 
@@ -101,129 +110,15 @@ export default function Home(): ReactElement {
               </div>
             <ProjectsSection />
 
-            <div className="flex flex-col md:flex-row gap-4"></div>
-            <div className="flex flex-col gap-4">
-              <div className="flex flex-row gap-4"></div>
-              <div className=" bg-white/5 backdrop-blur-md border border-white/10 rounded-xl gap-4 p-6 max-w-[875px]
-              flex-col gap-4 ">
-                <h3 className="text-xl font-bold mb-4 text-cyan-400 flex items-center gap-2">
-                  Minha Historia
-                </h3>
+            <HistorySection items={historyFiles} />
+           </section>
 
-                <div className="flex flex-row gap-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6
-                group hover:border-cyan-500 mb-4">
-                  <img src="https://cdn.pixabay.com/photo/2022/09/27/19/46/ai-generated-7483596_960_720.jpg"
-                  className="rounded-lg max-w-md" />
-                  <p className="text-sm text-gray-600">
-                    Sou um Profissional qualificado no desenvolvimento de
-                    applicações <br />
-                    de software interface de sistema e integração e comunicação
-                    de dados entre sistemas, mas minha historia nao começa
-                    assim...{" "}
-                  </p>
-                </div>
+     
 
-                <div className="flex flex-row gap-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6
-                mb-4">
-                  
-                  <p className="text-sm text-gray-600">
-                    Sou um Profissional qualificado no desenvolvimento de
-                    applicações <br />
-                    de software interface de sistema e integração e comunicação
-                    de dados entre sistemas, mas minha historia nao começa
-                    assim...{" "}
-                  </p>
-                   <img src="https://cdn.pixabay.com/photo/2022/09/27/19/46/ai-generated-7483596_960_720.jpg"
-                  className="rounded-lg max-w-md" />
-                </div>
 
-                   <div className="flex flex-row gap-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6
-                group hover:border-cyan-500 mb-4">
-                  <img src="https://cdn.pixabay.com/photo/2022/09/27/19/46/ai-generated-7483596_960_720.jpg"
-                  className="rounded-lg max-w-md" />
-                  <p className="text-sm text-gray-600">
-                    Sou um Profissional qualificado no desenvolvimento de
-                    applicações <br />
-                    de software interface de sistema e integração e comunicação
-                    de dados entre sistemas, mas minha historia nao começa
-                    assim...{" "}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Galeria de Projetos */}
-          <section className="flex my-4 gap-4 flex-wrap max-w-lg items-center justify-center mt-6 mb-6
-           max-w-[875px] mx-auto">
-            <div className="max-w-[200px] bg-white/5 p-6 border border-white/10
-            rounded-lg  ">
-
-               <img src="https://cdn.pixabay.com/photo/2022/09/27/19/46/ai-generated-7483596_960_720.jpg"
-             className="w-md rounded-lg"/>
-             <h1>Projeto x data: 2020</h1>
-             <p>
-              descrição curta do proejto e o motivo do projeto
-             </p>
-             <button className="rounded-lg px-4 py-2 bg-blue-500
-             hover:bg-blue-500/50 self-center flex border border-white/10">
-              Saber mais !
-             </button>
-             </div>
-
-                <div className="ma[200px]wpx] bg-white/5 p-6 border border-white/10
-            rounded-lg  ">
-
-               <img src="https://cdn.pixabay.com/photo/2022/09/27/19/46/ai-generated-7483596_960_720.jpg"
-             className="w-md rounded-lg"/>
-             <h1>Projeto x data: 2020</h1>
-             <p>
-              descrição curta do proejto e o motivo do projeto
-             </p>
-             <button className="rounded-lg px-4 py-2 bg-blue-500
-             hover:bg-blue-500/50 self-center flex border border-white/10">
-              Saber mais !
-             </button>
-             </div>
-
-             
-                <div className="w-auto bg-white/5 p-6 border border-white/10
-            rounded-lg ">
-
-               <img src="https://cdn.pixabay.com/photo/2022/09/27/19/46/ai-generated-7483596_960_720.jpg"
-             className="w-md rounded-lg"/>
-             <h1>Projeto x data: 2020</h1>
-             <p>
-              descrição curta do proejto e o motivo do projeto
-             </p>
-             <button className="rounded-lg px-4 py-2 bg-blue-500
-             hover:bg-blue-500/50 self-center flex border border-white/10">
-              Saber mais !
-             </button>
-             </div>
-
-             
-                <div className="ma[200px]wpx] bg-white/5 p-6 border border-white/10
-            rounded-lg  ">
-
-               <img src="https://cdn.pixabay.com/photo/2022/09/27/19/46/ai-generated-7483596_960_720.jpg"
-             className="w-md rounded-lg"/>
-             <h1>Projeto x data: 2020</h1>
-             <p>
-              descrição curta do proejto e o motivo do projeto
-             </p>
-             <button className="rounded-lg px-4 py-2 bg-blue-500
-             hover:bg-blue-500/50 self-center flex border border-white/10">
-              Saber mais !
-             </button>
-             </div>
-             
-          </section>
-
-          <section className="flex flex-col items-center justify-start"></section>
 
           {/* Rodapé */}
-          <footer className="w-full text-center py-6 my-6 text-sm text-zinc-500"></footer>
+          <footer className="w-full text-center py-6 my-6 text-sm text-zinc-500 h-12 my-12ac"></footer>
         </div>
 
         {/* Modals */}
@@ -231,10 +126,59 @@ export default function Home(): ReactElement {
           <ContactModal onClose={() => setShowContactModal(false)} />
         )}
 
-        {showAdminPanel && (
-          <AdminPanel onClose={() => setShowAdminPanel(false)} />
-        )}
+      
       </main>
     </>
   );
+}
+
+export async function getStaticProps() {
+  // Ler todos os arquivos markdown em /content no build
+  const fs = require("fs");
+  const path = require("path");
+  const matter = require("gray-matter");
+
+  try {
+    const contentDir = path.join(process.cwd(), "content");
+    const files = fs.readdirSync(contentDir).filter((f: string) => f.endsWith(".md"));
+
+    const items = files.map((fileName: string) => {
+      const filePath = path.join(contentDir, fileName);
+      const fileContent = fs.readFileSync(filePath, "utf-8");
+      const { content, data } = matter(fileContent);
+
+      return {
+        slug: fileName.replace(/\.md$/i, ""),
+        title: data?.title || null,
+        excerpt: data?.excerpt || null,
+        order: typeof data?.order === 'number' ? data.order : null,
+        content,
+      };
+    });
+
+    // Ordena por frontmatter.order se existir, senão por nome de arquivo
+    items.sort((a: any, b: any) => {
+      if (a.order !== null && b.order !== null) return a.order - b.order;
+      if (a.order !== null) return -1;
+      if (b.order !== null) return 1;
+      return a.slug.localeCompare(b.slug);
+    });
+
+    return {
+      props: {
+        markdownContent: items[0]?.content || "",
+        frontmatter: items[0]?.title ? { title: items[0].title } : null,
+        historyFiles: items,
+      },
+    };
+  } catch (err) {
+    console.error("Erro ao ler markdowns:", err);
+    return {
+      props: {
+        markdownContent: "",
+        frontmatter: null,
+        historyFiles: [],
+      },
+    };
+  }
 }

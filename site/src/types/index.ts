@@ -85,3 +85,12 @@ export interface UseContactsReturn {
   loadContacts: () => Promise<void>;
   submitContact: (data: ContactForm) => Promise<boolean>;
 }
+
+// History / content items
+export interface HistoryItem {
+  slug: string;
+  title?: string | null;
+  excerpt?: string | null;
+  content: string;
+  order?: number | null;
+}

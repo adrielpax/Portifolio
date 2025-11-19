@@ -1,4 +1,6 @@
-import { useState } from 'react';
+"use client";
+
+import { useState, useEffect } from 'react';
 import { FaTimes, FaSpinner, FaPaperPlane } from 'react-icons/fa';
 import { ContactModalProps, ContactForm } from '@/src/types';
 import { useContacts } from '@/src/hooks/useContacts';
@@ -41,9 +43,17 @@ const ContactModal: React.FC<ContactModalProps> = ({ onClose }) => {
     }
   };
 
-  const alreadySubmitted = typeof window !== "undefined" && localStorage.getItem("contactSubmitted") === "true";
+  const [alreadySubmitted, setAlreadySubmitted] = useState<boolean>(false);
 
-  const isFormValid = formData.name.trim() && formData.email.trim() && formData.message.trim();
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setAlreadySubmitted(localStorage.getItem('contactSubmitted') === 'true');
+    }
+  }, []);
+
+  const isFormValid = Boolean(
+    formData.name.trim() && formData.email.trim() && formData.message.trim()
+  );
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/75 backdrop-blur-sm p-4">
@@ -113,7 +123,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ onClose }) => {
           
           <button 
             type="submit"
-            disabled={!isFormValid || isSubmitting || alreadySubmitted}
+            disabled={!isFormValid || isSubmitting}
             className="w-full bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 disabled:from-gray-500 disabled:to-gray-600 disabled:cursor-not-allowed px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50 flex items-center justify-center gap-2"
           >
             {isSubmitting ? (
@@ -129,6 +139,9 @@ const ContactModal: React.FC<ContactModalProps> = ({ onClose }) => {
             )}
           </button>
         </form>
+        {alreadySubmitted && (
+          <p className="mt-3 text-xs text-yellow-300">Você já enviou uma mensagem anteriormente — ainda assim pode enviar outra se quiser.</p>
+        )}
       </div>
     </div>
   );

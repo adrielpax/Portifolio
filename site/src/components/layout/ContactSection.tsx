@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { FaEnvelope, FaUserShield } from "react-icons/fa";
 import { ContactSectionProps } from "@/src/types";
 
@@ -6,12 +9,34 @@ const ContactSection: React.FC<ContactSectionProps> = ({
   onOpenAdmin,
   showAdminButton,
 }) => {
+  const [count, setCount] = useState<number | null>(null);
+
+  useEffect(() => {
+    let mounted = true;
+    (async () => {
+      try {
+        const res = await fetch('/api/contacts');
+        if (!res.ok) return;
+        const data = await res.json();
+        if (mounted && typeof data.count === 'number') {
+          setCount(data.count);
+        }
+      } catch (err) {
+        // ignore
+      }
+    })();
+    return () => { mounted = false; };
+  }, []);
+
   return (
     <div className="w-full ">
       <div className="w-full bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6">
         <h3 className="text-xl font-bold mb-4 text-cyan-400 flex items-center gap-2">
           <FaEnvelope />
           Contato
+          {typeof count === 'number' && (
+            <span className="ml-3 text-sm text-gray-300">• {count} recebidos</span>
+          )}
         </h3>
 
         <div className="space-y-4">
@@ -43,8 +68,6 @@ const ContactSection: React.FC<ContactSectionProps> = ({
           {/* Contact Info */}
           <div className="pt-4 border-t border-white/10">
             <div className="space-y-2 text-xs text-white">
-              {/* <p className='text-white'>📧 ...@email.com</p>
-              <p className='text-white'>📱 (31) 99999-9999</p> */}
               <p className="text-white">📍 Betim, Minas Gerais</p>
             </div>
           </div>
