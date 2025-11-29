@@ -94,3 +94,24 @@ export interface HistoryItem {
   content: string;
   order?: number | null;
 }
+
+// Projects
+export interface Project {
+  id: number;
+  title: string;
+  description?: string;
+  imageUrl?: string;
+  tags?: string;
+  link?: string;
+  createdAt?: string;
+}
+
+// Blog Post
+export interface BlogPost {
+  slug: string;
+  title?: string | null;
+  excerpt?: string | null;
+  date?: string | null;
+  content: string;
+  order?: number | null;
+}

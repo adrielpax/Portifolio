@@ -15,7 +15,7 @@ const HistorySection: React.FC<HistorySectionProps> = ({ items }) => {
   if (!items || items.length === 0) {
     return (
       <div className="w-full max-w-[875px]">
-        <div className="flex flex-col md:flex-row bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6">
+        <div className="flex flex-row bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6">
           <h3 className="text-xl font-bold mb-4 text-cyan-400 flex items-center gap-2">
             <FaListUl /> Minha História
           </h3>

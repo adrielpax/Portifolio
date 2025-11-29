@@ -2,6 +2,7 @@ import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
 import { Theme } from "@radix-ui/themes";
 import Head from 'next/head';
+import Nav from '@/src/components/layout/Nav';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -34,9 +35,17 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="twitter:creator" content="@seu_twitter" />
       </Head>
 
+      {/* Nav colocado no layout global sem alterar o design das páginas */}
 
-      <Component {...pageProps} />
-  
+
+      <main>
+        <div className="absolute -z-50 h-full w-full">
+          <img src="/images/bg-two.png" width={"100%"} height={"100"} />
+        </div>
+      
+        <Nav />
+        <Component {...pageProps} />
+      </main>
     </>
   );
 }

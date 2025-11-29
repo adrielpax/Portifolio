@@ -22,7 +22,8 @@ const MainCard: React.FC<MainCardProps> = ({ onOpenContact }) => {
           ) : (
            
 
-            <img className="rounded-full w-40 h-40 border-4 border-white/5" src={avatarImage} />
+            <img className="rounded-full hover:border-cyan-500/   
+            cursor-pointer w-40 h-40 border-4 border-white/5 " src={avatarImage} />
          
           )}
 
@@ -30,7 +31,7 @@ const MainCard: React.FC<MainCardProps> = ({ onOpenContact }) => {
           <div className="flex flex-col">
             <h2 className="text-2xl text-white font-bold mb-2">Adriel Lucas</h2>
             <p className="text-cyan-400 mb-4">Desenvolvedor Full Stack</p>
-            <p className="text-gray-300 text-sm leading-relaxed mb-6">
+            <p className="text-gray-300 text-sm leading-relaxed mb-6 text-justify ">
               Especializado em interfaces modernas, automação e soluções
               digitais. Apaixonado por tecnologia e sempre em busca de novos
               desafios.
@@ -44,35 +45,35 @@ const MainCard: React.FC<MainCardProps> = ({ onOpenContact }) => {
                 href="https://github.com/SEU_USUARIO"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 text-xl"
+                className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 text-xl bg-white/10 p-2
+                 rounded-full 
+                border border-white/10 text-xs flex items-center gap-2  hover:bg-white/20 space-x-2"
                 aria-label="GitHub Profile"
                 >
-                <FaGithub />
+                <FaGithub  className="w-5 h-5"  />
+                Github 
               </a>
               <a
                 href="https://linkedin.com/in/SEU_USUARIO"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 text-xl"
+                className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 text-xl bg-white/10 p-2 rounded-full 
+                border border-white/10 text-xs  flex items-center gap-2 hover:bg-white/20 space-x-2"
                 aria-label="LinkedIn Profile"
                 >
-                <FaLinkedin />
+                <FaLinkedin className=" w-5 h-5"  />
+                Linkedin
               </a>
               <a
                 href="mailto:seu@email.com"
-                className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 text-xl"
+                className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 text-xl bg-white/10 p-2 rounded-full 
+                border border-white/10 text-xs  flex items-center gap-2 hover:bg-white/20 space-x-2"
                 aria-label="Send Email"
                 >
-                <FaEnvelope />
+                <FaEnvelope className=" w-5 h-5"  />
+                Email
               </a>
               </div>
-              {/* <button
-                onClick={onOpenContact}
-                className="w-[200px] bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 
-                p-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-green-500/25 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50"
-                >
-                Vamos Conversar
-              </button> */}
             </div>
           </div>
         </div>

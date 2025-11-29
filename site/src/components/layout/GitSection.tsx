@@ -89,7 +89,7 @@ const EmptyState: React.FC = () => (
   </div>
 );
 
-const ProjectsSection: React.FC = () => {
+const GitSection: React.FC = () => {
   const { projects, loading, error, loadProjects } = useGitHub();
 
   useEffect(() => {
@@ -115,7 +115,7 @@ const ProjectsSection: React.FC = () => {
       <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6">
         <h3 className="text-xl font-bold mb-4 text-cyan-400 flex items-center gap-2">
           <FaCode />
-          Projetos
+          Git Section
         </h3>
         {renderContent()}
       </div>
@@ -123,4 +123,4 @@ const ProjectsSection: React.FC = () => {
   );
 };
 
-export default ProjectsSection;
+export default GitSection;
