@@ -3,6 +3,7 @@ import LoadingScreen from "@/src/components/common/LoadScreen";
 import AboutSection from "@/src/components/layout/AboutSection";
 import ContactSection from "@/src/components/layout/ContactSection";
 import MainCard from "@/src/components/layout/Profile_Card";
+import CTACards from '@/src/components/layout/CTACards'
 import ProjectsSection from "@/src/components/layout/GitSection";
 import ContactModal from "@/src/components/common/ContactModal";
 import Head from "next/head";
@@ -10,11 +11,11 @@ import { ReactElement, useEffect, useState } from "react";
 import { AiFillHome } from "react-icons/ai";
 import { Box, Card, Inset, Strong, Text } from "@radix-ui/themes";
 import MarkdownRenderer from "@/src/components/MarkdownRenderer";
-import HistorySection from "@/src/components/layout/HistorySection";
+import HistorySectionServer from "@/src/components/layout/HistorySectionServer";
 import { HistoryItem } from "@/src/types";
 import Link from "next/link";
 import Nav from "@/src/components/layout/Nav";
-import ProjectCard from "@/src/components/layout/ProjectsCard";
+import ProjectCard from "@/src/components/layout/HabilityCards";
 import GitSection from "@/src/components/layout/GitSection";
 import GaleryProjects from "@/src/components/layout/GaleryProjects";
 
@@ -67,8 +68,8 @@ export default function Home({ markdownContent, frontmatter, historyFiles }: Hom
 
   return (
     <>
-      <Head>
-        <div key={0}>
+      {/* <Head>
+        <div>
           <title key={1}>Adriel Lucas | Desenvolvedor Full Stack</title>
           <meta
             name="description"
@@ -83,17 +84,11 @@ export default function Home({ markdownContent, frontmatter, historyFiles }: Hom
             href="https://fonts.gstatic.com"
             crossOrigin=""
           />
-          <link
-            href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap"
-            rel="stylesheet"
-          />
+        
         </div>
-      </Head>
-
+      </Head> */}
       <main className="relative bg-transparent min-h-screen flex gap-4 justify-between px-4 font-mono">
-
         <LoadingScreen />
-
         <div className="relative z-10 text-white w-full">
           {/* <Nav /> */}
           {/* Header simples */}
@@ -112,45 +107,42 @@ export default function Home({ markdownContent, frontmatter, historyFiles }: Hom
             <Link href="#" className="flex items-center gap-2 rounded-full border border-white/5 bg-white/10 px-3 py-1">Contato</Link>
           </div>
           </header> */}
-
           {/* Seção principal */}
           <section className="flex flex-col items-center justify-center gap-4 max-w-[875px] mx-auto">
             <MainCard onOpenContact={() => setShowContactModal(true)} />
-            <div className="flex gap-4 md:flex-row flex-col">
-              <GitSection />
-              <ContactSection
-                onOpenContact={() => setShowContactModal(true)}
-                onOpenAdmin={() => setShowAdminPanel(true)}
-                showAdminButton={adminAccess}
-              />
-            </div>
+            {/* <CTACards onOpenContact={() => setShowContactModal(true)} /> */}
             <ProjectCard />
-            <GaleryProjects />
-            
+
             <ContactSection
-               onOpenContact={() => setShowContactModal(true)}
-               onOpenAdmin={() => setShowAdminPanel(true)}
-               showAdminButton={adminAccess}
+              onOpenContact={() => setShowContactModal(true)}
+              onOpenAdmin={() => setShowAdminPanel(true)}
+              showAdminButton={adminAccess}
             />
+            <div className="flex gap-4 md:flex-row flex-col">
+              <GaleryProjects />
+              {/* <GitSection /> */}
 
+            </div>
 
-            {/* <HistorySection items={historyFiles} /> */}
+            <ContactSection
+              onOpenContact={() => setShowContactModal(true)}
+              onOpenAdmin={() => setShowAdminPanel(true)}
+              showAdminButton={adminAccess}
+            />
+            <HistorySectionServer items={historyFiles} />
+              <ContactSection
+              onOpenContact={() => setShowContactModal(true)}
+              onOpenAdmin={() => setShowAdminPanel(true)}
+              showAdminButton={adminAccess}
+            />
           </section>
-
-
-
-
-
           {/* Rodapé */}
           <footer className="w-full text-center py-6 my-6 text-sm text-zinc-500 h-12 my-12ac"></footer>
         </div>
-
         {/* Modals */}
         {showContactModal && (
           <ContactModal onClose={() => setShowContactModal(false)} />
         )}
-
-
       </main>
     </>
   );

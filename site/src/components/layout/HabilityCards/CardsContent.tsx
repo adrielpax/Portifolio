@@ -1,20 +1,20 @@
 
 import React from 'react'
-import { SiN8N } from "react-icons/si";
-import { RiNextjsLine } from "react-icons/ri";
+// import  { SiN8N }  from "react-icons/si";
+// import { RiNextjsLine } from "react-icons/ri";
 import { FaWordpress } from "react-icons/fa";
 import { FaPython } from "react-icons/fa";
 import { FaNodeJs } from "react-icons/fa";
 
 const CardContentProps = [
     {
-        icon:<SiN8N />,
+        // icon:<SiN8N />,
         color: "text-pink-500/80",
         title: "N8N",
         description: "Desenvolvimento de fluxos automatizados para otimizar processos empresariais utilizando a plataforma N8N.",
     },
     {
-        icon:<RiNextjsLine />,
+        // icon:<RiNextjsLine />,
         color: "text-cyan-500/80",
         title: "Next.js",
         description: "Criação de aplicações web modernas e performáticas utilizando o framework Next.js, focado em SSR e SSG.",

@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useMemo, useState } from "react";
 import { FaExternalLinkAlt, FaTrash, FaPlus } from "react-icons/fa";
+import useSanityFetch from "@/src/hooks/useSanityFetch";
 
 interface Project {
   id: number;
@@ -13,62 +14,45 @@ interface Project {
 }
 
 const ProjectsGallery: React.FC = () => {
-  const [projects, setProjects] = useState<Project[]>([]);
-  const [loading, setLoading] = useState(true);
+  // Use mockable Sanity hook - by default returns built-in mocks
+  const { data, loading } = useSanityFetch<Project[]>({ type: "projects" }, { mock: false, delay: 350 });
+  const initial = (data || []) as Project[];
+
+  // Local state used for CRUD mock (all mocked in-browser)
+  const [projects, setProjects] = useState<Project[]>(initial);
   const [showForm, setShowForm] = useState(false);
-  const [formData, setFormData] = useState({ title: '', description: '', imageUrl: '', tags: '', link: '' });
+  const [formData, setFormData] = useState({ title: "", description: "", imageUrl: "", tags: "", link: "" });
 
-  useEffect(() => {
-    fetchProjects();
-  }, []);
+  // Keep state in sync if hook returns new data
+  React.useEffect(() => {
+    setProjects(initial);
+  }, [JSON.stringify(initial)]);
 
-  const fetchProjects = async () => {
-    try {
-      const res = await fetch('/api/projects');
-      const data = await res.json();
-      if (data.success) {
-        setProjects(data.data);
-      }
-    } catch (err) {
-      console.error('Erro ao buscar projetos:', err);
-    } finally {
-      setLoading(false);
-    }
-  };
+  const nextId = useMemo(() => {
+    return projects.length > 0 ? Math.max(...projects.map((p) => p.id)) + 1 : 1;
+  }, [projects]);
 
-  const handleAddProject = async (e: React.FormEvent) => {
+  const handleAddProject = (e: React.FormEvent) => {
     e.preventDefault();
-    try {
-      const res = await fetch('/api/projects', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
-      const data = await res.json();
-      if (data.success) {
-        setProjects([data.data, ...projects]);
-        setFormData({ title: '', description: '', imageUrl: '', tags: '', link: '' });
-        setShowForm(false);
-      }
-    } catch (err) {
-      console.error('Erro ao adicionar projeto:', err);
-    }
+    const newProject: Project = { id: nextId, ...formData } as any;
+    setProjects([newProject, ...projects]);
+    setFormData({ title: "", description: "", imageUrl: "", tags: "", link: "" });
+    setShowForm(false);
   };
 
-  const handleDeleteProject = async (id: number) => {
-    try {
-      const res = await fetch(`/api/projects?id=${id}`, { method: 'DELETE' });
-      const data = await res.json();
-      if (data.success) {
-        setProjects(projects.filter(p => p.id !== id));
-      }
-    } catch (err) {
-      console.error('Erro ao deletar projeto:', err);
-    }
+  const handleDeleteProject = (id: number) => {
+    setProjects(projects.filter((p) => p.id !== id));
   };
 
   if (loading) {
-    return <div className="text-center text-gray-400">Carregando projetos...</div>;
+    return (
+      <div className="w-full">
+        <div className="mb-4 flex justify-between items-center">
+          <h3 className="text-2xl font-bold text-cyan-400">Galeria de Projetos</h3>
+        </div>
+        <div className="text-gray-400">Carregando projetos…</div>
+      </div>
+    );
   }
 
   return (
