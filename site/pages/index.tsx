@@ -3,13 +3,12 @@ import LoadingScreen from "@/src/components/common/LoadScreen";
 import AboutSection from "@/src/components/layout/AboutSection";
 import ContactSection from "@/src/components/layout/ContactSection";
 import MainCard from "@/src/components/layout/Profile_Card";
-import CTACards from '@/src/components/layout/CTACards'
+import CTACards from "@/src/components/layout/CTACards";
 import ProjectsSection from "@/src/components/layout/GitSection";
 import ContactModal from "@/src/components/common/ContactModal";
 import Head from "next/head";
 import { ReactElement, useEffect, useState } from "react";
 import { AiFillHome } from "react-icons/ai";
-import { Box, Card, Inset, Strong, Text } from "@radix-ui/themes";
 import MarkdownRenderer from "@/src/components/MarkdownRenderer";
 import HistorySectionServer from "@/src/components/layout/HistorySectionServer";
 import { HistoryItem } from "@/src/types";
@@ -25,7 +24,40 @@ interface HomeProps {
   historyFiles: HistoryItem[];
 }
 
-export default function Home({ markdownContent, frontmatter, historyFiles }: HomeProps): ReactElement {
+function parseMarkdownWithFrontmatter(fileContent: string): {
+  content: string;
+  data: Record<string, any>;
+} {
+  if (!fileContent.startsWith("---")) {
+    return { content: fileContent, data: {} };
+  }
+
+  const endIndex = fileContent.indexOf("\n---", 3);
+  if (endIndex === -1) {
+    return { content: fileContent, data: {} };
+  }
+
+  const rawFrontmatter = fileContent.slice(3, endIndex).trim();
+  const body = fileContent.slice(endIndex + 4).replace(/^\s+/, "");
+
+  const data: Record<string, any> = {};
+  rawFrontmatter.split("\n").forEach((line) => {
+    const [key, ...rest] = line.split(":");
+    if (!key || rest.length === 0) return;
+    let value = rest.join(":").trim();
+    value = value.replace(/^['"]|['"]$/g, "");
+    const num = Number(value);
+    data[key.trim()] = Number.isNaN(num) ? value : num;
+  });
+
+  return { content: body, data };
+}
+
+export default function Home({
+  markdownContent,
+  frontmatter,
+  historyFiles,
+}: HomeProps): ReactElement {
   const [bootDone, setBootDone] = useState<boolean>(false);
   const [showContactModal, setShowContactModal] = useState<boolean>(false);
   const [showAdminPanel, setShowAdminPanel] = useState<boolean>(false);
@@ -121,7 +153,6 @@ export default function Home({ markdownContent, frontmatter, historyFiles }: Hom
             <div className="flex gap-4 md:flex-row flex-col">
               <GaleryProjects />
               {/* <GitSection /> */}
-
             </div>
 
             <ContactSection
@@ -130,7 +161,7 @@ export default function Home({ markdownContent, frontmatter, historyFiles }: Hom
               showAdminButton={adminAccess}
             />
             <HistorySectionServer items={historyFiles} />
-              <ContactSection
+            <ContactSection
               onOpenContact={() => setShowContactModal(true)}
               onOpenAdmin={() => setShowAdminPanel(true)}
               showAdminButton={adminAccess}
@@ -152,22 +183,23 @@ export async function getStaticProps() {
   // Ler todos os arquivos markdown em /content no build
   const fs = require("fs");
   const path = require("path");
-  const matter = require("gray-matter");
 
   try {
     const contentDir = path.join(process.cwd(), "content");
-    const files = fs.readdirSync(contentDir).filter((f: string) => f.endsWith(".md"));
+    const files = fs
+      .readdirSync(contentDir)
+      .filter((f: string) => f.endsWith(".md"));
 
     const items = files.map((fileName: string) => {
       const filePath = path.join(contentDir, fileName);
       const fileContent = fs.readFileSync(filePath, "utf-8");
-      const { content, data } = matter(fileContent);
+      const { content, data } = parseMarkdownWithFrontmatter(fileContent);
 
       return {
         slug: fileName.replace(/\.md$/i, ""),
         title: data?.title || null,
         excerpt: data?.excerpt || null,
-        order: typeof data?.order === 'number' ? data.order : null,
+        order: typeof data?.order === "number" ? data.order : null,
         content,
       };
     });

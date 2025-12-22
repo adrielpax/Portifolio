@@ -1,18 +1,14 @@
 /* eslint-disable @next/next/google-font-display */
-import '@/styles/globals.css';
-import type { AppProps } from 'next/app';
-import { Theme } from "@radix-ui/themes";
+import "@/styles/globals.css";
+import type { AppProps } from "next/app";
 
-import Nav from '@/src/components/layout/Nav';
-import Footer from '@/src/components/layout/Footer';
+import Nav from "@/src/components/layout/Nav";
+import Footer from "@/src/components/layout/Footer";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
-    
       {/* Nav colocado no layout global sem alterar o design das páginas */}
-
-
       <main>
         <div className="fixed inset-0 -z-50">
           <div
@@ -20,9 +16,9 @@ export default function App({ Component, pageProps }: AppProps) {
             className="w-full h-full"
             style={{
               backgroundImage: "url('/images/bg-two.png')",
-              backgroundAttachment: 'fixed',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
+              backgroundAttachment: "fixed",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
             }}
           />
         </div>
