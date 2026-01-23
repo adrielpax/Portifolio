@@ -1,5 +1,5 @@
 ## Prólogo — O Incômodo que Virou Direção
-Adriel sempre sentiu que algo maior o chamava. Entre eletrônica, tecnologia e ideias empreendedoras, decidiu transformar inquietação em ação: **criar soluções digitais que resolvem problemas reais**.
+Sempre senti que algo maior me chamava. Entre circuitos eletrônicos, linhas de código e ideias que não me deixavam dormir, tomei uma decisão: **criar soluções digitais que resolvem problemas reais**.
 
 ---
 
@@ -11,15 +11,15 @@ Adriel sempre sentiu que algo maior o chamava. Entre eletrônica, tecnologia e i
 ---
 
 ## 2. A Queda que Desencadeou o Movimento
-Após dois meses como técnico em eletrônica, Adriel foi demitido.
+Após dois meses como técnico em eletrônica, fui demitido.
 Esse momento se transformou em gatilho para uma reinvenção:
 
-> **“Se o mercado não me dá estabilidade, eu crio o meu próprio caminho.”**
+> **"Se o mercado não me dá estabilidade, eu crio o meu próprio caminho."**
 
 ---
 
 ## 3. Aprendizado e as Ferramentas do Herói
-Adriel construiu uma base sólida de habilidades e tecnologias:
+Construí uma base sólida de habilidades e tecnologias:
 
 ### **Automação**
 - n8n
@@ -52,7 +52,7 @@ Adriel construiu uma base sólida de habilidades e tecnologias:
 ---
 
 ## 4. Provas, Aliados e Primeiros Produtos
-Adriel começou a entregar valor com:
+Comecei a entregar valor com:
 
 - **Fluxos de automação em n8n** que conectam ferramentas e aumentam eficiência.
 - **Integrações entre plataformas e APIs** (WooCommerce, Mercado Livre, Nuvemshop).
@@ -63,21 +63,21 @@ Adriel começou a entregar valor com:
 ---
 
 ## 5. Transformação — De Técnico a Arquiteto de Soluções
-Adriel deixou de ser apenas executor e se tornou **arquiteto digital**:
+Deixei de ser apenas executor e me tornei **arquiteto digital**:
 
-- Conecta tecnologias.
-- Cria sistemas que se comunicam.
-- Automatiza processos para gerar valor real.
-- Constrói ecossistemas: front → back → infra → automação.
+- Conecto tecnologias.
+- Crio sistemas que se comunicam.
+- Automatizo processos para gerar valor real.
+- Construo ecossistemas: front → back → infra → automação.
 
-Sua assinatura se resume em três pilares:
+Minha assinatura se resume em três pilares:
 1. **Eficiência**
 2. **Escalabilidade**
 3. **Clareza**
 
 ---
 
-## 6. O Elixir — O que Adriel Entrega aos Clientes
+## 6. O Elixir — O que Entrego aos Clientes
 > **"Eu automatizo o que trava, integro o que está solto e construo o que falta para transformar ideias em sistemas que funcionam."**
 
 Os resultados falam por si:

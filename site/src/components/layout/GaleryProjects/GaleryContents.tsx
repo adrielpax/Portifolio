@@ -1,5 +1,6 @@
 "use client";
 
+import Image from 'next/image';
 import React, { useState } from 'react'
 import { FaLocationArrow } from "react-icons/fa";
 
@@ -7,23 +8,30 @@ const GaleryContentsProps = [
     {
         title: "Web E-Commerce Precinho rei",
         description: " Projeto de e-commerce completo com carrinho de compras, sistema de pagamento integrado e painel administrativo para gerenciar produtos e pedidos.",
-        link: "#",
+        link: "https://precinhorei.vercel.app",
         habilidades: ["React", "Node.js", "MongoDB", "Stripe"],
-        imageUrl: "/images/img1.png",
+        imageUrl: "/images/precinhorei.png",
     },
     {
         title: "Web App Meu Barbeiro App",
         description: " Aplicativo web para agendamento de serviços em barbearias, com sistema de notificações e perfil de usuário.",
-        link: "#",
+        link: "https://barberboost.vercel.app",
         habilidades: ["React", "Node.js", "Firebase"],
-        imageUrl: "/images/img2.png",    
+        imageUrl: "/images/meubarbeiro.png",    
     },
     {
         title: "Landing Page Elluxus Vidraçaria",
         description: " Landing page moderna e responsiva para uma vidraçaria, destacando serviços, portfólio e formulário de contato.",
         habilidades: ["HTML", "CSS", "JavaScript"],
-        link: "#",
-        imageUrl: "/images/img.png",    
+        link: "https://elluxus.vercel.app",
+        imageUrl: "/images/elluxus.png",    
+    },
+    {
+        title: "Website Elevar Digital",
+        description: " Website institucional para uma agência de marketing digital, com seções sobre a empresa, serviços oferecidos e blog.",
+        habilidades: ["Next.js", "Tailwind CSS"],
+        link: "https://elevar-digital.vercel.app",
+        imageUrl: "/images/elevardigital.png",    
     }
 ]
 
@@ -37,7 +45,7 @@ function GaleryContents() {
             max-w-sm hover:border-cyan-400/50 transition-all backdrop-blur-md 
             '>
                 <div className='w-full overflow-hidden rounded-lg object-fill'>
-                    <img src={gallery.imageUrl} alt={gallery.title} className=''/>
+                    <Image src={gallery.imageUrl} alt={gallery.title} objectFit='contain' width={400} height={400}/>
                 </div>
                 <div className='w-full'>
                     <h3 className=' text-white font-bold text-lg mb-2'>

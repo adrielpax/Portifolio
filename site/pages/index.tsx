@@ -114,21 +114,21 @@ export default function Home({
             <HardSkillContent/>
             <HabilityCards />
 
-            <ContactSection
+            {/* <ContactSection
               onOpenContact={() => setShowContactModal(true)}
               onOpenAdmin={() => setShowAdminPanel(true)}
               showAdminButton={adminAccess}
-            />
+            /> */}
             <div className="flex gap-4 md:flex-row flex-col">
               <GaleryProjects />
               {/* <GitSection /> */}
             </div>
 
-            <ContactSection
+            {/* <ContactSection
               onOpenContact={() => setShowContactModal(true)}
               onOpenAdmin={() => setShowAdminPanel(true)}
               showAdminButton={adminAccess}
-            />
+            /> */}
             <HistorySectionServer items={historyFiles} />
             <ContactSection
               onOpenContact={() => setShowContactModal(true)}
