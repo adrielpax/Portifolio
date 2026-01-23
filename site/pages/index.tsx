@@ -17,6 +17,8 @@ import Nav from "@/src/components/layout/Nav";
 import ProjectCard from "@/src/components/layout/HabilityCards";
 import GitSection from "@/src/components/layout/GitSection";
 import GaleryProjects from "@/src/components/layout/GaleryProjects";
+import HardSkillContent from "@/src/components/HardSkillsContent";
+import HabilityCards from "@/src/components/layout/HabilityCards";
 
 interface HomeProps {
   markdownContent: string;
@@ -100,50 +102,17 @@ export default function Home({
 
   return (
     <>
-      {/* <Head>
-        <div>
-          <title key={1}>Adriel Lucas | Desenvolvedor Full Stack</title>
-          <meta
-            name="description"
-            content="Portfólio pessoal de Adriel Lucas — Desenvolvedor Full Stack especializado em interfaces modernas, automação e soluções digitais."
-          />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <meta name="theme-color" content="#000000" />
-          <link rel="icon" href="/favicon.ico" />
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link
-            rel="preconnect"
-            href="https://fonts.gstatic.com"
-            crossOrigin=""
-          />
-        
-        </div>
-      </Head> */}
+     
       <main className="relative bg-transparent min-h-screen flex gap-4 justify-between px-4 font-mono">
         <LoadingScreen />
         <div className="relative z-10 text-white w-full">
-          {/* <Nav /> */}
-          {/* Header simples */}
-          {/* <header className="w-full text-center py-8 max-w-[875px] mx-auto bg-white/5 backdrop-blur-sm rounded-lg px-4
-          mt-6 mb-8 border border-white/10 flex flex-row items-center justify-between gap-4">
-          
-          <div className="text-left">
-
-            <h1 className="flex items-center justify-end mt-0 p-0 text-lg">Desenvolvedor de Software</h1>
-            <span className="text-cyan-500 flex items-center justify-end text-xs mt-0 p-0">Adriel Lucas ○ Portifolio Pessoal</span>
-          </div>
-
-          <div className="flex items-center gap-6 text-sm">
-            <Link href="#" className="flex items-center gap-2 rounded-full border border-white/5 bg-white/10 px-3 py-1"> <AiFillHome className="w-4 h-4" /> Inicio </Link>
-            <Link href="#" className="flex items-center gap-2 rounded-full border border-white/5 bg-white/10 px-3 py-1">Sobre mim</Link>
-            <Link href="#" className="flex items-center gap-2 rounded-full border border-white/5 bg-white/10 px-3 py-1">Contato</Link>
-          </div>
-          </header> */}
+         
           {/* Seção principal */}
           <section className="flex flex-col items-center justify-center gap-4 max-w-[875px] mx-auto">
             <MainCard onOpenContact={() => setShowContactModal(true)} />
             {/* <CTACards onOpenContact={() => setShowContactModal(true)} /> */}
-            <ProjectCard />
+            <HardSkillContent/>
+            <HabilityCards />
 
             <ContactSection
               onOpenContact={() => setShowContactModal(true)}
