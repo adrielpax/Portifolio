@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import React, { useState } from 'react';
-import { AiFillHome } from 'react-icons/ai';
+
 
 interface NavLink {
   label: string;

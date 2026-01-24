@@ -8,7 +8,7 @@ import ProjectsSection from "@/src/components/layout/GitSection";
 import ContactModal from "@/src/components/common/ContactModal";
 import Head from "next/head";
 import { ReactElement, useEffect, useState } from "react";
-import { AiFillHome } from "react-icons/ai";
+
 import MarkdownRenderer from "@/src/components/MarkdownRenderer";
 import HistorySectionServer from "@/src/components/layout/HistorySectionServer";
 import { HistoryItem } from "@/src/types";
