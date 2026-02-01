@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import { FaTimes, FaSpinner, FaPaperPlane } from 'react-icons/fa';
+
 import { ContactModalProps, ContactForm } from '@/src/types';
 import { useContacts } from '@/src/hooks/useContacts';
 
@@ -67,7 +67,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ onClose }) => {
             disabled={isSubmitting}
             aria-label="Fechar modal"
           >
-            <FaTimes />
+            {/* <FaTimes /> */}
           </button>
         </div>
         
@@ -128,12 +128,12 @@ const ContactModal: React.FC<ContactModalProps> = ({ onClose }) => {
           >
             {isSubmitting ? (
               <>
-                <FaSpinner className="animate-spin" />
+                {/* <FaSpinner className="animate-spin" /> */}
                 Enviando...
               </>
             ) : (
               <>
-                <FaPaperPlane />
+                {/* <FaPaperPlane /> */}
                 Enviar Mensagem
               </>
             )}
