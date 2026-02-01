@@ -39,7 +39,7 @@ export default function AboutPage({ content, data }: AboutPageProps) {
   return (
     <main className="relative min-h-screen flex gap-4 justify-between px-4 font-mono">
       <div className="fixed -z-50 h-full w-full">
-        <img src="/images/bg-two.png" width={"100%"} height={"100"} />
+        <img src="/images/bg-two.png" width={"100%"} height={"100"} alt="plano de fundo"/>
       </div>
 
       <div className="relative z-10 text-white w-full py-8">

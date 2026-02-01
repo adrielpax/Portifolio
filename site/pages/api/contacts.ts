@@ -3,6 +3,32 @@ import { ContactForm, ContactResponse, ContactsResponse } from '@/src/types';
 
 // Use local SQLite DB via src/lib/db.ts
 const dbLib = require('@/src/lib/db');
+const MAKE_WEBHOOK_URL = process.env.MAKE_WEBHOOK_URL;
+
+async function sendToMakeWebhook(payload: Record<string, any>): Promise<void> {
+  if (!MAKE_WEBHOOK_URL) return;
+
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 5000);
+
+  try {
+    const response = await fetch(MAKE_WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+      signal: controller.signal,
+    });
+
+    if (!response.ok) {
+      const text = await response.text().catch(() => '');
+      console.warn('Make webhook falhou:', response.status, text);
+    }
+  } catch (error) {
+    console.warn('Make webhook erro:', error);
+  } finally {
+    clearTimeout(timeout);
+  }
+}
 
 export default async function handler(
   req: NextApiRequest,
@@ -36,6 +62,15 @@ export default async function handler(
 
       // Inserir no SQLite
       const id = dbLib.insertContact({ name: contactData.name.trim(), email: contactData.email.trim(), message: contactData.message.trim(), timestamp });
+
+      // Enviar para Make (opcional)
+      await sendToMakeWebhook({
+        name: contactData.name.trim(),
+        email: contactData.email.trim(),
+        message: contactData.message.trim(),
+        timestamp,
+        source: 'portfolio',
+      });
 
       return res.status(200).json({ success: true, message: 'Contato salvo', } as ContactResponse);
 

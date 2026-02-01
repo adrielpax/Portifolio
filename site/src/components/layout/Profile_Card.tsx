@@ -50,7 +50,7 @@ const MainCard: React.FC<MainCardProps> = ({ onOpenContact }) => {
           ) : (
 
           
-              <img className="rounded-full 
+              <img alt="avatar" className="rounded-full 
             cursor-pointer w-44 h-44 border-4 border-white/5 -mt-12 md:m-0" src={avatarImage} />
         
         
