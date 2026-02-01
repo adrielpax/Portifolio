@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react'
-import { FaLocationArrow } from "react-icons/fa";
+
 
 const GaleryContentsProps = [
     {
@@ -50,7 +50,8 @@ function GaleryContents() {
                         {gallery.description}
                     </p>
                     <a href={gallery.link} className='text-cyan-500 hover:underline mt-4 inline-flex items-center justify-center gap-2 w-full bg-white/10 rounded-full px-2 py-1 shadow-lg hover:bg-white/20 transition-colors duration-200 border border-white/10 text-xs'>
-                        <FaLocationArrow /> ver mais
+                        {/* <FaLocationArrow /> */}
+                         ver mais
                     </a>
                 </div>
             </div>

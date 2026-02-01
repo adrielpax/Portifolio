@@ -1,13 +1,13 @@
 import React, { ReactElement, useEffect } from "react";
-import {
-  FaCode,
-  FaStar,
-  FaCodeBranch,
-  FaExternalLinkAlt,
-  FaSpinner,
-  FaExclamationTriangle,
-  FaFolderOpen,
-} from "react-icons/fa";
+// import {
+//   FaCode,
+//   FaStar,
+//   FaCodeBranch,
+//   FaExternalLinkAlt,
+//   FaSpinner,
+//   FaExclamationTriangle,
+//   FaFolderOpen,
+// } from "react-icons/fa";
 import { useGitHub } from "@/src/hooks/useGitHub";
 import { GitHubRepo } from "@/src/types";
 
@@ -37,11 +37,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => (
     <div className="flex justify-between items-center">
       <div className="flex items-center gap-4 text-xs text-gray-400">
         <span className="flex items-center gap-1">
-          <FaStar className="text-yellow-500" />
+          {/* <FaStar className="text-yellow-500" /> */}
           {project.stargazers_count}
         </span>
         <span className="flex items-center gap-1">
-          <FaCodeBranch />
+          {/* <FaCodeBranch /> */}
           {project.forks_count}
         </span>
       </div>
@@ -52,7 +52,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => (
         className="text-cyan-400 hover:text-green-300 transition-colors"
         aria-label={`Ver projeto ${project.name} no GitHub`}
       >
-        <FaExternalLinkAlt className="text-sm" />
+        {/* <FaExternalLinkAlt className="text-sm" /> */}
       </a>
     </div>
   </div>
@@ -60,7 +60,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => (
 
 const LoadingState: React.FC = () => (
   <div className="text-center text-gray-400 py-8">
-    <FaSpinner className="animate-spin text-2xl mb-2 mx-auto" />
+    {/* <FaSpinner className="animate-spin text-2xl mb-2 mx-auto" /> */}
     <p className="text-sm">Carregando projetos...</p>
   </div>
 );
@@ -71,7 +71,7 @@ interface ErrorStateProps {
 
 const ErrorState: React.FC<ErrorStateProps> = ({ onRetry }) => (
   <div className="text-center text-red-400 py-8">
-    <FaExclamationTriangle className="text-2xl mb-2 mx-auto" />
+    {/* <FaExclamationTriangle className="text-2xl mb-2 mx-auto" /> */}
     <p className="text-sm mb-2">Erro ao carregar projetos</p>
     <button
       onClick={onRetry}
@@ -84,7 +84,7 @@ const ErrorState: React.FC<ErrorStateProps> = ({ onRetry }) => (
 
 const EmptyState: React.FC = () => (
   <div className="text-center text-gray-400 py-8">
-    <FaFolderOpen className="text-2xl mb-2 mx-auto" />
+    {/* <FaFolderOpen className="text-2xl mb-2 mx-auto" /> */}
     <p className="text-sm">Nenhum projeto encontrado</p>
   </div>
 );
@@ -114,7 +114,7 @@ const GitSection: React.FC = () => {
     <div className="w-full max-w-[925px]">
       <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6">
         <h3 className="text-xl font-bold mb-4 text-cyan-400 flex items-center gap-2">
-          <FaCode />
+          {/* <FaCode /> */}
           Git Section
         </h3>
         {renderContent()}

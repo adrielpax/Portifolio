@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import MarkdownRenderer from "@/src/components/MarkdownRenderer";
-import { FaChevronLeft, FaChevronRight, FaListUl } from "react-icons/fa";
+// import { FaChevronLeft, FaChevronRight, FaListUl } from "react-icons/fa";fa
 import { HistoryItem } from "@/src/types";
 
 interface HistorySectionProps {
@@ -17,7 +17,8 @@ const HistorySection: React.FC<HistorySectionProps> = ({ items }) => {
       <div className="w-full max-w-[875px]">
         <div className="flex flex-row bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6">
           <h3 className="text-xl font-bold mb-4 text-cyan-400 flex items-center gap-2">
-            <FaListUl /> Minha História
+            {/* <FaListUl /> */}
+             Minha História
           </h3>
           <p className="text-gray-400 text-sm">Nenhuma história encontrada.</p>
         </div>
@@ -32,7 +33,8 @@ const HistorySection: React.FC<HistorySectionProps> = ({ items }) => {
       <div className="flex flex-col md:flex-row bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6">
         <div className="flex flex-col md:flex-row items-center justify-between mb-4">
           <h3 className="text-xl font-bold text-cyan-400 flex items-center gap-2">
-            <FaListUl /> Minha História
+            {/* <FaListUl /> */}
+             Minha História
           </h3>
           <div className="flex items-center gap-2">
             <button
@@ -40,7 +42,7 @@ const HistorySection: React.FC<HistorySectionProps> = ({ items }) => {
               disabled={index === 0}
               className="px-3 py-1 bg-black/20 rounded disabled:opacity-40"
             >
-              <FaChevronLeft />
+              {/* <FaChevronLeft /> */}
             </button>
             <span className="text-sm text-gray-300">{index + 1} / {items.length}</span>
             <button
@@ -48,7 +50,7 @@ const HistorySection: React.FC<HistorySectionProps> = ({ items }) => {
               disabled={index === items.length - 1}
               className="px-3 py-1 bg-black/20 rounded disabled:opacity-40"
             >
-              <FaChevronRight />
+              {/* <FaChevronRight /> */}
             </button>
           </div>
         </div>

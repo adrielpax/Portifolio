@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+
 import { MdVerified } from "react-icons/md";
 import { TfiTag } from "react-icons/tfi";
 
@@ -10,17 +10,17 @@ const mockLinks = [
   {
     name: "GitHub",
     url: "https://github.com/adrielpax",
-    icon: <FaGithub className="w-5 h-5" />
+    icon: "",//<FaGithub className="w-5 h-5" />
   },
   {
     name: "LinkedIn",
     url: "https://linkedin.com/in/adriel-lucas",
-    icon: <FaLinkedin className=" w-5 h-5" />
+    icon: "",//<FaLinkedin className=" w-5 h-5" />
   },
   {
     name: "Email",
     url: "mailto:adrielsilva.ext@gmail.com",
-    icon: <FaEnvelope className=" w-5 h-5" />
+    icon: "",//<FaEnvelope className=" w-5 h-5" />
   }
 ]
 
@@ -89,8 +89,8 @@ const MainCard: React.FC<MainCardProps> = ({ onOpenContact }) => {
               </div>
                  <button
             onClick={onOpenContact}
-            className="w-full self-center max-w-[256px] bg-gradient-to-r from-green-500/80 to-blue-500/80 border-white/10 border-2 
-            hover:from-green-600 hover:to-blue-600 px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-green-500/25 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50"
+            className="w-auto self-center bg-gradient-to-r text-sm from-green-500/30 to-blue-500/30 border-white/10 border-2 
+            hover:from-green-600 hover:to-blue-600 p-2 scale-90 px-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-green-500/25 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50"
           >
             Entrar em Contato
           </button>

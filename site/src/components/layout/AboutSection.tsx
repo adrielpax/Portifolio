@@ -1,11 +1,11 @@
 import { ReactNode } from "react";
-import {
-  FaUser,
-  FaLaptopCode,
-  FaServer,
-  FaDatabase,
-  FaMobileAlt,
-} from "react-icons/fa";
+// import {
+//   FaUser,
+//   FaLaptopCode,
+//   FaServer,
+//   FaDatabase,
+//   FaMobileAlt,
+// } from "react-icons/fa";
 
 interface Skill {
   icon: ReactNode;
@@ -16,17 +16,17 @@ interface Skill {
 const AboutSection: React.FC = () => {
   const skills: Skill[] = [
     {
-      icon: <FaLaptopCode className="text-2xl text-cyan-400" />,
+      icon: "",//<FaLaptopCode className="text-2xl text-cyan-400" />,
       label: "Frontend",
       description: "React, Next.js, HTML, CSS, JavaScript",
     },
     {
-      icon: <FaServer className="text-2xl text-blue-400" />,
+      icon: "",//<FaServer className="text-2xl text-blue-400" />,
       label: "Backend",
       description: "Node.js, Python, Java",
     },
     {
-      icon: <FaDatabase className="text-2xl text-purple-400" />,
+      icon: "",//<FaDatabase className="text-2xl text-purple-400" />,
       label: "Database",
       description: "MySQL, PostgreSQL, MongoDB",
     },
@@ -41,7 +41,7 @@ const AboutSection: React.FC = () => {
     <div className="w-full">
       <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6">
         <h3 className="text-xl font-bold mb-4 text-cyan-400 flex items-center gap-2">
-          <FaUser />
+          {/* <FaUser /> */}
           Habilidade Tecnicas
         </h3>
 

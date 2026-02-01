@@ -110,9 +110,15 @@ export default function Home({
           {/* Seção principal */}
           <section className="flex flex-col items-center justify-center gap-4 max-w-[875px] mx-auto">
             <MainCard onOpenContact={() => setShowContactModal(true)} />
+              
             {/* <CTACards onOpenContact={() => setShowContactModal(true)} /> */}
             <HardSkillContent/>
             <HabilityCards />
+             <ContactSection
+              onOpenContact={() => setShowContactModal(true)}
+              onOpenAdmin={() => setShowAdminPanel(true)}
+              showAdminButton={adminAccess}
+            />
 
             {/* <ContactSection
               onOpenContact={() => setShowContactModal(true)}

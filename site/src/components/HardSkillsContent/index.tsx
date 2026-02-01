@@ -25,7 +25,7 @@ const HardSkillContentProps = [
    function HardSkillContent() {
   // await new Promise((resolve) => setTimeout(resolve, 0));
   return (
-    <div className='flex flex-col w-auto'>
+    <div className='flex flex-col w-auto my-12'>
         <div className='flex flex-wrap gap-2 justify-center items-start'>
         {HardSkillContentProps.map((skill) => (
           <div key={skill.level}  >
