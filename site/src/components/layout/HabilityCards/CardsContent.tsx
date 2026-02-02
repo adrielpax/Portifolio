@@ -3,9 +3,7 @@ import React from 'react'
 import Image from 'next/image';
 // import  { SiN8N }  from "react-icons/si";
 // import { RiNextjsLine } from "react-icons/ri";
-import { FaWordpress } from "react-icons/fa";
-import { FaPython } from "react-icons/fa";
-import { FaNodeJs } from "react-icons/fa";
+
 
 const CardContentProps = [
     {

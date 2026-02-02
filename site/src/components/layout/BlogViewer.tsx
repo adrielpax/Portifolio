@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import MarkdownRenderer from "@/src/components/MarkdownRenderer";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 interface BlogPost {
   slug: string;
@@ -55,7 +54,6 @@ export default function BlogViewer({ posts }: Props) {
               disabled={currentIndex === 0}
               className="px-3 py-2 bg-white/5 rounded disabled:opacity-40 hover:bg-white/10 transition-colors"
             >
-              <FaChevronLeft />
             </button>
             <span className="text-sm text-gray-300">{currentIndex + 1} / {posts.length}</span>
             <button
@@ -63,7 +61,6 @@ export default function BlogViewer({ posts }: Props) {
               disabled={currentIndex === posts.length - 1}
               className="px-3 py-2 bg-white/5 rounded disabled:opacity-40 hover:bg-white/10 transition-colors"
             >
-              <FaChevronRight />
             </button>
           </div>
         </div>

@@ -1,6 +1,7 @@
 
 import { MdVerified } from "react-icons/md";
 import { TfiTag } from "react-icons/tfi";
+import { Github } from 'lucide-react';
 
 interface MainCardProps {
   onOpenContact?: () => void;
@@ -10,7 +11,7 @@ const mockLinks = [
   {
     name: "GitHub",
     url: "https://github.com/adrielpax",
-    icon: "",//<FaGithub className="w-5 h-5" />
+    icon: <Github />
   },
   {
     name: "LinkedIn",

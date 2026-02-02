@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import React, { useState } from 'react'
-import { FaLocationArrow } from "react-icons/fa";
+
 
 const GaleryContentsProps = [
     {
@@ -65,7 +65,7 @@ function GaleryContents() {
                     text-cyan-500 hover:underline mt-4 inline-block bg-white/10 rounded-full px-2 py-1
                     shadow-lg hover:bg-white/20 transition-colors duration-200 blur-effect 
                     border border-white/10 flex w-full items-center justify-center items-center gap-2 w-auto text-xs'>
-                        <FaLocationArrow /> ver mais
+                         ver mais
                     </a>
                 </div>
             </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { FaEnvelope, FaUserShield } from "react-icons/fa";
+
 import { ContactSectionProps } from "@/src/types";
 import useSanityFetch from "@/src/hooks/useSanityFetch";
 
@@ -18,7 +18,6 @@ const ContactSection: React.FC<ContactSectionProps> = ({
     <div className="w-full min-w-[356px] ">
       <div className="w-full bg-white/5 hover:bg-white/20 backdrop-blur-md border border-white/10 rounded-xl p-6">
         <h3 className="text-xl font-bold mb-4 text-cyan-400 flex items-center gap-2">
-          <FaEnvelope />
           Contato
           {loading ? (
             <span className="ml-3 text-sm text-gray-400">• carregando…</span>
@@ -48,7 +47,6 @@ const ContactSection: React.FC<ContactSectionProps> = ({
               onClick={onOpenAdmin}
               className="w-full  bg-red-600/80 hover:bg-red-600 px-4 py-2 rounded-lg text-sm transition-colors duration-300 flex items-center justify-center gap-2 border border-red-500/30 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-opacity-50"
             >
-              <FaUserShield />
               Painel Admin
             </button>
           )}
