@@ -67,6 +67,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ onClose }) => {
             disabled={isSubmitting}
             aria-label="Fechar modal"
           >
+            Fechar
             {/* <FaTimes /> */}
           </button>
         </div>
