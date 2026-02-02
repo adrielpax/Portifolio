@@ -1,13 +1,5 @@
 import React, { ReactElement, useEffect } from "react";
-// import {
-//   FaCode,
-//   FaStar,
-//   FaCodeBranch,
-//   FaExternalLinkAlt,
-//   FaSpinner,
-//   FaExclamationTriangle,
-//   FaFolderOpen,
-// } from "react-icons/fa";
+
 import { useGitHub } from "@/src/hooks/useGitHub";
 import { GitHubRepo } from "@/src/types";
 

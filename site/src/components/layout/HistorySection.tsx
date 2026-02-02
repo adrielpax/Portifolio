@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import MarkdownRenderer from "@/src/components/MarkdownRenderer";
-// import { FaChevronLeft, FaChevronRight, FaListUl } from "react-icons/fa";fa
+
 import { HistoryItem } from "@/src/types";
 
 interface HistorySectionProps {

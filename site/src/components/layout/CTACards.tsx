@@ -2,7 +2,7 @@
 
 import React from 'react'
 import Link from 'next/link'
-import { FaEnvelope, FaProjectDiagram, FaNewspaper } from 'react-icons/fa'
+
 
 interface CTACardsProps {
   onOpenContact?: () => void
@@ -14,7 +14,7 @@ const CTACards: React.FC<CTACardsProps> = ({ onOpenContact }) => {
       id: 'contact',
       title: 'Entrar em Contato',
       desc: 'Fale sobre projetos, vagas ou parcerias. Respondo rápido!',
-      icon: <FaEnvelope className="w-5 h-5" />,
+      icon: "",
       action: () => onOpenContact && onOpenContact(),
       aria: 'Abrir formulário de contato',
     },
@@ -22,7 +22,7 @@ const CTACards: React.FC<CTACardsProps> = ({ onOpenContact }) => {
       id: 'projects',
       title: 'Ver Projetos',
       desc: 'Veja projetos recentes, estudos de caso e tecnologias utilizadas.',
-      icon: <FaProjectDiagram className="w-5 h-5" />,
+      icon: "",
       href: '/showcase',
       aria: 'Ir para projetos',
     },
@@ -30,7 +30,7 @@ const CTACards: React.FC<CTACardsProps> = ({ onOpenContact }) => {
       id: 'blog',
       title: 'Ler o Blog',
       desc: 'Artigos sobre desenvolvimento, automação e dicas práticas.',
-      icon: <FaNewspaper className="w-5 h-5" />,
+      icon: "",
       href: '/blog',
       aria: 'Ir para o blog',
     },

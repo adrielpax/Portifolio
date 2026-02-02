@@ -1,11 +1,5 @@
 import { ReactNode } from "react";
-// import {
-//   FaUser,
-//   FaLaptopCode,
-//   FaServer,
-//   FaDatabase,
-//   FaMobileAlt,
-// } from "react-icons/fa";
+
 
 interface Skill {
   icon: ReactNode;
