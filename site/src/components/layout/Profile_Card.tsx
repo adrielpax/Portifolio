@@ -1,7 +1,5 @@
 
-import { MdVerified } from "react-icons/md";
-import { TfiTag } from "react-icons/tfi";
-import { Github } from 'lucide-react';
+import { BadgeCheck, Github, Linkedin, Mail, Send } from 'lucide-react';
 
 interface MainCardProps {
   onOpenContact?: () => void;
@@ -11,17 +9,17 @@ const mockLinks = [
   {
     name: "GitHub",
     url: "https://github.com/adrielpax",
-    icon: <Github />
+    icon: <Github className='w-5 h-5'/>
   },
   {
     name: "LinkedIn",
     url: "https://linkedin.com/in/adriel-lucas",
-    icon: "",//<FaLinkedin className=" w-5 h-5" />
+    icon:  <Linkedin className='w-5 h-5'/>,
   },
   {
     name: "Email",
     url: "mailto:adrielsilva.ext@gmail.com",
-    icon: "",//<FaEnvelope className=" w-5 h-5" />
+    icon:     <Mail className='w-5 h-5'/>
   }
 ]
 
@@ -59,7 +57,8 @@ const MainCard: React.FC<MainCardProps> = ({ onOpenContact }) => {
 
           {/* Info */}
           <div className="flex flex-col">
-            <h2 className="text-2xl text-white flex text-left items-center font-bold gap-2 mb-2">  <MdVerified className="text-blue-600 text-shadow-yellow-400/80" /> Adriel L.  </h2>
+            <h2 className="text-2xl text-white flex text-left items-center font-bold gap-2 mb-2"> 
+               <BadgeCheck className='text-blue-500' /> Adriel L.  </h2>
             <p className="text-cyan-400/60 text-left mb-4">Analista de Sistemas Web | Soluções Tecnologicas e Digitais</p>
             <p className="text-gray-200/50  text-sm leading-relaxed mb-6 text-left ">
               Especializado em interfaces modernas, automação e soluções
@@ -91,9 +90,9 @@ const MainCard: React.FC<MainCardProps> = ({ onOpenContact }) => {
                  <button
             onClick={onOpenContact}
             className="w-auto self-center bg-gradient-to-r text-sm from-green-500/30 to-blue-500/30 border-white/10 border-2 
-            hover:from-green-600 hover:to-blue-600 p-2 scale-90 px-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-green-500/25 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50"
+            hover:from-green-600 flex items-center gap-2 hover:to-blue-600 p-2 scale-90 px-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-green-500/25 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50"
           >
-            Entrar em Contato
+            Entrar em Contato  <Send className='w-5 h-5'/>
           </button>
             </div>
           </div>
