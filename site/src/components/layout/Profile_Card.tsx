@@ -1,5 +1,4 @@
 
-import { BadgeCheck, Github, Linkedin, Mail, Send } from 'lucide-react';
 
 interface MainCardProps {
   onOpenContact?: () => void;
