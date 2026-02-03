@@ -31,6 +31,7 @@ export interface GitHubUser {
 export interface ContactForm {
   name: string;
   email: string;
+  contact: string;
   message: string;
   timestamp?: string;
 }

@@ -27,32 +27,43 @@ if (Database) {
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       name TEXT NOT NULL,
       email TEXT NOT NULL,
+      contact TEXT NOT NULL DEFAULT '',
       message TEXT NOT NULL,
       timestamp TEXT NOT NULL
     );
   `);
 
+  const contactColumn = db
+    .prepare(`PRAGMA table_info(contacts)`)
+    .all()
+    .some((col: any) => col.name === "contact");
+  if (!contactColumn) {
+    db.exec(`ALTER TABLE contacts ADD COLUMN contact TEXT NOT NULL DEFAULT ''`);
+  }
+
   const insertContact = ({
     name,
     email,
+    contact,
     message,
     timestamp,
   }: {
     name: string;
     email: string;
+    contact: string;
     message: string;
     timestamp: string;
   }) => {
     const stmt = db.prepare(
-      `INSERT INTO contacts (name, email, message, timestamp) VALUES (?, ?, ?, ?)`
+      `INSERT INTO contacts (name, email, contact, message, timestamp) VALUES (?, ?, ?, ?, ?)`
     );
-    const info = stmt.run(name, email, message, timestamp);
+    const info = stmt.run(name, email, contact, message, timestamp);
     return info.lastInsertRowid;
   };
 
   const getContacts = (limit = 100) => {
     const stmt = db.prepare(
-      `SELECT id, name, email, message, timestamp FROM contacts ORDER BY id DESC LIMIT ?`
+      `SELECT id, name, email, contact, message, timestamp FROM contacts ORDER BY id DESC LIMIT ?`
     );
     return stmt.all(limit);
   };
@@ -145,17 +156,19 @@ if (Database) {
   const insertContact = ({
     name,
     email,
+    contact,
     message,
     timestamp,
   }: {
     name: string;
     email: string;
+    contact: string;
     message: string;
     timestamp: string;
   }) => {
     const all = readAll();
     const id = all.length > 0 ? (all[all.length - 1].id || all.length) + 1 : 1;
-    const item = { id, name, email, message, timestamp };
+    const item = { id, name, email, contact, message, timestamp };
     all.push(item);
     writeAll(all);
     return id;
@@ -163,7 +176,10 @@ if (Database) {
 
   const getContacts = (limit = 100) => {
     const all = readAll();
-    return all.slice(-limit).reverse();
+    return all
+      .slice(-limit)
+      .reverse()
+      .map((item: any) => ({ ...item, contact: item.contact || "" }));
   };
 
   const getContactsCount = () => {

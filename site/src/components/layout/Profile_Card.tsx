@@ -88,7 +88,7 @@ const MainCard: React.FC<MainCardProps> = ({ onOpenContact }) => {
               </div>
                  <button
             onClick={onOpenContact}
-            className="w-auto self-center bg-gradient-to-r text-sm from-green-500/30 to-blue-500/30 border-white/10 border-2 
+            className="w-auto self-center bg-gradient-to-r text-sm from-green-500 to-blue-500 border-white/10 border-2 
             hover:from-green-600 flex items-center gap-2 hover:to-blue-600 p-2 scale-90 px-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-green-500/25 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50"
           >
             Entrar em Contato 

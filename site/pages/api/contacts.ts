@@ -2,31 +2,23 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { ContactForm, ContactResponse, ContactsResponse } from '@/src/types';
 
 // Use local SQLite DB via src/lib/db.ts
-const dbLib = require('@/src/lib/db');
+const dbLib = require('../../src/lib/db');
 const MAKE_WEBHOOK_URL = process.env.MAKE_WEBHOOK_URL;
 
-async function sendToMakeWebhook(payload: Record<string, any>): Promise<void> {
-  if (!MAKE_WEBHOOK_URL) return;
+async function sendToMakeWebhook(payload: ContactForm): Promise<void> {
+  if (!MAKE_WEBHOOK_URL) {
+    throw new Error('MAKE_WEBHOOK_URL não configurada no .env.local');
+  }
 
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 5000);
+  const response = await fetch(MAKE_WEBHOOK_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  });
 
-  try {
-    const response = await fetch(MAKE_WEBHOOK_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
-      signal: controller.signal,
-    });
-
-    if (!response.ok) {
-      const text = await response.text().catch(() => '');
-      console.warn('Make webhook falhou:', response.status, text);
-    }
-  } catch (error) {
-    console.warn('Make webhook erro:', error);
-  } finally {
-    clearTimeout(timeout);
+  if (!response.ok) {
+    const text = await response.text().catch(() => '');
+    throw new Error(`Make webhook falhou (${response.status}): ${text || 'sem detalhes'}`);
   }
 }
 
@@ -46,34 +38,42 @@ export default async function handler(
 
   try {
     if (req.method === 'POST') {
-      const contactData: ContactForm = req.body;
+      let contactData: Partial<ContactForm>;
+      try {
+        contactData = typeof req.body === 'string' ? JSON.parse(req.body) : req.body;
+      } catch {
+        return res.status(400).json({ success: false, error: 'JSON inválido no corpo da requisição' });
+      }
+
+      const name = contactData.name?.trim() || '';
+      const email = contactData.email?.trim() || '';
+      const contact = contactData.contact?.toString().trim() || '';
+      const message = contactData.message?.trim() || '';
 
       // Validações básicas
-      if (!contactData.name || !contactData.email || !contactData.message) {
-        return res.status(400).json({ success: false, error: 'Nome, email e mensagem são obrigatórios' });
+      if (!name || !email || !contact || !message) {
+        return res.status(400).json({ success: false, error: 'Nome, email, celular e mensagem são obrigatórios' });
       }
 
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(contactData.email)) {
+      if (!emailRegex.test(email)) {
         return res.status(400).json({ success: false, error: 'Email inválido' });
       }
 
       const timestamp = contactData.timestamp || new Date().toLocaleString('pt-BR');
+      const payload: ContactForm = { name, email, contact, message, timestamp };
 
-      // Inserir no SQLite
-      const id = dbLib.insertContact({ name: contactData.name.trim(), email: contactData.email.trim(), message: contactData.message.trim(), timestamp });
+      // Envia de forma direta para o Make
+      await sendToMakeWebhook(payload);
 
-      // Enviar para Make (opcional)
-      await sendToMakeWebhook({
-        name: contactData.name.trim(),
-        email: contactData.email.trim(),
-        message: contactData.message.trim(),
-        timestamp,
-        source: 'portfolio',
-      });
+      // Persistência local é opcional e não deve impedir o envio para webhook
+      try {
+        dbLib.insertContact(payload);
+      } catch (dbError) {
+        console.warn('Falha ao salvar contato localmente:', dbError);
+      }
 
-      return res.status(200).json({ success: true, message: 'Contato salvo', } as ContactResponse);
-
+      return res.status(200).json({ success: true, message: 'Contato enviado com sucesso' } as ContactResponse);
     } else if (req.method === 'GET') {
       // Retornar contatos e contador
       const limit = req.query.limit ? Number(req.query.limit) : 100;
