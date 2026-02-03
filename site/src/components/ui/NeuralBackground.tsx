@@ -1,18 +1,27 @@
 import { useEffect, useState } from "react";
-import { motion, useMotionValue, useTransform, animate } from "framer-motion";
+import { motion } from "framer-motion";
 
 const NUM_NODES = 12;
 const REPULSION_RADIUS = 100; // pixels
 
+interface NodePoint {
+  x: number; // percentual (0 - 100)
+  y: number; // percentual (0 - 100)
+}
+
 export default function NeuralBackground() {
-  const [nodes, setNodes] = useState(
-    Array.from({ length: NUM_NODES }, () => ({
-      x: useMotionValue(Math.random() * 100),
-      y: useMotionValue(Math.random() * 100),
-    }))
+  const [nodes, setNodes] = useState<NodePoint[]>(
+    () =>
+      Array.from({ length: NUM_NODES }, () => ({
+        x: Math.random() * 100,
+        y: Math.random() * 100,
+      })) as NodePoint[]
   );
 
-  const [mousePos, setMousePos] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
+  const [mousePos, setMousePos] = useState<{ x: number; y: number }>({
+    x: 0,
+    y: 0,
+  });
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -22,38 +31,44 @@ export default function NeuralBackground() {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
+  // Animação simples dos nós com leve movimento + repulsão pelo mouse
   useEffect(() => {
-    nodes.forEach((node) => {
-      const animateX = animate(
-        node.x,
-        [node.x.get(), node.x.get() + (Math.random() * 15 - 7.5)],
-        {
-          duration: 4 + Math.random() * 2,
-          repeat: Infinity,
-          repeatType: "reverse",
-          ease: "easeInOut",
-        }
+    const interval = setInterval(() => {
+      setNodes((prev) =>
+        prev.map((node) => {
+          let x = node.x + (Math.random() * 4 - 2);
+          let y = node.y + (Math.random() * 4 - 2);
+
+          const mouseXPercent = (mousePos.x / window.innerWidth) * 100;
+          const mouseYPercent = (mousePos.y / window.innerHeight) * 100;
+          const dx = mouseXPercent - x;
+          const dy = mouseYPercent - y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+
+          if (distance < REPULSION_RADIUS / 10 && distance > 0) {
+            const factor = 0.5;
+            x -= (dx / distance) * factor;
+            y -= (dy / distance) * factor;
+          }
+
+          // Limitar aos bounds 0-100
+          x = Math.max(0, Math.min(100, x));
+          y = Math.max(0, Math.min(100, y));
+
+          return { x, y };
+        })
       );
-      const animateY = animate(
-        node.y,
-        [node.y.get(), node.y.get() + (Math.random() * 15 - 7.5)],
-        {
-          duration: 4 + Math.random() * 2,
-          repeat: Infinity,
-          repeatType: "reverse",
-          ease: "easeInOut",
-        }
-      );
-      return () => {
-        animateX.stop();
-        animateY.stop();
-      };
-    });
-  }, [nodes]);
+    }, 80);
+
+    return () => clearInterval(interval);
+  }, [mousePos]);
 
   return (
     <div className="absolute inset-0 -z-10 overflow-hidden">
-      <svg className="w-full h-full absolute pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        className="w-full h-full absolute pointer-events-none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <defs>
           <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" stopColor="#06b6d4" stopOpacity="0.5" />
@@ -63,10 +78,10 @@ export default function NeuralBackground() {
 
         {nodes.map((start, i) => {
           const end = nodes[(i + 2) % nodes.length]; // ligações não lineares
-          const x1 = start.x.get();
-          const y1 = start.y.get();
-          const x2 = end.x.get();
-          const y2 = end.y.get();
+          const x1 = start.x;
+          const y1 = start.y;
+          const x2 = end.x;
+          const y2 = end.y;
 
           // Curva Bezier com controle no meio
           const cx = (x1 + x2) / 2 + Math.random() * 10 - 5;
@@ -85,19 +100,8 @@ export default function NeuralBackground() {
       </svg>
 
       {nodes.map((node, i) => {
-        const top = useTransform(node.y, (v) => `${v}%`);
-        const left = useTransform(node.x, (v) => `${v}%`);
-
-        // Distância do mouse
-        const dx = (mousePos.x / window.innerWidth) * 100 - node.x.get();
-        const dy = (mousePos.y / window.innerHeight) * 100 - node.y.get();
-        const distance = Math.sqrt(dx * dx + dy * dy);
-
-        // Se estiver perto, aplicar repulsão
-        if (distance < REPULSION_RADIUS / 10) {
-          node.x.set(node.x.get() - dx * 0.05);
-          node.y.set(node.y.get() - dy * 0.05);
-        }
+        const top = `${node.y}%`;
+        const left = `${node.x}%`;
 
         return (
           <motion.div

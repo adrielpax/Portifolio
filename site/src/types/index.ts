@@ -31,6 +31,7 @@ export interface GitHubUser {
 export interface ContactForm {
   name: string;
   email: string;
+  contact: string;
   message: string;
   timestamp?: string;
 }
@@ -84,4 +85,34 @@ export interface UseContactsReturn {
   error: string | null;
   loadContacts: () => Promise<void>;
   submitContact: (data: ContactForm) => Promise<boolean>;
+}
+
+// History / content items
+export interface HistoryItem {
+  slug: string;
+  title?: string | null;
+  excerpt?: string | null;
+  content: string;
+  order?: number | null;
+}
+
+// Projects
+export interface Project {
+  id: number;
+  title: string;
+  description?: string;
+  imageUrl?: string;
+  tags?: string;
+  link?: string;
+  createdAt?: string;
+}
+
+// Blog Post
+export interface BlogPost {
+  slug: string;
+  title?: string | null;
+  excerpt?: string | null;
+  date?: string | null;
+  content: string;
+  order?: number | null;
 }

@@ -1,5 +1,7 @@
-import { useState } from 'react';
-import { FaTimes, FaSpinner, FaPaperPlane } from 'react-icons/fa';
+"use client";
+
+import { useState, useEffect } from 'react';
+
 import { ContactModalProps, ContactForm } from '@/src/types';
 import { useContacts } from '@/src/hooks/useContacts';
 
@@ -7,11 +9,13 @@ const ContactModal: React.FC<ContactModalProps> = ({ onClose }) => {
   const [formData, setFormData] = useState<ContactForm>({
     name: '',
     email: '',
+    contact:'',
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   
-  const { submitContact } = useContacts();
+  const { submitContact , error} = useContacts();
+  
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
     setFormData({
@@ -25,14 +29,17 @@ const ContactModal: React.FC<ContactModalProps> = ({ onClose }) => {
     setIsSubmitting(true);
 
     try {
-      const success = await submitContact(formData);
       
-      if (success) {
+      const ok = await submitContact(formData);
+      if (ok) {
         alert('Mensagem enviada com sucesso! Entrarei em contato em breve.');
-         localStorage.setItem("contactSubmitted", "true");
-         setFormData({ name: '', email: '', message: '' });
+        localStorage.setItem("contactSubmitted", "true");
+        setFormData({ name: '', email: '', contact: '', message: '' });
         onClose();
-      }
+      } else {
+        alert('Erro ao enviar: veja o console (F12) e a mensagem abaixo.');
+      }      
+
     } catch (error) {
       console.error('Erro ao enviar:', error);
       alert('Erro ao enviar mensagem. Tente novamente mais tarde.');
@@ -41,9 +48,17 @@ const ContactModal: React.FC<ContactModalProps> = ({ onClose }) => {
     }
   };
 
-  const alreadySubmitted = typeof window !== "undefined" && localStorage.getItem("contactSubmitted") === "true";
+  const [alreadySubmitted, setAlreadySubmitted] = useState<boolean>(false);
 
-  const isFormValid = formData.name.trim() && formData.email.trim() && formData.message.trim();
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setAlreadySubmitted(localStorage.getItem('contactSubmitted') === 'true');
+    }
+  }, []);
+
+  const isFormValid = Boolean(
+    formData.name.trim() && formData.email.trim() && formData.contact.trim() && formData.message.trim()
+  );
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/75 backdrop-blur-sm p-4">
@@ -57,7 +72,8 @@ const ContactModal: React.FC<ContactModalProps> = ({ onClose }) => {
             disabled={isSubmitting}
             aria-label="Fechar modal"
           >
-            <FaTimes />
+            Fechar
+            {/* <FaTimes /> */}
           </button>
         </div>
         
@@ -94,6 +110,24 @@ const ContactModal: React.FC<ContactModalProps> = ({ onClose }) => {
               placeholder="seu@email.com"
             />
           </div>
+
+             <div>
+            <label className="block text-sm font-medium text-gray-300 mb-2">
+              Numero Celular *
+            </label>
+            <input 
+              type="tel"
+              name="contact"
+              value={formData.contact}
+              onChange={handleChange}
+              required
+              inputMode="numeric"
+              pattern="[0-9()+\\-\\s]{8,20}"
+              disabled={isSubmitting}
+              className="w-full px-4 py-2 bg-black/50 border border-gray-600 rounded-lg focus:border-green-400 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50 text-white placeholder-gray-400 disabled:opacity-50 disabled:cursor-not-allowed"
+              placeholder="(DDD) seu numero"
+            />
+          </div>
           
           <div>
             <label className="block text-sm font-medium text-gray-300 mb-2">
@@ -113,22 +147,30 @@ const ContactModal: React.FC<ContactModalProps> = ({ onClose }) => {
           
           <button 
             type="submit"
-            disabled={!isFormValid || isSubmitting || alreadySubmitted}
+            disabled={!isFormValid || isSubmitting}
             className="w-full bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 disabled:from-gray-500 disabled:to-gray-600 disabled:cursor-not-allowed px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50 flex items-center justify-center gap-2"
           >
             {isSubmitting ? (
               <>
-                <FaSpinner className="animate-spin" />
+                {/* <FaSpinner className="animate-spin" /> */}
                 Enviando...
               </>
             ) : (
               <>
-                <FaPaperPlane />
+                {/* <FaPaperPlane /> */}
                 Enviar Mensagem
               </>
             )}
           </button>
+          {error && (
+            <p className="mt-3 text-sm text-red-300 whitespace-pre-wrap">
+              {error}
+            </p>
+        )}  
         </form>
+        {alreadySubmitted && (
+          <p className="mt-3 text-xs text-yellow-300">Você já enviou uma mensagem anteriormente — ainda assim pode enviar outra se quiser.</p>
+        )}
       </div>
     </div>
   );

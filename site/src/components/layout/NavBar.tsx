@@ -1,5 +1,5 @@
 // components/NavBar.tsx
-import { FaUser, FaCode, FaEnvelope } from 'react-icons/fa'
+
 
 type Props = {
   currentSection: number
@@ -8,13 +8,13 @@ type Props = {
 
 export default function NavBar({ currentSection, onNavigate }: Props) {
   const navItems = [
-    { icon: <FaUser className={`transition text-white hover:text-[#00ffc3]`}
+    { icon: <div className={`transition text-white hover:text-[#00ffc3]`}
  />, index: 0 },
-    { icon: <FaCode className={`transition text-white hover:text-[#00ffc3]`}
+    { icon: <div className={`transition text-white hover:text-[#00ffc3]`}
  />, index: 1 },
-    { icon: <FaEnvelope className={`transition text-white hover:text-[#00ffc3]`}
+    { icon: <div className={`transition text-white hover:text-[#00ffc3]`}
  />, index: 2 },
-     { icon: <FaEnvelope className={`transition text-white hover:text-[#00ffc3]`}
+     { icon: <div className={`transition text-white hover:text-[#00ffc3]`}
  />, index: 3 },
   ]
 

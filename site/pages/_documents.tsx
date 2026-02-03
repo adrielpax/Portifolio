@@ -1,5 +1,5 @@
+/* eslint-disable @next/next/google-font-display */
 import { Html, Head, Main, NextScript } from "next/document";
-
 
 export default function Document() {
   return (
@@ -17,9 +17,12 @@ export default function Document() {
         />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&display=swap"
-          rel="stylesheet"
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin=""
         />
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -28,20 +31,7 @@ export default function Document() {
           href="https://fonts.gstatic.com"
           crossOrigin=""
         />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500&display=swap"
-          rel="stylesheet"
-        />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin=""
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500&family=Orbitron:wght@400;500&display=swap"
-          rel="stylesheet"
-        />
+
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         <meta name="author" content="Adriel - Dev" />
         <meta
@@ -50,7 +40,7 @@ export default function Document() {
         />
         <title>Adriel Developer | Personal portfolio</title>
       </Head>
-      <body >
+      <body>
         <Main />
         <NextScript />
       </body>
