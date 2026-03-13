@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 👋 Olá, eu sou o Adriel L  
 
-## Getting Started
+💻 **Desenvolvedor Full Stack | Apaixonado por Tecnologia**  
+Construindo soluções escaláveis e eficientes em **frontend, backend e automação de processos**.  
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Tecnologias & Ferramentas  
+- **Frontend:** React, Next.js, React Native (Expo), TailwindCSS, shadcn/ui  
+- **Backend:** Node.js, Fastify, Express  
+- **Banco de Dados:** PostgreSQL, MongoDB, Firebase  
+- **Automação & Integração:** n8n, Make, Zapier, APIs REST/GraphQL, Webhooks  
+- **DevOps & Infra:** Docker 🐳, Docker Compose, Nginx, Git/GitHub  
+- **Outros:** Strapi (CMS), Google Sheets API, App Scripts  
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📌 Projetos em Destaque  
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- 🔗 **[Portfólio Pessoal](#)** → Meu site de apresentação profissional  
+- ⚡ **[Sistema de Automação com n8n](#)** → Integrações e fluxos inteligentes para negócios  
+- 🛒 **[E-commerce Integrado](#)** → Integração entre Mercado Livre, WooCommerce e Nuvemshop  
+- 🔐 **[Mini Projetos SaaS - Auth](#)** → Estudos práticos sobre autenticação e arquitetura SaaS  
 
-## Learn More
+*(Substituí os `#` pelos links reais dos repositórios ou deploys depois)*  
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📊 Estatísticas  
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=AdrielL&show_icons=true&theme=tokyonight)  
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=AdrielL&layout=compact&theme=tokyonight)  
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🛠️ Roadmap de Aprendizado  
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Atualmente estou me aprofundando em:  
+
+- 🐳 **Docker & Docker Compose** → Conteinerização e orquestração de serviços  
+- ⚡ **Arquitetura SaaS** → Autenticação, escalabilidade e multi-tenant apps  
+- 🔗 **Integrações avançadas com n8n/Make** → Automação de processos complexos  
+- ☁️ **Infraestrutura & Deploy** → Nginx, CI/CD e hospedagem escalável  
+- 📊 **Análise de Dados** → SQL avançado e integração de bancos  
+
+---
+
+## 🌐 Conecte-se comigo  
+
+- [LinkedIn](#)  
+- [Portfólio Online](#)  
+- 📧 adriel@email.com  
+
+---
+
+🔹 Sempre em busca de novos desafios e aprendizados na área de **desenvolvimento e automação**.  
