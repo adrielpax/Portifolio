@@ -22,7 +22,6 @@ import { Badge } from "@/components/ui/badge";
 import BootSequence from "@/components/bootSequence";
 
 export default function Home() {
-
   return (
     <div
       className="bg-gradient-to-tr gap-12
@@ -71,14 +70,23 @@ export default function Home() {
             Betim, Minas Gerais, Brasil
           </blockquote>
           <div className="flex gap-2 flex-wrap w-full py-3 mt-4">
-            <Button variant="outline" size="lg">
-              {" "}
-              <Github /> Github
-            </Button>
-            <Button variant="outline" size="lg">
-              <Linkedin /> Linkedin
-            </Button>
-            <Button size="lg">Quer entrar em contato ?</Button>
+            
+            <a href="https://github.com/adrielpax" target="_blank">
+              <Button variant="outline" size="lg">
+                {" "}
+                <Github /> Github
+              </Button>
+            </a>
+
+            <a href="https://linkedin.com/in/adriel-lucas" target="_blank">
+              <Button variant="outline" size="lg">
+                <Linkedin /> Linkedin
+              </Button>
+            </a>
+
+            <a href="https://tally.so/r/kdAMVM">
+              <Button size="lg">Quer entrar em contato ?</Button>
+            </a>
           </div>
         </div>
       </CardMy>
@@ -143,8 +151,10 @@ export default function Home() {
                 {item.ProtectionText}
               </blockquote>
               <a href="" className="cursor-pointer">
-                <Button className="rounded-full cursor-pointer  
-                hover:bg-blue-600 bg-blue-500 ring-1 px-6 py-6 shadow-blue-400 shadow-lg">
+                <Button
+                  className="rounded-full cursor-pointer  
+                hover:bg-blue-600 bg-blue-500 ring-1 px-6 py-6 shadow-blue-400 shadow-lg"
+                >
                   Confira mais Clicando Aqui !
                 </Button>
               </a>
