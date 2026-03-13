@@ -70,7 +70,6 @@ export default function Home() {
             Betim, Minas Gerais, Brasil
           </blockquote>
           <div className="flex gap-2 flex-wrap w-full py-3 mt-4">
-            
             <a href="https://github.com/adrielpax" target="_blank">
               <Button variant="outline" size="lg">
                 {" "}
@@ -90,16 +89,21 @@ export default function Home() {
           </div>
         </div>
       </CardMy>
-      <CardMy
+
+       <CardMy
         className="flex flex-col items-stretch justify-center mx-4 md:mx-16
       md:px-6 md:py-5 border-zinc-500/20 rounded-xl"
       >
         <h3
           className="scroll-m-20 text-xl
-         text-zinc-600 font-semibold tracking-tight first:mt-0"
+         text-zinc-600 font-semibold tracking-tight first:mt-0 mb-4"
         >
           Projetos Campeões
         </h3>
+        <blockquote className="italic text-sm text-zinc-400 mb-4">
+          Alguns projetos ainda podem estar em desenvolvimento, porem são
+          projetos feitos por mim automonamente e com uso real no mercado !
+        </blockquote>
 
         <div
           className="flex flex-col border border-yellow-500 transition duration-300
@@ -115,14 +119,14 @@ export default function Home() {
               ProtectionText:
                 "   ! O projeto é pantentiado e tem seus direitos reservados de imagem e technologia intelectual. qualquer uso ou copia, serão tomadas medidas de acordo com as leis: Lei do Software (Lei nº 9.609/98), Direito Autoral (Lei nº 9.610/98), Registro no INPI (Instituto Nacional da Propriedade Industrial).",
             },
-            {
-              icon: "/images/loading.tsx",
-              title: "Projeto Exper",
-              descriptiton:
-                "Fundador do meu Projeto Exper, uma tentativa empreendedora de prestação de serviços e venda de produtos que trazem soluções reais para negocios reais com tecnologia de ponta desde a automação a paginas de conversção e trafego dentro do ecossistema web e digital.",
-              ProtectionText:
-                "   ! O projeto é pantentiado e tem seus direitos reservados de imagem e technologia intelectual. qualquer uso ou copia, serão tomadas medidas de acordo com as leis: Lei do Software (Lei nº 9.609/98), Direito Autoral (Lei nº 9.610/98), Registro no INPI (Instituto Nacional da Propriedade Industrial).",
-            },
+            // {
+            //   icon: "/images/loading.tsx",
+            //   title: "Projeto Exper",
+            //   descriptiton:
+            //     "Fundador do meu Projeto Exper, uma tentativa empreendedora de prestação de serviços e venda de produtos que trazem soluções reais para negocios reais com tecnologia de ponta desde a automação a paginas de conversção e trafego dentro do ecossistema web e digital.",
+            //   ProtectionText:
+            //     "   ! O projeto é pantentiado e tem seus direitos reservados de imagem e technologia intelectual. qualquer uso ou copia, serão tomadas medidas de acordo com as leis: Lei do Software (Lei nº 9.609/98), Direito Autoral (Lei nº 9.610/98), Registro no INPI (Instituto Nacional da Propriedade Industrial).",
+            // },
           ].map((item, index) => (
             <div
               key={index}
@@ -150,12 +154,12 @@ export default function Home() {
               <blockquote className="italic text-justify text-sm text-zinc-400 mb-4">
                 {item.ProtectionText}
               </blockquote>
-              <a href="" className="cursor-pointer">
+              <a href="https://barberboost.vercel.app/" className="cursor-pointer">
                 <Button
                   className="rounded-full cursor-pointer  
                 hover:bg-blue-600 bg-blue-500 ring-1 px-6 py-6 shadow-blue-400 shadow-lg"
                 >
-                  Confira mais Clicando Aqui !
+                  Saiba mais Clicando Aqui !
                 </Button>
               </a>
             </div>
@@ -163,19 +167,7 @@ export default function Home() {
         </div>
       </CardMy>
 
-      <CardMy
-        className="flex flex-col items-stretch justify-center mx-4 md:mx-16
-      md:px-6 md:py-5 border-zinc-500/20 rounded-xl"
-      >
-        <h3 className="scroll-m-20 pb-2 text-xl text-zinc-600 font-semibold tracking-tight first:mt-0">
-          Formação Academica
-        </h3>
-        <blockquote className="italic text-sm text-zinc-400 mb-4">
-          Algumas formações podem estar em andamento
-        </blockquote>
-        <TrainingCard />
-      </CardMy>
-
+      {/* Habilidades */}
       <CardMy
         className="flex flex-col items-stretch justify-center mx-4 md:mx-16
       md:px-6 md:py-5 border-zinc-500/20 rounded-xl"
@@ -192,10 +184,80 @@ export default function Home() {
             dourado
           </span>{" "}
           são certificadas officialmente.
+          <br /> outras habilidades são desenvolvidas 100% atraves de projetos e
+          auto-aprendizado !
         </blockquote>
         <Skills />
       </CardMy>
 
+      {/* Formações */}
+      <CardMy
+        className="flex flex-col items-stretch justify-center mx-4 md:mx-16
+      md:px-6 md:py-5 border-zinc-500/20 rounded-xl"
+      >
+        <h3 className="scroll-m-20 text-xl text-zinc-600 font-semibold tracking-tight first:mt-0">
+          Formação Academica
+        </h3>
+        <blockquote className="italic text-sm text-zinc-400 mb-4">
+          Algumas formações podem estar em andamento... apenas formações
+          relevantes e de longo prazo em constante atualização !
+        </blockquote>
+        <TrainingCard />
+      </CardMy>
+
+      {/* Projetos */}
+      <CardMy
+        className="flex flex-col items-stretch justify-center mx-4 md:mx-16
+      md:px-6 md:py-5 border-zinc-500/20 rounded-xl"
+      >
+        <h3 className="scroll-m-20 text-xl text-zinc-600 font-semibold tracking-tight first:mt-0 mb-4">
+          Principais Projetos
+        </h3>
+        <blockquote className="italic text-sm text-zinc-400 mb-4">
+          Alguns projetos podem estar em desenvolvimento !
+        </blockquote>
+        {[
+          {
+            featured: "Projeto on-line",
+            title: "loja virtual para Sheu Brigadeiros Gourmet",
+            description:"Loja vitual que fiz para minha namorada para colocar demandas reais de doces e brigadeiros gourmet na sua loja virtual alem de toda a renovação de maketing e logo e midias digitais.",
+            link:"https://sheyla-brigadeiros-site.vercel.app/?fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnaJol5tXeY2fDQgPqXqxABZMHkp72-Cr8dImMm8cm36xxpxWXo9qPEPVJYZI_aem_G4yfG3HFFQNWjqNZgUljfA",
+            page:"",
+            image:"/images/projects/sheu-site.png"
+          },
+        ].map((item, index) => {
+          return (
+            <Card key={index} className="relative mx-auto w-full max-w-sm pt-0">
+              <div className="absolute inset-0 z-30" />
+              <Image
+                src={item.image}
+                alt={item.title}
+                unoptimized
+                width={384}
+                height={384}
+                className="relative z-20 aspect-video w-full object-cover"
+              />
+              <CardHeader>
+                <CardAction>
+                </CardAction>
+                  <Badge variant="secondary">{item.featured}</Badge>
+                <CardTitle>{item.title}</CardTitle>
+                <CardDescription>
+                  {item.description}
+                </CardDescription>
+              </CardHeader>
+              <CardFooter>
+              <a href={item.link} target="_blank">
+
+                <Button className="w-full">Descobrir mais</Button>
+              </a>
+              </CardFooter>
+            </Card>
+          );
+        })}
+      </CardMy>
+
+      {/* certificações */}
       <CardMy
         className="flex flex-col items-stretch justify-center mx-4 md:mx-16
       md:px-6 md:py-5 border-zinc-500/20 rounded-xl"
@@ -203,45 +265,14 @@ export default function Home() {
         <h3 className="scroll-m-20 pb-2 text-xl text-zinc-600 font-semibold tracking-tight first:mt-0">
           Certificações Tecnicas & Officiais
         </h3>
+        <blockquote className="italic text-sm text-zinc-400 mb-4">
+          Essas certificações são para apredizados especificos consolidando e
+          validando conhecimentos em ferramantas e technologias.
+        </blockquote>
         <CertificationCards />
       </CardMy>
 
-      <CardMy
-        className="flex flex-col items-stretch justify-center mx-4 md:mx-16
-      md:px-6 md:py-5 border-zinc-500/20 rounded-xl"
-      >
-        <h3 className="scroll-m-20 text-xl text-zinc-600 font-semibold tracking-tight first:mt-0">
-          Principais Projetos
-        </h3>
-        {[{}].map((item, index) => {
-          return (
-            <Card key={index} className="relative mx-auto w-full max-w-sm pt-0">
-              <div className="absolute inset-0 z-30 aspect-video bg-black/35" />
-              <Image
-                src="/images/loading.gif"
-                alt="Event cover"
-                unoptimized
-                width={384}
-                height={226}
-                className="relative z-20 aspect-video w-full object-cover brightness-60 grayscale dark:brightness-40"
-              />
-              <CardHeader>
-                <CardAction>
-                  <Badge variant="secondary">Featured</Badge>
-                </CardAction>
-                <CardTitle>Design systems meetup</CardTitle>
-                <CardDescription>
-                  A practical talk on component APIs, accessibility, and
-                  shipping faster.
-                </CardDescription>
-              </CardHeader>
-              <CardFooter>
-                <Button className="w-full">View Event</Button>
-              </CardFooter>
-            </Card>
-          );
-        })}
-      </CardMy>
+     
     </div>
   );
 }

@@ -11,8 +11,8 @@ import { BadgeCheck } from "lucide-react";
 function Skills() {
   return (
     <div
-      className="grid md:grid-cols-2 lg:grid-cols-3 border border-zinc-300 transition duration-300
-        bg-gradient-to-tr from-white/10 via-black/10 to-white/10 rounded-2xl"
+      className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border border-zinc-300 transition duration-300
+        bg-gradient-to-tr text-center from-white/10 via-black/10 to-white/10 rounded-2xl"
     >
       {[
         {
@@ -63,7 +63,7 @@ function Skills() {
           icon: "/images/skills/postgresql.png",
           title: "PostgreSql",
           description:
-            "runtime - executar e rodar javascript fora da web e navegadores",
+            "Banco de dados e logica de estruturação com conceitos SQL, instruções e de leitura, filtro, busca e registro de dados em SQL.",
         },
         {
           icon: "/images/skills/css.png",
@@ -122,13 +122,13 @@ function Skills() {
           )}
 
           <div className="flex flex-col">
-            <h3 className="text-zinc-600 font-bold text-lg mb-2">
+            <h3 className="text-zinc-600 font-bold text-lg mb-2 lg:text-left">
               {card.title}
             </h3>
 
             <p
               className="text-gray-500 text-sm leading-relaxed
-                    text-left "
+                    text-center lg:text-left"
             >
               {card.description}
             </p>
