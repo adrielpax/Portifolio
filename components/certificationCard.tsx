@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { Button } from "./ui/button";
+import { BadgeCheck } from "lucide-react";
 
 export default function CertificationCards() {
   return (
@@ -49,7 +50,9 @@ export default function CertificationCards() {
             >
               {card.description}
             </p>
-          <Button className="max-w-42 my-4">Validar Certificado</Button>
+          <Button className="max-w-56 my-4 rounded-full 
+          bg-gradient-to-tr from-amber-500 to-amber-700 ring-1
+          shadow-lg shadow-amber-500"><BadgeCheck/> Certificado </Button>
           </div>
 
         </div>

@@ -32,7 +32,7 @@ export default function RootLayout({
         className={`${heeboSans.variable} ${geistMono.variable} antialiased`}
       >
         <TooltipProvider>
-
+        
         {children}
         </TooltipProvider>
       </body>

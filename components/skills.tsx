@@ -6,6 +6,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { BadgeCheck } from "lucide-react";
 
 function Skills() {
   return (
@@ -35,26 +36,34 @@ function Skills() {
         {
           icon: "/images/skills/git.png",
           title: "git",
-          description:
-            "git bash e linhas de comandos para versionamento",
+          description: "git bash e linhas de comandos para versionamento",
         },
-         {
+        {
           icon: "/images/skills/github.png",
           title: "github",
-          description:
-            "Plataforma de versionamento e historico de codigo",
+          description: "Plataforma de versionamento e historico de codigo",
         },
-         {
+        {
           icon: "/images/skills/javascript.png",
           title: "Javascript",
-          description:
-            "Linguagem de programação da WEB",
+          description: "Linguagem de programação da WEB",
         },
-         {
+        {
           icon: "/images/skills/make.jpeg",
           title: "make",
+          description: "Platafoma de automação e integração de dados e apps",
+        },
+        {
+          icon: "/images/skills/nodejs.jpeg",
+          title: "Node",
           description:
-            "Platafoma de automação e integração de dados e apps",
+            "runtime - executar e rodar javascript fora da web e navegadores",
+        },
+        {
+          icon: "/images/skills/postgresql.png",
+          title: "PostgreSql",
+          description:
+            "runtime - executar e rodar javascript fora da web e navegadores",
         },
         {
           icon: "/images/skills/css.png",
@@ -77,24 +86,26 @@ function Skills() {
         >
           {card.certified ? (
             <>
-              <Tooltip >
-                
-                  <TooltipTrigger asChild>
-                    <Image
-                      src={card.icon}
-                      alt={card.title}
-                      objectFit="cover"
-                      width={80}
-                      height={80}
-                      className={`text-8xl rounded-full text-xs border-3 shadow-amber-300 shadow-md
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Image
+                    src={card.icon}
+                    alt={card.title}
+                    objectFit="cover"
+                    width={80}
+                    height={80}
+                    className={`text-8xl rounded-full text-xs border-3 shadow-amber-300 shadow-md
                         border-amber-300 p-1 flex items-center justify-center bg-amber-300/40
                         group-hover:scale-105 transition-transform duration-300 `}
-                    />
-                  </TooltipTrigger>
-                  <TooltipContent side="bottom" >
-                    <p>Certificado Official em {card.title}</p>
-                  </TooltipContent>
-              
+                  />
+                </TooltipTrigger>
+                <TooltipContent side="bottom">
+                  <p className="flex items-center gap-2">
+                    {" "}
+                    <BadgeCheck />
+                    Certificado Official em {card.title}
+                  </p>
+                </TooltipContent>
               </Tooltip>
             </>
           ) : (
