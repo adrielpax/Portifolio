@@ -21,6 +21,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 
 import Link from "next/link";
+import ReadMoreButton from "@/components/readmore";
 
 export default function Home() {
   return (
@@ -124,7 +125,7 @@ export default function Home() {
           Formação Academica
         </h3>
         <blockquote className="italic text-sm text-zinc-400 mb-4">
-          Algumas formações podem estar em andamento... apenas formações
+          Algumas formações podem estar em andamento... <br/> apenas formações
           relevantes e de longo prazo em constante atualização !
         </blockquote>
         <TrainingCard />
@@ -142,7 +143,7 @@ export default function Home() {
           Projetos Campeões
         </h3>
         <blockquote className="italic text-sm text-zinc-400 mb-4">
-          Alguns projetos ainda podem estar em desenvolvimento, porem são
+          Alguns projetos ainda podem estar em desenvolvimento,<br/> porem são
           projetos feitos por mim automonamente e com uso real no mercado !
         </blockquote>
 
@@ -223,33 +224,45 @@ export default function Home() {
         <blockquote className="italic text-sm text-zinc-400 mb-4">
           Alguns projetos podem estar em desenvolvimento !
         </blockquote>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+
         {[
           {
             featured: "Projeto on-line",
             title: "loja virtual para Sheu Brigadeiros Gourmet",
             description:
-              "Loja vitual que fiz para minha namorada para colocar demandas reais de doces e brigadeiros gourmet na sua loja virtual alem de toda a renovação de maketing e logo e midias digitais.",
+            "Loja vitual que fiz para minha namorada para colocar demandas reais de doces e brigadeiros gourmet na sua loja virtual alem de toda a renovação de maketing e logo e midias digitais.",
             link: "https://sheyla-brigadeiros-site.vercel.app/?fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnaJol5tXeY2fDQgPqXqxABZMHkp72-Cr8dImMm8cm36xxpxWXo9qPEPVJYZI_aem_G4yfG3HFFQNWjqNZgUljfA",
             page: "",
             image: "/images/projects/sheu-site.png",
+          },    {
+            featured: "Projeto on-line",
+            title: "loja virtual Precinho Rei",
+            description:
+            "A loja virtual precinho rei e um ecommerce que eu desenvolvi em nextjs tambem buscando mesclar o melhor em interfaces da amazon, shopee e mercado pago o que eu gostava nas plataformas, esse projeto no futuro não so sera minha loja virtual mas será whitelabel e usavel !",
+            link: "https://precinhorei.vercel.app/",
+            page: "",
+            image: "/images/projects/precinho-rei.png",
           },
         ].map((item, index) => {
           return (
-            <Card key={index} className="relative mx-auto w-full max-w-sm pt-0">
-              <div className="absolute inset-0 z-30" />
+            <Card key={index} className="relative mx-auto w-full max-w-sm pt-0 group z-30">
+              <div className="absolute inset-0 " />
               <Image
                 src={item.image}
                 alt={item.title}
                 unoptimized
                 width={384}
-                height={384}
-                className="relative z-20 aspect-video w-full object-cover"
-              />
+                height={400}
+                className="relative z-20 aspect-video w-full object-cover group-hover:scale-110 transition-all easy-in-out duration-300"
+                />
               <CardHeader>
                 <CardAction></CardAction>
                 <Badge variant="secondary">{item.featured}</Badge>
                 <CardTitle>{item.title}</CardTitle>
-                <CardDescription>{item.description}</CardDescription>
+                <CardDescription className="z-30">
+                  <ReadMoreButton text={item.description} />
+                </CardDescription>
               </CardHeader>
               <CardFooter>
                 <Button className="w-full hover:bg-blue-500 z-50 rounded-full ">
@@ -261,18 +274,19 @@ export default function Home() {
             </Card>
           );
         })}
+      </div>
       </CardMy>
 
       {/* certificações */}
       <CardMy
         className="flex flex-col items-stretch justify-center mx-4 md:mx-16
-      md:px-6 md:py-5 border-zinc-500/20 rounded-xl"
-      >
+        md:px-6 md:py-5 border-zinc-500/20 rounded-xl"
+        >
         <h3 className="scroll-m-20 pb-2 text-xl text-zinc-600 font-semibold tracking-tight first:mt-0">
           Certificações Tecnicas & Officiais
         </h3>
         <blockquote className="italic text-sm text-zinc-400 mb-4">
-          Essas certificações são para apredizados especificos consolidando e
+          Essas certificações são para apredizados especificos<br/> consolidando e
           validando conhecimentos em ferramantas e technologias.
         </blockquote>
         <CertificationCards />
