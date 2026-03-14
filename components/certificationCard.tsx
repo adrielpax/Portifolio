@@ -20,7 +20,7 @@ export default function CertificationCards() {
       {[
         {
           icon: "/images/formacao/vercel.png",
-          certified:"/images/project/certifiedNext.png"
+          certified:"/images/project/certifiedNext.png",
           title:"Certificado pela propria Vercel em NEXT JS App Router Fundamentals",
           description:
             "Curso official da Vercel Learn em vercel.com que ensina todos os fundamentos de desenvolvimento experiente com NextJS em Streaming loading, fetch de dados, client e server components, e mais estruturação com React",
@@ -74,13 +74,14 @@ export default function CertificationCards() {
                   <DialogTitle>{card.title}</DialogTitle>
                   <DialogDescription>
                     <div className="flex justify-center items-center rounded-xl">
-                      <Image
+                      {/* <Image
                         src={card.icon}
                         width={264}
                         height={384}
                         alt={card.title}
                         className="rounded-xl"
-                      />
+                      /> */}
+                      Estamos trabalhando para expor as credenciais, houve uma atualização no website da vercel, volte depois..
                     </div>
                   </DialogDescription>
                 </DialogHeader>
