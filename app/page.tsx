@@ -19,7 +19,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import BootSequence from "@/components/bootSequence";
+
 import Link from "next/link";
 
 export default function Home() {
@@ -71,22 +71,23 @@ export default function Home() {
             Betim, Minas Gerais, Brasil
           </blockquote>
           <div className="flex gap-2 flex-wrap w-full py-3 mt-4">
-            <a href="https://github.com/adrielpax" target="_blank">
-              <Button variant="outline" size="lg">
+            <Link href="https://github.com/adrielpax" target="_blank">
+              <Button variant="outline" size="lg" className="rounded-full cursor-pointer px-5 py-4">
                 {" "}
                 <Github /> Github
               </Button>
-            </a>
+            </Link>
 
-            <a href="https://linkedin.com/in/adriel-lucas" target="_blank">
-              <Button variant="outline" size="lg">
+            <Link href="https://linkedin.com/in/adriel-lucas" target="_blank">
+              <Button variant="outline" size="lg" className="rounded-full cursor-pointer px-5 py-4">
                 <Linkedin /> Linkedin
               </Button>
-            </a>
+            </Link>
 
-            <a href="https://tally.so/r/kdAMVM">
-              <Button size="lg">Quer entrar em contato ?</Button>
-            </a>
+            <Link href="https://tally.so/r/kdAMVM">
+              <Button size="lg" className="rounded-full cursor-pointer px-5 py-4 ring ring-white
+              hover:bg-gradient-to-tr hover:shadow-md shadow-amber-500 from-amber-600 to-amber-500">Quer entrar em contato ?</Button>
+            </Link>
           </div>
         </div>
       </CardMy>
@@ -200,7 +201,8 @@ export default function Home() {
               >
                 <Button
                   className="rounded-full cursor-pointer  
-                hover:bg-blue-600 bg-blue-500 ring-1 px-6 py-6 shadow-blue-400 shadow-lg"
+                hover:scale-105 bg-gradient-to-tr from-amber-400 to-amber-500 ring 
+                px-6 py-6 shadow-amber-400 shadow-lg"
                 >
                   Saiba mais Clicando Aqui !
                 </Button>
@@ -250,7 +252,7 @@ export default function Home() {
                 <CardDescription>{item.description}</CardDescription>
               </CardHeader>
               <CardFooter>
-                <Button className="w-full hover:bg-blue-500 z-50">
+                <Button className="w-full hover:bg-blue-500 z-50 rounded-full ">
                   <Link href={item.link} target="_blank">
                     Descobrir mais
                   </Link>
