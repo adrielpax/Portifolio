@@ -20,6 +20,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import BootSequence from "@/components/bootSequence";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -90,7 +91,46 @@ export default function Home() {
         </div>
       </CardMy>
 
-       <CardMy
+      {/* Habilidades */}
+      <CardMy
+        className="flex flex-col items-stretch justify-center mx-4 md:mx-16
+      md:px-6 md:py-5 border-zinc-500/20 rounded-xl"
+      >
+        <h3 className="scroll-m-20 text-xl text-zinc-600 font-semibold tracking-tight first:mt-0">
+          Minhas Habilidades
+        </h3>
+        <blockquote className="italic text-sm text-zinc-400 mb-4">
+          Habilidades em{" "}
+          <span
+            className="bg-amber-200 px-1 rounded-full
+          text-amber-800"
+          >
+            dourado
+          </span>{" "}
+          são certificadas officialmente.
+          <br /> outras habilidades são desenvolvidas 100% atraves de projetos e
+          auto-aprendizado !
+        </blockquote>
+        <Skills />
+      </CardMy>
+
+      {/* Formações */}
+      <CardMy
+        className="flex flex-col items-stretch justify-center mx-4 md:mx-16
+      md:px-6 md:py-5 border-zinc-500/20 rounded-xl"
+      >
+        <h3 className="scroll-m-20 text-xl text-zinc-600 font-semibold tracking-tight first:mt-0">
+          Formação Academica
+        </h3>
+        <blockquote className="italic text-sm text-zinc-400 mb-4">
+          Algumas formações podem estar em andamento... apenas formações
+          relevantes e de longo prazo em constante atualização !
+        </blockquote>
+        <TrainingCard />
+      </CardMy>
+
+      {/* champions projects */}
+      <CardMy
         className="flex flex-col items-stretch justify-center mx-4 md:mx-16
       md:px-6 md:py-5 border-zinc-500/20 rounded-xl"
       >
@@ -154,7 +194,10 @@ export default function Home() {
               <blockquote className="italic text-justify text-sm text-zinc-400 mb-4">
                 {item.ProtectionText}
               </blockquote>
-              <a href="https://barberboost.vercel.app/" className="cursor-pointer">
+              <a
+                href="https://barberboost.vercel.app/"
+                className="cursor-pointer"
+              >
                 <Button
                   className="rounded-full cursor-pointer  
                 hover:bg-blue-600 bg-blue-500 ring-1 px-6 py-6 shadow-blue-400 shadow-lg"
@@ -165,44 +208,6 @@ export default function Home() {
             </div>
           ))}
         </div>
-      </CardMy>
-
-      {/* Habilidades */}
-      <CardMy
-        className="flex flex-col items-stretch justify-center mx-4 md:mx-16
-      md:px-6 md:py-5 border-zinc-500/20 rounded-xl"
-      >
-        <h3 className="scroll-m-20 text-xl text-zinc-600 font-semibold tracking-tight first:mt-0">
-          Minhas Habilidades
-        </h3>
-        <blockquote className="italic text-sm text-zinc-400 mb-4">
-          Habilidades em{" "}
-          <span
-            className="bg-amber-200 px-1 rounded-full
-          text-amber-800"
-          >
-            dourado
-          </span>{" "}
-          são certificadas officialmente.
-          <br /> outras habilidades são desenvolvidas 100% atraves de projetos e
-          auto-aprendizado !
-        </blockquote>
-        <Skills />
-      </CardMy>
-
-      {/* Formações */}
-      <CardMy
-        className="flex flex-col items-stretch justify-center mx-4 md:mx-16
-      md:px-6 md:py-5 border-zinc-500/20 rounded-xl"
-      >
-        <h3 className="scroll-m-20 text-xl text-zinc-600 font-semibold tracking-tight first:mt-0">
-          Formação Academica
-        </h3>
-        <blockquote className="italic text-sm text-zinc-400 mb-4">
-          Algumas formações podem estar em andamento... apenas formações
-          relevantes e de longo prazo em constante atualização !
-        </blockquote>
-        <TrainingCard />
       </CardMy>
 
       {/* Projetos */}
@@ -220,10 +225,11 @@ export default function Home() {
           {
             featured: "Projeto on-line",
             title: "loja virtual para Sheu Brigadeiros Gourmet",
-            description:"Loja vitual que fiz para minha namorada para colocar demandas reais de doces e brigadeiros gourmet na sua loja virtual alem de toda a renovação de maketing e logo e midias digitais.",
-            link:"https://sheyla-brigadeiros-site.vercel.app/?fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnaJol5tXeY2fDQgPqXqxABZMHkp72-Cr8dImMm8cm36xxpxWXo9qPEPVJYZI_aem_G4yfG3HFFQNWjqNZgUljfA",
-            page:"",
-            image:"/images/projects/sheu-site.png"
+            description:
+              "Loja vitual que fiz para minha namorada para colocar demandas reais de doces e brigadeiros gourmet na sua loja virtual alem de toda a renovação de maketing e logo e midias digitais.",
+            link: "https://sheyla-brigadeiros-site.vercel.app/?fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnaJol5tXeY2fDQgPqXqxABZMHkp72-Cr8dImMm8cm36xxpxWXo9qPEPVJYZI_aem_G4yfG3HFFQNWjqNZgUljfA",
+            page: "",
+            image: "/images/projects/sheu-site.png",
           },
         ].map((item, index) => {
           return (
@@ -238,19 +244,17 @@ export default function Home() {
                 className="relative z-20 aspect-video w-full object-cover"
               />
               <CardHeader>
-                <CardAction>
-                </CardAction>
-                  <Badge variant="secondary">{item.featured}</Badge>
+                <CardAction></CardAction>
+                <Badge variant="secondary">{item.featured}</Badge>
                 <CardTitle>{item.title}</CardTitle>
-                <CardDescription>
-                  {item.description}
-                </CardDescription>
+                <CardDescription>{item.description}</CardDescription>
               </CardHeader>
               <CardFooter>
-              <a href={item.link} target="_blank">
-
-                <Button className="w-full">Descobrir mais</Button>
-              </a>
+                <Button className="w-full hover:bg-blue-500 z-50">
+                  <Link href={item.link} target="_blank">
+                    Descobrir mais
+                  </Link>
+                </Button>
               </CardFooter>
             </Card>
           );
@@ -271,8 +275,6 @@ export default function Home() {
         </blockquote>
         <CertificationCards />
       </CardMy>
-
-     
     </div>
   );
 }
