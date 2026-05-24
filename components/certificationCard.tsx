@@ -14,8 +14,7 @@ import {
 export default function CertificationCards() {
   return (
     <div
-      className="w-full border border-zinc-300 transition duration-300
-        bg-gradient-to-tr from-white/10 via-black/10 to-white/10 rounded-2xl "
+      className="w-full border rounded-xl bg-gray-100 "
     >
       {[
         {
@@ -34,7 +33,7 @@ export default function CertificationCards() {
       ].map((card, index) => (
         <div
           key={index}
-          className="flex flex-col md:flex-row gap-4 items-center
+          className="flex flex-col md:flex-row gap-4 items-start
             p-4 group hover:bg-white/5 transition duration-300 border-b 
             border-zinc-300 last:border-b-0 group-hover:border-${card.color}"
         >
@@ -42,10 +41,10 @@ export default function CertificationCards() {
             src={card.icon}
             alt={card.title}
             objectFit="cover"
-            width={104}
-            height={104}
+            width={70}
+            height={70}
             className={`text-8xl rounded-full text-xs border-3
-                border-white p-4 flex items-center justify-center bg-white/5
+                border-white flex items-center justify-center bg-white/5
                 group-hover:scale-105 transition-transform duration-300 shadow-lg shadow`}
           />
 

@@ -22,16 +22,17 @@ import { Badge } from "@/components/ui/badge";
 
 import Link from "next/link";
 import ReadMoreButton from "@/components/readmore";
+import CarroselProjects from "@/components/CarroselProjects";
 
 export default function Home() {
   return (
     <div
-      className="bg-linear-to-tr gap-12
-      from-white to-white flex flex-col mx-auto max-w-[600px] my-8 pb-9 px"
+      className="bg-linear-to-tr md:justify-center items-center
+      from-white to-white flex flex-col mx-auto max-w-150 my-8 pb-9 h-100vh"
     >
       <CardMy
         className="flex flex-col items-start justify-center mx-2 
-         border-zinc-500/20 rounded-xl px-4"
+         border-zinc-500/20 rounded-xl border-none bg-none shadow-none hover:shadow-none"
       >
         <div className="flex flex-row gap-3 mb-2">
           <Tooltip>
@@ -80,12 +81,15 @@ export default function Home() {
             Construindo plataformas SaaS, MVPs e sistemas que escalam negócios.
           </p>
         </div>
+        <div className="my-3 w-full">
+          <Skills />
+        </div>
 
-        <div className="flex gap-2 flex-wrap w-full">
-          <Link href="https://tally.so/r/kdAMVM">
+        <div className="flex gap-2 w-full">
+          <Link href="https://typebot.co/my-typebot-75c4uvl" className="w-full">
             <Button
               size="sm"
-              className="rounded-lg cursor-pointer px-3 py-4 ring ring-white
+              className="rounded-lg cursor-pointer px-3 py-4 ring ring-white w-full
               bg-gradient-to-tr hover:shadow-md shadow-amber-500 from-amber-600 to-amber-500 text-xs"
             >
               Entrar em Contato
@@ -112,191 +116,83 @@ export default function Home() {
             </Button>
           </Link>
         </div>
+      </CardMy>
+      <CardMy className="flex flex-col items-stretch justify-center my-6 border-none shadow-none bg-none p-0 w-full">
+        <h3
+          className="scroll-m-20 text-xl px-3
+         text-zinc-600 font-semibold tracking-tight first:mt-0 mb-4"
+        >
+          Projetos Campeões
+        </h3>
+        <blockquote className="px-3 italic text-sm text-zinc-400 mb-4">
+          Alguns projetos ainda podem estar em desenvolvimento,
+          <br /> porem são projetos feitos por mim automonamente e com uso real
+          no mercado !
+        </blockquote>
 
-        <div className="py-4 px-2 w-full">
-
-          <div className="mb-1">
-            <h3 className=" scroll-m-20 text-sm text-zinc-400 font-semibold tracking-tight first:mt-0">
-              Habilidades Front-End
-            </h3>
-            <div className="flex flex-row py-2 px-3 rounded-lg gap-4">
-              {[
-                {
-                  icon: "/images/skills/nextjs.jpeg",
-                  title: "Next.JS",
-                  description:
-                    "Desenvolvimento de Sistemas e interfaces com o maior framework que impulsiona o React",
-                  certified: true,
-                },
-                {
-                  icon: "/images/skills/react.png",
-                  title: "React.JS",
-                  description: "Linguagem de programação da WEB",
-                },
-                {
-                  icon: "/images/skills/typescript.png",
-                  title: "TypeScript",
-                  description: "Linguagem de programação da WEB",
-                },
-                {
-                  icon: "/images/skills/tailwindcss.png",
-                  title: "Tailwindcss",
-                  description: "Linguagem de programação da WEB",
-                },
-              ].map((card, index) => (
-                <div
-                  key={index}
-                  className="flex flex-col gap-1.5 items-center
-              group hover:bg-white/5 transition duration-300  
-              border-zinc-300 last:border-b-0 group-hover:border-${card.color}"
-                >
-                  {card.certified ? (
-                    <>
-                      <Tooltip>
-                        <TooltipTrigger asChild>
-                          <Image
-                            src={card.icon}
-                            alt={card.title}
-                            objectFit="cover"
-                            width={42}
-                            height={42}
-                            className={`rounded-lg text-xs border-3 shadow-amber-300 shadow-md
-                            border-amber-300 flex items-center justify-center bg-amber-300/40
-                            p-0.5 group-hover:scale-105 transition-transform duration-300 select-none`}
-                          />
-                        </TooltipTrigger>
-                        <TooltipContent side="bottom">
-                          <p className="flex items-center gap-2">
-                            {" "}
-                            <BadgeCheck />
-                            Certificado Official em {card.title}
-                          </p>
-                        </TooltipContent>
-                      </Tooltip>
-                    </>
-                  ) : (
-                    <Image
-                      src={card.icon}
-                      alt={card.title}
-                      objectFit="cover"
-                      width={42}
-                      height={42}
-                      className={` rounded-lg text-xs select-none
-                    p-0.5 flex items-center justify-center bg-transparent
-                    group-hover:scale-125 group-active:scale-125 transition-transform duration-300`}
-                    />
-                  )}
-
-                  <h3 className="text-zinc-500 font-bold text-xs mb-2 lg:text-left">
-                    {card.title}
+        <div
+          className="flex flex-col w-full border border-amber-500 transition duration-300
+          bg-gradient-to-tr from-amber-500/10 via-amber-100/10 to-yellow-500/10 
+          rounded-2xl"
+        >
+          {[
+            {
+              icon: "/images/trofeus/meu-barbeiro.png",
+              title: "🏆​ Meu Barbeiro App 🏆​",
+              descriptiton:
+                "Fundador do meu barbeiro um web app que automatiza as trocas de mensagens dos barbeiros, otimizando tempo e agendamentos.",
+              ProtectionText:
+                "O projeto é pantentiado e tem seus direitos reservados de imagem e technologia intelectual. qualquer uso ou copia, serão tomadas medidas de acordo com as leis: Lei do Software (Lei nº 9.609/98), Direito Autoral (Lei nº 9.610/98), Registro no INPI (Instituto Nacional da Propriedade Industrial).",
+            },
+          ].map((item, index) => (
+            <div
+              key={index}
+              className="flex flex-col gap-4 justify-center items-center
+                  p-4 group hover:bg-white/5 transition duration-300 border-b 
+                  border-zinc-300 last:border-b-0 text-center"
+            >
+              <div className="flex flex-row items-center gap-4">
+                <Image
+                  src={item.icon}
+                  alt={item.title}
+                  objectFit="cover"
+                  width={80}
+                  height={80}
+                  className={`rounded-full text-xs border-3 z-10
+                  border-amber-400 p-1 flex items-center justify-center bg-amber-400/5
+                    group-hover:scale-105 transition-transform duration-300 shadow-lg shadow-amber-400`}
+                />
+                <div className="flex flex-col items-start justify-start">
+                  <h2 className="flex items-center gap-2 scroll-m-20 pb-2 text-md text-zinc-800 font-semibold tracking-tight first:mt-0">
+                    {item.title}
+                  </h2>
+                  <h3 className="scroll-m-20 text-left max-w-md pb-2 text-xs text-zinc-600 font-semibold ">
+                    {item.descriptiton}
                   </h3>
                 </div>
-              ))}
-            </div>
-          </div>
-          <div>
-            <h3 className=" scroll-m-20 text-sm text-zinc-400 font-semibold tracking-tight first:mt-0">
-              Habilidades Back-End
-            </h3>
-            <div className="flex flex-row  py-2 px-3 rounded-lg gap-4">
-              {[
-                {
-                  icon: "/images/skills/nodejs.jpeg",
-                  title: "Node JS",
-                  description:
-                    "Desenvolvimento de Sistemas e interfaces com o maior framework que impulsiona o React",
-                },
-                {
-                  icon: "/images/skills/postgresql.png",
-                  title: "PostgreSQL",
-                  description: "Linguagem de programação da WEB",
-                },
-                {
-                  icon: "/images/skills/python.png",
-                  title: "Python",
-                  description: "Linguagem de programação da WEB",
-                },
-              ].map((card, index) => (
-                <div
-                  key={index}
-                  className="flex flex-col gap-1.5 items-center
-                group hover:bg-white/5 transition duration-300  
-                border-zinc-300 last:border-b-0 group-hover:border-${card.color}"
+              </div>
+              <div>
+                <blockquote className="italic text-justify text-xs text-zinc-400 mb-4 bg-gray-100 rounded-xl px-4 py-2 border">
+                  {item.ProtectionText}
+                </blockquote>
+                <a
+                  href="https://barberboost.vercel.app/"
+                  className="cursor-pointer"
                 >
-                  {
-                    <Image
-                      src={card.icon}
-                      alt={card.title}
-                      objectFit="cover"
-                      width={42}
-                      height={42}
-                      className={` rounded-lg text-xs select-none
-                    p-0.5 flex items-center justify-center bg-transparent
-                    group-hover:scale-125 group-active:scale-125 transition-transform duration-300`}
-                    />
-                  }
-                  <h3 className="text-zinc-500 font-bold text-xs mb-2 lg:text-left">
-                    {card.title}
-                  </h3>
-                </div>
-              ))}
-            </div>
-            <div className="mb-1">
-              <h3 className=" scroll-m-20 text-sm text-zinc-400 font-semibold tracking-tight first:mt-0">
-                Infraestrutura & DevOps
-              </h3>
-              <div className="flex flex-row py-2 px-3 rounded-lg gap-4">
-                {[
-                  {
-                    icon: "/images/skills/git.png",
-                    title: "git",
-                    description:
-                      "Desenvolvimento de Sistemas e interfaces com o maior framework que impulsiona o React",
-                  },
-                  {
-                    icon: "/images/skills/github.png",
-                    title: "Github",
-                    description: "Linguagem de programação da WEB",
-                  },
-                  {
-                    icon: "/images/skills/docker.jpg",
-                    title: "Docker",
-                    description: "Linguagem de programação da WEB",
-                  },
-                  {
-                    icon: "/images/skills/n8n.png",
-                    title: "N8N",
-                    description: "Linguagem de programação da WEB",
-                  },
-                ].map((card, index) => (
-                  <div
-                    key={index}
-                    className="flex flex-col gap-1.5 items-center
-                group hover:bg-white/5 transition duration-300  
-                border-zinc-300 last:border-b-0 group-hover:border-${card.color}"
+                  <Button
+                    className="rounded-full cursor-pointer  
+                  hover:scale-105 bg-gradient-to-tr from-amber-400 to-amber-500 ring 
+                  px-6 py-6 shadow-amber-400 shadow-lg"
                   >
-                    {
-                      <Image
-                        src={card.icon}
-                        alt={card.title}
-                        objectFit="cover"
-                        width={42}
-                        height={42}
-                        className={` rounded-lg text-xs select-none
-                      p-0.5 flex items-center justify-center bg-transparent
-                      group-hover:scale-125 group-active:scale-125 transition-transform duration-300`}
-                      />
-                    }
-                    <h3 className="text-zinc-500 font-bold text-xs mb-2 lg:text-left">
-                      {card.title}
-                    </h3>
-                  </div>
-                ))}
+                    Clique e Veja mais !
+                  </Button>
+                </a>
               </div>
             </div>
-          </div>
+          ))}
         </div>
       </CardMy>
+      <CarroselProjects />
 
       {/* Habilidades */}
       {/* <CardMy
@@ -333,163 +229,21 @@ export default function Home() {
       </CardMy> */}
 
       {/* champions projects */}
-      {/* <CardMy
-        className="flex flex-col items-stretch justify-center mx-4 md:mx-16
-      md:px-6 md:py-5 border-zinc-500/20 rounded-xl"
-      >
-        <h3
-          className="scroll-m-20 text-xl
-         text-zinc-600 font-semibold tracking-tight first:mt-0 mb-4"
-        >
-          Projetos Campeões
-        </h3>
-        <blockquote className="italic text-sm text-zinc-400 mb-4">
-          Alguns projetos ainda podem estar em desenvolvimento,
-          <br /> porem são projetos feitos por mim automonamente e com uso real
-          no mercado !
-        </blockquote>
-
-        <div
-          className="flex flex-col border border-yellow-500 transition duration-300
-        bg-gradient-to-tr from-amber-500/10 via-amber-100/10 to-yellow-500/10 
-        max-w-md self-center rounded-2xl"
-        >
-          {[
-            {
-              icon: "/images/trofeus/meu-barbeiro.png",
-              title: "Meu Barbeiro App",
-              descriptiton:
-                "Fundador do meu barbeiro um web app que automatiza as trocas de mensagens dos barbeiros, otimizando tempo e agendamentos.",
-              ProtectionText:
-                "   ! O projeto é pantentiado e tem seus direitos reservados de imagem e technologia intelectual. qualquer uso ou copia, serão tomadas medidas de acordo com as leis: Lei do Software (Lei nº 9.609/98), Direito Autoral (Lei nº 9.610/98), Registro no INPI (Instituto Nacional da Propriedade Industrial).",
-            },
-           
-          ].map((item, index) => (
-            <div
-              key={index}
-              className="flex flex-col gap-4 justify-center items-center
-                  p-4 group hover:bg-white/5 transition duration-300 border-b 
-                  border-zinc-300 last:border-b-0 text-center"
-            >
-              <Image
-                src={item.icon}
-                alt={item.title}
-                objectFit="cover"
-                width={120}
-                height={120}
-                className={`text-8xl rounded-full text-xs border-3 z-10
-                    border-amber-400 p-1 flex items-center justify-center bg-amber-400/5
-                    group-hover:scale-105 transition-transform duration-300 shadow-lg shadow-amber-400`}
-              />
-             
-              <h2 className="flex items-center gap-2 scroll-m-20 pb-2 text-3xl text-zinc-800 font-semibold tracking-tight first:mt-0">
-                {item.title}
-              </h2>
-              <h3 className="scroll-m-20 text-justify max-w-md pb-2 text-xl text-zinc-600 font-semibold tracking-tight first:mt-0">
-                {item.descriptiton}
-              </h3>
-              <blockquote className="italic text-justify text-sm text-zinc-400 mb-4">
-                {item.ProtectionText}
-              </blockquote>
-              <a
-                href="https://barberboost.vercel.app/"
-                className="cursor-pointer"
-              >
-                <Button
-                  className="rounded-full cursor-pointer  
-                hover:scale-105 bg-gradient-to-tr from-amber-400 to-amber-500 ring 
-                px-6 py-6 shadow-amber-400 shadow-lg"
-                >
-                  Saiba mais Clicando Aqui !
-                </Button>
-              </a>
-            </div>
-          ))}
-        </div>
-      </CardMy> */}
 
       {/* Projetos */}
-      <CardMy
-        className="flex flex-col items-stretch justify-center mx-4 md:mx-16
-      md:px-6 md:py-5 border-zinc-500/20 rounded-xl"
-      >
-        <h3 className="scroll-m-20 text-xl text-zinc-600 font-semibold tracking-tight first:mt-0 mb-4">
-          Principais Projetos
-        </h3>
-        <blockquote className="italic text-sm text-zinc-400 mb-4">
-          Alguns projetos podem estar em desenvolvimento !
-        </blockquote>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-          {[
-            {
-              featured: "Projeto on-line",
-              title: "loja virtual para Sheu Brigadeiros Gourmet",
-              description:
-                "Loja vitual que fiz para minha namorada para colocar demandas reais de doces e brigadeiros gourmet na sua loja virtual alem de toda a renovação de maketing e logo e midias digitais.",
-              link: "https://sheyla-brigadeiros-site.vercel.app/?fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnaJol5tXeY2fDQgPqXqxABZMHkp72-Cr8dImMm8cm36xxpxWXo9qPEPVJYZI_aem_G4yfG3HFFQNWjqNZgUljfA",
-              page: "",
-              image: "/images/projects/sheu-site.png",
-            },
-            {
-              featured: "Projeto on-line",
-              title: "loja virtual Precinho Rei",
-              description:
-                "A loja virtual precinho rei e um ecommerce que eu desenvolvi em nextjs tambem buscando mesclar o melhor em interfaces da amazon, shopee e mercado pago o que eu gostava nas plataformas, esse projeto no futuro não so sera minha loja virtual mas será whitelabel e usavel !",
-              link: "https://precinhorei.vercel.app/",
-              page: "",
-              image: "/images/projects/precinho-rei.png",
-            },
-          ].map((item, index) => {
-            return (
-              <Card
-                key={index}
-                className="relative mx-auto w-full max-w-sm pt-0 group z-30"
-              >
-                <div className="absolute inset-0 " />
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  unoptimized
-                  width={384}
-                  height={400}
-                  className="relative z-20 aspect-video w-full object-cover group-hover:scale-110 transition-all easy-in-out duration-300"
-                />
-                <CardHeader>
-                  <CardAction></CardAction>
-                  <Badge variant="secondary">{item.featured}</Badge>
-                  <CardTitle>{item.title}</CardTitle>
-                  <CardDescription className="z-30">
-                    <ReadMoreButton text={item.description} />
-                  </CardDescription>
-                </CardHeader>
-                <CardFooter>
-                  <Button className="w-full hover:bg-blue-500 z-50 rounded-full ">
-                    <Link href={item.link} target="_blank">
-                      Descobrir mais
-                    </Link>
-                  </Button>
-                </CardFooter>
-              </Card>
-            );
-          })}
-        </div>
-      </CardMy>
 
       {/* certificações */}
-      {/* <CardMy
-        className="flex flex-col items-stretch justify-center mx-4 md:mx-16
-        md:px-6 md:py-5 border-zinc-500/20 rounded-xl"
-      >
-        <h3 className="scroll-m-20 pb-2 text-xl text-zinc-600 font-semibold tracking-tight first:mt-0">
+      <CardMy className="flex flex-col items-stretch justify-center bg-none shadow-none border-none">
+        <h3 className="px-3 scroll-m-20 pb-2 text-xl text-zinc-600 font-semibold tracking-tight first:mt-0">
           Certificações Tecnicas & Officiais
         </h3>
-        <blockquote className="italic text-sm text-zinc-400 mb-4">
+        <blockquote className="px-3 italic text-sm text-zinc-400 mb-4">
           Essas certificações são para apredizados especificos
           <br /> consolidando e validando conhecimentos em ferramantas e
           technologias.
         </blockquote>
         <CertificationCards />
-      </CardMy> */}
+      </CardMy>
     </div>
   );
 }
