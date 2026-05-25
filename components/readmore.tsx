@@ -9,7 +9,7 @@ export default function ReadMoreButton({ text }: { text: string }) {
 
   return (
     <div>
-      <p className={`text-gray-700 ${isExpanded ? 'line-clamp-none':'line-clamp-1'}`}>
+      <p className={`text-white ${isExpanded ? 'line-clamp-none':'line-clamp-1'}`}>
         {isExpanded ? text : `${text.substring(0, limit)}...`}
       </p>
       <button

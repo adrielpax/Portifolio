@@ -61,7 +61,7 @@ export default function CertificationCards() {
             <Dialog>
               <DialogTrigger asChild>
                 <Button
-                  className="max-w-56 my-4 rounded-full self-start
+                  className="max-w-56 my-4 rounded-lg self-start
                   bg-gradient-to-tr from-amber-500 to-amber-700 ring-1
                   shadow-lg shadow-amber-500 cursor-pointer px-6"
                 >
