@@ -121,7 +121,7 @@ function CarroselProjects({ style = "borderless" }: CarroselProjectsProps) {
                 className="object-cover transition-all duration-300"
               />
             </div>
-            <div className="bg-black rounded-lg pb-2 mx-4">
+            <div className="bg-gray-200 rounded-lg py-4 mx-2">
               <CardHeader className="p-0 pt-2">
                 <div className="flex">
                   {/* <Badge
@@ -130,10 +130,10 @@ function CarroselProjects({ style = "borderless" }: CarroselProjectsProps) {
                   {item.featured}
                   </Badge> */}
                 </div>
-                <CardTitle className="text-xl px-4 mt-0 text-white">
+                <CardTitle className="text-sm px-4 mt-0 text-gray-600">
                   {item.title}
                 </CardTitle>
-                <CardDescription className="px-4 z-30 text-sm  mt-0">
+                <CardDescription className="px-4 z-30 text-xs mt-0">
                   <ReadMoreButton text={item.description} />
                 </CardDescription>
               </CardHeader>

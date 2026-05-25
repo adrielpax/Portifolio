@@ -9,12 +9,12 @@ export default function ReadMoreButton({ text }: { text: string }) {
 
   return (
     <div>
-      <p className={`text-white ${isExpanded ? 'line-clamp-none':'line-clamp-1'}`}>
+      <p className={`text-gray-400 ${isExpanded ? 'line-clamp-none':'line-clamp-1'}`}>
         {isExpanded ? text : `${text.substring(0, limit)}...`}
       </p>
       <button
         onClick={() => setIsExpanded(!isExpanded)}
-        className="text-blue-500 hover:underline text-sm"
+        className="text-blue-500 hover:underline text-xs"
       >
         {isExpanded ? 'Ler menos' : 'Ler mais'}
       </button>

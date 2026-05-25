@@ -14,7 +14,7 @@ export default function SegmentControl() {
   return (
     <div className="flex flex-col items-start w-full px-2 my-3">
       {/* Botões do Segment Control */}
-      <div className="flex p-1  rounded-lg shadow-sm w-full justify-between">
+      <div className="flex flex-wrap p-1  rounded-lg shadow-sm w-full justify-between">
         <button
           onClick={() => setActiveTab("projects-champions")}
           className={`px-6 py-2 text-sm w-full font-medium rounded-md transition-all ${
