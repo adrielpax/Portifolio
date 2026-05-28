@@ -4,8 +4,10 @@ import { useState } from "react";
 import CardMy from "../card";
 import { Button } from "./button";
 import Image from "next/image";
-import CarroselProjects from "../CarroselProjects";
+import CarroselProjects from "../GaleriaInsta";
 import CertificationCards from "../certificationCard";
+import { FolderKanban, ShieldCheck, Trophy } from "lucide-react";
+import GaleriaInsta from "../GaleriaInsta";
 
 export default function SegmentControl() {
   // Estado para controlar qual aba está ativa (ex: 'projects-champions', 'analytics', 'certifiedAt')
@@ -14,36 +16,36 @@ export default function SegmentControl() {
   return (
     <div className="flex flex-col items-start w-full px-2 my-3">
       {/* Botões do Segment Control */}
-      <div className="flex flex-wrap p-1  rounded-lg shadow-sm w-full justify-between">
+      <div className="flex flex-row p-1 border-b w-full justify-between">
         <button
           onClick={() => setActiveTab("projects-champions")}
-          className={`px-6 py-2 text-sm w-full font-medium rounded-md transition-all ${
+          className={`px-3 py-2 text-sm w-full font-medium rounded-md transition-all justify-center flex ${
             activeTab === "projects-champions"
-              ? "bg-black text-white shadow-sm"
+              ? "bg-black text-white shadow-sm rounded-b-none"
               : "text-gray-600 hover:text-gray-900"
           }`}
         >
-          Projetos Campeôes
+          <Trophy />
         </button>
         <button
           onClick={() => setActiveTab("principal-projects")}
-          className={`px-6 py-2 text-sm w-full font-medium rounded-md transition-all ${
+          className={`px-3 py-2 text-sm w-full font-medium rounded-md transition-all justify-center flex ${
             activeTab === "principal-projects"
-              ? "bg-black text-white shadow-sm"
+              ? "bg-black text-white shadow-sm rounded-b-none "
               : "text-gray-600 hover:text-gray-900"
           }`}
         >
-          Projetos Principais
+          <FolderKanban />
         </button>
         <button
           onClick={() => setActiveTab("certifiedAt")}
-          className={`px-6 py-2 text-sm w-full font-medium rounded-md transition-all ${
+          className={`px-3 py-2 text-sm w-full font-medium rounded-md transition-all justify-center flex ${
             activeTab === "certifiedAt"
-              ? "bg-black text-white shadow-sm"
+              ? "bg-black text-white shadow-sm rounded-b-none"
               : "text-gray-600 hover:text-gray-900"
           }`}
         >
-          Certificações
+          <ShieldCheck />
         </button>
       </div>
 
@@ -52,10 +54,10 @@ export default function SegmentControl() {
         {activeTab === "projects-champions" && (
           <CardMy className="flex flex-col items-stretch justify-center border-none shadow-none bg-none p-0 w-full">
             <h3 className="px-3 scroll-m-20 pb-2 text-xl text-zinc-600 font-semibold tracking-tight first:mt-0">
-              Projetos Campeões 
+              Projetos Campeões
             </h3>
             <blockquote className="px-3 italic text-sm text-zinc-400 mb-4">
-                Projetos de caso de uso real de mercado !
+              Projetos de caso de uso real de mercado !
             </blockquote>
 
             <div
@@ -122,7 +124,7 @@ export default function SegmentControl() {
           </CardMy>
         )}
 
-        {activeTab === "principal-projects" && <CarroselProjects />}
+        {activeTab === "principal-projects" && <GaleriaInsta />}
 
         {activeTab === "certifiedAt" && (
           <CardMy className="flex flex-col items-stretch justify-center bg-none shadow-none border-none">

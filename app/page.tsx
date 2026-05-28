@@ -22,7 +22,7 @@ import { Badge } from "@/components/ui/badge";
 
 import Link from "next/link";
 import ReadMoreButton from "@/components/readmore";
-import CarroselProjects from "@/components/CarroselProjects";
+import CarroselProjects from "@/components/GaleriaInsta";
 import SegmentControl from "@/components/ui/SegmentControl";
 
 export default function Home() {
