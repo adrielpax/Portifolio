@@ -16,9 +16,23 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adriel.dev";
+
 export const metadata: Metadata = {
-  title: "Adriel | Analista e Desenvolvedor de Soluções em Technologia",
-  description: "Desenvolvimento / analise e administração de Sistemas para soluções em technologia e Automação",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Adriel | Analista e Desenvolvedor de Soluções em Tecnologia",
+    template: "%s | Adriel Silva",
+  },
+  description:
+    "Desenvolvimento, análise e administração de sistemas para soluções em tecnologia e automação. Portfólio, projetos e blog.",
+  openGraph: {
+    type: "website",
+    locale: "pt_BR",
+    siteName: "Adriel Silva",
+    url: siteUrl,
+  },
+  twitter: { card: "summary_large_image" },
 };
 
 export default function RootLayout({

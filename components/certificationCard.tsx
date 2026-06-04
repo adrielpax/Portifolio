@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { Button } from "./ui/button";
+import Link from "next/link";
 import { BadgeCheck } from "lucide-react";
 import {
   Dialog,
@@ -10,85 +10,104 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { resolveImage } from "@/lib/sanity/data";
+import type { Certification } from "@/lib/sanity/types";
 
-export default function CertificationCards() {
+/** Conteúdo padrão exibido enquanto não há certificações no Sanity. */
+const defaultCertifications: Certification[] = [
+  {
+    _id: "default-next",
+    title: "Certificado pela própria Vercel em NEXT JS App Router Fundamentals",
+    issuer: "Vercel",
+    logo: "/images/formacao/vercel.png",
+    credentialUrl: undefined,
+  },
+  {
+    _id: "default-react",
+    title: "Certificado pela própria Vercel em React Fundamentals",
+    issuer: "Vercel",
+    logo: "/images/formacao/vercel.png",
+    credentialUrl: undefined,
+  },
+];
+
+export default function CertificationCards({
+  certifications,
+}: {
+  certifications?: Certification[];
+}) {
+  const items =
+    certifications && certifications.length > 0
+      ? certifications
+      : defaultCertifications;
+
   return (
-    <div
-      className="w-full border rounded-xl bg-gray-100 "
-    >
-      {[
-        {
-          icon: "/images/formacao/vercel.png",
-          certified:"/images/project/certifiedNext.png",
-          title:"Certificado pela propria Vercel em NEXT JS App Router Fundamentals",
-          description:
-            "Curso official da Vercel Learn em vercel.com que ensina todos os fundamentos de desenvolvimento experiente com NextJS em Streaming loading, fetch de dados, client e server components, e mais estruturação com React",
-        },
-        {
-          icon: "/images/formacao/vercel.png",
-          title: "Certificado pela propria Vercel em React Fundamentals",
-          description:
-            "Curso official da Vercel Learn em vercel.com que ensina todos os fundamentos React JS framework do facebook",
-        },
-      ].map((card, index) => (
-        <div
-          key={index}
-          className="flex flex-col md:flex-row gap-4 items-start
-            p-4 group hover:bg-white/5 transition duration-300 border-b 
-            border-zinc-300 last:border-b-0 group-hover:border-${card.color}"
-        >
-          <Image
-            src={card.icon}
-            alt={card.title}
-            objectFit="cover"
-            width={70}
-            height={70}
-            className={`text-8xl rounded-full text-xs border-3
-                border-white flex items-center justify-center bg-white/5
-                group-hover:scale-105 transition-transform duration-300 shadow-lg shadow`}
-          />
+    <div className="flex w-full flex-col gap-2">
+      {items.map((card) => {
+        const logo = resolveImage(card.logo, 140);
+        return (
+          <div
+            key={card._id}
+            className="group flex items-start gap-3 rounded-2xl border border-zinc-200/80 bg-white
+            p-3 transition-colors hover:border-zinc-300"
+          >
+            {logo && (
+              <Image
+                src={logo}
+                alt={card.title}
+                width={40}
+                height={40}
+                unoptimized
+                className="h-10 w-10 shrink-0 rounded-xl object-cover ring-1 ring-zinc-100"
+              />
+            )}
 
-          <div className="flex flex-col">
-            <h3 className="text-zinc-600 font-bold text-lg mb-2">
-              {card.title}
-            </h3>
-            <p
-              className="text-gray-500 text-sm leading-relaxed
-                    text-left "
-            >
-              {card.description}
-            </p>
-            <Dialog>
-              <DialogTrigger asChild>
-                <Button
-                  className="max-w-56 my-4 rounded-lg self-start
-                  bg-gradient-to-tr from-amber-500 to-amber-700 ring-1
-                  shadow-lg shadow-amber-500 cursor-pointer px-6"
+            <div className="min-w-0 flex-1">
+              {card.issuer && (
+                <p className="text-[11px] font-medium text-amber-600">
+                  {card.issuer}
+                </p>
+              )}
+              <h3 className="text-sm font-semibold leading-snug text-zinc-900">
+                {card.title}
+              </h3>
+
+              {card.credentialUrl ? (
+                <Link
+                  href={card.credentialUrl}
+                  target="_blank"
+                  className="mt-1.5 inline-flex items-center gap-1 text-xs font-medium text-amber-600
+                  transition-colors hover:text-amber-700"
                 >
-                  <BadgeCheck /> Ver Certificado{" "}
-                </Button>
-              </DialogTrigger>
-              <DialogContent showCloseButton={false}>
-                <DialogHeader className="gap-6">
-                  <DialogTitle>{card.title}</DialogTitle>
-                  <DialogDescription>
-                    <div className="flex justify-center items-center rounded-xl">
-                      {/* <Image
-                        src={card.icon}
-                        width={264}
-                        height={384}
-                        alt={card.title}
-                        className="rounded-xl"
-                      /> */}
-                      Estamos trabalhando para expor as credenciais, houve uma atualização no website da vercel, volte depois..
-                    </div>
-                  </DialogDescription>
-                </DialogHeader>
-              </DialogContent>
-            </Dialog>
+                  <BadgeCheck className="h-3.5 w-3.5" /> Ver certificado
+                </Link>
+              ) : (
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <button
+                      className="mt-1.5 inline-flex cursor-pointer items-center gap-1 text-xs font-medium
+                      text-zinc-500 transition-colors hover:text-zinc-800"
+                    >
+                      <BadgeCheck className="h-3.5 w-3.5" /> Ver certificado
+                    </button>
+                  </DialogTrigger>
+                  <DialogContent showCloseButton={false}>
+                    <DialogHeader className="gap-6">
+                      <DialogTitle>{card.title}</DialogTitle>
+                      <DialogDescription>
+                        <span className="flex items-center justify-center rounded-xl">
+                          Estamos trabalhando para expor as credenciais, houve
+                          uma atualização no website da vercel, volte depois..
+                        </span>
+                      </DialogDescription>
+                    </DialogHeader>
+                  </DialogContent>
+                </Dialog>
+              )}
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 }
