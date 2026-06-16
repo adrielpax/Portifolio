@@ -8,6 +8,12 @@ const CONTATO_URL = "https://typebot.co/my-typebot-75c4uvl";
 
 const tabs = [
   { href: "/", label: "Perfil", icon: User, match: (p: string) => p === "/" },
+  // {
+  //   href: "/lp",
+  //   label: "LP",
+  //   icon: StickerIcon,
+  //   match: (p: string) => p === "/lp",
+  // },
   {
     href: "/blog",
     label: "Blog",
@@ -38,7 +44,7 @@ export default function BottomNav() {
               text-[10px] font-medium transition-colors"
             >
               <span
-                className={`flex h-9 w-14 items-center justify-center rounded-full transition-all duration-300 ${
+                className={`flex h-9 w-14 items-center justify-center rounded-xl transition-all duration-300 ${
                   active
                     ? "bg-zinc-900 text-white shadow-sm"
                     : "text-zinc-500 group-hover:text-zinc-900"
@@ -62,13 +68,13 @@ export default function BottomNav() {
           text-[10px] font-medium"
         >
           <span
-            className="flex h-9 w-14 items-center justify-center rounded-full
-            bg-gradient-to-tr from-amber-600 to-amber-500 text-white shadow-sm
+            className="flex h-9 w-14 items-center justify-center rounded-xl
+            bg-gradient-to-tr from-green-500 to-green-500 text-white shadow-sm
             transition-transform duration-300 group-hover:scale-105 group-active:scale-95"
           >
             <MessageCircle className="h-5 w-5" strokeWidth={2.2} />
           </span>
-          <span className="text-amber-600">Contato</span>
+          <span className="text-black">Contato</span>
         </a>
       </div>
     </nav>

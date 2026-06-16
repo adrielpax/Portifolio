@@ -93,8 +93,8 @@ export default async function Home() {
             <Button
               size="sm"
               className="group h-11 w-full cursor-pointer gap-1.5 rounded-xl text-xs font-medium
-              bg-amber-500/90 text-white shadow-none transition-colors
-              hover:bg-amber-500"
+              bg-black text-white shadow-none transition-colors
+              hover:bg-black/70"
             >
               <MessageCircle className="h-4 w-4" />
               Entrar em Contato

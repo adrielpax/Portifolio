@@ -81,7 +81,7 @@ export default function SegmentControl({
                 return (
                   <div
                     key={item._id}
-                    className="group rounded-2xl border border-zinc-200/80 bg-white p-3
+                    className="group rounded-2xl border border-zinc-200/80 bg-zinc-50 p-3
                     transition-colors hover:border-zinc-300"
                   >
                     <div className="flex items-center gap-3">
@@ -92,7 +92,7 @@ export default function SegmentControl({
                           width={48}
                           height={48}
                           unoptimized
-                          className="h-12 w-12 shrink-0 rounded-xl object-cover ring-1 ring-amber-200"
+                          className="h-20 w-20 shrink-0 rounded-full object-cover ring-1 ring-cyan-200"
                         />
                       )}
                       <div className="min-w-0">
@@ -105,19 +105,20 @@ export default function SegmentControl({
                       </div>
                     </div>
 
-                    {item.protectionText && (
-                      <p className="mt-2.5 line-clamp-3 rounded-lg bg-zinc-50 px-3 py-2 text-[11px] italic leading-relaxed text-zinc-400">
-                        {item.protectionText}
-                      </p>
-                    )}
+                   
                     {item.link && (
                       <a
                         href={item.link}
-                        className="mt-2.5 inline-flex items-center gap-1 text-xs font-medium text-amber-600
-                        transition-colors hover:text-amber-700"
+                        className="mt-2.5 inline-flex w-full self-center gap-1 text-xs font-medium text-cyan-600
+                        transition-colors hover:text-cyan-700"
                       >
                         Saiba mais →
                       </a>
+                    )}
+                     {item.protectionText && (
+                      <p className="mt-2.5 line-clamp-3 rounded-lg bg-white h-auto px-3 py-2 text-[11px] italic leading-relaxed text-zinc-400">
+                        {item.protectionText}
+                      </p>
                     )}
                   </div>
                 );
