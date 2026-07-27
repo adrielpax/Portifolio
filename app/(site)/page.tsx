@@ -7,6 +7,7 @@ import Reveal from "@/components/os/Reveal";
 import SkillsPanel from "@/components/os/SkillsPanel";
 import ProjectCard from "@/components/os/ProjectCard";
 import ProofStrip from "@/components/os/ProofStrip";
+import ProfileCard from "@/components/os/ProfileCard";
 import {
   getProjects,
   getPosts,
@@ -29,7 +30,12 @@ export default async function Home() {
     <div className="pb-20">
       <VideoHero />
 
-      <div className="space-y-16 px-5 py-14 md:px-12 lg:px-16">
+      <div className="space-y-12 px-4 py-10 sm:px-5 md:space-y-16 md:px-12 md:py-14 lg:px-16">
+        {/* ── Cartão de visitas (o primeiro contato, sobretudo no celular) ── */}
+        <Reveal>
+          <ProfileCard />
+        </Reveal>
+
         {/* ── Prova em números reais ── */}
         <Reveal>
           <ProofStrip projects={projects} posts={posts.length} />

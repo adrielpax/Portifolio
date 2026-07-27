@@ -37,38 +37,41 @@ export default function Topbar({
       <button
         onClick={onOpenMobileNav}
         aria-label="Abrir menu"
-        className="grid h-9 w-9 place-items-center rounded-lg text-hud-muted hover:bg-black/[0.04] hover:text-hud-text md:hidden"
+        className="grid h-11 w-11 shrink-0 place-items-center rounded-xl text-hud-muted transition-colors
+        active:scale-95 hover:bg-black/[0.04] hover:text-hud-text md:hidden"
       >
         <Menu className="h-5 w-5" />
       </button>
 
       {/* Busca global */}
-      <form onSubmit={submit} className="relative flex-1 max-w-xl">
+      <form onSubmit={submit} className="relative min-w-0 flex-1 sm:max-w-xl">
         <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-hud-muted" />
         <input
           ref={inputRef}
           value={q}
           onChange={(e) => setQ(e.target.value)}
-          placeholder="Buscar no sistema…"
+          placeholder="Buscar…"
           aria-label="Buscar"
-          className="h-10 w-full rounded-xl border border-hud-line bg-hud-surface/70 pl-9 pr-16
-          font-mono text-sm text-hud-text placeholder:text-hud-muted/70
-          outline-none transition-colors focus:border-hud-amber/50"
+          enterKeyHint="search"
+          className="h-11 w-full rounded-xl border border-hud-line bg-white/70 pl-9 pr-3
+          font-mono text-base text-hud-text placeholder:text-hud-muted/70 backdrop-blur
+          outline-none transition-colors focus:border-hud-amber/50 sm:h-10 sm:pr-16 sm:text-sm"
         />
-        <kbd className="pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 rounded border border-hud-line px-1.5 py-0.5 font-mono text-[10px] text-hud-muted">
+        {/* Atalho só faz sentido onde existe teclado */}
+        <kbd className="pointer-events-none absolute right-2.5 top-1/2 hidden -translate-y-1/2 rounded border border-hud-line px-1.5 py-0.5 font-mono text-[10px] text-hud-muted sm:block">
           ⌘K
         </kbd>
       </form>
 
       {/* Status ao vivo */}
-      <div className="ml-auto hidden items-center gap-4 sm:flex">
+      <div className="ml-auto hidden shrink-0 items-center gap-4 sm:flex">
         <SystemClock />
-        <span className="flex items-center gap-1.5 rounded-full border border-hud-line px-2.5 py-1">
+        <span className="flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-1">
           <span className="relative flex h-2 w-2">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400/70" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
           </span>
-          <span className="hud-label !text-emerald-400">online</span>
+          <span className="hud-label !text-emerald-700">online</span>
         </span>
       </div>
     </header>

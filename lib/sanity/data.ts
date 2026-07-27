@@ -30,10 +30,27 @@ import type {
 // Revalidação ISR: conteúdo atualiza sozinho a cada 60s sem rebuild.
 const REVALIDATE = 60;
 
-async function sanityFetch<T>(query: string, params: Record<string, unknown> = {}) {
-  return client.fetch<T>(query, params, {
-    next: { revalidate: REVALIDATE },
-  });
+/**
+ * Busca no Sanity que nunca derruba a página nem o build.
+ *
+ * Se a API estiver fora do ar, lenta ou recusar a conexão, devolvemos `null` e
+ * quem chamou segue com o conteúdo base. Um recrutador abrindo o site no meio
+ * de uma instabilidade do CMS continua vendo o portfólio completo.
+ */
+async function sanityFetch<T>(
+  query: string,
+  params: Record<string, unknown> = {},
+): Promise<T | null> {
+  try {
+    return await client.fetch<T>(query, params, {
+      next: { revalidate: REVALIDATE },
+    });
+  } catch (err) {
+    console.warn(
+      `[sanity] busca falhou (${(err as Error).message}) — usando conteúdo base`,
+    );
+    return null;
+  }
 }
 
 /**

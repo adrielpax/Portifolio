@@ -26,7 +26,7 @@ export default function VideoHero() {
   return (
     <section
       ref={ref}
-      className="hud-grain relative h-[80vh] min-h-[540px] w-full overflow-hidden"
+      className="hud-grain relative h-[62vh] min-h-[400px] w-full overflow-hidden md:h-[78vh] md:min-h-[540px]"
     >
       {/* Mesh gradient animado */}
       <motion.div style={{ y: bgY }} className="absolute inset-0">
@@ -60,7 +60,7 @@ export default function VideoHero() {
       {/* Conteúdo */}
       <motion.div
         style={{ y: contentY, opacity: fade }}
-        className="relative z-10 flex h-full flex-col justify-end p-6 md:p-12 lg:p-16"
+        className="relative z-10 flex h-full flex-col justify-end p-5 pb-8 sm:p-6 md:p-12 lg:p-16"
       >
         <motion.div
           initial={{ opacity: 0, y: 28 }}
