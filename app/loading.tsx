@@ -1,14 +1,17 @@
-import BootSequence from "@/components/bootSequence";
-
-const loading = () => {
+/**
+ * Estado de carregamento do sistema.
+ * Discreto e no tema claro — nada de flash preto entre navegações.
+ */
+export default function Loading() {
   return (
-    <div className="fixed inset-0 z-40 bg-black flex items-center justify-center transition-opacity duration-500">
-      <div className="text-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto mb-4"></div>
-        <p className="text-blue-500 font-mono text-sm">Carregando sistema...</p>
+    <div className="hud fixed inset-0 z-40 flex items-center justify-center">
+      <div className="flex flex-col items-center gap-3">
+        <span className="relative flex h-10 w-10">
+          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-hud-amber/25" />
+          <span className="relative inline-flex h-10 w-10 items-center justify-center rounded-full border-2 border-hud-line border-t-hud-amber motion-safe:animate-spin" />
+        </span>
+        <p className="hud-label">Carregando</p>
       </div>
     </div>
   );
-};
-
-export default loading;
+}

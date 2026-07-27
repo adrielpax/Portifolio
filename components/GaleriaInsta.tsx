@@ -1,37 +1,19 @@
 "use client";
 import React, { useState, useCallback } from "react";
 import Image from "next/image";
-
-interface Projeto {
-  title: string;
-  description: string;
-  link?: string;
-  image: string;
-  username?: string;
-}
-
-const projetos: Projeto[] = [
-  {
-    title: "E-commerce Precinho Rei",
-    description:
-      "Plataforma de e-commerce em Next.js inspirada em Amazon, Shopee e Mercado Pago — com UX intuitiva e expansão white-label planejada.",
-    link: "https://precinhorei.vercel.app/",
-    image: "/images/projects/precinho-rei.png",
-    username: "precinhorei",
-  },
-
-  // Adicione mais projetos aqui
-];
+import { resolveImage } from "@/lib/sanity/data";
+import type { Project } from "@/lib/sanity/types";
 
 interface PopupState {
   open: boolean;
-  projeto: Projeto | null;
+  projeto: Project | null;
 }
 
-export default function GaleriaInsta() {
+export default function GaleriaInsta({ projects }: { projects: Project[] }) {
+  const projetos = projects;
   const [popup, setPopup] = useState<PopupState>({ open: false, projeto: null });
 
-  const abrirPopup = useCallback((projeto: Projeto) => {
+  const abrirPopup = useCallback((projeto: Project) => {
     setPopup({ open: true, projeto });
   }, []);
 
@@ -44,22 +26,27 @@ export default function GaleriaInsta() {
       {/* Grid */}
       <section aria-label="Galeria de projetos">
         <div className="grid grid-cols-3 gap-[2px]">
-          {projetos.map((projeto, i) => (
-            <button
-              key={i}
-              onClick={() => abrirPopup(projeto)}
-              className="relative aspect-square overflow-hidden bg-zinc-100 dark:bg-zinc-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
-              aria-label={`Abrir detalhes: ${projeto.title}`}
-            >
-              <Image
-                src={projeto.image}
-                alt={projeto.title}
-                fill
-                unoptimized
-                className="object-cover transition-opacity duration-200 active:opacity-70"
-              />
-            </button>
-          ))}
+          {projetos.map((projeto) => {
+            const src = resolveImage(projeto.image, 600);
+            return (
+              <button
+                key={projeto._id}
+                onClick={() => abrirPopup(projeto)}
+                className="relative aspect-square overflow-hidden bg-zinc-100 dark:bg-zinc-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+                aria-label={`Abrir detalhes: ${projeto.title}`}
+              >
+                {src && (
+                  <Image
+                    src={src}
+                    alt={projeto.title}
+                    fill
+                    unoptimized
+                    className="object-cover transition-opacity duration-200 active:opacity-70"
+                  />
+                )}
+              </button>
+            );
+          })}
         </div>
       </section>
 
@@ -83,13 +70,15 @@ export default function GaleriaInsta() {
 
             {/* Imagem */}
             <div className="relative aspect-square w-full">
-              <Image
-                src={popup.projeto.image}
-                alt={popup.projeto.title}
-                fill
-                unoptimized
-                className="object-cover"
-              />
+              {resolveImage(popup.projeto.image, 1080) && (
+                <Image
+                  src={resolveImage(popup.projeto.image, 1080)!}
+                  alt={popup.projeto.title}
+                  fill
+                  unoptimized
+                  className="object-cover"
+                />
+              )}
               <button
                 onClick={fecharPopup}
                 className="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/40 flex items-center justify-center text-white text-sm"

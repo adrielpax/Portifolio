@@ -1,143 +1,146 @@
 "use client";
 
 import { useState } from "react";
-import CardMy from "../card";
-import { Button } from "./button";
 import Image from "next/image";
-import CarroselProjects from "../GaleriaInsta";
-import CertificationCards from "../certificationCard";
 import { FolderKanban, ShieldCheck, Trophy } from "lucide-react";
-import GaleriaInsta from "../GaleriaInsta";
 
-export default function SegmentControl() {
-  // Estado para controlar qual aba está ativa (ex: 'projects-champions', 'analytics', 'certifiedAt')
+import GaleriaInsta from "../GaleriaInsta";
+import CertificationCards from "../certificationCard";
+import { resolveImage } from "@/lib/sanity/data";
+import type {
+  ChampionProject,
+  Project,
+  Certification,
+} from "@/lib/sanity/types";
+
+interface Props {
+  champions: ChampionProject[];
+  projects: Project[];
+  certifications: Certification[];
+}
+
+export default function SegmentControl({
+  champions,
+  projects,
+  certifications,
+}: Props) {
   const [activeTab, setActiveTab] = useState("projects-champions");
 
+  const tabBtn = (active: boolean) =>
+    `flex flex-1 items-center justify-center gap-1.5 rounded-xl py-2.5 text-xs font-semibold
+    transition-all duration-300 ${
+      active
+        ? "bg-white text-zinc-900 shadow-sm"
+        : "text-zinc-500 hover:text-zinc-800"
+    }`;
+
   return (
-    <div className="flex flex-col items-start w-full px-2 my-3">
-      {/* Botões do Segment Control */}
-      <div className="flex flex-row p-1 border-b w-full justify-between">
+    <div className="flex flex-col items-start w-full px-2 my-4">
+      {/* Segment Control estilo pill (iOS) */}
+      <div className="flex w-full gap-1 rounded-2xl border border-zinc-200/70 bg-zinc-100/80 p-1 backdrop-blur">
         <button
           onClick={() => setActiveTab("projects-champions")}
-          className={`px-3 py-2 text-sm w-full font-medium rounded-md transition-all justify-center flex ${
-            activeTab === "projects-champions"
-              ? "bg-black text-white shadow-sm rounded-b-none"
-              : "text-gray-600 hover:text-gray-900"
-          }`}
+          aria-label="Projetos Campeões"
+          className={tabBtn(activeTab === "projects-champions")}
         >
-          <Trophy />
+          <Trophy className="h-4 w-4" />
+          <span>Campeões</span>
         </button>
         <button
           onClick={() => setActiveTab("principal-projects")}
-          className={`px-3 py-2 text-sm w-full font-medium rounded-md transition-all justify-center flex ${
-            activeTab === "principal-projects"
-              ? "bg-black text-white shadow-sm rounded-b-none "
-              : "text-gray-600 hover:text-gray-900"
-          }`}
+          aria-label="Galeria de Projetos"
+          className={tabBtn(activeTab === "principal-projects")}
         >
-          <FolderKanban />
+          <FolderKanban className="h-4 w-4" />
+          <span>Projetos</span>
         </button>
         <button
           onClick={() => setActiveTab("certifiedAt")}
-          className={`px-3 py-2 text-sm w-full font-medium rounded-md transition-all justify-center flex ${
-            activeTab === "certifiedAt"
-              ? "bg-black text-white shadow-sm rounded-b-none"
-              : "text-gray-600 hover:text-gray-900"
-          }`}
+          aria-label="Certificações"
+          className={tabBtn(activeTab === "certifiedAt")}
         >
-          <ShieldCheck />
+          <ShieldCheck className="h-4 w-4" />
+          <span>Certificados</span>
         </button>
       </div>
 
-      {/* Conteúdo Principal que muda conforme a aba clicada */}
+      {/* Conteúdo */}
       <div className="w-full mt-6 rounded-xl text-start">
         {activeTab === "projects-champions" && (
-          <CardMy className="flex flex-col items-stretch justify-center border-none shadow-none bg-none p-0 w-full">
-            <h3 className="px-3 scroll-m-20 pb-2 text-xl text-zinc-600 font-semibold tracking-tight first:mt-0">
+          <div className="flex flex-col w-full">
+            <h3 className="px-1 text-sm font-semibold tracking-tight text-zinc-900">
               Projetos Campeões
             </h3>
-            <blockquote className="px-3 italic text-sm text-zinc-400 mb-4">
-              Projetos de caso de uso real de mercado !
-            </blockquote>
+            <p className="px-1 pb-3 text-xs text-zinc-400">
+              Casos reais de uso de mercado.
+            </p>
 
-            <div
-              className="flex flex-col w-full border border-amber-500 transition duration-300
-          bg-gradient-to-tr from-amber-500/10 via-amber-100/10 to-yellow-500/10 
-          rounded-2xl"
-            >
-              {[
-                {
-                  icon: "/images/trofeus/meu-barbeiro.png",
-                  title: "🏆​ Meu Barbeiro App 🏆​",
-                  descriptiton:
-                    "Fundador do meu barbeiro um web app que automatiza as trocas de mensagens dos barbeiros, otimizando tempo e agendamentos.",
-                  ProtectionText:
-                    "O projeto é pantentiado e tem seus direitos reservados de imagem e technologia intelectual. qualquer uso ou copia, serão tomadas medidas de acordo com as leis: Lei do Software (Lei nº 9.609/98), Direito Autoral (Lei nº 9.610/98), Registro no INPI (Instituto Nacional da Propriedade Industrial).",
-                },
-              ].map((item, index) => (
-                <div
-                  key={index}
-                  className="flex flex-col gap-4 justify-center items-center
-                  p-4 group hover:bg-white/5 transition duration-300 border-b 
-                  border-zinc-300 last:border-b-0 text-center"
-                >
-                  <div className="flex flex-row items-center gap-4">
-                    <Image
-                      src={item.icon}
-                      alt={item.title}
-                      objectFit="cover"
-                      width={80}
-                      height={80}
-                      className={`rounded-full text-xs border-3 z-10
-                  border-amber-400 p-1 flex items-center justify-center bg-amber-400/5
-                    group-hover:scale-105 transition-transform duration-300 shadow-lg shadow-amber-400`}
-                    />
-                    <div className="flex flex-col items-start justify-start">
-                      <h2 className="flex items-center gap-2 scroll-m-20 pb-2 text-md text-zinc-800 font-semibold tracking-tight first:mt-0">
-                        {item.title}
-                      </h2>
-                      <h3 className="scroll-m-20 text-left max-w-md pb-2 text-xs text-zinc-600 font-semibold ">
-                        {item.descriptiton}
-                      </h3>
+            <div className="flex flex-col gap-2">
+              {champions.map((item) => {
+                const img = resolveImage(item.image, 160);
+                return (
+                  <div
+                    key={item._id}
+                    className="group rounded-2xl border border-zinc-200/80 bg-zinc-50 p-3
+                    transition-colors hover:border-zinc-300"
+                  >
+                    <div className="flex items-center gap-3">
+                      {img && (
+                        <Image
+                          src={img}
+                          alt={item.title}
+                          width={48}
+                          height={48}
+                          unoptimized
+                          className="h-20 w-20 shrink-0 rounded-full object-cover ring-1 ring-cyan-200"
+                        />
+                      )}
+                      <div className="min-w-0">
+                        <h2 className="truncate text-sm font-semibold text-zinc-900">
+                          {item.title}
+                        </h2>
+                        <p className="line-clamp-2 text-xs leading-relaxed text-zinc-500">
+                          {item.description}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                  <div>
-                    <blockquote className="italic text-justify text-xs text-zinc-400 mb-4 bg-gray-100 rounded-xl px-4 py-2 border">
-                      {item.ProtectionText}
-                    </blockquote>
-                    <a
-                      href="https://barberboost.vercel.app/"
-                      className="cursor-pointer"
-                    >
-                      <Button
-                        className="rounded-lg cursor-pointer  
-                  hover:scale-105 bg-gradient-to-tr from-amber-400 to-amber-500 ring 
-                  px-8 py-2 shadow-amber-400 shadow-lg"
+
+                   
+                    {item.link && (
+                      <a
+                        href={item.link}
+                        className="mt-2.5 inline-flex w-full self-center gap-1 text-xs font-medium text-cyan-600
+                        transition-colors hover:text-cyan-700"
                       >
-                        Saiba mais
-                      </Button>
-                    </a>
+                        Saiba mais →
+                      </a>
+                    )}
+                     {item.protectionText && (
+                      <p className="mt-2.5 line-clamp-3 rounded-lg bg-white h-auto px-3 py-2 text-[11px] italic leading-relaxed text-zinc-400">
+                        {item.protectionText}
+                      </p>
+                    )}
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
-          </CardMy>
+          </div>
         )}
 
-        {activeTab === "principal-projects" && <GaleriaInsta />}
+        {activeTab === "principal-projects" && (
+          <GaleriaInsta projects={projects} />
+        )}
 
         {activeTab === "certifiedAt" && (
-          <CardMy className="flex flex-col items-stretch justify-center bg-none shadow-none border-none">
-            <h3 className="px-3 scroll-m-20 pb-2 text-xl text-zinc-600 font-semibold tracking-tight first:mt-0">
-              Certificações Tecnicas & Officiais
+          <div className="flex flex-col w-full">
+            <h3 className="px-1 text-sm font-semibold tracking-tight text-zinc-900">
+              Certificações
             </h3>
-            <blockquote className="px-3 italic text-sm text-zinc-400 mb-4">
-              Essas certificações são para apredizados especificos
-              <br /> consolidando e validando conhecimentos em ferramantas e
-              technologias.
-            </blockquote>
-            <CertificationCards />
-          </CardMy>
+            <p className="px-1 pb-3 text-xs text-zinc-400">
+              Conhecimentos validados em ferramentas e tecnologias.
+            </p>
+            <CertificationCards certifications={certifications} />
+          </div>
         )}
       </div>
     </div>
