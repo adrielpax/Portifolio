@@ -1,18 +1,20 @@
 import type { Metadata } from "next";
-import { Heebo, Geist_Mono, Inter } from "next/font/google";
+import { Geist_Mono, Inter, Chakra_Petch } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { TooltipProvider } from "@/components/ui/tooltip"
 
-const inter = Inter({subsets:['latin'],variable:'--font-sans'});
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
-const heeboSans = Heebo({
-  variable: "--font-geist-sans",
+// Display/HUD — angular, "tático", identidade de console
+const chakra = Chakra_Petch({
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
+  variable: "--font-display",
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+  variable: "--font-mono",
   subsets: ["latin"],
 });
 
@@ -41,10 +43,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-br" className={cn("font-sans", inter.variable)}>
-      <body
-        className={`${heeboSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html
+      lang="pt-br"
+      className={cn(inter.variable, chakra.variable, geistMono.variable)}
+    >
+      <body className="font-sans antialiased">
         <TooltipProvider>
         
         {children}

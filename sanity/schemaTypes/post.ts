@@ -86,6 +86,26 @@ export const post = defineType({
           },
         },
         { type: "image", options: { hotspot: true } },
+        {
+          type: "code",
+          name: "code",
+          title: "Bloco de código",
+          options: {
+            language: "bash",
+            languageAlternatives: [
+              { title: "Bash / Terminal", value: "bash" },
+              { title: "PowerShell", value: "powershell" },
+              { title: "Python", value: "python" },
+              { title: "TypeScript", value: "typescript" },
+              { title: "JavaScript", value: "javascript" },
+              { title: "JSON", value: "json" },
+              { title: "YAML", value: "yaml" },
+              { title: "Markdown", value: "markdown" },
+              { title: "Texto", value: "text" },
+            ],
+            withFilename: true,
+          },
+        },
       ],
     }),
     defineField({

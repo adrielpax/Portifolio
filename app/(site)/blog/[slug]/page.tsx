@@ -68,7 +68,7 @@ export default async function PostPage({ params }: Params) {
   };
 
   return (
-    <main className="mx-auto max-w-150 px-3 py-6">
+    <main className="mx-auto max-w-2xl px-5 py-10">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -76,34 +76,34 @@ export default async function PostPage({ params }: Params) {
 
       <Link
         href="/blog"
-        className="mb-4 inline-flex items-center gap-1.5 text-sm text-zinc-500
-        transition-colors hover:text-zinc-900"
+        className="mb-5 inline-flex items-center gap-1.5 font-mono text-xs text-hud-muted
+        transition-colors hover:text-hud-text"
       >
-        <ArrowLeft className="h-4 w-4" /> Blog
+        <ArrowLeft className="h-4 w-4" /> voltar ao blog
       </Link>
 
       <article>
-        <header className="mb-5">
+        <header className="mb-6">
           <div className="mb-3 flex flex-wrap gap-1.5">
             {post.tags?.map((t) => (
               <span
                 key={t}
-                className="rounded-full bg-zinc-100 px-2.5 py-0.5 text-[11px] font-medium text-zinc-600"
+                className="rounded-md border border-hud-line px-2 py-0.5 font-mono text-[10px] text-hud-steel"
               >
                 {t}
               </span>
             ))}
           </div>
-          <h1 className="text-2xl font-bold leading-tight tracking-tight text-zinc-900 sm:text-3xl">
+          <h1 className="font-display text-3xl font-bold leading-tight tracking-tight text-hud-text sm:text-4xl">
             {post.title}
           </h1>
-          <p className="mt-2 text-xs text-zinc-400">
+          <p className="hud-label mt-3">
             {formatDate(post.publishedAt)} · por Adriel Silva
           </p>
         </header>
 
         {cover && (
-          <div className="relative mb-6 aspect-[16/10] w-full overflow-hidden rounded-3xl bg-zinc-100">
+          <div className="hud-brackets relative mb-8 aspect-[16/9] w-full overflow-hidden rounded-2xl border border-hud-line bg-hud-surface-2">
             <Image
               src={cover}
               alt={post.title}
@@ -118,24 +118,22 @@ export default async function PostPage({ params }: Params) {
         {post.body && post.body.length > 0 ? (
           <PortableBody value={post.body} />
         ) : (
-          <p className="text-sm text-zinc-500">{post.excerpt}</p>
+          <p className="text-sm text-hud-muted">{post.excerpt}</p>
         )}
       </article>
 
       {/* CTA de contato no fim do post */}
-      <div className="mt-12 rounded-3xl border border-amber-200 bg-gradient-to-tr from-amber-50 to-white p-5 text-center">
-        <p className="text-sm font-semibold text-zinc-900">
+      <div className="hud-brackets mt-12 rounded-2xl border border-hud-line bg-gradient-to-tr from-hud-surface to-hud-bg p-6 text-center">
+        <span className="hud-label">Módulo de contato</span>
+        <p className="mt-2 font-display text-lg font-bold text-hud-text">
           Gostou do conteúdo?
         </p>
-        <p className="mt-1 text-xs text-zinc-500">
-          Vamos construir algo juntos.
-        </p>
+        <p className="mt-1 text-xs text-hud-muted">Vamos construir algo juntos.</p>
         <a
           href="https://typebot.co/my-typebot-75c4uvl"
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-3 inline-block rounded-lg bg-gradient-to-tr from-amber-600 to-amber-500
-          px-6 py-2 text-xs font-semibold text-white shadow-sm transition-transform hover:scale-105"
+          className="mt-4 inline-block rounded-xl bg-hud-amber px-6 py-2.5 font-display text-xs font-semibold text-hud-bg transition-transform hover:scale-105"
         >
           Entrar em contato
         </a>

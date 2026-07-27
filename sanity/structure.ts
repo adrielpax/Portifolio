@@ -17,4 +17,7 @@ export const structure: StructureResolver = (S) =>
       S.listItem()
         .title("🛡️ Certificações")
         .child(S.documentTypeList("certification").title("Certificações")),
+      S.listItem()
+        .title("💬 Depoimentos")
+        .child(S.documentTypeList("testimonial").title("Depoimentos")),
     ]);

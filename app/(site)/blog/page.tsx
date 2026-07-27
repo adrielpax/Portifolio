@@ -1,136 +1,120 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
 
+import Reveal from "@/components/os/Reveal";
 import { getPosts, resolveImage } from "@/lib/sanity/data";
 import { formatDate } from "@/lib/format";
+import type { Post } from "@/lib/sanity/types";
 
 export const metadata: Metadata = {
   title: "Blog",
   description:
-    "Artigos sobre desenvolvimento full-stack, Next.js, automação e construção de produtos por Adriel Silva.",
+    "Artigos sobre desenvolvimento full-stack, Next.js, automação e IA aplicada por Adriel Silva.",
   alternates: { canonical: "/blog" },
 };
 
-export default async function BlogPage() {
-  const posts = await getPosts();
-  const [featured, ...rest] = posts;
+function filterPosts(posts: Post[], q?: string) {
+  if (!q) return posts;
+  const t = q.toLowerCase();
+  return posts.filter(
+    (p) =>
+      p.title.toLowerCase().includes(t) ||
+      p.excerpt?.toLowerCase().includes(t) ||
+      p.tags?.some((tag) => tag.toLowerCase().includes(t)),
+  );
+}
+
+export default async function BlogPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ q?: string }>;
+}) {
+  const { q } = await searchParams;
+  const all = await getPosts();
+  const posts = filterPosts(all, q);
 
   return (
-    <main className="mx-auto max-w-150 px-3 py-6">
-      {/* Header estilo app */}
-      <header className="mb-5 flex items-center gap-3">
-        <Link
-          href="/"
-          aria-label="Voltar ao perfil"
-          className="flex h-9 w-9 items-center justify-center rounded-full
-          text-zinc-600 transition-colors hover:bg-zinc-100"
-        >
-          <ArrowLeft className="h-5 w-5" />
-        </Link>
-        <div>
-          <h1 className="text-xl font-bold tracking-tight text-zinc-900">
+    <div className="px-5 py-10 md:px-12 lg:px-16">
+      <Reveal>
+        <header className="mb-8">
+          <span className="hud-label flex items-center gap-2">
+            <span className="text-hud-amber">LOG</span>
+            <span className="h-px w-8 bg-hud-line" /> Registro do sistema
+          </span>
+          <h1 className="mt-2 font-display text-3xl font-bold tracking-tight text-hud-text md:text-4xl">
             Blog
           </h1>
-          <p className="text-xs text-zinc-500">
-            Bastidores, aprendizados e construção de produtos.
-          </p>
-        </div>
-      </header>
-
-      {posts.length === 0 && (
-        <p className="py-20 text-center text-sm text-zinc-400">
-          Ainda não há posts publicados. Em breve!
-        </p>
-      )}
-
-      {/* Post em destaque */}
-      {featured && (
-        <Link
-          href={`/blog/${featured.slug}`}
-          className="group mb-6 block overflow-hidden rounded-3xl border border-zinc-200/80
-          bg-white shadow-sm transition-all hover:shadow-md"
-        >
-          {resolveImage(featured.coverImage, 1080) && (
-            <div className="relative aspect-[16/10] w-full overflow-hidden bg-zinc-100">
-              <Image
-                src={resolveImage(featured.coverImage, 1080)!}
-                alt={featured.title}
-                fill
-                unoptimized
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <span className="absolute left-3 top-3 rounded-full bg-amber-500 px-3 py-1 text-[11px] font-semibold text-white shadow">
-                Destaque
-              </span>
-            </div>
-          )}
-          <div className="p-4">
-            <div className="mb-2 flex flex-wrap gap-1.5">
-              {featured.tags?.slice(0, 3).map((t) => (
-                <span
-                  key={t}
-                  className="rounded-full bg-zinc-100 px-2 py-0.5 text-[10px] font-medium text-zinc-600"
-                >
-                  {t}
-                </span>
-              ))}
-            </div>
-            <h2 className="text-lg font-bold leading-snug tracking-tight text-zinc-900">
-              {featured.title}
-            </h2>
-            {featured.excerpt && (
-              <p className="mt-1.5 text-sm leading-relaxed text-zinc-500">
-                {featured.excerpt}
-              </p>
+          <p className="mt-1 max-w-xl text-sm text-hud-muted">
+            {q ? (
+              <>
+                Resultados para <span className="text-hud-amber">“{q}”</span> ·{" "}
+                {posts.length} {posts.length === 1 ? "post" : "posts"}
+              </>
+            ) : (
+              "Bastidores, IA e construção de produtos."
             )}
-            <p className="mt-3 text-[11px] text-zinc-400">
-              {formatDate(featured.publishedAt)}
-            </p>
-          </div>
-        </Link>
-      )}
+          </p>
+        </header>
+      </Reveal>
 
-      {/* Lista */}
-      <div className="flex flex-col gap-3">
-        {rest.map((post) => {
-          const cover = resolveImage(post.coverImage, 400);
-          return (
-            <Link
-              key={post._id}
-              href={`/blog/${post.slug}`}
-              className="group flex gap-3 rounded-2xl border border-zinc-200/70 bg-white p-2.5
-              shadow-sm transition-all hover:shadow-md"
-            >
-              {cover && (
-                <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-xl bg-zinc-100">
-                  <Image
-                    src={cover}
-                    alt={post.title}
-                    fill
-                    unoptimized
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-              )}
-              <div className="flex min-w-0 flex-col justify-center">
-                <h3 className="line-clamp-2 text-sm font-semibold leading-snug text-zinc-900">
-                  {post.title}
-                </h3>
-                {post.excerpt && (
-                  <p className="mt-1 line-clamp-2 text-xs leading-relaxed text-zinc-500">
-                    {post.excerpt}
-                  </p>
-                )}
-                <p className="mt-1.5 text-[10px] text-zinc-400">
-                  {formatDate(post.publishedAt)}
-                </p>
-              </div>
-            </Link>
-          );
-        })}
-      </div>
-    </main>
+      {posts.length === 0 ? (
+        <p className="py-16 text-center text-sm text-hud-muted">
+          Nada encontrado{q ? ` para “${q}”` : ""}.{" "}
+          <Link href="/blog" className="text-hud-amber hover:underline">
+            Ver tudo
+          </Link>
+        </p>
+      ) : (
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {posts.map((post, i) => {
+            const cover = resolveImage(post.coverImage, 720);
+            return (
+              <Reveal key={post._id} delay={(i % 3) * 0.06}>
+                <Link
+                  href={`/blog/${post.slug}`}
+                  className="card-glass backdrop-blur-xl backdrop-saturate-150 group flex h-full flex-col overflow-hidden rounded-2xl"
+                >
+                  <div className="relative aspect-[16/10] overflow-hidden bg-hud-surface-2">
+                    {cover && (
+                      <Image
+                        src={cover}
+                        alt={post.title}
+                        fill
+                        unoptimized
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    )}
+                    {post.featured && (
+                      <span className="absolute left-3 top-3 rounded-md bg-hud-amber px-2 py-0.5 font-mono text-[10px] font-semibold text-hud-bg">
+                        DESTAQUE
+                      </span>
+                    )}
+                  </div>
+                  <div className="flex flex-1 flex-col p-4">
+                    <div className="mb-2 flex flex-wrap gap-1.5">
+                      {post.tags?.slice(0, 3).map((t) => (
+                        <span key={t} className="rounded-md border border-hud-line px-1.5 py-0.5 font-mono text-[10px] text-hud-steel">
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                    <h2 className="font-display text-[15px] font-semibold leading-snug text-hud-text">
+                      {post.title}
+                    </h2>
+                    <p className="mt-1 line-clamp-2 text-xs text-hud-muted">
+                      {post.excerpt}
+                    </p>
+                    <span className="hud-label mt-3">
+                      {formatDate(post.publishedAt)}
+                    </span>
+                  </div>
+                </Link>
+              </Reveal>
+            );
+          })}
+        </div>
+      )}
+    </div>
   );
 }

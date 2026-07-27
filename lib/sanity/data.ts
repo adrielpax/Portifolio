@@ -6,6 +6,9 @@ import {
   postSlugsQuery,
   postBySlugQuery,
   projectsQuery,
+  projectSlugsQuery,
+  projectBySlugQuery,
+  testimonialsQuery,
   certificationsQuery,
   championProjectsQuery,
 } from "./queries";
@@ -20,6 +23,7 @@ import type {
   Project,
   Certification,
   ChampionProject,
+  Testimonial,
   ImageRef,
 } from "./types";
 
@@ -73,10 +77,33 @@ export async function getProjects(): Promise<Project[]> {
   return data?.length ? data : fallbackProjects;
 }
 
+const fallbackSlugs = fallbackProjects
+  .map((p) => p.slug)
+  .filter((s): s is string => Boolean(s));
+
+export async function getProjectSlugs(): Promise<string[]> {
+  if (!hasSanity) return fallbackSlugs;
+  const slugs = await sanityFetch<string[]>(projectSlugsQuery);
+  return slugs?.length ? slugs : fallbackSlugs;
+}
+
+export async function getProject(slug: string): Promise<Project | null> {
+  const local = fallbackProjects.find((p) => p.slug === slug) ?? null;
+  if (!hasSanity) return local;
+  const data = await sanityFetch<Project | null>(projectBySlugQuery, { slug });
+  return data ?? local;
+}
+
+export async function getTestimonials(): Promise<Testimonial[]> {
+  if (!hasSanity) return [];
+  return (await sanityFetch<Testimonial[]>(testimonialsQuery)) ?? [];
+}
+
 export async function getCertifications(): Promise<Certification[]> {
   if (!hasSanity) return fallbackCertifications;
   const data = await sanityFetch<Certification[]>(certificationsQuery);
-  return data ?? fallbackCertifications;
+  // `?? ` não serve: uma lista vazia é "definida" e deixaria a página em branco.
+  return data?.length ? data : fallbackCertifications;
 }
 
 export async function getChampionProjects(): Promise<ChampionProject[]> {
