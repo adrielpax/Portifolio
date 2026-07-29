@@ -25,7 +25,7 @@ export default function ProjectCard({
     <Link
       href={href}
       target={external ? "_blank" : undefined}
-      className={`card-glass backdrop-blur-xl backdrop-saturate-150 group flex h-full flex-col overflow-hidden rounded-2xl ${className}`}
+      className={`card-glass group flex h-full flex-col overflow-hidden rounded-2xl ${className}`}
     >
       <div className="relative aspect-[16/10] overflow-hidden bg-hud-surface-2">
         {img && (
@@ -47,11 +47,11 @@ export default function ProjectCard({
           <h3 className="font-display text-base font-semibold leading-snug text-hud-text">
             {p.title}
           </h3>
-          <ArrowUpRight className="mt-0.5 h-4 w-4 shrink-0 text-hud-amber opacity-0 transition-all duration-300 group-hover:translate-x-0.5 group-hover:opacity-100" />
+          <ArrowUpRight className="mt-0.5 h-4 w-4 shrink-0 text-hud-accent opacity-0 transition-all duration-300 group-hover:translate-x-0.5 group-hover:opacity-100" />
         </div>
 
         {p.role && (
-          <p className="mt-0.5 text-[11px] font-medium text-hud-amber">{p.role}</p>
+          <p className="mt-0.5 text-[11px] font-medium text-hud-accent">{p.role}</p>
         )}
 
         <p className="mt-1.5 line-clamp-2 text-xs leading-relaxed text-hud-muted">

@@ -73,7 +73,7 @@ export default function RightAside({ stats }: { stats: AsideStats }) {
       <div className="grid grid-cols-3 gap-2">
         {cards.map((s) => (
           <div key={s.label} className="hud-panel p-3 text-center">
-            <p className="font-display text-xl font-bold text-hud-amber">
+            <p className="font-display text-xl font-bold text-hud-accent">
               {s.value}
             </p>
             <p className="hud-label mt-0.5 !text-[9px]">{s.label}</p>
@@ -98,9 +98,9 @@ export default function RightAside({ stats }: { stats: AsideStats }) {
           href="https://typebot.co/my-typebot-75c4uvl"
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-3 flex items-center justify-center gap-1.5 rounded-lg bg-hud-amber px-3 py-2.5
-          font-display text-xs font-semibold text-white shadow-[0_6px_18px_rgba(245,130,43,0.3)]
-          transition-all hover:-translate-y-0.5 hover:shadow-[0_10px_24px_rgba(245,130,43,0.4)]"
+          className="mt-3 flex items-center justify-center gap-1.5 rounded-lg bg-hud-accent px-3 py-2.5
+          font-display text-xs font-semibold text-white shadow-[0_6px_18px_rgba(0,113,227,0.3)]
+          transition-all hover:-translate-y-0.5 hover:shadow-[0_10px_24px_rgba(0,113,227,0.4)]"
         >
           Falar comigo <ArrowUpRight className="h-3.5 w-3.5" />
         </a>

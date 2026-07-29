@@ -115,7 +115,7 @@ function Skills() {
             const ring = card.ai
               ? "border-2 border-violet-400 bg-violet-50 shadow-md shadow-violet-300/60"
               : card.certified
-                ? "border-2 border-amber-300 bg-amber-300/40 shadow-md shadow-amber-300"
+                ? "border-2 border-blue-300 bg-blue-300/40 shadow-md shadow-blue-300"
                 : "bg-white";
 
             return (

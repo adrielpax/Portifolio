@@ -147,8 +147,9 @@ body {
 }
 
 /* ══════════════════════════════════════════════════════════════════
-   BRAINCORE OS — Design System "Mission Control / HUD"
-   Tema cinematográfico: navy-black + âmbar-sinal + aço-frio
+   AdrielDev — Design System
+   Claro e translúcido (vidro), com azul como único acento.
+   O prefixo `hud-` é histórico e permanece para não quebrar as classes.
    ══════════════════════════════════════════════════════════════════ */
 @theme inline {
   --font-display: var(--font-display);
@@ -158,8 +159,8 @@ body {
   --color-hud-line: var(--hud-line);
   --color-hud-text: var(--hud-text);
   --color-hud-muted: var(--hud-muted);
-  --color-hud-amber: var(--hud-amber);
-  --color-hud-amber-2: var(--hud-amber-2);
+  --color-hud-accent: var(--hud-accent);
+  --color-hud-accent-2: var(--hud-accent-2);
   --color-hud-steel: var(--hud-steel);
 }
 
@@ -172,14 +173,14 @@ body {
   --hud-line-strong: rgba(17, 24, 39, 0.16);
   --hud-text: #14161b;
   --hud-muted: #6b7280;
-  --hud-amber: #f5822b;
-  --hud-amber-2: #e8663d;
+  --hud-accent: #0071e3;
+  --hud-accent-2: #4aa3ff;
   --hud-steel: #7a8699;
 }
 
 .hud {
   background:
-    radial-gradient(1100px 560px at 100% -8%, rgba(245, 130, 43, 0.1), transparent 60%),
+    radial-gradient(1100px 560px at 100% -8%, rgba(0,113,227, 0.1), transparent 60%),
     radial-gradient(950px 480px at -8% 8%, rgba(120, 150, 235, 0.08), transparent 55%),
     var(--hud-bg);
   color: var(--hud-text);
@@ -201,32 +202,37 @@ body {
   outline: 1px solid var(--hud-line);
   outline-offset: -1px;
   border-radius: 18px;
-  @apply backdrop-blur-2xl backdrop-saturate-150;
+  @apply backdrop-blur-lg backdrop-saturate-150;
   box-shadow:
     0 1px 2px rgba(17, 24, 39, 0.04),
     0 10px 30px rgba(17, 24, 39, 0.07);
 }
 
-/* Card de vidro com elevação e micro-interação */
+/* Card de grade.
+   Sem backdrop-filter de propósito: em uma grade com muitos cards cada
+   desfoque vira uma camada de composição own-layer e a rolagem engasga.
+   Como não há conteúdo rolando atrás deles, o branco translúcido entrega
+   o mesmo resultado visual por uma fração do custo. */
 .card-glass {
-  background: rgba(255, 255, 255, 0.72);
+  background: rgba(255, 255, 255, 0.86);
   border: 1px solid var(--hud-line);
   border-radius: 18px;
-  @apply backdrop-blur-xl backdrop-saturate-150;
   box-shadow:
     0 1px 2px rgba(17, 24, 39, 0.04),
     0 10px 28px rgba(17, 24, 39, 0.07);
   transition:
-    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-    box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-    border-color 0.3s ease;
+    transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.2s ease;
 }
-.card-glass:hover {
-  transform: translateY(-5px);
-  border-color: rgba(245, 130, 43, 0.4);
-  box-shadow:
-    0 4px 10px rgba(17, 24, 39, 0.05),
-    0 26px 55px rgba(245, 130, 43, 0.18);
+@media (hover: hover) {
+  .card-glass:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0, 113, 227, 0.4);
+    box-shadow:
+      0 4px 10px rgba(17, 24, 39, 0.05),
+      0 22px 48px rgba(0, 113, 227, 0.16);
+  }
 }
 
 /* Brackets de canto — a assinatura do sistema */
@@ -239,7 +245,7 @@ body {
   position: absolute;
   width: 14px;
   height: 14px;
-  border: 1.5px solid var(--hud-amber);
+  border: 1.5px solid var(--hud-accent);
   opacity: 0.85;
   transition: all 0.3s ease;
 }
@@ -269,40 +275,37 @@ body {
   background-size: 44px 44px;
 }
 
-/* Linha de varredura ambiente */
-@keyframes hud-scan {
-  0% { transform: translateY(-100%); }
-  100% { transform: translateY(2000%); }
-}
-.hud-scanline::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, transparent, rgba(232, 163, 61, 0.06), transparent);
-  height: 6%;
-  animation: hud-scan 7s linear infinite;
-  pointer-events: none;
-}
+/* Fundo cinematográfico animado (mesh gradient).
 
-/* Fundo cinematográfico animado (mesh gradient) */
+   Sem `filter: blur()`: desfocar um elemento que anima obriga o navegador a
+   recalcular o desfoque a cada quadro, e era a maior fonte de travamento na
+   rolagem. O gradiente radial já entrega a borda suave de graça, então resta
+   apenas animar `transform`/`opacity` — que a GPU resolve sozinha. */
 @keyframes hud-aurora {
-  0%, 100% { transform: translate3d(0, 0, 0) scale(1); opacity: 0.6; }
-  50% { transform: translate3d(4%, -5%, 0) scale(1.18); opacity: 0.9; }
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); opacity: 0.65; }
+  50% { transform: translate3d(4%, -5%, 0) scale(1.16); opacity: 0.9; }
 }
 @keyframes hud-aurora-alt {
-  0%, 100% { transform: translate3d(0, 0, 0) scale(1.1); opacity: 0.75; }
-  50% { transform: translate3d(-5%, 4%, 0) scale(0.92); opacity: 0.5; }
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1.1); opacity: 0.8; }
+  50% { transform: translate3d(-5%, 4%, 0) scale(0.94); opacity: 0.55; }
+}
+.hud-aurora {
+  contain: paint;
 }
 .hud-aurora span {
   position: absolute;
   border-radius: 50%;
-  filter: blur(80px);
-  animation: hud-aurora 16s ease-in-out infinite;
+  background-image: radial-gradient(
+    circle closest-side,
+    var(--blob, rgba(0, 113, 227, 0.55)),
+    transparent 72%
+  );
+  animation: hud-aurora 20s ease-in-out infinite;
   will-change: transform, opacity;
 }
 .hud-aurora span:nth-child(even) {
   animation-name: hud-aurora-alt;
-  animation-duration: 21s;
+  animation-duration: 27s;
 }
 
 /* Grão sutil (dá textura de filme sem pesar) */

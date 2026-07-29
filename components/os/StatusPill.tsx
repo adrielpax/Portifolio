@@ -8,7 +8,7 @@ const MAP: Record<string, { label: string; className: string; live?: boolean }> 
   },
   desenvolvimento: {
     label: "Em desenvolvimento",
-    className: "border-amber-200 bg-amber-50 text-amber-700",
+    className: "border-blue-200 bg-blue-50 text-blue-700",
   },
   concluido: {
     label: "Concluído",

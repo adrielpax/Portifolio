@@ -95,7 +95,7 @@ export default function ProfileCard() {
           <h2 className="mt-1 font-display text-2xl font-bold leading-tight tracking-tight text-hud-text sm:text-3xl">
             {PERFIL.nome}
           </h2>
-          <p className="mt-1 text-sm font-medium text-hud-amber">
+          <p className="mt-1 text-sm font-medium text-hud-accent">
             Full-Stack & Automação
           </p>
           <p className="mt-1.5 flex items-center justify-center gap-1.5 text-xs text-hud-muted sm:justify-start">
@@ -109,9 +109,9 @@ export default function ProfileCard() {
               href={PERFIL.contato}
               target="_blank"
               rel="noopener noreferrer"
-              className="col-span-2 flex min-h-11 items-center justify-center gap-2 rounded-xl bg-hud-amber px-5
-              font-display text-sm font-semibold text-white shadow-[0_8px_22px_rgba(245,130,43,0.32)]
-              transition-all active:scale-[0.98] hover:-translate-y-0.5 hover:shadow-[0_14px_32px_rgba(245,130,43,0.42)]"
+              className="col-span-2 flex min-h-11 items-center justify-center gap-2 rounded-xl bg-hud-accent px-5
+              font-display text-sm font-semibold text-white shadow-[0_8px_22px_rgba(0,113,227,0.32)]
+              transition-all active:scale-[0.98] hover:-translate-y-0.5 hover:shadow-[0_14px_32px_rgba(0,113,227,0.42)]"
             >
               <MessageSquare className="h-4 w-4" /> Falar comigo
             </a>
@@ -119,7 +119,7 @@ export default function ProfileCard() {
             <button
               onClick={salvarContato}
               className="flex min-h-11 items-center justify-center gap-2 rounded-xl border border-hud-line bg-white/70
-              px-4 font-display text-xs font-medium text-hud-text backdrop-blur transition-all
+              px-4 font-display text-xs font-medium text-hud-text transition-all
               active:scale-[0.98] hover:-translate-y-0.5 hover:shadow-md"
             >
               {salvo ? (
@@ -136,7 +136,7 @@ export default function ProfileCard() {
             <button
               onClick={compartilhar}
               className="flex min-h-11 items-center justify-center gap-2 rounded-xl border border-hud-line bg-white/70
-              px-4 font-display text-xs font-medium text-hud-text backdrop-blur transition-all
+              px-4 font-display text-xs font-medium text-hud-text transition-all
               active:scale-[0.98] hover:-translate-y-0.5 hover:shadow-md"
             >
               {copiado ? (
@@ -156,7 +156,7 @@ export default function ProfileCard() {
               rel="noopener noreferrer"
               aria-label="GitHub"
               className="flex min-h-11 items-center justify-center rounded-xl border border-hud-line bg-white/70
-              text-hud-muted backdrop-blur transition-all active:scale-[0.98] hover:-translate-y-0.5 hover:text-hud-text hover:shadow-md sm:w-11"
+              text-hud-muted transition-all active:scale-[0.98] hover:-translate-y-0.5 hover:text-hud-text hover:shadow-md sm:w-11"
             >
               <Github className="h-4 w-4" />
             </a>
@@ -166,7 +166,7 @@ export default function ProfileCard() {
               rel="noopener noreferrer"
               aria-label="LinkedIn"
               className="flex min-h-11 items-center justify-center rounded-xl border border-hud-line bg-white/70
-              text-hud-muted backdrop-blur transition-all active:scale-[0.98] hover:-translate-y-0.5 hover:text-hud-text hover:shadow-md sm:w-11"
+              text-hud-muted transition-all active:scale-[0.98] hover:-translate-y-0.5 hover:text-hud-text hover:shadow-md sm:w-11"
             >
               <Linkedin className="h-4 w-4" />
             </a>

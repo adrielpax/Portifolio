@@ -21,7 +21,7 @@ export default async function CertificacoesPage() {
       <Reveal>
         <header className="mb-8">
           <span className="hud-label flex items-center gap-2">
-            <span className="text-hud-amber">CRT</span>
+            <span className="text-hud-accent">CRT</span>
             <span className="h-px w-8 bg-hud-line" /> Credenciais
           </span>
           <h1 className="mt-2 font-display text-3xl font-bold tracking-tight text-hud-text md:text-4xl">
@@ -43,7 +43,7 @@ export default async function CertificacoesPage() {
             const logo = resolveImage(c.logo, 140);
             return (
               <Reveal key={c._id} delay={i * 0.05}>
-                <div className="card-glass backdrop-blur-xl backdrop-saturate-150 flex items-start gap-4 rounded-2xl p-4">
+                <div className="card-glass flex items-start gap-4 rounded-2xl p-4">
                   {logo && (
                     <Image
                       src={logo}
@@ -56,7 +56,7 @@ export default async function CertificacoesPage() {
                   )}
                   <div className="min-w-0 flex-1">
                     {c.issuer && (
-                      <span className="hud-label !text-hud-amber">{c.issuer}</span>
+                      <span className="hud-label !text-hud-accent">{c.issuer}</span>
                     )}
                     <h3 className="font-display text-sm font-semibold leading-snug text-hud-text">
                       {c.title}
@@ -65,7 +65,7 @@ export default async function CertificacoesPage() {
                       <Link
                         href={c.credentialUrl}
                         target="_blank"
-                        className="mt-2 inline-flex items-center gap-1 font-display text-xs font-medium text-hud-amber hover:underline"
+                        className="mt-2 inline-flex items-center gap-1 font-display text-xs font-medium text-hud-accent hover:underline"
                       >
                         <BadgeCheck className="h-3.5 w-3.5" /> Ver certificado
                       </Link>

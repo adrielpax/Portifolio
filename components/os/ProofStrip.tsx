@@ -29,7 +29,7 @@ export default function ProofStrip({
     <div className="hud-panel grid grid-cols-2 divide-x divide-y divide-hud-line/70 sm:grid-cols-4 sm:divide-y-0">
       {items.map((it) => (
         <div key={it.label} className="flex flex-col items-center gap-1 px-4 py-6 text-center">
-          <it.icon className="mb-1 h-4 w-4 text-hud-amber" />
+          <it.icon className="mb-1 h-4 w-4 text-hud-accent" />
           <p className="font-display text-3xl font-bold leading-none text-hud-text">
             {it.value}
           </p>

@@ -22,7 +22,7 @@ export default async function ProjetosPage() {
       <Reveal>
         <header className="mb-9">
           <span className="hud-label flex items-center gap-2">
-            <span className="text-hud-amber">PRJ</span>
+            <span className="text-hud-accent">PRJ</span>
             <span className="h-px w-8 bg-hud-line" /> Portfólio
           </span>
           <h1 className="mt-2 font-display text-3xl font-bold tracking-tight text-hud-text md:text-4xl">

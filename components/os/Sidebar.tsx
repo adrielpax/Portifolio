@@ -44,7 +44,7 @@ export default function Sidebar({
         href="/"
         className="flex h-16 items-center gap-3 border-b border-hud-line px-4"
       >
-        <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-hud-amber/15 text-hud-amber ring-1 ring-hud-amber/30">
+        <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-hud-accent/15 text-hud-accent ring-1 ring-hud-accent/30">
           <Terminal className="h-5 w-5" />
         </span>
         {!collapsed && (
@@ -69,12 +69,12 @@ export default function Sidebar({
               title={label}
               aria-current={active ? "page" : undefined}
               className={`group relative flex items-center gap-3 rounded-lg px-3 py-2.5 transition-colors
-              ${active ? "bg-hud-amber/10 text-hud-text" : "text-hud-muted hover:bg-black/[0.04] hover:text-hud-text"}`}
+              ${active ? "bg-hud-accent/10 text-hud-text" : "text-hud-muted hover:bg-black/[0.04] hover:text-hud-text"}`}
             >
               {active && (
-                <span className="absolute inset-y-1.5 left-0 w-0.5 rounded-full bg-hud-amber" />
+                <span className="absolute inset-y-1.5 left-0 w-0.5 rounded-full bg-hud-accent" />
               )}
-              <Icon className={`h-5 w-5 shrink-0 ${active ? "text-hud-amber" : ""}`} strokeWidth={active ? 2.3 : 1.9} />
+              <Icon className={`h-5 w-5 shrink-0 ${active ? "text-hud-accent" : ""}`} strokeWidth={active ? 2.3 : 1.9} />
               {!collapsed && (
                 <span className="flex-1 font-display text-[13px] font-medium tracking-wide">
                   {label}
@@ -95,7 +95,7 @@ export default function Sidebar({
           target="_blank"
           rel="noopener noreferrer"
           title="Contato"
-          className="flex items-center gap-3 rounded-lg bg-hud-amber px-3 py-2.5 text-hud-bg
+          className="flex items-center gap-3 rounded-lg bg-hud-accent px-3 py-2.5 text-hud-bg
           transition-transform hover:scale-[1.02]"
         >
           <MessageSquare className="h-5 w-5 shrink-0" strokeWidth={2.2} />

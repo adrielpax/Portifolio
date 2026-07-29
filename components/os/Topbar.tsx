@@ -55,7 +55,7 @@ export default function Topbar({
           enterKeyHint="search"
           className="h-11 w-full rounded-xl border border-hud-line bg-white/70 pl-9 pr-3
           font-mono text-base text-hud-text placeholder:text-hud-muted/70 backdrop-blur
-          outline-none transition-colors focus:border-hud-amber/50 sm:h-10 sm:pr-16 sm:text-sm"
+          outline-none transition-colors focus:border-hud-accent/50 sm:h-10 sm:pr-16 sm:text-sm"
         />
         {/* Atalho só faz sentido onde existe teclado */}
         <kbd className="pointer-events-none absolute right-2.5 top-1/2 hidden -translate-y-1/2 rounded border border-hud-line px-1.5 py-0.5 font-mono text-[10px] text-hud-muted sm:block">

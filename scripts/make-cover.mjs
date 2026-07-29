@@ -4,10 +4,10 @@
  */
 
 const PALETTES = [
-  { a: "#f5822b", b: "#ff9d6e" },
+  { a: "#0071e3", b: "#7ab8ff" },
   { a: "#7aa7ff", b: "#c9a7ff" },
   { a: "#34c79a", b: "#7ad4c0" },
-  { a: "#f2547d", b: "#ff9d6e" },
+  { a: "#f2547d", b: "#7ab8ff" },
 ];
 
 function esc(s = "") {

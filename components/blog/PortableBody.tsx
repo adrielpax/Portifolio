@@ -23,7 +23,7 @@ const components: PortableTextComponents = {
       </h3>
     ),
     blockquote: ({ children }) => (
-      <blockquote className="my-6 rounded-r-lg border-l-2 border-hud-amber bg-hud-surface/60 py-2 pl-4 italic text-hud-muted">
+      <blockquote className="my-6 rounded-r-lg border-l-2 border-hud-accent bg-hud-surface/60 py-2 pl-4 italic text-hud-muted">
         {children}
       </blockquote>
     ),
@@ -34,7 +34,7 @@ const components: PortableTextComponents = {
     ),
     em: ({ children }) => <em className="italic">{children}</em>,
     code: ({ children }) => (
-      <code className="rounded bg-hud-surface-2 px-1.5 py-0.5 font-mono text-[13px] text-hud-amber">
+      <code className="rounded bg-hud-surface-2 px-1.5 py-0.5 font-mono text-[13px] text-hud-accent">
         {children}
       </code>
     ),
@@ -43,7 +43,7 @@ const components: PortableTextComponents = {
         href={value?.href ?? "#"}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-hud-amber underline underline-offset-2 hover:opacity-80"
+        className="text-hud-accent underline underline-offset-2 hover:opacity-80"
       >
         {children}
       </Link>

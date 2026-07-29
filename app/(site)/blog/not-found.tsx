@@ -12,7 +12,7 @@ export default function BlogNotFound() {
       </p>
       <Link
         href="/blog"
-        className="mt-6 rounded-xl bg-hud-amber px-5 py-2.5 font-display text-sm font-semibold text-hud-bg transition-transform hover:scale-105"
+        className="mt-6 rounded-xl bg-hud-accent px-5 py-2.5 font-display text-sm font-semibold text-hud-bg transition-transform hover:scale-105"
       >
         Ver todos os posts
       </Link>

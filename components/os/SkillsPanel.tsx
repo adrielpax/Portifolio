@@ -63,7 +63,7 @@ export default function SkillsPanel() {
         aria-expanded={open}
         className="flex w-full items-center gap-3 px-5 py-4 text-left transition-colors hover:bg-black/[0.02]"
       >
-        <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-hud-amber/12 text-hud-amber ring-1 ring-hud-amber/25">
+        <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-hud-accent/12 text-hud-accent ring-1 ring-hud-accent/25">
           <Sparkles className="h-4 w-4" />
         </span>
         <span className="flex-1">
@@ -107,10 +107,10 @@ export default function SkillsPanel() {
                       >
                         <div
                           className={`relative grid h-14 w-14 place-items-center rounded-2xl border bg-white/80
-                          shadow-[0_2px_8px_rgba(17,24,39,0.06)] backdrop-blur
+                          shadow-[0_2px_8px_rgba(17,24,39,0.06)]
                           transition-all duration-300 group-hover/skill:-translate-y-1
-                          group-hover/skill:shadow-[0_12px_26px_rgba(245,130,43,0.25)]
-                          ${s.ai ? "border-hud-amber/40" : "border-hud-line"}`}
+                          group-hover/skill:shadow-[0_12px_26px_rgba(0,113,227,0.25)]
+                          ${s.ai ? "border-hud-accent/40" : "border-hud-line"}`}
                         >
                           <Image
                             src={s.icon}
@@ -121,7 +121,7 @@ export default function SkillsPanel() {
                             className="h-8 w-8 rounded-md object-contain"
                           />
                           {s.ai && (
-                            <span className="absolute -right-1 -top-1 grid h-4 w-4 place-items-center rounded-full bg-hud-amber text-white shadow">
+                            <span className="absolute -right-1 -top-1 grid h-4 w-4 place-items-center rounded-full bg-hud-accent text-white shadow">
                               <Sparkles className="h-2.5 w-2.5" />
                             </span>
                           )}

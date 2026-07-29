@@ -87,7 +87,7 @@ export default async function Home() {
                 return (
                   <Reveal key={t._id} delay={i * 0.06}>
                     <figure className="hud-panel h-full p-6">
-                      <Quote className="h-5 w-5 text-hud-amber" />
+                      <Quote className="h-5 w-5 text-hud-accent" />
                       <blockquote className="mt-3 text-sm leading-relaxed text-hud-text/85">
                         {t.quote}
                       </blockquote>
@@ -141,7 +141,7 @@ export default async function Home() {
                   <Reveal key={post._id} delay={i * 0.06}>
                     <Link
                       href={`/blog/${post.slug}`}
-                      className="card-glass backdrop-blur-xl backdrop-saturate-150 group flex h-full flex-col overflow-hidden rounded-2xl"
+                      className="card-glass group flex h-full flex-col overflow-hidden rounded-2xl"
                     >
                       <div className="relative aspect-[16/10] overflow-hidden bg-hud-surface-2">
                         {cover && (
@@ -198,9 +198,9 @@ export default async function Home() {
               href="https://typebot.co/my-typebot-75c4uvl"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-3 inline-flex items-center gap-2 rounded-xl bg-hud-amber px-7 py-3.5
-              font-display text-sm font-semibold text-white shadow-[0_10px_28px_rgba(245,130,43,0.32)]
-              transition-all hover:-translate-y-0.5 hover:shadow-[0_18px_40px_rgba(245,130,43,0.45)]"
+              className="mt-3 inline-flex items-center gap-2 rounded-xl bg-hud-accent px-7 py-3.5
+              font-display text-sm font-semibold text-white shadow-[0_10px_28px_rgba(0,113,227,0.32)]
+              transition-all hover:-translate-y-0.5 hover:shadow-[0_18px_40px_rgba(0,113,227,0.45)]"
             >
               Iniciar conversa <ExternalLink className="h-4 w-4" />
             </a>
@@ -228,7 +228,7 @@ function SectionHeader({
     <div className="mb-5 flex items-end justify-between gap-4">
       <div>
         <span className="hud-label flex items-center gap-2">
-          <span className="text-hud-amber">{code}</span>
+          <span className="text-hud-accent">{code}</span>
           <span className="h-px w-6 bg-hud-line" />
         </span>
         <h2 className="mt-1 font-display text-2xl font-bold tracking-tight text-hud-text">
@@ -238,7 +238,7 @@ function SectionHeader({
       </div>
       <Link
         href={href}
-        className="hidden shrink-0 items-center gap-1 font-display text-xs font-medium text-hud-amber transition-transform hover:translate-x-0.5 sm:flex"
+        className="hidden shrink-0 items-center gap-1 font-display text-xs font-medium text-hud-accent transition-transform hover:translate-x-0.5 sm:flex"
       >
         {linkLabel} <ArrowUpRight className="h-3.5 w-3.5" />
       </Link>

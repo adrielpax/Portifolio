@@ -133,7 +133,7 @@ export default async function PostPage({ params }: Params) {
           href="https://typebot.co/my-typebot-75c4uvl"
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-4 inline-block rounded-xl bg-hud-amber px-6 py-2.5 font-display text-xs font-semibold text-hud-bg transition-transform hover:scale-105"
+          className="mt-4 inline-block rounded-xl bg-hud-accent px-6 py-2.5 font-display text-xs font-semibold text-hud-bg transition-transform hover:scale-105"
         >
           Entrar em contato
         </a>

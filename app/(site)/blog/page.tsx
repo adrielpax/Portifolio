@@ -39,7 +39,7 @@ export default async function BlogPage({
       <Reveal>
         <header className="mb-8">
           <span className="hud-label flex items-center gap-2">
-            <span className="text-hud-amber">LOG</span>
+            <span className="text-hud-accent">LOG</span>
             <span className="h-px w-8 bg-hud-line" /> Registro do sistema
           </span>
           <h1 className="mt-2 font-display text-3xl font-bold tracking-tight text-hud-text md:text-4xl">
@@ -48,7 +48,7 @@ export default async function BlogPage({
           <p className="mt-1 max-w-xl text-sm text-hud-muted">
             {q ? (
               <>
-                Resultados para <span className="text-hud-amber">“{q}”</span> ·{" "}
+                Resultados para <span className="text-hud-accent">“{q}”</span> ·{" "}
                 {posts.length} {posts.length === 1 ? "post" : "posts"}
               </>
             ) : (
@@ -61,7 +61,7 @@ export default async function BlogPage({
       {posts.length === 0 ? (
         <p className="py-16 text-center text-sm text-hud-muted">
           Nada encontrado{q ? ` para “${q}”` : ""}.{" "}
-          <Link href="/blog" className="text-hud-amber hover:underline">
+          <Link href="/blog" className="text-hud-accent hover:underline">
             Ver tudo
           </Link>
         </p>
@@ -73,7 +73,7 @@ export default async function BlogPage({
               <Reveal key={post._id} delay={(i % 3) * 0.06}>
                 <Link
                   href={`/blog/${post.slug}`}
-                  className="card-glass backdrop-blur-xl backdrop-saturate-150 group flex h-full flex-col overflow-hidden rounded-2xl"
+                  className="card-glass group flex h-full flex-col overflow-hidden rounded-2xl"
                 >
                   <div className="relative aspect-[16/10] overflow-hidden bg-hud-surface-2">
                     {cover && (
@@ -86,7 +86,7 @@ export default async function BlogPage({
                       />
                     )}
                     {post.featured && (
-                      <span className="absolute left-3 top-3 rounded-md bg-hud-amber px-2 py-0.5 font-mono text-[10px] font-semibold text-hud-bg">
+                      <span className="absolute left-3 top-3 rounded-md bg-hud-accent px-2 py-0.5 font-mono text-[10px] font-semibold text-hud-bg">
                         DESTAQUE
                       </span>
                     )}

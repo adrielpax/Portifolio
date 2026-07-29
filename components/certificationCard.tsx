@@ -64,7 +64,7 @@ export default function CertificationCards({
 
             <div className="min-w-0 flex-1">
               {card.issuer && (
-                <p className="text-[11px] font-medium text-amber-600">
+                <p className="text-[11px] font-medium text-blue-600">
                   {card.issuer}
                 </p>
               )}
@@ -76,8 +76,8 @@ export default function CertificationCards({
                 <Link
                   href={card.credentialUrl}
                   target="_blank"
-                  className="mt-1.5 inline-flex items-center gap-1 text-xs font-medium text-amber-600
-                  transition-colors hover:text-amber-700"
+                  className="mt-1.5 inline-flex items-center gap-1 text-xs font-medium text-blue-600
+                  transition-colors hover:text-blue-700"
                 >
                   <BadgeCheck className="h-3.5 w-3.5" /> Ver certificado
                 </Link>

@@ -87,7 +87,7 @@ export default async function ProjectCasePage({ params }: Params) {
             </h1>
 
             {p.role && (
-              <p className="mt-2 font-display text-sm font-medium text-hud-amber">
+              <p className="mt-2 font-display text-sm font-medium text-hud-accent">
                 {p.role}
               </p>
             )}
@@ -101,9 +101,9 @@ export default async function ProjectCasePage({ params }: Params) {
                   href={p.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-xl bg-hud-amber px-5 py-2.5
-                  font-display text-sm font-semibold text-white shadow-[0_8px_22px_rgba(245,130,43,0.3)]
-                  transition-all hover:-translate-y-0.5 hover:shadow-[0_14px_30px_rgba(245,130,43,0.4)]"
+                  className="inline-flex items-center gap-2 rounded-xl bg-hud-accent px-5 py-2.5
+                  font-display text-sm font-semibold text-white shadow-[0_8px_22px_rgba(0,113,227,0.3)]
+                  transition-all hover:-translate-y-0.5 hover:shadow-[0_14px_30px_rgba(0,113,227,0.4)]"
                 >
                   Ver ao vivo <ExternalLink className="h-4 w-4" />
                 </a>
@@ -145,7 +145,7 @@ export default async function ProjectCasePage({ params }: Params) {
             <div className="mb-9 grid gap-3 sm:grid-cols-3">
               {p.metrics.map((m) => (
                 <div key={m.label} className="hud-panel p-5 text-center">
-                  <p className="font-display text-3xl font-bold text-hud-amber">
+                  <p className="font-display text-3xl font-bold text-hud-accent">
                     {m.value}
                   </p>
                   <p className="mt-1 text-xs text-hud-muted">{m.label}</p>
@@ -161,7 +161,7 @@ export default async function ProjectCasePage({ params }: Params) {
             <Reveal key={b.label} delay={i * 0.06}>
               <section className="hud-panel p-6">
                 <span className="hud-label mb-2.5 flex items-center gap-2">
-                  <b.icon className="h-3.5 w-3.5 text-hud-amber" />
+                  <b.icon className="h-3.5 w-3.5 text-hud-accent" />
                   {b.label}
                 </span>
                 <p className="text-[15px] leading-7 text-hud-text/85">{b.text}</p>
@@ -180,7 +180,7 @@ export default async function ProjectCasePage({ params }: Params) {
                   <span
                     key={s}
                     className="rounded-lg border border-hud-line bg-white/70 px-3 py-1.5
-                    font-mono text-xs text-hud-text backdrop-blur transition-all hover:-translate-y-0.5 hover:shadow-md"
+                    font-mono text-xs text-hud-text transition-all hover:-translate-y-0.5 hover:shadow-md"
                   >
                     {s}
                   </span>
@@ -203,9 +203,9 @@ export default async function ProjectCasePage({ params }: Params) {
               href="https://typebot.co/my-typebot-75c4uvl"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-3 inline-flex items-center gap-2 rounded-xl bg-hud-amber px-6 py-3
-              font-display text-sm font-semibold text-white shadow-[0_10px_26px_rgba(245,130,43,0.32)]
-              transition-all hover:-translate-y-0.5 hover:shadow-[0_16px_36px_rgba(245,130,43,0.42)]"
+              className="mt-3 inline-flex items-center gap-2 rounded-xl bg-hud-accent px-6 py-3
+              font-display text-sm font-semibold text-white shadow-[0_10px_26px_rgba(0,113,227,0.32)]
+              transition-all hover:-translate-y-0.5 hover:shadow-[0_16px_36px_rgba(0,113,227,0.42)]"
             >
               Iniciar conversa <ExternalLink className="h-4 w-4" />
             </a>
