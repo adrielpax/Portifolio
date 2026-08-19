@@ -31,10 +31,37 @@ export default async function Home() {
       <VideoHero />
 
       <div className="space-y-12 px-4 py-10 sm:px-5 md:space-y-16 md:px-12 md:py-14 lg:px-16">
+        <span className="hud-label mb-3 flex items-center gap-2">
+          <span className="h-px w-7 bg-hud-accent" /> Sistemas de com conversão
+          entre si !
+        </span>
+
+        <h1 className="font-display text-4xl font-bold leading-[1.05] tracking-tight text-hud-text md:text-6xl">
+          Estetico <span className="text-hud-accent">Eficiente</span>{" "}
+          Empresarial
+          <br className="hidden md:block" />
+        </h1>
+
+        <p className="mt-4 max-w-lg text-sm leading-relaxed text-hud-muted md:text-base">
+          Nós analisamos de ponta a ponta sua estrutura e usamos soluções code e
+          nocode para resolver problemas de informação e dados, desde a
+          industria ao comercio ao desenvolvimento de soluções em tecnologia na
+          web ou na palma da sua mão
+        </p>
         {/* ── Cartão de visitas (o primeiro contato, sobretudo no celular) ── */}
         <Reveal>
           <ProfileCard />
         </Reveal>
+        <span className="hud-label mb-3 flex items-center gap-2">
+          <span className="h-px w-7 bg-hud-accent" /> conhecimento
+        </span>
+
+        <h1 className="font-display text-4xl font-bold leading-[1.05] tracking-tight text-hud-text md:text-6xl">
+          Um pouco do que <span className="text-hud-accent">sei</span>{" "}
+        </h1>
+        <p className="mt-0 max-w-lg text-sm leading-relaxed text-hud-muted md:text-base">
+          Projetos, Portifolio, Tecnologias e Artigos Uteis e proximos passos.
+        </p>
 
         {/* ── Prova em números reais ── */}
         <Reveal>

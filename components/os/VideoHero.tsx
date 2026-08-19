@@ -29,7 +29,7 @@ export default function VideoHero() {
   return (
     <section
       ref={ref}
-      className="hud-grain relative h-[62vh] min-h-[400px] w-full overflow-hidden md:h-[78vh] md:min-h-[540px]"
+      className="hud-grain relative h-[62vh] min-h-[400px] w-full mt-16 overflow-hidden md:h-[78vh] md:min-h-[840px]"
     >
       {/* Mesh gradient animado */}
       <motion.div style={{ y: bgY }} className="absolute inset-0">
@@ -88,13 +88,12 @@ export default function VideoHero() {
           </span>
 
           <h1 className="font-display text-4xl font-bold leading-[1.05] tracking-tight text-hud-text md:text-6xl">
-            Construo <span className="text-hud-accent">sistemas</span> que
+            Integro <span className="text-hud-accent">sistemas</span> que
             <br className="hidden md:block" /> escalam negócios.
           </h1>
 
           <p className="mt-4 max-w-lg text-sm leading-relaxed text-hud-muted md:text-base">
-            Do MVP à produção: plataformas SaaS, automações e IA aplicada.
-            Explore os projetos e os bastidores no blog.
+            Integração de Sistema, banco e analise de dados IA integrada !
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">

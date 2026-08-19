@@ -25,11 +25,11 @@ export default function RightAside({ stats }: { stats: AsideStats }) {
   ];
 
   return (
-    <aside className="sticky top-16 hidden h-[calc(100dvh-4rem)] w-72 shrink-0 flex-col gap-4 overflow-y-auto border-l border-hud-line p-4 xl:flex">
+    <aside className="sticky top-0 hidden h-screen w-72 shrink-0 flex-col gap-4 overflow-y-auto border-l border-hud-line p-4 xl:flex">
       {/* Perfil */}
       <div className="hud-panel p-4">
         <div className="flex items-center gap-3">
-          <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-xl ring-1 ring-hud-line">
+          <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full ring-1 ring-hud-line">
             <Image
               src="/images/profile.png"
               alt="Adriel Silva"

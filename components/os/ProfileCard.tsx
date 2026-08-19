@@ -71,7 +71,7 @@ export default function ProfileCard() {
       <div className="flex flex-col gap-5 p-5 sm:flex-row sm:items-center sm:gap-6 sm:p-6">
         {/* Foto */}
         <div className="relative mx-auto shrink-0 sm:mx-0">
-          <div className="relative h-28 w-28 overflow-hidden rounded-2xl ring-1 ring-hud-line shadow-[0_12px_30px_rgba(17,24,39,0.14)] sm:h-32 sm:w-32">
+          <div className="relative h-28 w-28 overflow-hidden rounded-full ring-1 ring-hud-line shadow-[0_12px_30px_rgba(17,24,39,0.14)] sm:h-32 sm:w-32">
             <Image
               src="/images/profile.png"
               alt="Adriel Silva"
@@ -91,12 +91,12 @@ export default function ProfileCard() {
 
         {/* Identidade */}
         <div className="min-w-0 flex-1 text-center sm:text-left">
-          <p className="hud-label">Cartão de visitas</p>
+          <p className="hud-label">Estudante</p>
           <h2 className="mt-1 font-display text-2xl font-bold leading-tight tracking-tight text-hud-text sm:text-3xl">
             {PERFIL.nome}
           </h2>
           <p className="mt-1 text-sm font-medium text-hud-accent">
-            Full-Stack & Automação
+            Engenharia de Software & IA
           </p>
           <p className="mt-1.5 flex items-center justify-center gap-1.5 text-xs text-hud-muted sm:justify-start">
             <MapPin className="h-3.5 w-3.5 shrink-0" />

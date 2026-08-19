@@ -59,7 +59,7 @@ export default function SegmentControl({
           aria-label="Certificações"
           className={tabBtn(activeTab === "certifiedAt")}
         >
-          <ShieldCheck className="h-4 w-4" />
+          <ShieldCheck className="h-4 w-4 truncate" />
           <span>Certificados</span>
         </button>
       </div>

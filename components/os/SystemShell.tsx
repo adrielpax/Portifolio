@@ -34,7 +34,7 @@ export default function SystemShell({
             <main className="min-w-0 flex-1">{children}</main>
           </div>
 
-          <RightAside stats={stats} />
+          {/* <RightAside stats={stats} /> */}
         </div>
 
         {/* Drawer de navegação no mobile */}
