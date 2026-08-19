@@ -29,7 +29,7 @@ export default function VideoHero() {
   return (
     <section
       ref={ref}
-      className="hud-grain relative h-[62vh] min-h-[400px] w-full mt-16 overflow-hidden md:h-[78vh] md:min-h-[840px]"
+      className="hud-grain relative h-[62vh] min-h-[400px] w-full md:mt-16 overflow-hidden md:h-[78vh] md:min-h-[840px]"
     >
       {/* Mesh gradient animado */}
       <motion.div style={{ y: bgY }} className="absolute inset-0">
