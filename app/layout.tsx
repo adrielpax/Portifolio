@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adriel.dev";
 
 export const viewport: Viewport = {
-  themeColor: "#0b0d11",
+  themeColor: "#0a0e17",
   colorScheme: "dark",
 };
 

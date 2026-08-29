@@ -46,15 +46,15 @@ export default function VideoHero({ stats }: { stats?: HeroStats }) {
         <div className="hud-aurora absolute inset-[-12%]">
           <span
             className="left-[6%] top-[12%] h-[26rem] w-[26rem]"
-            style={{ "--blob": "rgba(59,130,246,0.32)" } as React.CSSProperties}
+            style={{ "--blob": "rgba(34,211,238,0.28)" } as React.CSSProperties}
           />
           <span
             className="right-[4%] top-[4%] h-[30rem] w-[30rem]"
-            style={{ "--blob": "rgba(6,182,212,0.18)", animationDelay: "3s" } as React.CSSProperties}
+            style={{ "--blob": "rgba(0,245,255,0.14)", animationDelay: "3s" } as React.CSSProperties}
           />
           <span
             className="bottom-[2%] left-[28%] h-[32rem] w-[32rem]"
-            style={{ "--blob": "rgba(37,99,235,0.22)", animationDelay: "7s" } as React.CSSProperties}
+            style={{ "--blob": "rgba(8,145,178,0.24)", animationDelay: "7s" } as React.CSSProperties}
           />
         </div>
 

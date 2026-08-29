@@ -66,7 +66,7 @@ export default async function Home() {
   // Paleta de status validada para CVD/contraste (dataviz validator)
   const STATUS_META = [
     { key: "producao", label: "Em produção", color: "#059669" },
-    { key: "desenvolvimento", label: "Em desenvolvimento", color: "#3b82f6" },
+    { key: "desenvolvimento", label: "Em desenvolvimento", color: "#6366f1" },
     { key: "concluido", label: "Concluído", color: "#d97706" },
     { key: "arquivado", label: "Arquivado", color: "#8b96a8" },
   ] as const;

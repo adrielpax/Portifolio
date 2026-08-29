@@ -154,7 +154,7 @@ body {
    O prefixo `hud-` é histórico e permanece para não quebrar as classes.
    ══════════════════════════════════════════════════════════════════ */
 @theme inline {
-  --font-display: var(--font-display); /* Chakra Petch — angular, tático */
+  --font-display: var(--font-geist-mono); /* Modo Guerra: display mono */
   --color-hud-bg: var(--hud-bg);
   --color-hud-surface: var(--hud-surface);
   --color-hud-surface-2: var(--hud-surface-2);
@@ -170,31 +170,32 @@ body {
 }
 
 :root {
-  /* Tactical HUD — navy + azul tático */
-  --hud-bg: #0f131d;
-  --hud-surface: #121622;
-  --hud-surface-2: #151b2b;
-  --hud-elevated: #182033;
-  --hud-line: rgba(255, 255, 255, 0.08);
-  --hud-line-strong: rgba(255, 255, 255, 0.16);
-  --hud-text: #f2f4f8;
-  --hud-muted: #9aa3b2;
-  --hud-accent: #3b82f6; /* primário tático */
-  --hud-accent-2: #60a5fa;
-  --hud-accent-fg: #ffffff;
-  --hud-detail: #06b6d4; /* cyan de inteligência: micro-detalhes */
-  --hud-steel: #8b96a8;
-  --hud-glow: rgba(59, 130, 246, 0.3);
+  /* Modo Guerra v2.5.0 — ardósia espacial + ciano claro de assinatura */
+  --hud-bg: #0a0e17;
+  --hud-surface: #0f1523;
+  --hud-surface-2: #141c2e;
+  --hud-elevated: #19243a;
+  --hud-line: rgba(255, 255, 255, 0.1);
+  --hud-line-strong: rgba(255, 255, 255, 0.18);
+  --hud-text: #ffffff;
+  --hud-muted: rgba(255, 255, 255, 0.72);
+  --hud-accent: #22d3ee; /* ciano elétrico — cor de comando */
+  --hud-accent-2: #67e8f9;
+  --hud-accent-fg: #0a0e17; /* tinta escura sobre o ciano */
+  --hud-detail: #00f5ff; /* assinatura ultra-clara: micro-detalhes */
+  --hud-steel: rgba(255, 255, 255, 0.52);
+  --hud-glow: rgba(0, 245, 255, 0.35);
   /* Semânticas do sistema */
   --hud-critical: #ef4444;
   --hud-success: #10b981;
   --hud-warning: #f59e0b;
+  --hud-comms: #6366f1;
 }
 
 .hud {
   background:
-    radial-gradient(1100px 560px at 100% -8%, rgba(59, 130, 246, 0.1), transparent 60%),
-    radial-gradient(950px 480px at -8% 8%, rgba(6, 182, 212, 0.05), transparent 55%),
+    radial-gradient(1100px 560px at 100% -8%, rgba(0, 245, 255, 0.08), transparent 60%),
+    radial-gradient(950px 480px at -8% 8%, rgba(34, 211, 238, 0.05), transparent 55%),
     var(--hud-bg);
   /* Fundo fixo: o conteúdo rola sobre ele (parallax de camadas) */
   background-attachment: fixed;
@@ -202,8 +203,8 @@ body {
 }
 
 .hud ::selection {
-  background: rgba(59, 130, 246, 0.35);
-  color: #ffffff;
+  background: rgba(0, 245, 255, 0.35);
+  color: #0a0e17;
 }
 
 /* ── Botões ─────────────────────────────────────────────────────────
@@ -214,14 +215,15 @@ body {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  border-radius: 6px;
-  background: linear-gradient(180deg, #3b82f6 0%, #1d4ed8 100%);
+  border-radius: 4px;
+  background: linear-gradient(180deg, #22d3ee 0%, #0891b2 100%);
   color: var(--hud-accent-fg);
-  border: 1px solid rgba(96, 165, 250, 0.55);
+  border: 1px solid rgba(0, 245, 255, 0.5);
+  font-weight: 700;
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
     0 1px 2px rgba(0, 0, 0, 0.5),
-    0 0 15px rgba(59, 130, 246, 0.3);
+    0 0 16px rgba(0, 245, 255, 0.3);
   transition:
     transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
     box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1);
@@ -229,9 +231,9 @@ body {
 .btn-primary:hover {
   transform: translateY(-2px);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
     0 2px 4px rgba(0, 0, 0, 0.5),
-    0 0 26px rgba(59, 130, 246, 0.45);
+    0 0 26px rgba(0, 245, 255, 0.45);
 }
 .btn-primary:active {
   transform: translateY(0) scale(0.98);
@@ -242,7 +244,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  border-radius: 6px;
+  border-radius: 4px;
   background: rgba(255, 255, 255, 0.05);
   color: var(--hud-text);
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -258,11 +260,11 @@ body {
 }
 .btn-ghost:hover {
   transform: translateY(-2px);
-  border-color: rgba(59, 130, 246, 0.35);
-  background: rgba(59, 130, 246, 0.08);
+  border-color: rgba(0, 245, 255, 0.4);
+  background: rgba(0, 245, 255, 0.1);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.1),
-    0 0 15px rgba(59, 130, 246, 0.2),
+    0 0 16px rgba(0, 245, 255, 0.2),
     0 14px 32px rgba(0, 0, 0, 0.5);
 }
 .btn-ghost:active {
@@ -271,7 +273,7 @@ body {
 
 /* Texto com gradiente tático (destaque do hero) */
 .text-silver {
-  background: linear-gradient(115deg, #ffffff 20%, #60a5fa 80%);
+  background: linear-gradient(115deg, #ffffff 15%, #67e8f9 75%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -288,21 +290,21 @@ body {
 
 /* Painel de vidro (Apple-like): translúcido, hairline e sombra suave */
 .hud-panel {
-  /* Vidro elevado: mais claro que o fundo + hairline firme = contraste real */
+  /* Vidro Modo Guerra: ardósia translúcida + hairline ciano de assinatura */
   background: linear-gradient(
     180deg,
-    rgba(30, 40, 62, 0.72) 0%,
-    rgba(22, 29, 46, 0.66) 100%
+    rgba(25, 36, 58, 0.78) 0%,
+    rgba(15, 21, 35, 0.72) 100%
   );
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(0, 245, 255, 0.2);
   outline: 1px solid var(--hud-line);
   outline-offset: -1px;
-  border-radius: 8px;
-  @apply backdrop-blur-lg backdrop-saturate-150;
+  border-radius: 6px;
+  @apply backdrop-blur-xl backdrop-saturate-150;
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.1),
-    0 1px 2px rgba(0, 0, 0, 0.5),
-    0 10px 30px rgba(0, 0, 0, 0.5);
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 4px 20px rgba(0, 0, 0, 0.35),
+    0 8px 32px rgba(0, 0, 0, 0.5);
 }
 
 /* Card de grade.
@@ -313,11 +315,11 @@ body {
 .card-glass {
   background: linear-gradient(
     180deg,
-    rgba(28, 37, 58, 0.85) 0%,
-    rgba(21, 27, 43, 0.82) 100%
+    rgba(20, 28, 46, 0.92) 0%,
+    rgba(15, 21, 35, 0.9) 100%
   );
   border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 8px;
+  border-radius: 6px;
   box-shadow:
     0 1px 2px rgba(0, 0, 0, 0.35),
     0 10px 28px rgba(0, 0, 0, 0.4);
@@ -329,11 +331,11 @@ body {
 @media (hover: hover) {
   .card-glass:hover {
     transform: translateY(-4px);
-    border-color: rgba(59, 130, 246, 0.35);
+    border-color: rgba(0, 245, 255, 0.4);
     box-shadow:
       0 4px 10px rgba(0, 0, 0, 0.4),
-      0 0 15px rgba(59, 130, 246, 0.3),
-      0 22px 48px rgba(59, 130, 246, 0.12);
+      0 0 16px rgba(0, 245, 255, 0.3),
+      0 22px 48px rgba(0, 245, 255, 0.1);
   }
 }
 
@@ -374,7 +376,7 @@ body {
   background-image:
     linear-gradient(var(--hud-line) 1px, transparent 1px),
     linear-gradient(90deg, var(--hud-line) 1px, transparent 1px);
-  background-size: 44px 44px;
+  background-size: 48px 48px; /* grade tática 48px (DS v2.5.0) */
   background-attachment: fixed;
 }
 
@@ -400,7 +402,7 @@ body {
   border-radius: 50%;
   background-image: radial-gradient(
     circle closest-side,
-    var(--blob, rgba(59, 130, 246, 0.35)),
+    var(--blob, rgba(34, 211, 238, 0.3)),
     transparent 72%
   );
   animation: hud-aurora 20s ease-in-out infinite;
@@ -440,7 +442,7 @@ body {
   transition: opacity 0.3s ease;
   background: radial-gradient(
     240px circle at var(--spot-x, 50%) var(--spot-y, 50%),
-    rgba(59, 130, 246, 0.1),
+    rgba(0, 245, 255, 0.08),
     transparent 70%
   );
 }
@@ -461,8 +463,8 @@ body {
   right: 0;
   bottom: -2px;
   height: 1px;
-  background: var(--hud-detail); /* micro-detalhe cyan */
-  box-shadow: 0 0 8px rgba(6, 182, 212, 0.55);
+  background: var(--hud-detail); /* micro-detalhe ciano de assinatura */
+  box-shadow: 0 0 8px rgba(0, 245, 255, 0.5);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
@@ -504,14 +506,14 @@ body {
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  border: 1px solid rgba(59, 130, 246, 0.4);
+  border: 1px solid rgba(0, 245, 255, 0.4);
 }
 .jarvis-parallel {
   position: absolute;
   left: 50%;
   top: 50%;
   border-radius: 50%;
-  border: 1px solid rgba(6, 182, 212, 0.35);
+  border: 1px solid rgba(103, 232, 249, 0.35);
 }
 /* Anéis orbitais ao redor do globo */
 .jarvis-orbit {
@@ -525,15 +527,15 @@ body {
   height: 300px;
   width: 300px;
   margin: -150px 0 0 -150px;
-  border: 1px solid rgba(59, 130, 246, 0.4);
-  box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+  border: 1px solid rgba(0, 245, 255, 0.4);
+  box-shadow: 0 0 16px rgba(0, 245, 255, 0.3);
   transform: rotateX(76deg);
 }
 .jarvis-orbit-b {
   height: 330px;
   width: 330px;
   margin: -165px 0 0 -165px;
-  border: 1px dashed rgba(6, 182, 212, 0.35);
+  border: 1px dashed rgba(103, 232, 249, 0.35);
   transform: rotateX(76deg) rotateY(18deg);
 }
 /* Brilho do núcleo no centro do globo */
@@ -547,8 +549,8 @@ body {
   border-radius: 50%;
   background: radial-gradient(
     circle,
-    rgba(147, 197, 253, 0.5) 0%,
-    rgba(59, 130, 246, 0.22) 45%,
+    rgba(165, 243, 252, 0.5) 0%,
+    rgba(0, 245, 255, 0.2) 45%,
     transparent 75%
   );
   animation: jarvis-pulse 3.2s ease-in-out infinite;
@@ -574,8 +576,8 @@ body {
     to bottom,
     transparent 0px,
     transparent 3px,
-    rgba(6, 182, 212, 0.035) 3px,
-    rgba(6, 182, 212, 0.035) 4px
+    rgba(0, 245, 255, 0.03) 3px,
+    rgba(0, 245, 255, 0.03) 4px
   );
   mix-blend-mode: screen;
 }
