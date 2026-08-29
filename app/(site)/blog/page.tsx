@@ -52,7 +52,7 @@ export default async function BlogPage({
                 {posts.length} {posts.length === 1 ? "post" : "posts"}
               </>
             ) : (
-              "Bastidores, IA e construção de produtos."
+              "Decisões técnicas, IA e o que aprendo construindo produtos."
             )}
           </p>
         </header>

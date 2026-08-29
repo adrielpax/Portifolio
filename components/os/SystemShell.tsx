@@ -6,6 +6,7 @@ import { X } from "lucide-react";
 import SmoothScroll from "./SmoothScroll";
 import Sidebar from "./Sidebar";
 import Topbar from "./Topbar";
+import Footer from "./Footer";
 
 export default function SystemShell({
   children,
@@ -29,7 +30,10 @@ export default function SystemShell({
           <div className="flex min-w-0 flex-1 flex-col">
             <Topbar onOpenMobileNav={() => setMobileNav(true)} />
             <main className="min-w-0 flex-1">
-              <div className="mx-auto w-full max-w-6xl">{children}</div>
+              <div className="mx-auto w-full max-w-6xl">
+                {children}
+                <Footer />
+              </div>
             </main>
           </div>
         </div>

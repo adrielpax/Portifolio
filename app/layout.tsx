@@ -52,6 +52,14 @@ export default function RootLayout({
       className={cn(inter.variable, chakra.variable, geistMono.variable, "dark")}
     >
       <body className="font-sans antialiased">
+        {/* Aplica o Modo Leitura antes da pintura (token ?modo=leitura na URL
+            ou preferência salva) — evita flash de tema errado. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              'try{var q=new URLSearchParams(location.search).get("modo");var s=localStorage.getItem("modo-leitura");if(q==="leitura"||(q!=="sistema"&&s==="1")){document.documentElement.classList.add("modo-leitura")}}catch(e){}',
+          }}
+        />
         {children}
       </body>
     </html>

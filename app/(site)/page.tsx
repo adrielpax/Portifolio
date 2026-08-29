@@ -1,11 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, ExternalLink, Quote } from "lucide-react";
+import { ArrowUpRight, Quote } from "lucide-react";
 
 import VideoHero from "@/components/os/VideoHero";
 import Reveal from "@/components/os/Reveal";
-import Magnetic from "@/components/os/Magnetic";
 import Spotlight from "@/components/os/Spotlight";
+import AvailabilityCard from "@/components/os/AvailabilityCard";
+import ContactModule from "@/components/os/ContactModule";
+import SystemPanel from "@/components/os/SystemPanel";
 import SkillsPanel from "@/components/os/SkillsPanel";
 import ProjectCard from "@/components/os/ProjectCard";
 import ProofStrip from "@/components/os/ProofStrip";
@@ -18,6 +20,28 @@ import {
 } from "@/lib/sanity/data";
 import { formatDate } from "@/lib/format";
 
+/** Como o trabalho acontece — pipeline honesto, sem caixa-preta. */
+const PIPELINE = [
+  {
+    numero: "01 · DESCOBERTA",
+    titulo: "Entender antes de codar",
+    texto:
+      "Mapeio o problema, o contexto do negócio e o que 'pronto' significa. Saída: escopo claro e um plano de ataque.",
+  },
+  {
+    numero: "02 · CONSTRUÇÃO",
+    titulo: "Ciclos curtos, entregas reais",
+    texto:
+      "Versões navegáveis desde as primeiras semanas — você acompanha o produto crescendo, não espera uma revelação no final.",
+  },
+  {
+    numero: "03 · OPERAÇÃO",
+    titulo: "Produção é o começo",
+    texto:
+      "Deploy, monitoramento e iteração contínua. Automação e IA entram onde geram resultado que dá para medir.",
+  },
+] as const;
+
 export default async function Home() {
   const [projects, posts, testimonials] = await Promise.all([
     getProjects(),
@@ -28,17 +52,45 @@ export default async function Home() {
   const featured = projects.filter((p) => p.featured);
   const rail = featured.length > 0 ? featured : projects.slice(0, 3);
 
+  // ── Dados do painel — derivados do conteúdo real, nunca hardcoded ──
+  const stackCount = new Map<string, number>();
+  for (const p of projects)
+    for (const s of p.stack ?? [])
+      stackCount.set(s, (stackCount.get(s) ?? 0) + 1);
+  const stackData = [...stackCount.entries()]
+    .map(([name, count]) => ({ name, count }))
+    .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name))
+    .slice(0, 8);
+
+  // Paleta de status validada para CVD/contraste (dataviz validator)
+  const STATUS_META = [
+    { key: "producao", label: "Em produção", color: "#059669" },
+    { key: "desenvolvimento", label: "Em desenvolvimento", color: "#3b82f6" },
+    { key: "concluido", label: "Concluído", color: "#d97706" },
+    { key: "arquivado", label: "Arquivado", color: "#8b96a8" },
+  ] as const;
+  const statusData = STATUS_META.map((m) => ({
+    label: m.label,
+    color: m.color,
+    count: projects.filter((p) => (p.status ?? "producao") === m.key).length,
+  })).filter((s) => s.count > 0);
+
   return (
     <div className="pb-20">
       <VideoHero />
 
       <div className="space-y-10 px-4 py-8 sm:px-5 md:space-y-14 md:px-12 md:py-12 lg:px-16">
-        {/* ── Bloco de identidade: cartão de visitas + prova em números ── */}
+        {/* ── Bloco de identidade: cartão + disponibilidade + números ── */}
         <section className="space-y-4">
-          <Reveal>
-            <ProfileCard />
-          </Reveal>
-          <Reveal delay={0.08}>
+          <div className="grid gap-4 lg:grid-cols-3">
+            <Reveal className="lg:col-span-2">
+              <ProfileCard />
+            </Reveal>
+            <Reveal delay={0.06} className="h-full">
+              <AvailabilityCard />
+            </Reveal>
+          </div>
+          <Reveal delay={0.1}>
             <ProofStrip projects={projects} posts={posts.length} />
           </Reveal>
         </section>
@@ -74,6 +126,56 @@ export default async function Home() {
           <Reveal>
             <SkillsPanel />
           </Reveal>
+        </section>
+
+        {/* ── Painel de dados do sistema ── */}
+        <section>
+          <Reveal>
+            <SectionHeader
+              code="DAT"
+              title="Painel do sistema"
+              subtitle="O portfólio em números — derivados do conteúdo real."
+              href="/projetos"
+              linkLabel="Ver projetos"
+            />
+          </Reveal>
+          <Reveal delay={0.06}>
+            <SystemPanel
+              stack={stackData}
+              status={statusData}
+              total={projects.length}
+            />
+          </Reveal>
+        </section>
+
+        {/* ── Pipeline: como o trabalho acontece ── */}
+        <section>
+          <Reveal>
+            <SectionHeader
+              code="OPS"
+              title="Como eu opero"
+              subtitle="Do problema ao sistema em produção — sem caixa-preta."
+              href="/projetos"
+              linkLabel="Ver na prática"
+            />
+          </Reveal>
+          <div className="grid gap-4 sm:grid-cols-3">
+            {PIPELINE.map((etapa, i) => (
+              <Reveal key={etapa.numero} delay={i * 0.06}>
+                <div className="hud-panel h-full p-5">
+                  <span className="font-mono text-xs font-semibold text-hud-detail">
+                    {etapa.numero}
+                  </span>
+                  <h3 className="mt-2 font-display text-base font-semibold text-hud-text">
+                    {etapa.titulo}
+                  </h3>
+                  <p className="mt-1.5 text-xs leading-relaxed text-hud-muted">
+                    {etapa.texto}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </section>
 
         {/* ── Depoimentos (só aparece com conteúdo real) ── */}
@@ -192,28 +294,9 @@ export default async function Home() {
           </section>
         )}
 
-        {/* ── CTA ── */}
+        {/* ── Módulo de contato (mensagem em tempo real) ── */}
         <Reveal>
-          <div className="hud-panel hud-brackets flex flex-col items-center gap-3 p-10 text-center md:p-14">
-            <span className="hud-label">Disponível para novos projetos</span>
-            <h2 className="font-display text-2xl font-bold tracking-tight text-hud-text md:text-3xl">
-              Vamos tirar seu sistema do papel?
-            </h2>
-            <p className="max-w-md text-sm leading-relaxed text-hud-muted">
-              Me conte o problema que você precisa resolver — eu respondo com um
-              plano de ataque, não com um orçamento genérico.
-            </p>
-            <Magnetic className="mt-3 inline-block">
-              <a
-                href="https://typebot.co/my-typebot-75c4uvl"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary px-7 py-3.5 font-display text-sm font-semibold"
-              >
-                Iniciar conversa <ExternalLink className="h-4 w-4" />
-              </a>
-            </Magnetic>
-          </div>
+          <ContactModule />
         </Reveal>
       </div>
     </div>
@@ -247,7 +330,7 @@ function SectionHeader({
       </div>
       <Link
         href={href}
-        className="link-neon hidden shrink-0 items-center gap-1 font-display text-xs font-medium text-hud-text transition-transform hover:translate-x-0.5 sm:flex"
+        className="link-neon flex shrink-0 items-center gap-1 font-display text-xs font-medium text-hud-text transition-transform hover:translate-x-0.5"
       >
         {linkLabel} <ArrowUpRight className="h-3.5 w-3.5" />
       </Link>

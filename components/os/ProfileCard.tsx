@@ -52,10 +52,12 @@ export default function ProfileCard() {
   };
 
   const compartilhar = async () => {
+    // URL atual — carrega o token ?modo=leitura quando o modo está ativo.
+    const url = window.location.href;
     const dados = {
       title: PERFIL.nome,
       text: `${PERFIL.nome} — ${PERFIL.cargo}`,
-      url: PERFIL.site,
+      url,
     };
     // Share nativo no celular; nos desktops, copia o link.
     if (navigator.share) {
@@ -66,7 +68,7 @@ export default function ProfileCard() {
         return; // usuário cancelou
       }
     }
-    await navigator.clipboard.writeText(PERFIL.site);
+    await navigator.clipboard.writeText(url);
     setCopiado(true);
     setTimeout(() => setCopiado(false), 2500);
   };
@@ -86,7 +88,7 @@ export default function ProfileCard() {
               className="object-cover object-top"
             />
           </div>
-          <span className="absolute -bottom-1.5 -right-1.5 flex items-center gap-1 rounded-full border border-hud-surface bg-emerald-500 px-2 py-1 shadow-md">
+          <span className="absolute -bottom-1.5 -right-1.5 flex items-center gap-1 rounded-[4px] border border-hud-surface bg-emerald-500 px-2 py-1 shadow-md">
             <span className="h-1.5 w-1.5 rounded-full bg-white" />
             <span className="font-mono text-[9px] font-semibold uppercase tracking-wider text-white">
               disponível

@@ -33,7 +33,7 @@ export default function StatusPill({
 
   return (
     <span
-      className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1
+      className={`inline-flex items-center gap-1.5 rounded-[4px] border px-2.5 py-1
       font-mono text-[10px] font-medium uppercase tracking-wider ${s.className} ${
         compact ? "px-2 py-0.5" : ""
       }`}

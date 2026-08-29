@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Search, Menu } from "lucide-react";
 import SystemClock from "./SystemClock";
+import ReadingModeToggle from "./ReadingModeToggle";
 
 export default function Topbar({
   onOpenMobileNav,
@@ -50,7 +51,7 @@ export default function Topbar({
           ref={inputRef}
           value={q}
           onChange={(e) => setQ(e.target.value)}
-          placeholder="Buscar…"
+          placeholder="Buscar no sistema…"
           aria-label="Buscar"
           enterKeyHint="search"
           className="h-11 w-full rounded-xl border border-hud-line bg-white/5 pl-9 pr-3
@@ -63,16 +64,19 @@ export default function Topbar({
         </kbd>
       </form>
 
-      {/* Status ao vivo */}
-      <div className="ml-auto hidden shrink-0 items-center gap-4 sm:flex">
+      {/* Status ao vivo + modo leitura */}
+      <div className="ml-auto flex shrink-0 items-center gap-2 sm:gap-4">
+        <ReadingModeToggle />
+        <div className="hidden shrink-0 items-center gap-4 sm:flex">
         <SystemClock />
-        <span className="flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-1">
+        <span className="flex items-center gap-1.5 rounded-[4px] border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-1">
           <span className="relative flex h-2 w-2">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400/70" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
           </span>
           <span className="hud-label !text-emerald-400">online</span>
         </span>
+        </div>
       </div>
     </header>
   );
