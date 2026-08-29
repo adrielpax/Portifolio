@@ -10,12 +10,12 @@ import ContactModule from "@/components/os/ContactModule";
 import SystemPanel from "@/components/os/SystemPanel";
 import SkillsPanel from "@/components/os/SkillsPanel";
 import ProjectCard from "@/components/os/ProjectCard";
-import ProofStrip from "@/components/os/ProofStrip";
 import ProfileCard from "@/components/os/ProfileCard";
 import {
   getProjects,
   getPosts,
   getTestimonials,
+  getCertifications,
   resolveImage,
 } from "@/lib/sanity/data";
 import { formatDate } from "@/lib/format";
@@ -43,10 +43,11 @@ const PIPELINE = [
 ] as const;
 
 export default async function Home() {
-  const [projects, posts, testimonials] = await Promise.all([
+  const [projects, posts, testimonials, certs] = await Promise.all([
     getProjects(),
     getPosts(),
     getTestimonials(),
+    getCertifications(),
   ]);
 
   const featured = projects.filter((p) => p.featured);
@@ -75,23 +76,27 @@ export default async function Home() {
     count: projects.filter((p) => (p.status ?? "producao") === m.key).length,
   })).filter((s) => s.count > 0);
 
+  const stackTotal = new Set(projects.flatMap((p) => p.stack ?? [])).size;
+
   return (
     <div className="pb-20">
-      <VideoHero />
+      <VideoHero
+        stats={{
+          projetos: projects.length,
+          live: projects.filter((p) => Boolean(p.link)).length,
+          stack: stackTotal,
+          certs: certs.length,
+        }}
+      />
 
       <div className="space-y-10 px-4 py-8 sm:px-5 md:space-y-14 md:px-12 md:py-12 lg:px-16">
-        {/* ── Bloco de identidade: cartão + disponibilidade + números ── */}
-        <section className="space-y-4">
-          <div className="grid gap-4 lg:grid-cols-3">
-            <Reveal className="lg:col-span-2">
-              <ProfileCard />
-            </Reveal>
-            <Reveal delay={0.06} className="h-full">
-              <AvailabilityCard />
-            </Reveal>
-          </div>
-          <Reveal delay={0.1}>
-            <ProofStrip projects={projects} posts={posts.length} />
+        {/* ── Bloco de identidade: cartão + disponibilidade ── */}
+        <section className="grid gap-4 lg:grid-cols-3">
+          <Reveal className="lg:col-span-2">
+            <ProfileCard />
+          </Reveal>
+          <Reveal delay={0.06} className="h-full">
+            <AvailabilityCard />
           </Reveal>
         </section>
 
@@ -129,7 +134,7 @@ export default async function Home() {
         </section>
 
         {/* ── Painel de dados do sistema ── */}
-        <section>
+        <section id="painel" className="scroll-mt-20">
           <Reveal>
             <SectionHeader
               code="DAT"

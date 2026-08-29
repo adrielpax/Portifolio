@@ -6,6 +6,14 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { ArrowRight, Play } from "lucide-react";
 
 import Magnetic from "./Magnetic";
+import JarvisCore from "./JarvisCore";
+
+export type HeroStats = {
+  projetos: number;
+  live: number;
+  stack: number;
+  certs: number;
+};
 
 /**
  * Hero cinematográfico escuro.
@@ -15,7 +23,7 @@ import Magnetic from "./Magnetic";
 /** Defina NEXT_PUBLIC_HERO_VIDEO (ex: "/videos/hero.mp4") para usar vídeo. */
 const VIDEO_URL = process.env.NEXT_PUBLIC_HERO_VIDEO;
 
-export default function VideoHero() {
+export default function VideoHero({ stats }: { stats?: HeroStats }) {
   const [videoOk, setVideoOk] = useState(true);
   const ref = useRef<HTMLElement>(null);
 
@@ -73,6 +81,16 @@ export default function VideoHero() {
       <div className="absolute inset-0 hud-grid opacity-50" />
       <div className="absolute inset-0 bg-gradient-to-t from-hud-bg via-hud-bg/45 to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-r from-hud-bg/85 via-hud-bg/30 to-transparent" />
+
+      {/* Núcleo Jarvis — reator de dados (telas grandes) */}
+      {stats && (
+        <motion.div
+          style={{ opacity: fade }}
+          className="absolute right-10 top-1/2 z-10 hidden -translate-y-1/2 lg:block xl:right-16"
+        >
+          <JarvisCore stats={stats} />
+        </motion.div>
+      )}
 
       {/* Conteúdo */}
       <motion.div

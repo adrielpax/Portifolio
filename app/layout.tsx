@@ -49,6 +49,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-br"
+      suppressHydrationWarning
       className={cn(inter.variable, chakra.variable, geistMono.variable, "dark")}
     >
       <body className="font-sans antialiased">

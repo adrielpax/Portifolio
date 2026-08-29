@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 
 import Reveal from "@/components/os/Reveal";
+import Spotlight from "@/components/os/Spotlight";
 import { getPosts, resolveImage } from "@/lib/sanity/data";
 import { formatDate } from "@/lib/format";
 import type { Post } from "@/lib/sanity/types";
@@ -34,6 +36,11 @@ export default async function BlogPage({
   const all = await getPosts();
   const posts = filterPosts(all, q);
 
+  // Sem busca ativa, o registro mais recente vira o destaque do log.
+  const destaque = !q && posts.length > 0 ? posts[0] : null;
+  const registros = destaque ? posts.slice(1) : posts;
+  const cover = destaque ? resolveImage(destaque.coverImage, 1000) : null;
+
   return (
     <div className="px-5 py-10 md:px-12 lg:px-16">
       <Reveal>
@@ -48,8 +55,8 @@ export default async function BlogPage({
           <p className="mt-1 max-w-xl text-sm text-hud-muted">
             {q ? (
               <>
-                Resultados para <span className="text-hud-accent">“{q}”</span> ·{" "}
-                {posts.length} {posts.length === 1 ? "post" : "posts"}
+                Resultados para <span className="text-hud-accent-2">“{q}”</span> ·{" "}
+                {posts.length} {posts.length === 1 ? "registro" : "registros"}
               </>
             ) : (
               "Decisões técnicas, IA e o que aprendo construindo produtos."
@@ -60,60 +67,101 @@ export default async function BlogPage({
 
       {posts.length === 0 ? (
         <p className="py-16 text-center text-sm text-hud-muted">
-          Nada encontrado{q ? ` para “${q}”` : ""}.{" "}
-          <Link href="/blog" className="text-hud-accent hover:underline">
-            Ver tudo
+          Nenhum registro encontrado{q ? ` para “${q}”` : ""}.{" "}
+          <Link href="/blog" className="text-hud-accent-2 hover:underline">
+            Ver todos
           </Link>
         </p>
       ) : (
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {posts.map((post, i) => {
-            const cover = resolveImage(post.coverImage, 720);
-            return (
-              <Reveal key={post._id} delay={(i % 3) * 0.06}>
+        <>
+          {/* Registro em destaque — o mais recente */}
+          {destaque && (
+            <Reveal>
+              <Spotlight className="mb-6 rounded-lg">
                 <Link
-                  href={`/blog/${post.slug}`}
-                  className="card-glass group flex h-full flex-col overflow-hidden rounded-2xl"
+                  href={`/blog/${destaque.slug}`}
+                  className="card-glass group grid overflow-hidden md:grid-cols-2"
                 >
-                  <div className="relative aspect-[16/10] overflow-hidden bg-hud-surface-2">
+                  <div className="relative aspect-[16/9] overflow-hidden bg-hud-surface-2 md:aspect-auto md:min-h-[260px]">
                     {cover && (
                       <Image
                         src={cover}
-                        alt={post.title}
+                        alt={destaque.title}
                         fill
                         unoptimized
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
                       />
                     )}
-                    {post.featured && (
-                      <span className="absolute left-3 top-3 rounded-md bg-hud-accent px-2 py-0.5 font-mono text-[10px] font-semibold text-hud-bg">
-                        DESTAQUE
-                      </span>
-                    )}
                   </div>
-                  <div className="flex flex-1 flex-col p-4">
-                    <div className="mb-2 flex flex-wrap gap-1.5">
-                      {post.tags?.slice(0, 3).map((t) => (
-                        <span key={t} className="rounded-md border border-hud-line px-1.5 py-0.5 font-mono text-[10px] text-hud-steel">
-                          {t}
-                        </span>
-                      ))}
-                    </div>
-                    <h2 className="font-display text-[15px] font-semibold leading-snug text-hud-text">
-                      {post.title}
+                  <div className="flex flex-col justify-center gap-3 p-6 md:p-8">
+                    <span className="hud-label text-hud-detail">
+                      Último registro · {formatDate(destaque.publishedAt)}
+                    </span>
+                    <h2 className="font-display text-xl font-bold leading-snug text-hud-text md:text-2xl">
+                      {destaque.title}
                     </h2>
-                    <p className="mt-1 line-clamp-2 text-xs text-hud-muted">
-                      {post.excerpt}
+                    <p className="line-clamp-3 text-sm leading-relaxed text-hud-muted">
+                      {destaque.excerpt}
                     </p>
-                    <span className="hud-label mt-3">
-                      {formatDate(post.publishedAt)}
+                    {destaque.tags && destaque.tags.length > 0 && (
+                      <div className="flex flex-wrap gap-1.5">
+                        {destaque.tags.slice(0, 4).map((t) => (
+                          <span
+                            key={t}
+                            className="rounded-md border border-hud-line px-1.5 py-0.5 font-mono text-[10px] text-hud-steel"
+                          >
+                            {t}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                    <span className="mt-1 inline-flex items-center gap-1 font-mono text-xs text-hud-accent-2">
+                      ler registro <ArrowUpRight className="h-3.5 w-3.5" />
                     </span>
                   </div>
                 </Link>
-              </Reveal>
-            );
-          })}
-        </div>
+              </Spotlight>
+            </Reveal>
+          )}
+
+          {/* Log — linhas de registro */}
+          {registros.length > 0 && (
+            <Reveal delay={0.06}>
+              <div className="hud-panel divide-y divide-hud-line/70 overflow-hidden">
+                {registros.map((post) => (
+                  <Link
+                    key={post._id}
+                    href={`/blog/${post.slug}`}
+                    className="group grid gap-1 px-5 py-4 transition-colors hover:bg-white/[0.04] sm:grid-cols-[8.5rem_1fr_auto] sm:items-center sm:gap-4"
+                  >
+                    <time className="font-mono text-[11px] text-hud-detail">
+                      {formatDate(post.publishedAt)}
+                    </time>
+                    <span className="min-w-0">
+                      <h2 className="truncate font-display text-sm font-semibold text-hud-text transition-colors group-hover:text-hud-accent-2">
+                        {post.title}
+                      </h2>
+                      <p className="mt-0.5 line-clamp-1 text-xs text-hud-muted">
+                        {post.excerpt}
+                      </p>
+                    </span>
+                    <span className="hidden shrink-0 items-center gap-1.5 sm:flex">
+                      {post.tags?.slice(0, 2).map((t) => (
+                        <span
+                          key={t}
+                          className="rounded-md border border-hud-line px-1.5 py-0.5 font-mono text-[10px] text-hud-steel"
+                        >
+                          {t}
+                        </span>
+                      ))}
+                      <ArrowUpRight className="h-3.5 w-3.5 text-hud-muted transition-all group-hover:translate-x-0.5 group-hover:text-hud-text" />
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </Reveal>
+          )}
+        </>
       )}
     </div>
   );

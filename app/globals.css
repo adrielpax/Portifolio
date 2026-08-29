@@ -154,7 +154,7 @@ body {
    O prefixo `hud-` é histórico e permanece para não quebrar as classes.
    ══════════════════════════════════════════════════════════════════ */
 @theme inline {
-  --font-display: var(--font-geist-mono); /* HUD tático: display mono */
+  --font-display: var(--font-display); /* Chakra Petch — angular, tático */
   --color-hud-bg: var(--hud-bg);
   --color-hud-surface: var(--hud-surface);
   --color-hud-surface-2: var(--hud-surface-2);
@@ -196,6 +196,8 @@ body {
     radial-gradient(1100px 560px at 100% -8%, rgba(59, 130, 246, 0.1), transparent 60%),
     radial-gradient(950px 480px at -8% 8%, rgba(6, 182, 212, 0.05), transparent 55%),
     var(--hud-bg);
+  /* Fundo fixo: o conteúdo rola sobre ele (parallax de camadas) */
+  background-attachment: fixed;
   color: var(--hud-text);
 }
 
@@ -286,16 +288,21 @@ body {
 
 /* Painel de vidro (Apple-like): translúcido, hairline e sombra suave */
 .hud-panel {
-  background: rgba(22, 26, 32, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  /* Vidro elevado: mais claro que o fundo + hairline firme = contraste real */
+  background: linear-gradient(
+    180deg,
+    rgba(30, 40, 62, 0.72) 0%,
+    rgba(22, 29, 46, 0.66) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.14);
   outline: 1px solid var(--hud-line);
   outline-offset: -1px;
   border-radius: 8px;
   @apply backdrop-blur-lg backdrop-saturate-150;
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.06),
-    0 1px 2px rgba(0, 0, 0, 0.4),
-    0 10px 30px rgba(0, 0, 0, 0.45);
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 1px 2px rgba(0, 0, 0, 0.5),
+    0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 /* Card de grade.
@@ -304,8 +311,12 @@ body {
    Como não há conteúdo rolando atrás deles, o grafite translúcido entrega
    o mesmo resultado visual por uma fração do custo. */
 .card-glass {
-  background: rgba(22, 26, 32, 0.72);
-  border: 1px solid var(--hud-line);
+  background: linear-gradient(
+    180deg,
+    rgba(28, 37, 58, 0.85) 0%,
+    rgba(21, 27, 43, 0.82) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 8px;
   box-shadow:
     0 1px 2px rgba(0, 0, 0, 0.35),
@@ -358,12 +369,13 @@ body {
   height: 20px;
 }
 
-/* Grade sutil de fundo (blueprint) */
+/* Grade sutil de fundo (blueprint) — fixa: rola em paralaxe com o conteúdo */
 .hud-grid {
   background-image:
     linear-gradient(var(--hud-line) 1px, transparent 1px),
     linear-gradient(90deg, var(--hud-line) 1px, transparent 1px);
   background-size: 44px 44px;
+  background-attachment: fixed;
 }
 
 /* Fundo cinematográfico animado (mesh gradient).
@@ -457,6 +469,98 @@ body {
 }
 .link-neon:hover::after {
   transform: scaleX(1);
+}
+
+/* ── Jarvis — globo-mundo wireframe em CSS 3D (só transform/opacity) ── */
+.jarvis {
+  --jarvis-rx: 0deg;
+  --jarvis-ry: 0deg;
+  perspective: 900px;
+}
+.jarvis-scene {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  transform: rotateX(calc(14deg + var(--jarvis-rx))) rotateY(var(--jarvis-ry));
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+/* Globo: meridianos giram em torno do próprio eixo */
+.jarvis-globe {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 230px;
+  width: 230px;
+  margin: -115px 0 0 -115px;
+  transform-style: preserve-3d;
+  animation: jarvis-globe-spin 22s linear infinite;
+  will-change: transform;
+}
+@keyframes jarvis-globe-spin {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
+}
+.jarvis-meridian {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(59, 130, 246, 0.4);
+}
+.jarvis-parallel {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+  border: 1px solid rgba(6, 182, 212, 0.35);
+}
+/* Anéis orbitais ao redor do globo */
+.jarvis-orbit {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+  transform-style: preserve-3d;
+}
+.jarvis-orbit-a {
+  height: 300px;
+  width: 300px;
+  margin: -150px 0 0 -150px;
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+  transform: rotateX(76deg);
+}
+.jarvis-orbit-b {
+  height: 330px;
+  width: 330px;
+  margin: -165px 0 0 -165px;
+  border: 1px dashed rgba(6, 182, 212, 0.35);
+  transform: rotateX(76deg) rotateY(18deg);
+}
+/* Brilho do núcleo no centro do globo */
+.jarvis-core-glow {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 150px;
+  width: 150px;
+  margin: -75px 0 0 -75px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(147, 197, 253, 0.5) 0%,
+    rgba(59, 130, 246, 0.22) 45%,
+    transparent 75%
+  );
+  animation: jarvis-pulse 3.2s ease-in-out infinite;
+}
+@keyframes jarvis-pulse {
+  0%, 100% { opacity: 0.7; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.08); }
+}
+.modo-leitura .jarvis-meridian { border-color: rgba(37, 99, 235, 0.45); }
+.modo-leitura .jarvis-parallel { border-color: rgba(14, 116, 144, 0.4); }
+@media (prefers-reduced-motion: reduce) {
+  .jarvis-globe, .jarvis-core-glow { animation: none; }
 }
 
 /* Scanline tática — textura de monitor sobre o hero (transform-free, barata) */
