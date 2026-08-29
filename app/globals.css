@@ -593,6 +593,16 @@ body {
   .hud-aurora span { animation: none; }
 }
 
+/* Touch: background-attachment fixed é bugado no iOS Safari (jank/artefatos).
+   Em ponteiro grosso o fundo volta a rolar normal — o resto fica igual. */
+@media (hover: none) {
+  .hud,
+  .hud-grid,
+  .modo-leitura .hud {
+    background-attachment: scroll;
+  }
+}
+
 /* Navegação por teclado: anel de foco visível e consistente */
 .hud :where(a, button, input, textarea, select, [tabindex]):focus-visible {
   outline: 2px solid var(--hud-accent);

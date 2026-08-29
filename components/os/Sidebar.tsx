@@ -105,8 +105,10 @@ export default function Sidebar({
         <button
           onClick={onToggle}
           aria-label={collapsed ? "Expandir menu" : "Recolher menu"}
-          className="mt-2 flex w-full items-center gap-3 rounded-lg px-3 py-2 text-hud-muted
-          transition-colors hover:bg-white/[0.06] hover:text-hud-text"
+          className={`mt-2 w-full items-center gap-3 rounded-lg px-3 py-2 text-hud-muted
+          transition-colors hover:bg-white/[0.06] hover:text-hud-text ${
+            isMobile ? "hidden" : "flex"
+          }`}
         >
           <ChevronsLeft
             className={`h-5 w-5 shrink-0 transition-transform ${collapsed ? "rotate-180" : ""}`}

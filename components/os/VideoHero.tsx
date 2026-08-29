@@ -104,7 +104,11 @@ export default function VideoHero({ stats }: { stats?: HeroStats }) {
           className="max-w-2xl"
         >
           <span className="hud-label mb-3 flex items-center gap-2">
-            <span className="h-px w-7 bg-hud-detail" /> Adriel Silva — Full-Stack · Automação · IA aplicada
+            <span className="h-px w-7 shrink-0 bg-hud-detail" />
+            <span className="truncate">
+              Adriel Silva — Full-Stack
+              <span className="hidden sm:inline"> · Automação · IA aplicada</span>
+            </span>
           </span>
 
           <h1 className="font-display text-4xl font-bold leading-[1.05] tracking-tight text-hud-text md:text-6xl">

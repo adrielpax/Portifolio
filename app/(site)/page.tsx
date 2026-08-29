@@ -322,8 +322,8 @@ function SectionHeader({
   linkLabel: string;
 }) {
   return (
-    <div className="mb-5 flex items-end justify-between gap-4">
-      <div>
+    <div className="mb-5 flex flex-wrap items-end justify-between gap-x-6 gap-y-2.5">
+      <div className="min-w-0">
         <span className="hud-label flex items-center gap-2">
           <span className="text-hud-detail">{code}</span>
           <span className="h-px w-6 bg-hud-line" />
@@ -335,7 +335,7 @@ function SectionHeader({
       </div>
       <Link
         href={href}
-        className="link-neon flex shrink-0 items-center gap-1 font-display text-xs font-medium text-hud-text transition-transform hover:translate-x-0.5"
+        className="link-neon ml-auto flex shrink-0 items-center gap-1 font-display text-xs font-medium text-hud-text transition-transform hover:translate-x-0.5"
       >
         {linkLabel} <ArrowUpRight className="h-3.5 w-3.5" />
       </Link>

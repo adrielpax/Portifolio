@@ -173,7 +173,9 @@ export default async function ProjetosPage() {
                       ))}
                     </span>
                     <span className="flex shrink-0 items-center gap-2.5">
-                      <StatusPill status={p.status} compact />
+                      <span className="hidden sm:inline-flex">
+                        <StatusPill status={p.status} compact />
+                      </span>
                       <ArrowUpRight className="h-3.5 w-3.5 text-hud-muted transition-all group-hover:translate-x-0.5 group-hover:text-hud-text" />
                     </span>
                   </Link>
