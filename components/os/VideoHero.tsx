@@ -31,22 +31,22 @@ export default function VideoHero() {
   return (
     <section
       ref={ref}
-      className="hud-grain relative h-[56vh] min-h-[380px] w-full overflow-hidden md:h-[66vh] md:min-h-[480px]"
+      className="hud-grain hud-scanline relative h-[56vh] min-h-[380px] w-full overflow-hidden md:h-[66vh] md:min-h-[480px]"
     >
       {/* Mesh gradient animado */}
       <motion.div style={{ y: bgY }} className="absolute inset-0">
         <div className="hud-aurora absolute inset-[-12%]">
           <span
             className="left-[6%] top-[12%] h-[26rem] w-[26rem]"
-            style={{ "--blob": "rgba(170,195,225,0.26)" } as React.CSSProperties}
+            style={{ "--blob": "rgba(59,130,246,0.32)" } as React.CSSProperties}
           />
           <span
             className="right-[4%] top-[4%] h-[30rem] w-[30rem]"
-            style={{ "--blob": "rgba(255,255,255,0.12)", animationDelay: "3s" } as React.CSSProperties}
+            style={{ "--blob": "rgba(6,182,212,0.18)", animationDelay: "3s" } as React.CSSProperties}
           />
           <span
             className="bottom-[2%] left-[28%] h-[32rem] w-[32rem]"
-            style={{ "--blob": "rgba(130,160,205,0.18)", animationDelay: "7s" } as React.CSSProperties}
+            style={{ "--blob": "rgba(37,99,235,0.22)", animationDelay: "7s" } as React.CSSProperties}
           />
         </div>
 
