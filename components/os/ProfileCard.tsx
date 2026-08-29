@@ -4,9 +4,14 @@ import { useState } from "react";
 import Image from "next/image";
 import { Check, Download, Github, Linkedin, MapPin, MessageSquare, Share2 } from "lucide-react";
 
+import Magnetic from "./Magnetic";
+
 const PERFIL = {
   nome: "Adriel Silva",
-  cargo: "Desenvolvedor Full-Stack & Especialista em Automação",
+  cargo: "Desenvolvedor Full-Stack · Automação & IA",
+  pitch:
+    "Do zero ao deploy: produto, código e automação — com IA onde ela gera resultado.",
+  focos: ["SaaS", "Automação", "IA aplicada", "Next.js", "Node.js", "Python"],
   local: "Betim, MG · Brasil",
   site: "https://adrieldev.vercel.app",
   github: "https://github.com/adrielpax",
@@ -71,7 +76,7 @@ export default function ProfileCard() {
       <div className="flex flex-col gap-5 p-5 sm:flex-row sm:items-center sm:gap-6 sm:p-6">
         {/* Foto */}
         <div className="relative mx-auto shrink-0 sm:mx-0">
-          <div className="relative h-28 w-28 overflow-hidden rounded-2xl ring-1 ring-hud-line shadow-[0_12px_30px_rgba(17,24,39,0.14)] sm:h-32 sm:w-32">
+          <div className="relative h-28 w-28 overflow-hidden rounded-2xl ring-1 ring-hud-line shadow-[0_12px_30px_rgba(0,0,0,0.5)] sm:h-32 sm:w-32">
             <Image
               src="/images/profile.png"
               alt="Adriel Silva"
@@ -81,10 +86,10 @@ export default function ProfileCard() {
               className="object-cover object-top"
             />
           </div>
-          <span className="absolute -bottom-1.5 -right-1.5 flex items-center gap-1 rounded-full border border-white bg-emerald-500 px-2 py-1 shadow-md">
+          <span className="absolute -bottom-1.5 -right-1.5 flex items-center gap-1 rounded-full border border-hud-surface bg-emerald-500 px-2 py-1 shadow-md">
             <span className="h-1.5 w-1.5 rounded-full bg-white" />
             <span className="font-mono text-[9px] font-semibold uppercase tracking-wider text-white">
-              livre
+              disponível
             </span>
           </span>
         </div>
@@ -95,36 +100,50 @@ export default function ProfileCard() {
           <h2 className="mt-1 font-display text-2xl font-bold leading-tight tracking-tight text-hud-text sm:text-3xl">
             {PERFIL.nome}
           </h2>
-          <p className="mt-1 text-sm font-medium text-hud-accent">
-            Full-Stack & Automação
+          <p className="mt-1 text-sm font-medium text-hud-steel">
+            {PERFIL.cargo}
           </p>
           <p className="mt-1.5 flex items-center justify-center gap-1.5 text-xs text-hud-muted sm:justify-start">
             <MapPin className="h-3.5 w-3.5 shrink-0" />
             {PERFIL.local}
           </p>
 
+          <p className="mt-3 max-w-md text-[13px] leading-relaxed text-hud-text/80">
+            {PERFIL.pitch}
+          </p>
+
+          {/* Focos — leitura rápida para quem recruta */}
+          <div className="mt-3 flex flex-wrap justify-center gap-1.5 sm:justify-start">
+            {PERFIL.focos.map((f) => (
+              <span
+                key={f}
+                className="rounded-md border border-hud-line bg-white/5 px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-hud-steel"
+              >
+                {f}
+              </span>
+            ))}
+          </div>
+
           {/* Ações — alvos grandes para o toque */}
           <div className="mt-5 grid grid-cols-2 gap-2 sm:flex sm:flex-wrap">
-            <a
-              href={PERFIL.contato}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="col-span-2 flex min-h-11 items-center justify-center gap-2 rounded-xl bg-hud-accent px-5
-              font-display text-sm font-semibold text-white shadow-[0_8px_22px_rgba(0,113,227,0.32)]
-              transition-all active:scale-[0.98] hover:-translate-y-0.5 hover:shadow-[0_14px_32px_rgba(0,113,227,0.42)]"
-            >
-              <MessageSquare className="h-4 w-4" /> Falar comigo
-            </a>
+            <Magnetic className="col-span-2">
+              <a
+                href={PERFIL.contato}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary min-h-11 w-full px-5 font-display text-sm font-semibold sm:w-auto"
+              >
+                <MessageSquare className="h-4 w-4" /> Falar comigo
+              </a>
+            </Magnetic>
 
             <button
               onClick={salvarContato}
-              className="flex min-h-11 items-center justify-center gap-2 rounded-xl border border-hud-line bg-white/70
-              px-4 font-display text-xs font-medium text-hud-text transition-all
-              active:scale-[0.98] hover:-translate-y-0.5 hover:shadow-md"
+              className="btn-ghost min-h-11 px-4 font-display text-xs font-medium"
             >
               {salvo ? (
                 <>
-                  <Check className="h-4 w-4 text-emerald-600" /> Salvo
+                  <Check className="h-4 w-4 text-emerald-400" /> Salvo
                 </>
               ) : (
                 <>
@@ -135,13 +154,11 @@ export default function ProfileCard() {
 
             <button
               onClick={compartilhar}
-              className="flex min-h-11 items-center justify-center gap-2 rounded-xl border border-hud-line bg-white/70
-              px-4 font-display text-xs font-medium text-hud-text transition-all
-              active:scale-[0.98] hover:-translate-y-0.5 hover:shadow-md"
+              className="btn-ghost min-h-11 px-4 font-display text-xs font-medium"
             >
               {copiado ? (
                 <>
-                  <Check className="h-4 w-4 text-emerald-600" /> Link copiado
+                  <Check className="h-4 w-4 text-emerald-400" /> Link copiado
                 </>
               ) : (
                 <>
@@ -155,8 +172,7 @@ export default function ProfileCard() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
-              className="flex min-h-11 items-center justify-center rounded-xl border border-hud-line bg-white/70
-              text-hud-muted transition-all active:scale-[0.98] hover:-translate-y-0.5 hover:text-hud-text hover:shadow-md sm:w-11"
+              className="btn-ghost min-h-11 text-hud-muted hover:text-hud-text sm:w-11"
             >
               <Github className="h-4 w-4" />
             </a>
@@ -165,8 +181,7 @@ export default function ProfileCard() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className="flex min-h-11 items-center justify-center rounded-xl border border-hud-line bg-white/70
-              text-hud-muted transition-all active:scale-[0.98] hover:-translate-y-0.5 hover:text-hud-text hover:shadow-md sm:w-11"
+              className="btn-ghost min-h-11 text-hud-muted hover:text-hud-text sm:w-11"
             >
               <Linkedin className="h-4 w-4" />
             </a>

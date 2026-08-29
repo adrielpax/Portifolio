@@ -21,14 +21,14 @@ export default async function CertificacoesPage() {
       <Reveal>
         <header className="mb-8">
           <span className="hud-label flex items-center gap-2">
-            <span className="text-hud-accent">CRT</span>
+            <span className="text-hud-detail">CRT</span>
             <span className="h-px w-8 bg-hud-line" /> Credenciais
           </span>
           <h1 className="mt-2 font-display text-3xl font-bold tracking-tight text-hud-text md:text-4xl">
             Certificações
           </h1>
           <p className="mt-1 max-w-xl text-sm text-hud-muted">
-            Conhecimentos validados em ferramentas e tecnologias.
+            Conhecimento validado — e aplicado em projeto real.
           </p>
         </header>
       </Reveal>

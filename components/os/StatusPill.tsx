@@ -3,20 +3,20 @@ import type { Project } from "@/lib/sanity/types";
 const MAP: Record<string, { label: string; className: string; live?: boolean }> = {
   producao: {
     label: "Em produção",
-    className: "border-emerald-200 bg-emerald-50 text-emerald-700",
+    className: "border-emerald-500/30 bg-emerald-500/10 text-emerald-400",
     live: true,
   },
   desenvolvimento: {
     label: "Em desenvolvimento",
-    className: "border-blue-200 bg-blue-50 text-blue-700",
+    className: "border-hud-detail/30 bg-hud-detail/10 text-hud-detail",
   },
   concluido: {
     label: "Concluído",
-    className: "border-hud-line bg-white/70 text-hud-muted",
+    className: "border-hud-line bg-white/5 text-hud-muted",
   },
   arquivado: {
     label: "Arquivado",
-    className: "border-hud-line bg-white/70 text-hud-muted",
+    className: "border-hud-line bg-white/5 text-hud-muted",
   },
 };
 

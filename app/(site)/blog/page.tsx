@@ -39,7 +39,7 @@ export default async function BlogPage({
       <Reveal>
         <header className="mb-8">
           <span className="hud-label flex items-center gap-2">
-            <span className="text-hud-accent">LOG</span>
+            <span className="text-hud-detail">LOG</span>
             <span className="h-px w-8 bg-hud-line" /> Registro do sistema
           </span>
           <h1 className="mt-2 font-display text-3xl font-bold tracking-tight text-hud-text md:text-4xl">

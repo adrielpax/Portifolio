@@ -4,6 +4,8 @@ import { ArrowUpRight, ExternalLink, Quote } from "lucide-react";
 
 import VideoHero from "@/components/os/VideoHero";
 import Reveal from "@/components/os/Reveal";
+import Magnetic from "@/components/os/Magnetic";
+import Spotlight from "@/components/os/Spotlight";
 import SkillsPanel from "@/components/os/SkillsPanel";
 import ProjectCard from "@/components/os/ProjectCard";
 import ProofStrip from "@/components/os/ProofStrip";
@@ -30,16 +32,16 @@ export default async function Home() {
     <div className="pb-20">
       <VideoHero />
 
-      <div className="space-y-12 px-4 py-10 sm:px-5 md:space-y-16 md:px-12 md:py-14 lg:px-16">
-        {/* ── Cartão de visitas (o primeiro contato, sobretudo no celular) ── */}
-        <Reveal>
-          <ProfileCard />
-        </Reveal>
-
-        {/* ── Prova em números reais ── */}
-        <Reveal>
-          <ProofStrip projects={projects} posts={posts.length} />
-        </Reveal>
+      <div className="space-y-10 px-4 py-8 sm:px-5 md:space-y-14 md:px-12 md:py-12 lg:px-16">
+        {/* ── Bloco de identidade: cartão de visitas + prova em números ── */}
+        <section className="space-y-4">
+          <Reveal>
+            <ProfileCard />
+          </Reveal>
+          <Reveal delay={0.08}>
+            <ProofStrip projects={projects} posts={posts.length} />
+          </Reveal>
+        </section>
 
         {/* ── Projetos em destaque ── */}
         <section>
@@ -47,15 +49,20 @@ export default async function Home() {
             <SectionHeader
               code="PRJ"
               title="Projetos em produção"
-              subtitle="Sistemas reais, no ar — abra e teste."
+              subtitle="Produtos reais em produção — abra e teste você mesmo."
               href="/projetos"
               linkLabel="Ver todos"
             />
           </Reveal>
 
+          {/* O primeiro destaque ocupa a largura de dois cards — vitrine. */}
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {rail.map((p, i) => (
-              <Reveal key={p._id} delay={(i % 3) * 0.06}>
+              <Reveal
+                key={p._id}
+                delay={(i % 3) * 0.06}
+                className={i === 0 ? "sm:col-span-2" : undefined}
+              >
                 <ProjectCard project={p} />
               </Reveal>
             ))}
@@ -76,7 +83,7 @@ export default async function Home() {
               <SectionHeader
                 code="REF"
                 title="O que dizem"
-                subtitle="Quem já trabalhou comigo."
+                subtitle="Resultados na voz de quem contratou."
                 href="/projetos"
                 linkLabel="Ver projetos"
               />
@@ -87,7 +94,7 @@ export default async function Home() {
                 return (
                   <Reveal key={t._id} delay={i * 0.06}>
                     <figure className="hud-panel h-full p-6">
-                      <Quote className="h-5 w-5 text-hud-accent" />
+                      <Quote className="h-5 w-5 text-hud-steel" />
                       <blockquote className="mt-3 text-sm leading-relaxed text-hud-text/85">
                         {t.quote}
                       </blockquote>
@@ -128,7 +135,7 @@ export default async function Home() {
               <SectionHeader
                 code="LOG"
                 title="Do blog"
-                subtitle="Bastidores, IA e construção de produtos."
+                subtitle="Decisões técnicas, IA e o que aprendo construindo produtos."
                 href="/blog"
                 linkLabel="Todos os posts"
               />
@@ -139,6 +146,7 @@ export default async function Home() {
                 const cover = resolveImage(post.coverImage, 720);
                 return (
                   <Reveal key={post._id} delay={i * 0.06}>
+                    <Spotlight className="h-full rounded-2xl">
                     <Link
                       href={`/blog/${post.slug}`}
                       className="card-glass group flex h-full flex-col overflow-hidden rounded-2xl"
@@ -176,6 +184,7 @@ export default async function Home() {
                         </span>
                       </div>
                     </Link>
+                    </Spotlight>
                   </Reveal>
                 );
               })}
@@ -185,25 +194,25 @@ export default async function Home() {
 
         {/* ── CTA ── */}
         <Reveal>
-          <div className="hud-panel hud-brackets flex flex-col items-center gap-3 p-10 text-center">
+          <div className="hud-panel hud-brackets flex flex-col items-center gap-3 p-10 text-center md:p-14">
             <span className="hud-label">Disponível para novos projetos</span>
             <h2 className="font-display text-2xl font-bold tracking-tight text-hud-text md:text-3xl">
-              Tem um sistema para construir?
+              Vamos tirar seu sistema do papel?
             </h2>
             <p className="max-w-md text-sm leading-relaxed text-hud-muted">
-              Me conta o problema que você precisa resolver — respondo com uma
-              proposta de como atacar, não com um orçamento genérico.
+              Me conte o problema que você precisa resolver — eu respondo com um
+              plano de ataque, não com um orçamento genérico.
             </p>
-            <a
-              href="https://typebot.co/my-typebot-75c4uvl"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-3 inline-flex items-center gap-2 rounded-xl bg-hud-accent px-7 py-3.5
-              font-display text-sm font-semibold text-white shadow-[0_10px_28px_rgba(0,113,227,0.32)]
-              transition-all hover:-translate-y-0.5 hover:shadow-[0_18px_40px_rgba(0,113,227,0.45)]"
-            >
-              Iniciar conversa <ExternalLink className="h-4 w-4" />
-            </a>
+            <Magnetic className="mt-3 inline-block">
+              <a
+                href="https://typebot.co/my-typebot-75c4uvl"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary px-7 py-3.5 font-display text-sm font-semibold"
+              >
+                Iniciar conversa <ExternalLink className="h-4 w-4" />
+              </a>
+            </Magnetic>
           </div>
         </Reveal>
       </div>
@@ -228,7 +237,7 @@ function SectionHeader({
     <div className="mb-5 flex items-end justify-between gap-4">
       <div>
         <span className="hud-label flex items-center gap-2">
-          <span className="text-hud-accent">{code}</span>
+          <span className="text-hud-detail">{code}</span>
           <span className="h-px w-6 bg-hud-line" />
         </span>
         <h2 className="mt-1 font-display text-2xl font-bold tracking-tight text-hud-text">
@@ -238,7 +247,7 @@ function SectionHeader({
       </div>
       <Link
         href={href}
-        className="hidden shrink-0 items-center gap-1 font-display text-xs font-medium text-hud-accent transition-transform hover:translate-x-0.5 sm:flex"
+        className="link-neon hidden shrink-0 items-center gap-1 font-display text-xs font-medium text-hud-text transition-transform hover:translate-x-0.5 sm:flex"
       >
         {linkLabel} <ArrowUpRight className="h-3.5 w-3.5" />
       </Link>

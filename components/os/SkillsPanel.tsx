@@ -61,7 +61,7 @@ export default function SkillsPanel() {
       <button
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
-        className="flex w-full items-center gap-3 px-5 py-4 text-left transition-colors hover:bg-black/[0.02]"
+        className="flex w-full items-center gap-3 px-5 py-4 text-left transition-colors hover:bg-white/[0.04]"
       >
         <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-hud-accent/12 text-hud-accent ring-1 ring-hud-accent/25">
           <Sparkles className="h-4 w-4" />
@@ -106,10 +106,10 @@ export default function SkillsPanel() {
                         className="group/skill relative"
                       >
                         <div
-                          className={`relative grid h-14 w-14 place-items-center rounded-2xl border bg-white/80
-                          shadow-[0_2px_8px_rgba(17,24,39,0.06)]
+                          className={`relative grid h-14 w-14 place-items-center rounded-2xl border bg-white/[0.06]
+                          shadow-[0_2px_8px_rgba(0,0,0,0.35)]
                           transition-all duration-300 group-hover/skill:-translate-y-1
-                          group-hover/skill:shadow-[0_12px_26px_rgba(0,113,227,0.25)]
+                          group-hover/skill:shadow-[0_12px_26px_rgba(255,255,255,0.12)]
                           ${s.ai ? "border-hud-accent/40" : "border-hud-line"}`}
                         >
                           <Image
@@ -121,7 +121,7 @@ export default function SkillsPanel() {
                             className="h-8 w-8 rounded-md object-contain"
                           />
                           {s.ai && (
-                            <span className="absolute -right-1 -top-1 grid h-4 w-4 place-items-center rounded-full bg-hud-accent text-white shadow">
+                            <span className="absolute -right-1 -top-1 grid h-4 w-4 place-items-center rounded-full bg-hud-accent text-hud-accent-fg shadow">
                               <Sparkles className="h-2.5 w-2.5" />
                             </span>
                           )}
@@ -129,7 +129,7 @@ export default function SkillsPanel() {
                         {/* Tooltip */}
                         <span
                           className="pointer-events-none absolute -bottom-7 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap
-                          rounded-md bg-hud-text px-2 py-1 font-mono text-[10px] text-white opacity-0
+                          rounded-md bg-hud-text px-2 py-1 font-mono text-[10px] text-hud-bg opacity-0
                           transition-opacity duration-200 group-hover/skill:opacity-100"
                         >
                           {s.name}

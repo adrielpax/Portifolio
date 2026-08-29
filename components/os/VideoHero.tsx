@@ -5,8 +5,10 @@ import Link from "next/link";
 import { motion, useScroll, useTransform } from "motion/react";
 import { ArrowRight, Play } from "lucide-react";
 
+import Magnetic from "./Magnetic";
+
 /**
- * Hero cinematográfico claro.
+ * Hero cinematográfico escuro.
  * Fundo: mesh gradient animado + grão (0 KB). Se você adicionar um vídeo em
  * public/videos/hero.mp4, ele é usado no lugar do mesh automaticamente.
  */
@@ -29,22 +31,22 @@ export default function VideoHero() {
   return (
     <section
       ref={ref}
-      className="hud-grain relative h-[62vh] min-h-[400px] w-full overflow-hidden md:h-[78vh] md:min-h-[540px]"
+      className="hud-grain relative h-[56vh] min-h-[380px] w-full overflow-hidden md:h-[66vh] md:min-h-[480px]"
     >
       {/* Mesh gradient animado */}
       <motion.div style={{ y: bgY }} className="absolute inset-0">
         <div className="hud-aurora absolute inset-[-12%]">
           <span
             className="left-[6%] top-[12%] h-[26rem] w-[26rem]"
-            style={{ "--blob": "rgba(0,113,227,0.42)" } as React.CSSProperties}
+            style={{ "--blob": "rgba(170,195,225,0.26)" } as React.CSSProperties}
           />
           <span
             className="right-[4%] top-[4%] h-[30rem] w-[30rem]"
-            style={{ "--blob": "rgba(74,163,255,0.38)", animationDelay: "3s" } as React.CSSProperties}
+            style={{ "--blob": "rgba(255,255,255,0.12)", animationDelay: "3s" } as React.CSSProperties}
           />
           <span
             className="bottom-[2%] left-[28%] h-[32rem] w-[32rem]"
-            style={{ "--blob": "rgba(122,184,255,0.34)", animationDelay: "7s" } as React.CSSProperties}
+            style={{ "--blob": "rgba(130,160,205,0.18)", animationDelay: "7s" } as React.CSSProperties}
           />
         </div>
 
@@ -67,10 +69,10 @@ export default function VideoHero() {
         )}
       </motion.div>
 
-      {/* Camadas de leitura (claras) */}
+      {/* Camadas de leitura (escuras) */}
       <div className="absolute inset-0 hud-grid opacity-50" />
       <div className="absolute inset-0 bg-gradient-to-t from-hud-bg via-hud-bg/45 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-r from-white/75 via-white/20 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-hud-bg/85 via-hud-bg/30 to-transparent" />
 
       {/* Conteúdo */}
       <motion.div
@@ -84,37 +86,33 @@ export default function VideoHero() {
           className="max-w-2xl"
         >
           <span className="hud-label mb-3 flex items-center gap-2">
-            <span className="h-px w-7 bg-hud-accent" /> Adriel Silva · Full-Stack & Automação
+            <span className="h-px w-7 bg-hud-detail" /> Adriel Silva — Full-Stack · Automação · IA aplicada
           </span>
 
           <h1 className="font-display text-4xl font-bold leading-[1.05] tracking-tight text-hud-text md:text-6xl">
-            Construo <span className="text-hud-accent">sistemas</span> que
+            Construo <span className="text-silver">sistemas</span> que
             <br className="hidden md:block" /> escalam negócios.
           </h1>
 
           <p className="mt-4 max-w-lg text-sm leading-relaxed text-hud-muted md:text-base">
-            Do MVP à produção: plataformas SaaS, automações e IA aplicada.
-            Explore os projetos e os bastidores no blog.
+            SaaS, automações e IA aplicada — do primeiro deploy à operação.
+            Tudo aqui está em produção: abra, teste e explore os bastidores no blog.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <Link
-              href="/projetos"
-              className="group inline-flex items-center gap-2 rounded-2xl bg-hud-accent px-6 py-3.5
-              font-display text-sm font-semibold tracking-wide text-white
-              shadow-[0_10px_30px_rgba(0,113,227,0.35)] transition-all duration-300
-              hover:-translate-y-0.5 hover:shadow-[0_18px_44px_rgba(0,113,227,0.45)]"
-            >
-              <Play className="h-4 w-4 fill-white" /> Ver projetos
-            </Link>
+            <Magnetic className="inline-block">
+              <Link
+                href="/projetos"
+                className="btn-primary px-6 py-3.5 font-display text-sm font-semibold tracking-wide"
+              >
+                <Play className="h-4 w-4 fill-current" /> Explorar projetos
+              </Link>
+            </Magnetic>
             <Link
               href="/blog"
-              className="inline-flex items-center gap-2 rounded-2xl border border-hud-line bg-white/70 px-6 py-3.5
-              font-display text-sm font-medium tracking-wide text-hud-text backdrop-blur-xl
-              shadow-[0_6px_20px_rgba(17,24,39,0.08)] transition-all duration-300
-              hover:-translate-y-0.5 hover:shadow-[0_14px_32px_rgba(17,24,39,0.12)]"
+              className="btn-ghost px-6 py-3.5 font-display text-sm font-medium tracking-wide"
             >
-              Ler o blog <ArrowRight className="h-4 w-4" />
+              Bastidores no blog <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </motion.div>

@@ -36,7 +36,7 @@ export default function Sidebar({
   return (
     <aside
       className={`h-dvh shrink-0 flex-col border-r border-hud-line
-      bg-white/70 backdrop-blur-2xl shadow-[0_8px_40px_rgba(17,24,39,0.06)] transition-[width] duration-300 ease-out
+      bg-hud-surface/70 backdrop-blur-2xl shadow-[0_8px_40px_rgba(0,0,0,0.45)] transition-[width] duration-300 ease-out
       ${isMobile ? "flex w-64" : `sticky top-0 hidden md:flex ${collapsed ? "w-16" : "w-60"}`}`}
     >
       {/* Marca */}
@@ -69,10 +69,10 @@ export default function Sidebar({
               title={label}
               aria-current={active ? "page" : undefined}
               className={`group relative flex items-center gap-3 rounded-lg px-3 py-2.5 transition-colors
-              ${active ? "bg-hud-accent/10 text-hud-text" : "text-hud-muted hover:bg-black/[0.04] hover:text-hud-text"}`}
+              ${active ? "bg-hud-accent/10 text-hud-text" : "text-hud-muted hover:bg-white/[0.06] hover:text-hud-text"}`}
             >
               {active && (
-                <span className="absolute inset-y-1.5 left-0 w-0.5 rounded-full bg-hud-accent" />
+                <span className="absolute inset-y-1.5 left-0 w-0.5 rounded-full bg-hud-detail" />
               )}
               <Icon className={`h-5 w-5 shrink-0 ${active ? "text-hud-accent" : ""}`} strokeWidth={active ? 2.3 : 1.9} />
               {!collapsed && (
@@ -95,8 +95,7 @@ export default function Sidebar({
           target="_blank"
           rel="noopener noreferrer"
           title="Contato"
-          className="flex items-center gap-3 rounded-lg bg-hud-accent px-3 py-2.5 text-hud-bg
-          transition-transform hover:scale-[1.02]"
+          className="btn-primary gap-3 rounded-lg px-3 py-2.5"
         >
           <MessageSquare className="h-5 w-5 shrink-0" strokeWidth={2.2} />
           {!collapsed && (
@@ -107,7 +106,7 @@ export default function Sidebar({
           onClick={onToggle}
           aria-label={collapsed ? "Expandir menu" : "Recolher menu"}
           className="mt-2 flex w-full items-center gap-3 rounded-lg px-3 py-2 text-hud-muted
-          transition-colors hover:bg-black/[0.04] hover:text-hud-text"
+          transition-colors hover:bg-white/[0.06] hover:text-hud-text"
         >
           <ChevronsLeft
             className={`h-5 w-5 shrink-0 transition-transform ${collapsed ? "rotate-180" : ""}`}

@@ -54,7 +54,7 @@ export default function RightAside({ stats }: { stats: AsideStats }) {
             href="https://github.com/adrielpax"
             target="_blank"
             aria-label="GitHub"
-            className="grid h-9 flex-1 place-items-center rounded-lg border border-hud-line bg-white/60 text-hud-muted transition-all hover:-translate-y-0.5 hover:text-hud-text hover:shadow-md"
+            className="grid h-9 flex-1 place-items-center rounded-lg border border-hud-line bg-white/5 text-hud-muted transition-all hover:-translate-y-0.5 hover:text-hud-text hover:shadow-md"
           >
             <Github className="h-4 w-4" />
           </Link>
@@ -62,7 +62,7 @@ export default function RightAside({ stats }: { stats: AsideStats }) {
             href="https://linkedin.com/in/adriel-lucas"
             target="_blank"
             aria-label="LinkedIn"
-            className="grid h-9 flex-1 place-items-center rounded-lg border border-hud-line bg-white/60 text-hud-muted transition-all hover:-translate-y-0.5 hover:text-hud-text hover:shadow-md"
+            className="grid h-9 flex-1 place-items-center rounded-lg border border-hud-line bg-white/5 text-hud-muted transition-all hover:-translate-y-0.5 hover:text-hud-text hover:shadow-md"
           >
             <Linkedin className="h-4 w-4" />
           </Link>
@@ -84,7 +84,7 @@ export default function RightAside({ stats }: { stats: AsideStats }) {
       {/* Disponibilidade */}
       <div className="hud-panel p-4">
         <span className="hud-label">Disponibilidade</span>
-        <p className="mt-2 flex items-center gap-2 text-xs font-medium text-emerald-600">
+        <p className="mt-2 flex items-center gap-2 text-xs font-medium text-emerald-400">
           <span className="relative flex h-2 w-2">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400/70" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
@@ -92,15 +92,13 @@ export default function RightAside({ stats }: { stats: AsideStats }) {
           Aberto a novos projetos
         </p>
         <p className="mt-2 text-xs leading-relaxed text-hud-muted">
-          Freelas, CLT ou parceria em produto. Foco em SaaS, MVPs e automação.
+          Freelance, CLT ou parceria em produto — foco em SaaS, MVPs e automação com IA.
         </p>
         <a
           href="https://typebot.co/my-typebot-75c4uvl"
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-3 flex items-center justify-center gap-1.5 rounded-lg bg-hud-accent px-3 py-2.5
-          font-display text-xs font-semibold text-white shadow-[0_6px_18px_rgba(0,113,227,0.3)]
-          transition-all hover:-translate-y-0.5 hover:shadow-[0_10px_24px_rgba(0,113,227,0.4)]"
+          className="btn-primary mt-3 w-full gap-1.5 rounded-lg px-3 py-2.5 font-display text-xs font-semibold"
         >
           Falar comigo <ArrowUpRight className="h-3.5 w-3.5" />
         </a>

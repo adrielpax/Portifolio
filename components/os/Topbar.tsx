@@ -38,7 +38,7 @@ export default function Topbar({
         onClick={onOpenMobileNav}
         aria-label="Abrir menu"
         className="grid h-11 w-11 shrink-0 place-items-center rounded-xl text-hud-muted transition-colors
-        active:scale-95 hover:bg-black/[0.04] hover:text-hud-text md:hidden"
+        active:scale-95 hover:bg-white/[0.06] hover:text-hud-text md:hidden"
       >
         <Menu className="h-5 w-5" />
       </button>
@@ -53,7 +53,7 @@ export default function Topbar({
           placeholder="Buscar…"
           aria-label="Buscar"
           enterKeyHint="search"
-          className="h-11 w-full rounded-xl border border-hud-line bg-white/70 pl-9 pr-3
+          className="h-11 w-full rounded-xl border border-hud-line bg-white/5 pl-9 pr-3
           font-mono text-base text-hud-text placeholder:text-hud-muted/70 backdrop-blur
           outline-none transition-colors focus:border-hud-accent/50 sm:h-10 sm:pr-16 sm:text-sm"
         />
@@ -66,12 +66,12 @@ export default function Topbar({
       {/* Status ao vivo */}
       <div className="ml-auto hidden shrink-0 items-center gap-4 sm:flex">
         <SystemClock />
-        <span className="flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-1">
+        <span className="flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-1">
           <span className="relative flex h-2 w-2">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400/70" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
           </span>
-          <span className="hud-label !text-emerald-700">online</span>
+          <span className="hud-label !text-emerald-400">online</span>
         </span>
       </div>
     </header>

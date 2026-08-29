@@ -36,6 +36,8 @@ const projects = [
       "Barbeiros perdem horas por dia respondendo mensagens repetidas no WhatsApp para marcar, confirmar e remarcar horários. Sem agenda centralizada, aparecem furos, esquecimentos e clientes atendidos em duplicidade.",
     solution:
       "Construí uma plataforma web que centraliza a agenda e automatiza a conversa de agendamento: o cliente marca sozinho, recebe confirmação automática e o barbeiro acompanha tudo por um painel. O projeto tem direitos reservados e registro de propriedade intelectual (Lei nº 9.609/98, Lei nº 9.610/98, INPI).",
+    outcome:
+      "O agendamento acontece sem conversa manual: o cliente marca sozinho e a agenda vive num painel único, em produção e em uso real. Produto com registro de propriedade intelectual no INPI.",
     stack: ["Next.js", "TypeScript", "React", "Tailwind CSS", "PostgreSQL"],
     featured: true,
     order: 0,
@@ -55,6 +57,8 @@ const projects = [
       "Pequenos lojistas dependem de marketplaces que cobram comissões altas e não oferecem controle sobre a marca nem sobre os dados dos clientes.",
     solution:
       "Desenvolvi uma loja completa em Next.js com catálogo, carrinho e fluxo de compra pensados para conversão, seguindo padrões de usabilidade que o público já conhece de Amazon, Shopee e Mercado Livre. A base foi estruturada para virar white-label e atender várias lojas.",
+    outcome:
+      "Loja completa no ar — catálogo, carrinho e fluxo de compra — com arquitetura pronta para ser replicada como white-label em novas lojas.",
     stack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
     featured: true,
     order: 1,
@@ -75,6 +79,8 @@ const projects = [
       "Produtos SaaS perdem leads quando a página só apresenta o produto e não conduz o visitante por um caminho claro até a conversão.",
     solution:
       "Montei uma landing page com painéis de funil, estruturando a jornada em etapas para acompanhar onde o lead entra e onde ele para.",
+    outcome:
+      "Landing em produção com o funil instrumentado por etapas — pronta para medir onde cada lead entra e onde abandona a jornada.",
     stack: ["JavaScript", "Next.js", "Vercel"],
     order: 2,
   },
@@ -92,6 +98,8 @@ const projects = [
       "Aplicações que dependem de requisições HTTP tradicionais não conseguem entregar mensagens instantâneas sem ficar consultando o servidor repetidamente.",
     solution:
       "Implementei comunicação bidirecional com Socket.IO sobre Node.js e Express, mantendo conexão persistente entre cliente e servidor para entrega imediata das mensagens.",
+    outcome:
+      "Mensagens entregues em tempo real com conexão persistente entre salas — código aberto, publicado no GitHub.",
     stack: ["React", "Node.js", "Socket.IO", "Express"],
     order: 3,
   },
@@ -109,6 +117,8 @@ const projects = [
       "Negócios pequenos precisam captar leads, mas não têm estrutura (nem orçamento) para manter um back-end e um banco de dados só para um formulário.",
     solution:
       "Integrei o formulário diretamente ao Google Sheets, transformando a planilha no destino dos leads — simples de manter e imediato para quem já trabalha com planilhas.",
+    outcome:
+      "Leads caindo direto na planilha do cliente, com custo zero de infraestrutura — sem servidor nem banco de dados para manter.",
     stack: ["JavaScript", "HTML5", "Google Sheets API"],
     order: 4,
   },

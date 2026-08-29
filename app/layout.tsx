@@ -1,8 +1,7 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist_Mono, Inter, Chakra_Petch } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import { TooltipProvider } from "@/components/ui/tooltip"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -20,14 +19,19 @@ const geistMono = Geist_Mono({
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adriel.dev";
 
+export const viewport: Viewport = {
+  themeColor: "#0b0d11",
+  colorScheme: "dark",
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Adriel | Analista e Desenvolvedor de Soluções em Tecnologia",
+    default: "Adriel Silva — Desenvolvedor Full-Stack & Automação",
     template: "%s | Adriel Silva",
   },
   description:
-    "Desenvolvimento, análise e administração de sistemas para soluções em tecnologia e automação. Portfólio, projetos e blog.",
+    "Desenvolvedor full-stack especializado em SaaS, automações e IA aplicada. Projetos em produção, case studies e bastidores técnicos.",
   openGraph: {
     type: "website",
     locale: "pt_BR",
@@ -45,13 +49,10 @@ export default function RootLayout({
   return (
     <html
       lang="pt-br"
-      className={cn(inter.variable, chakra.variable, geistMono.variable)}
+      className={cn(inter.variable, chakra.variable, geistMono.variable, "dark")}
     >
       <body className="font-sans antialiased">
-        <TooltipProvider>
-        
         {children}
-        </TooltipProvider>
       </body>
     </html>
   );

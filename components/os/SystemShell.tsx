@@ -6,14 +6,11 @@ import { X } from "lucide-react";
 import SmoothScroll from "./SmoothScroll";
 import Sidebar from "./Sidebar";
 import Topbar from "./Topbar";
-import RightAside, { type AsideStats } from "./RightAside";
 
 export default function SystemShell({
   children,
-  stats,
 }: {
   children: React.ReactNode;
-  stats: AsideStats;
 }) {
   const [collapsed, setCollapsed] = useState(false);
   const [mobileNav, setMobileNav] = useState(false);
@@ -31,10 +28,10 @@ export default function SystemShell({
           {/* Coluna central */}
           <div className="flex min-w-0 flex-1 flex-col">
             <Topbar onOpenMobileNav={() => setMobileNav(true)} />
-            <main className="min-w-0 flex-1">{children}</main>
+            <main className="min-w-0 flex-1">
+              <div className="mx-auto w-full max-w-6xl">{children}</div>
+            </main>
           </div>
-
-          <RightAside stats={stats} />
         </div>
 
         {/* Drawer de navegação no mobile */}
@@ -48,7 +45,7 @@ export default function SystemShell({
               <button
                 onClick={() => setMobileNav(false)}
                 aria-label="Fechar menu"
-                className="absolute right-3 top-4 z-10 grid h-9 w-9 place-items-center rounded-lg text-hud-muted hover:bg-black/[0.04]"
+                className="absolute right-3 top-4 z-10 grid h-9 w-9 place-items-center rounded-lg text-hud-muted hover:bg-white/[0.06]"
               >
                 <X className="h-5 w-5" />
               </button>
